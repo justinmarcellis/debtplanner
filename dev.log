@@ -1,0 +1,13 @@
+
+> app@0.0.0 dev
+> vite
+
+
+  VITE v8.1.0  ready in 292 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+11:57:31 PM [vite] (client) [optimizer] bundling dependencies...
+12:03:38 AM [vite] vite.config.ts changed, restarting server...
+12:03:38 AM [vite] (client) Re-optimizing dependencies because lockfile has changed
+12:03:38 AM [vite] server restarted.
