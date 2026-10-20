@@ -1,0 +1,47 @@
+{
+  "status": "done",
+  "dependsOn": [],
+  "createdAt": "2026-10-20T15:15:45.459Z",
+  "history": [
+    {
+      "at": "2026-10-20T15:19:09.951Z",
+      "from": "review",
+      "to": "done"
+    }
+  ],
+  "id": "S0-PRD-01",
+  "team": "pmo",
+  "title": "Brief intake: requirements, deliverables and facts",
+  "story": "As the engagement lead I need the interview brief decomposed into traceable requirements, deliverables and a single facts file so nothing in the specification is missed",
+  "points": 5,
+  "tier": "strong",
+  "owner": "eng-lead",
+  "reviewer": "qe-acceptance",
+  "sprint": 0,
+  "paths": [
+    "brief/"
+  ],
+  "contracts": [],
+  "acceptance": [
+    "brief/interview-brief.txt is the full text of the PDF",
+    "Every instruction, consideration, persona detail and logistics item in the brief maps to at least one REQ in brief/requirements.json, each with deliverables and a verification method",
+    "brief/facts.json reproduces the brief's FinTechCo facts exactly (team sizes, stacks, infrastructure, priorities, attendees, meeting timings) and marks placeholders"
+  ],
+  "requirements": [],
+  "deliverables": [
+    "D11"
+  ],
+  "doneAt": "2026-10-20T15:19:09.951Z",
+  "review": {
+    "reworkCount": 0,
+    "verdicts": [
+      {
+        "at": "2026-10-20T15:19:09.951Z",
+        "by": "qe-acceptance",
+        "verdict": "accept",
+        "reason": "Brief txt identical to pdftotext of PDF; all 30 REQs have deliverables+verify; every brief instruction/consideration/persona/logistics item maps to a REQ; facts.json exact; nits: REQ-09 'minute 35' vs ADR-005 0:37, minor unmapped scenario color"
+      }
+    ],
+    "firstPass": true
+  }
+}

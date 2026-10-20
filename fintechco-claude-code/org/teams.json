@@ -1,0 +1,165 @@
+{
+  "orchestrator": {
+    "id": "eng-lead",
+    "title": "Principal Applied AI Architect — Engagement Lead / Program Orchestrator",
+    "model": "opus",
+    "owns": [
+      "README.md",
+      "brief/",
+      "org/decisions/",
+      "org/playbooks/",
+      "org/config.json",
+      "org/teams.json"
+    ],
+    "decides": [
+      "meeting objective and the ask",
+      "storyline and slide titles (G1)",
+      "what is published and when (G5)",
+      "budget replans and agent deprecations"
+    ]
+  },
+  "teams": [
+    {
+      "id": "strategy",
+      "code": "STR",
+      "name": "Account Strategy & Discovery",
+      "hub": "strategy",
+      "director": { "id": "dir-strategy", "model": "opus" },
+      "manager": { "id": "mgr-strategy", "model": "sonnet" },
+      "icRoles": [
+        "stakeholder-analyst",
+        "discovery-designer",
+        "objection-handler",
+        "use-case-curator",
+        "talk-track-writer"
+      ],
+      "owns": ["strategy/"]
+    },
+    {
+      "id": "research",
+      "code": "RES",
+      "name": "Product & Market Intelligence",
+      "hub": "research",
+      "director": { "id": "dir-research", "model": "opus" },
+      "manager": { "id": "mgr-research", "model": "sonnet" },
+      "icRoles": [
+        "claude-code-researcher",
+        "competitive-analyst",
+        "proof-point-researcher",
+        "pricing-analyst",
+        "fact-checker"
+      ],
+      "owns": ["research/"],
+      "note": "Owns research/claims.json, the single source of truth for every external fact used in customer-facing material (ADR-006)."
+    },
+    {
+      "id": "narrative",
+      "code": "NAR",
+      "name": "Narrative & Deck",
+      "hub": "narrative",
+      "director": { "id": "dir-narrative", "model": "opus" },
+      "manager": { "id": "mgr-narrative", "model": "sonnet" },
+      "icRoles": [
+        "storyliner",
+        "slide-designer",
+        "diagram-designer",
+        "speaker-notes-writer"
+      ],
+      "owns": ["deck/"]
+    },
+    {
+      "id": "value",
+      "code": "VAL",
+      "name": "Value Engineering (Metrics & ROI)",
+      "hub": "value",
+      "director": { "id": "dir-value", "model": "opus" },
+      "manager": { "id": "mgr-value", "model": "sonnet" },
+      "icRoles": [
+        "metrics-designer",
+        "roi-modeler",
+        "calculator-dev"
+      ],
+      "owns": ["value/"]
+    },
+    {
+      "id": "adoption",
+      "code": "ADO",
+      "name": "Evaluation & Rollout",
+      "hub": "adoption",
+      "director": { "id": "dir-adoption", "model": "opus" },
+      "manager": { "id": "mgr-adoption", "model": "sonnet" },
+      "icRoles": [
+        "pilot-designer",
+        "rollout-planner",
+        "enablement-designer"
+      ],
+      "owns": ["rollout/"]
+    },
+    {
+      "id": "trust",
+      "code": "TRU",
+      "name": "Security, Risk & Compliance",
+      "hub": "trust",
+      "director": { "id": "dir-trust", "model": "opus" },
+      "manager": { "id": "mgr-trust", "model": "sonnet" },
+      "icRoles": [
+        "security-architect",
+        "threat-modeler",
+        "compliance-mapper"
+      ],
+      "owns": ["security/"],
+      "note": "Holds veto on any security, privacy or compliance statement in customer-facing material (ADR-003)."
+    },
+    {
+      "id": "demo",
+      "code": "DEM",
+      "name": "Demo Engineering",
+      "hub": "demo",
+      "director": { "id": "dir-demo", "model": "opus" },
+      "manager": { "id": "mgr-demo", "model": "sonnet" },
+      "icRoles": [
+        "swe-demo-dev",
+        "data-demo-dev",
+        "sre-demo-dev",
+        "governance-config-dev",
+        "dashboard-dev",
+        "demo-scriptwriter"
+      ],
+      "owns": ["demo/"]
+    },
+    {
+      "id": "quality",
+      "code": "QE",
+      "name": "Quality, Red Team & Rehearsal",
+      "hub": "quality",
+      "director": { "id": "dir-quality", "model": "opus" },
+      "manager": { "id": "mgr-quality", "model": "sonnet" },
+      "icRoles": [
+        "acceptance-reviewer",
+        "mock-cto",
+        "mock-champion",
+        "timekeeper",
+        "demo-dry-runner",
+        "fact-verifier"
+      ],
+      "owns": ["rehearsal/"],
+      "note": "qe-acceptance reviews every ticket. The red team (mock-cto, mock-champion) plays the attendees in Sprint 3."
+    },
+    {
+      "id": "pmo",
+      "code": "PMO",
+      "name": "Program Management Office",
+      "hub": "pmo",
+      "director": { "id": "dir-pmo", "model": "opus" },
+      "manager": { "id": "mgr-pmo", "model": "sonnet" },
+      "icRoles": [
+        "board-keeper",
+        "dashboard-dev",
+        "metrics-analyst",
+        "retro-facilitator"
+      ],
+      "owns": ["org/board/", "org/hubs/", "org/sprints/", "org/scorecards/", "org/dashboard/"]
+    }
+  ],
+  "crossTeamHubs": ["decisions", "claims", "blockers"]
+}

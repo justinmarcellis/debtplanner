@@ -1,0 +1,53 @@
+{
+  "status": "done",
+  "dependsOn": [],
+  "createdAt": "2026-10-20T15:15:45.459Z",
+  "history": [
+    {
+      "at": "2026-10-20T15:19:09.908Z",
+      "from": "review",
+      "to": "done"
+    }
+  ],
+  "id": "S0-ARC-01",
+  "team": "pmo",
+  "title": "Decision records, contracts and playbooks",
+  "story": "As every team I need fixed decisions (harness, layout, defaults, delegation controls, demo architecture, meeting format, evidence policy), data contracts and role prompts so I can build without waiting on others",
+  "points": 8,
+  "tier": "strong",
+  "owner": "eng-lead",
+  "reviewer": "qe-acceptance",
+  "sprint": 0,
+  "paths": [
+    "org/decisions/",
+    "org/contracts/",
+    "org/playbooks/",
+    "org/config.json",
+    "org/teams.json"
+  ],
+  "contracts": [],
+  "acceptance": [
+    "ADR-000..006 exist with status, owner, date and a decision",
+    "ADR-003 defines decision rights, authority limits, separation of duties, content vetoes, tool policy, gates, budget controls, escalation and audit trail",
+    "ADR-005 agenda sums to 40 minutes with time checkpoints and a cut list",
+    "Four contract schemas exist and the contracts README assigns claim id ranges with no overlaps",
+    "teams.json defines nine teams each with director, manager, IC roles and disjoint owned folders"
+  ],
+  "requirements": [],
+  "deliverables": [
+    "D11"
+  ],
+  "doneAt": "2026-10-20T15:19:09.908Z",
+  "review": {
+    "reworkCount": 0,
+    "verdicts": [
+      {
+        "at": "2026-10-20T15:19:09.908Z",
+        "by": "qe-acceptance",
+        "verdict": "accept",
+        "reason": "All 5 criteria met: ADR-000..006 with status/owner/date/decision; ADR-003 has all 9 control sections; agenda sums to 40 with checkpoints+cut list; 12 non-overlapping CLM ranges and 4 schemas; 9 teams with disjoint owns; nits only"
+      }
+    ],
+    "firstPass": true
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Impact metrics (value/metrics.json)",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "tier", "name", "definition", "dataSource", "baseline", "direction", "cadence", "audience"],
+    "properties": {
+      "id": { "type": "string", "pattern": "^MET-[0-9]{2}$" },
+      "tier": { "enum": ["adoption", "engagement", "flow", "quality", "experience", "business"] },
+      "name": { "type": "string" },
+      "definition": { "type": "string", "description": "Exact formula, unit and population." },
+      "dataSource": { "type": "string", "description": "Where the number comes from (e.g. Claude Code analytics, OpenTelemetry, GitHub, Jira, CI, PagerDuty, survey)." },
+      "baseline": { "type": "string", "description": "How the pre-pilot baseline is captured." },
+      "direction": { "enum": ["up", "down", "hold"] },
+      "pilotTarget": { "type": "string", "description": "Target or decision threshold for the pilot; label assumptions." },
+      "guardrail": { "type": "string", "description": "Counter-metric that must not degrade." },
+      "cadence": { "type": "string" },
+      "audience": { "type": "array", "items": { "enum": ["cto", "hodt", "eng-managers", "finance", "security"] } },
+      "claims": { "type": "array", "items": { "type": "string" } }
+    }
+  }
+}

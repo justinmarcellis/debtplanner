@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Use-case catalog (strategy/use-cases.json)",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "team", "title", "problem", "workflow", "capabilities", "valueDriver", "metrics", "pilotStarter", "risk"],
+    "properties": {
+      "id": { "type": "string", "pattern": "^UC-(SWE|DS|SRE|X)-[0-9]{2}$" },
+      "team": { "enum": ["swe", "ds", "sre", "cross"] },
+      "title": { "type": "string" },
+      "problem": { "type": "string", "description": "The FinTechCo pain in their words (generic; FinTechCo is fictional)." },
+      "workflow": { "type": "string", "description": "What the engineer asks and what Claude Code does, step by step." },
+      "capabilities": { "type": "array", "items": { "type": "string" }, "description": "Claude Code features used, e.g. plan mode, subagents, hooks, MCP, headless." },
+      "stack": { "type": "array", "items": { "type": "string" } },
+      "valueDriver": { "enum": ["throughput", "time-to-market", "quality", "reliability", "onboarding", "risk-reduction", "developer-experience"] },
+      "metrics": { "type": "array", "items": { "type": "string" }, "description": "MET ids or [MET-?: …] placeholders." },
+      "pilotStarter": { "type": "boolean", "description": "Recommended as a week-1 starter in the evaluation plan." },
+      "complexity": { "enum": ["low", "medium", "high"] },
+      "risk": { "type": "string", "description": "Main risk and the guardrail." },
+      "demoAct": { "type": ["integer", "null"], "description": "1, 2 or 3 if shown in the demo (ADR-004)." },
+      "claims": { "type": "array", "items": { "type": "string" } }
+    }
+  }
+}

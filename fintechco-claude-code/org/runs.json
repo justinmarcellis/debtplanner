@@ -1,0 +1,6 @@
+[
+  { "sprint": 1, "runId": "wf_eae37289-110", "teams": ["research", "trust"], "dir": "~/.claude/projects/-home-user-debtplanner/<session>/subagents/workflows/wf_eae37289-110" },
+  { "sprint": 1, "runId": "wf_98170f55-232", "teams": ["demo"], "dir": "~/.claude/projects/-home-user-debtplanner/<session>/subagents/workflows/wf_98170f55-232" },
+  { "sprint": 1, "runId": "wf_08172b1d-bf0", "teams": ["strategy", "narrative"], "dir": "~/.claude/projects/-home-user-debtplanner/<session>/subagents/workflows/wf_08172b1d-bf0" },
+  { "sprint": 1, "runId": "wf_2531b210-9c6", "teams": ["value", "adoption"], "dir": "~/.claude/projects/-home-user-debtplanner/<session>/subagents/workflows/wf_2531b210-9c6" }
+]

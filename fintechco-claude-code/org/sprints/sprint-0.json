@@ -1,0 +1,15 @@
+{
+  "number": 0,
+  "name": "Sprint 0",
+  "status": "planned",
+  "startedAt": "2026-10-20T15:15:45.593Z",
+  "committed": [
+    "S0-ARC-01",
+    "S0-PMO-01",
+    "S0-PRD-01"
+  ],
+  "committedPoints": 18,
+  "targets": {
+    "committedPoints": 18
+  }
+}
