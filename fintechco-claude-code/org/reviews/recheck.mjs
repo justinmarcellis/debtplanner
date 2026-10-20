@@ -26,7 +26,7 @@ const checks = [
     existsSync(join(ROOT, 'demo', r, '.claude/hooks/audit_log.py')) && has(`demo/${r}/.claude/settings.json`, /audit_log\.py/))],
   ['F1 governance close counts every act', () => has('demo/RUNBOOK.md', /wc -l ~\/fintechco-demo\/\*\/\.claude\/audit\/audit\.jsonl/)],
   ['F2 runbook shows the .env denial and a deterministic hook block', () =>
-    has('demo/RUNBOOK.md', /Read \.env/) && has('demo/RUNBOOK.md', /pci_guard\.py < \.claude\/hooks\/examples\/pan-edit\.json/)],
+    has('demo/RUNBOOK.md', /Read tool on \.env|Read \.env/) && has('demo/RUNBOOK.md', /pci_guard\.py < \.claude\/hooks\/examples\/pan-edit\.json/)],
   ['F3 no "asks before it acts" phrasing', () => none(/asks? (permission )?before (it )?act|asks first|asks permission as it goes/i).length === 0],
   ['F4 laptop telemetry default stated per route', () => none(/telemetry and error reporting are off by default and/).length === 0 && has('security/security-brief.md', /CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC/)],
   ['F5 no unconditional "existing agreement applies"', () => none(/(existing commercial agreement applies|Your existing commercial agreement|under your agreement)(?![^.]*unless otherwise agreed)/i).length === 0],
