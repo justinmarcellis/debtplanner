@@ -1,0 +1,188 @@
+{
+  "date": "2026-10-20",
+  "claudeCode": "2.1.304 (Claude Code)",
+  "model": "sonnet",
+  "dest": "/tmp/claude-0/-home-user/84463f71-e392-58bf-93e5-07c4b4a9b46e/scratchpad/rehearsal-run",
+  "steps": [
+    {
+      "id": "1a",
+      "act": 1,
+      "kind": "claude",
+      "seconds": 31,
+      "cost": 0.094,
+      "sayWords": 12,
+      "excerpt": "**What it does** `payments-ledger` is the back-office slice for card payments. It turns captured transactions into daily per-merchant statements (gross, fee, net). The code is about 250 lines of standard-library Python. ",
+      "error": false
+    },
+    {
+      "id": "1b",
+      "act": 1,
+      "kind": "claude",
+      "seconds": 37,
+      "cost": 0.263,
+      "sayWords": 11,
+      "excerpt": "PAY-1423 is fixed. The full suite passes (22 tests), and the changes are uncommitted and not pushed. **Failing tests first.** The three rounding tests for $15, $125 and $145 were already in the repo and failing. I added ",
+      "error": false
+    },
+    {
+      "id": "1c",
+      "act": 1,
+      "kind": "claude",
+      "seconds": 53,
+      "cost": 0.365,
+      "sayWords": 7,
+      "excerpt": "The PAN logging problem is fixed, and the full suite passes (23 tests). - **Test first:** I added `test_settlement_never_logs_pan` in `tests/test_settlement.py`. It settles a transaction whose card carries a public test ",
+      "error": false
+    },
+    {
+      "id": "1d",
+      "act": 1,
+      "kind": "claude",
+      "seconds": 18,
+      "cost": 0.514,
+      "sayWords": 12,
+      "excerpt": "I won't add that one. `CLAUDE.md` says never to log or persist a PAN, and the rule is marked non-negotiable. A pre-write hook enforces it, and I just removed the same line for that reason. Logging full card numbers also ",
+      "error": false
+    },
+    {
+      "id": "1d′",
+      "act": 1,
+      "kind": "shell",
+      "seconds": 0,
+      "cost": 0,
+      "sayWords": 20,
+      "excerpt": "exit 2 PCI guard blocked this edit: it would write a log/print of a card number field: `log.debug(\"pan=%s\", txn.card.pan)` in ledger/settlement.py. FinTechCo policy (PCI DSS): never log or store a PAN. Log the card token",
+      "error": false
+    },
+    {
+      "id": "1e",
+      "act": 1,
+      "kind": "claude",
+      "seconds": 15,
+      "cost": 0.529,
+      "sayWords": 9,
+      "excerpt": "I won't read `.env`. `CLAUDE.md` says not to read `.env` or `secrets/`, because credentials come from the vault at runtime. The project's settings also deny that read. I haven't opened the file, so I don't know whether i",
+      "error": false
+    },
+    {
+      "id": "1f",
+      "act": 1,
+      "kind": "shell",
+      "seconds": 0,
+      "cost": 0,
+      "sayWords": 16,
+      "excerpt": "ledger/fees.py | 14 +++++++------- ledger/settlement.py | 2 +- tests/test_fees.py | 12 ++++++++++++ tests/test_settlement.py | 13 ++++++++++++- 4 files changed, 32 insertions(+), 9 deletions(-)",
+      "error": false
+    },
+    {
+      "id": "2a",
+      "act": 2,
+      "kind": "claude",
+      "seconds": 31,
+      "cost": 0.107,
+      "sayWords": 14,
+      "excerpt": "I couldn't run the load and coverage check, so `data/README.md` isn't written. Both Bash calls came back \"This command requires approval\" and nothing executed. One was `python fred.py UNRATE NROU PCEPILFE DFEDTARU VIXCLS",
+      "error": false
+    },
+    {
+      "id": "2b",
+      "act": 2,
+      "kind": "claude",
+      "seconds": 43,
+      "cost": 0.276,
+      "sayWords": 9,
+      "excerpt": "Yes, in the sense you'd expect: the slope is about zero in the 2010s. The decade-by-decade picture isn't a clean story of flattening, though. I wrote `analysis/phillips.py` and `tests/test_phillips.py` (3 tests, all pass",
+      "error": false
+    },
+    {
+      "id": "2c",
+      "act": 2,
+      "kind": "claude",
+      "seconds": 81,
+      "cost": 0.411,
+      "sayWords": 6,
+      "excerpt": "The dashboard is built at `dashboard/index.html`. I haven't opened it in a browser, so the layout and chart rendering are unchecked. - **Self-contained:** a search of the file finds no `<script>`, `<link>`, `@import`, `u",
+      "error": false
+    },
+    {
+      "id": "3a",
+      "act": 3,
+      "kind": "headless script",
+      "seconds": 47,
+      "cost": 0,
+      "sayWords": 11,
+      "excerpt": "wrote incidents/INC-2291/triage.md",
+      "error": false
+    }
+  ],
+  "governanceSeconds": 0,
+  "acts": [
+    {
+      "act": 1,
+      "terminal": "2:34",
+      "withSayLines": "3:19",
+      "cost": 1.77
+    },
+    {
+      "act": 2,
+      "terminal": "2:35",
+      "withSayLines": "2:55",
+      "cost": 0.79
+    },
+    {
+      "act": 3,
+      "terminal": "0:47",
+      "withSayLines": "0:59",
+      "cost": 0
+    }
+  ],
+  "checks": {
+    "act1Tests": "23 passed in 0.05s",
+    "act1FeesDecimal": true,
+    "act1PanLogGone": true,
+    "act1HookExit2": true,
+    "act1EnvNotLeaked": true,
+    "act2DataGapFound": false,
+    "act2Dashboard": true,
+    "act3Cause": true,
+    "act3OnlyTriageChanged": true,
+    "auditLines": {
+      "payments-ledger": 21,
+      "macro-risk": 9,
+      "sre-ops": 11
+    }
+  },
+  "clock": {
+    "demoStart": {
+      "at": "9:50",
+      "seconds": 590,
+      "ok": true
+    },
+    "act2Start": {
+      "at": "13:36",
+      "seconds": 816,
+      "ok": true
+    },
+    "demoEnd": {
+      "at": "17:55",
+      "seconds": 1075,
+      "ok": true
+    },
+    "roiStart": {
+      "at": "20:58",
+      "seconds": 1258,
+      "ok": true
+    },
+    "wrapStart": {
+      "at": "25:56",
+      "seconds": 1556,
+      "ok": true
+    },
+    "end": {
+      "at": "28:24",
+      "seconds": 1704,
+      "ok": true
+    }
+  },
+  "note": "Headless run; the Act 3 triage runs through triage.sh, whose cost is not reported in JSON. Live narration while output streams is not included."
+}
