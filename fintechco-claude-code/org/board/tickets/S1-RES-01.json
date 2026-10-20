@@ -13,8 +13,8 @@
   "tier": "mid",
   "owner": "eng-lead (for research)",
   "paths": [
-    "research/claude-code-facts.md",
-    "research/claims/product.json"
+    "research/claims/product.json",
+    "research/claims.md"
   ],
   "contracts": [
     "org/contracts/claims.schema.json",
@@ -47,6 +47,10 @@
     {
       "at": "2026-10-20T17:58:31.911Z",
       "text": "Carried over from Sprint 1 after the account spend limit; executed player-coach per ADR-007."
+    },
+    {
+      "at": "2026-10-20T18:47:44.710Z",
+      "text": "Rescoped under ADR-007: Fact base is the merged claims register (research/claims.md) plus the product shard; Sprint 1 shards reused per ADR-007 §4."
     }
   ]
 }

@@ -15,7 +15,7 @@
   "paths": [
     "value/metrics.json",
     "value/metrics-framework.md",
-    "research/claims/value-metrics.json"
+    "research/claims/adoption-eval.json"
   ],
   "contracts": [
     "org/contracts/metrics.schema.json",
@@ -52,6 +52,10 @@
     {
       "at": "2026-10-20T17:58:31.911Z",
       "text": "Carried over from Sprint 1 after the account spend limit; executed player-coach per ADR-007."
+    },
+    {
+      "at": "2026-10-20T18:47:44.710Z",
+      "text": "Rescoped under ADR-007: Metrics claims are CLM-653..657 in the adoption-eval shard."
     }
   ]
 }

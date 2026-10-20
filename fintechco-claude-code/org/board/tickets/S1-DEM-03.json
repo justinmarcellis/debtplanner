@@ -17,7 +17,7 @@
     "demo/payments-ledger/.env",
     "demo/enterprise/",
     "demo/fallback/governance/",
-    "research/claims/demo-claude-code.json"
+    "research/claims/product.json"
   ],
   "contracts": [
     "org/decisions/ADR-004-demo-architecture.md",
@@ -51,6 +51,10 @@
     {
       "at": "2026-10-20T17:58:31.911Z",
       "text": "Carried over from Sprint 1 after the account spend limit; executed player-coach per ADR-007."
+    },
+    {
+      "at": "2026-10-20T18:47:44.710Z",
+      "text": "Rescoped under ADR-007: Demo product facts (hooks exit code 2, workspace trust, install) live in the product shard, CLM-001..012."
     }
   ]
 }

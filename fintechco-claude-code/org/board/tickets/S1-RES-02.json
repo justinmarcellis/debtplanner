@@ -13,9 +13,7 @@
   "tier": "mid",
   "owner": "eng-lead (for research)",
   "paths": [
-    "research/competitive-landscape.md",
-    "research/battlecard.md",
-    "research/claims/competitive.json"
+    "research/battlecard.md"
   ],
   "contracts": [
     "org/contracts/claims.schema.json",
@@ -51,6 +49,10 @@
     {
       "at": "2026-10-20T17:58:31.911Z",
       "text": "Carried over from Sprint 1 after the account spend limit; executed player-coach per ADR-007."
+    },
+    {
+      "at": "2026-10-20T18:47:44.710Z",
+      "text": "Rescoped under ADR-007: Rescoped: per-vendor profiles dropped (no budget to source competitor claims from vendor docs). Policy instead: no competitor feature, price or limitation claims anywhere; battlecard compares on five dimensions with a pilot test each; competitive facts CLM-628/629 in strategy.json. Acceptance re-based on: battlecard cites only verified/partial claims; fair protocol in rollout/evaluation-plan.md and deck a03."
     }
   ]
 }

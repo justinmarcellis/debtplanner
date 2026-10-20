@@ -25,8 +25,7 @@
   "sprint": 2,
   "paths": [
     "security/security-brief.md",
-    "security/reference-architecture.svg",
-    "research/claims/trust-brief.json"
+    "research/claims/strategy.json"
   ],
   "contracts": [
     "org/contracts/claims.schema.json",
@@ -63,6 +62,10 @@
     {
       "at": "2026-10-20T17:58:31.911Z",
       "text": "Carried over from Sprint 1 after the account spend limit; executed player-coach per ADR-007."
+    },
+    {
+      "at": "2026-10-20T18:47:44.710Z",
+      "text": "Rescoped under ADR-007: Reference architecture is the mermaid data-flow diagram inside security/security-brief.md; trust claims are CLM-600..618 in strategy.json."
     }
   ]
 }

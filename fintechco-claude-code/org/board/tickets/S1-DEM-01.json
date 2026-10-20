@@ -29,7 +29,6 @@
     "demo/payments-ledger/tickets/",
     "demo/payments-ledger/CLAUDE.md",
     "demo/payments-ledger/README.md",
-    "demo/payments-ledger/pyproject.toml",
     "demo/payments-ledger/.gitignore",
     "demo/fallback/act1/"
   ],
@@ -65,6 +64,10 @@
     {
       "at": "2026-10-20T17:58:31.911Z",
       "text": "Carried over from Sprint 1 after the account spend limit; executed player-coach per ADR-007."
+    },
+    {
+      "at": "2026-10-20T18:47:44.710Z",
+      "text": "Rescoped under ADR-007: No pyproject.toml needed: tests run with python -m pytest from the repo root."
     }
   ]
 }

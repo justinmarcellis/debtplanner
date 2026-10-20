@@ -1,6 +1,6 @@
 {
   "number": 2,
-  "name": "Sprint 2",
+  "name": "Sprint 2: lean delivery (ADR-007)",
   "status": "planned",
   "startedAt": "2026-10-20T17:58:32.105Z",
   "committed": [
@@ -31,5 +31,24 @@
   "committedPoints": 174,
   "targets": {
     "committedPoints": 174
+  },
+  "retro": {
+    "went_well": [
+      "Player-coach delivery finished D1-D11 in one context, with the board, gates and RTM kept as the accountability record",
+      "Mechanical gates caught real defects: s07/s08 notes over their time budget, a shell route around the PCI hook, a NaN alignment bug in the FRED loader, a gate-week mismatch between the evaluation plan and the charter",
+      "Sprint 1 output reused as-is: 89 sourced claims, the slide spec and the rollout plan"
+    ],
+    "went_badly": [
+      "Sprint 1 fan-out spent about 2.3M subagent tokens for one accepted IC ticket; context loading dominated the cost",
+      "Three agent-drafted strategy documents were overwritten by mistake; restored from git, the compact versions kept as -card.md",
+      "A factual error about default permissions reached the slide spec before the register (CLM-606) corrected it"
+    ],
+    "improvements": [
+      "Scale agents with output, not with the org chart: one author, machine gates, one independent reviewer",
+      "Give any agent a small context pack (the brief and one ADR), never the whole playbook",
+      "Check git status before writing to paths another agent owns",
+      "Facts enter the claims register before they enter a spec"
+    ],
+    "manager_retros": []
   }
 }

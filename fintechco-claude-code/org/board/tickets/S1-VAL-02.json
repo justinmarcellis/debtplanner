@@ -16,9 +16,7 @@
     "value/roi-assumptions.json",
     "value/roi.mjs",
     "value/roi.test.mjs",
-    "value/roi-report.mjs",
-    "value/roi-model.md",
-    "research/claims/value-roi.json"
+    "value/roi-model.md"
   ],
   "contracts": [
     "org/contracts/roi-assumptions.schema.json",
@@ -53,6 +51,10 @@
     {
       "at": "2026-10-20T17:58:31.911Z",
       "text": "Carried over from Sprint 1 after the account spend limit; executed player-coach per ADR-007."
+    },
+    {
+      "at": "2026-10-20T18:47:44.710Z",
+      "text": "Rescoped under ADR-007: value/roi.mjs renders roi-model.md itself (renderMarkdown); ROI cites CLM-619, 623, 650 from existing shards."
     }
   ]
 }

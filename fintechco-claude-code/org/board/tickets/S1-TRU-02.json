@@ -25,7 +25,7 @@
   "sprint": 2,
   "paths": [
     "security/threat-model.md",
-    "research/claims/trust-threats.json"
+    "research/claims/strategy.json"
   ],
   "contracts": [
     "org/contracts/claims.schema.json",
@@ -60,6 +60,10 @@
     {
       "at": "2026-10-20T17:58:31.911Z",
       "text": "Carried over from Sprint 1 after the account spend limit; executed player-coach per ADR-007."
+    },
+    {
+      "at": "2026-10-20T18:47:44.710Z",
+      "text": "Rescoped under ADR-007: Threat-model claims cite the strategy shard (CLM-600..618)."
     }
   ]
 }
