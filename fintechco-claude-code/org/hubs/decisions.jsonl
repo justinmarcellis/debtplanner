@@ -1,1 +1,2 @@
 {"at":"2026-10-20T15:15:45.526Z","hub":"decisions","type":"decision","text":"Sprint 0: ADR-000..006 proposed; contracts and claim id ranges set; brief decomposed into 30 requirements and 11 deliverables","from":"eng-lead","link":"org/decisions/"}
+{"at":"2026-10-20T16:57:49.527Z","hub":"decisions","type":"decision","text":"Sprint 0 closed: 18/18 pts accepted by qe-acceptance; REQ-09 aligned to ADR-005 (wrap at 0:37)","from":"eng-lead","link":"org/sprints/sprint-0.json"}
