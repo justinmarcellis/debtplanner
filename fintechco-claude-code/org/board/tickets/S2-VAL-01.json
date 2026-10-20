@@ -1,0 +1,29 @@
+{
+  "id": "S2-VAL-01",
+  "team": "value",
+  "title": "ROI calculator page",
+  "story": "ROI calculator page",
+  "points": 5,
+  "tier": "strong",
+  "owner": "eng-lead (for value)",
+  "reviewer": "qe-acceptance (consolidated, ADR-007)",
+  "sprint": 2,
+  "status": "ready",
+  "dependsOn": [],
+  "createdAt": "2026-10-20T17:58:31.911Z",
+  "history": [],
+  "paths": [
+    "value/calculator/"
+  ],
+  "contracts": [],
+  "acceptance": [
+    "One self-contained HTML page that reuses value/roi.mjs logic and reproduces the scenarios table in value/roi-model.md"
+  ],
+  "requirements": [
+    "REQ-14",
+    "REQ-06"
+  ],
+  "deliverables": [
+    "D5"
+  ]
+}

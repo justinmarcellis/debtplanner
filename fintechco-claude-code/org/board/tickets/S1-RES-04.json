@@ -4,14 +4,14 @@
   "createdAt": "2026-10-20T17:05:30.541Z",
   "history": [],
   "team": "research",
-  "reviewer": "qe-acceptance",
-  "sprint": 1,
+  "reviewer": "qe-acceptance (consolidated, ADR-007)",
+  "sprint": 2,
   "id": "S1-RES-04",
   "title": "Pricing, packaging and deployment options (Bedrock, Vertex AI, Foundry)",
   "story": "As the candidate I need dated list prices, Anthropic's published cost guidance and exact Bedrock and Vertex AI routing configuration for Claude Code, so that I can explain how FinTechCo buys and runs it on AWS and GCP and show cost controls without leading with price.",
   "points": 8,
   "tier": "mid",
-  "owner": "ic-research-pricing-analyst",
+  "owner": "eng-lead (for research)",
   "paths": [
     "research/pricing-and-deployment.md",
     "research/claims/pricing-deployment.json"
@@ -45,5 +45,11 @@
     "node org/contracts/validate.mjs passes (shard schema valid, no duplicate ids, no citation to a missing or unusable claim)",
     "Only this ticket's paths changed (git status --short shows research/pricing-and-deployment.md and research/claims/pricing-deployment.json only); no secrets, no Anthropic logos or brand assets, no real personal data"
   ],
-  "brief": "Produce the buying, pricing and deployment reference for a candidate presenting to a cost-conscious but not cost-driven bank on AWS and GCP serving US customers. Value is framed on throughput and time to market; cost controls are shown, not led with. A platform engineer must be able to copy your configuration and a CFO must be able to trust your numbers.\n\nSetup: load web tools with ToolSearch query \"select:WebSearch,WebFetch\". Sources in priority order: Anthropic pricing and models pages and the code.claude.com/docs pages on Bedrock, Vertex AI, Foundry, LLM gateway, costs, model configuration, IAM and monitoring; then AWS, Google Cloud and Microsoft official docs and pricing pages for provider-side model ids, regions, quotas and prices. Never write a variable, id or number from memory.\n\nLeads to verify: the env vars that switch Claude Code to each provider (use flag, region or project, model overrides), AWS authentication options and the IAM actions needed to invoke and list models, Vertex AI project, region, required role and Model Garden enablement, cross-region versus regional endpoints and any price difference, and the exact model or inference-profile ids for Opus 5.5, Sonnet 5.5 and Haiku 5.5. Prices: the 2026-10-06 reference in acceptance is a cross-check only; cite an official page for every price, record discrepancies, and let the official page win. Find Anthropic's own typical cost per developer and quote it exactly with its date.\n\nPut each price in a table with date and link, and config blocks with placeholders such as <aws-region> and <gcp-project-id>. Shard research/claims/pricing-deployment.json uses CLM-300..399 only, category pricing or deployment (model where it is a model fact), partial with safeWording where a source is narrower.\n\nPitfalls: seat plans, tiers and limits change often, so date everything; never invent an enterprise price (use \"contact sales\" only if the page says so); do not assert a security property or data-handling guarantee (tag it [TRUST-REVIEW] and keep the page's own words); certifications belong to the Trust team (CLM-400..449); ROI belongs to the Value team, so keep the 180-seat arithmetic simple; mark route advice \"(judgment)\". Post a handoff to the research hub when done."
+  "brief": "Produce the buying, pricing and deployment reference for a candidate presenting to a cost-conscious but not cost-driven bank on AWS and GCP serving US customers. Value is framed on throughput and time to market; cost controls are shown, not led with. A platform engineer must be able to copy your configuration and a CFO must be able to trust your numbers.\n\nSetup: load web tools with ToolSearch query \"select:WebSearch,WebFetch\". Sources in priority order: Anthropic pricing and models pages and the code.claude.com/docs pages on Bedrock, Vertex AI, Foundry, LLM gateway, costs, model configuration, IAM and monitoring; then AWS, Google Cloud and Microsoft official docs and pricing pages for provider-side model ids, regions, quotas and prices. Never write a variable, id or number from memory.\n\nLeads to verify: the env vars that switch Claude Code to each provider (use flag, region or project, model overrides), AWS authentication options and the IAM actions needed to invoke and list models, Vertex AI project, region, required role and Model Garden enablement, cross-region versus regional endpoints and any price difference, and the exact model or inference-profile ids for Opus 5.5, Sonnet 5.5 and Haiku 5.5. Prices: the 2026-10-06 reference in acceptance is a cross-check only; cite an official page for every price, record discrepancies, and let the official page win. Find Anthropic's own typical cost per developer and quote it exactly with its date.\n\nPut each price in a table with date and link, and config blocks with placeholders such as <aws-region> and <gcp-project-id>. Shard research/claims/pricing-deployment.json uses CLM-300..399 only, category pricing or deployment (model where it is a model fact), partial with safeWording where a source is narrower.\n\nPitfalls: seat plans, tiers and limits change often, so date everything; never invent an enterprise price (use \"contact sales\" only if the page says so); do not assert a security property or data-handling guarantee (tag it [TRUST-REVIEW] and keep the page's own words); certifications belong to the Trust team (CLM-400..449); ROI belongs to the Value team, so keep the 180-seat arithmetic simple; mark route advice \"(judgment)\". Post a handoff to the research hub when done.",
+  "notes": [
+    {
+      "at": "2026-10-20T17:58:31.911Z",
+      "text": "Carried over from Sprint 1 after the account spend limit; executed player-coach per ADR-007."
+    }
+  ]
 }

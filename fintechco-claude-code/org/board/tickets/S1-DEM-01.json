@@ -1,5 +1,5 @@
 {
-  "status": "in_progress",
+  "status": "ready",
   "dependsOn": [],
   "createdAt": "2026-10-20T17:04:27.297Z",
   "history": [
@@ -7,17 +7,22 @@
       "at": "2026-10-20T17:05:57.679Z",
       "from": "ready",
       "to": "in_progress"
+    },
+    {
+      "at": "2026-10-20T17:58:31.933Z",
+      "from": "in_progress",
+      "to": "ready"
     }
   ],
   "team": "demo",
-  "reviewer": "qe-acceptance",
-  "sprint": 1,
+  "reviewer": "qe-acceptance (consolidated, ADR-007)",
+  "sprint": 2,
   "id": "S1-DEM-01",
   "title": "Act 1 repo: payments-ledger with planted defect, planted violation and fallback patch",
   "story": "As the candidate I need a realistic small Python payments service with a one-cent fee bug and a PAN-logging violation, plus a verified reference fix, so that Act 1 shows onboarding, test-first bug fixing and governance to the 120 software engineers' stack without depending on luck.",
   "points": 8,
   "tier": "mid",
-  "owner": "ic-demo-swe-demo-dev",
+  "owner": "eng-lead (for demo)",
   "paths": [
     "demo/payments-ledger/ledger/",
     "demo/payments-ledger/tests/",
@@ -55,5 +60,11 @@
   "deliverables": [
     "D2"
   ],
-  "startedAt": "2026-10-20T17:05:57.679Z"
+  "startedAt": "2026-10-20T17:05:57.679Z",
+  "notes": [
+    {
+      "at": "2026-10-20T17:58:31.911Z",
+      "text": "Carried over from Sprint 1 after the account spend limit; executed player-coach per ADR-007."
+    }
+  ]
 }

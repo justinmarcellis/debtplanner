@@ -1,5 +1,5 @@
 {
-  "status": "in_progress",
+  "status": "ready",
   "dependsOn": [],
   "createdAt": "2026-10-20T17:03:45.398Z",
   "history": [
@@ -7,6 +7,11 @@
       "at": "2026-10-20T17:04:49.223Z",
       "from": "ready",
       "to": "in_progress"
+    },
+    {
+      "at": "2026-10-20T17:58:31.943Z",
+      "from": "in_progress",
+      "to": "ready"
     }
   ],
   "id": "S1-TRU-01",
@@ -15,9 +20,9 @@
   "story": "As the candidate I need a security and compliance brief, a reference-architecture diagram and a sourced claims shard so that I can answer a security-first fintech CTO's first objection with precise facts on Amazon Bedrock and Vertex AI deployment, data handling, certifications, Claude Code controls and how they support FinTechCo's likely obligations, and leave his security team a document they can review.",
   "points": 8,
   "tier": "mid",
-  "owner": "ic-trust-security-architect",
-  "reviewer": "qe-acceptance",
-  "sprint": 1,
+  "owner": "eng-lead (for trust)",
+  "reviewer": "qe-acceptance (consolidated, ADR-007)",
+  "sprint": 2,
   "paths": [
     "security/security-brief.md",
     "security/reference-architecture.svg",
@@ -53,5 +58,11 @@
   "deliverables": [
     "D7"
   ],
-  "startedAt": "2026-10-20T17:04:49.223Z"
+  "startedAt": "2026-10-20T17:04:49.223Z",
+  "notes": [
+    {
+      "at": "2026-10-20T17:58:31.911Z",
+      "text": "Carried over from Sprint 1 after the account spend limit; executed player-coach per ADR-007."
+    }
+  ]
 }

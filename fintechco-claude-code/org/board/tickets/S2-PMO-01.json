@@ -1,0 +1,28 @@
+{
+  "id": "S2-PMO-01",
+  "team": "pmo",
+  "title": "Program dashboard",
+  "story": "Program dashboard",
+  "points": 3,
+  "tier": "strong",
+  "owner": "eng-lead (for pmo)",
+  "reviewer": "qe-acceptance (consolidated, ADR-007)",
+  "sprint": 2,
+  "status": "ready",
+  "dependsOn": [],
+  "createdAt": "2026-10-20T17:58:31.911Z",
+  "history": [],
+  "paths": [
+    "org/dashboard/"
+  ],
+  "contracts": [],
+  "acceptance": [
+    "Self-contained page generated from the board: teams, tickets, gates, RTM coverage, claims, retro"
+  ],
+  "requirements": [
+    "REQ-30"
+  ],
+  "deliverables": [
+    "D11"
+  ]
+}

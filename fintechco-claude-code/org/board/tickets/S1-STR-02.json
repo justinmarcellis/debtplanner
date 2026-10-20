@@ -2,16 +2,27 @@
   "status": "ready",
   "dependsOn": [],
   "createdAt": "2026-10-20T17:06:01.758Z",
-  "history": [],
+  "history": [
+    {
+      "at": "2026-10-20T17:39:18.999Z",
+      "from": "ready",
+      "to": "in_progress"
+    },
+    {
+      "at": "2026-10-20T17:58:31.942Z",
+      "from": "in_progress",
+      "to": "ready"
+    }
+  ],
   "team": "strategy",
-  "reviewer": "qe-acceptance",
-  "sprint": 1,
+  "reviewer": "qe-acceptance (consolidated, ADR-007)",
+  "sprint": 2,
   "id": "S1-STR-02",
   "title": "Objection and Q&A bank with sourced claims",
   "story": "As the candidate I need a rehearsed bank of the questions a skeptical CTO and an AI champion will ask, with crisp answers, depth if pushed and sourced facts, so that I answer honestly and briefly under pressure and keep the 40 minutes on track.",
   "points": 8,
   "tier": "mid",
-  "owner": "ic-strategy-objection-handler",
+  "owner": "eng-lead (for strategy)",
   "paths": [
     "strategy/objection-handling.md",
     "research/claims/strategy.json"
@@ -47,5 +58,12 @@
     "node org/contracts/validate.mjs passes for this ticket's files: no FAIL line names research/claims/strategy.json or strategy/objection-handling.md (failures naming other teams' files are out of scope).",
     "Only this ticket's two paths were changed; no secrets, Anthropic brand assets, invented customer names, quotes or numbers; a handoff listing remaining placeholders is posted to hub strategy."
   ],
-  "brief": "Audience: the candidate rehearsing, then answering live inside a 40-minute meeting, so every Answer must be sayable in about 25 seconds (65 words max at ~140 wpm). The CTO is blunt, security-first, 20+ years in financial services IT, skeptical without proven enterprise adoption. The Head of Digital Transformation needs lines to reuse with colleagues.\n\nStep 1, source first: shard research/claims/strategy.json, ids CLM-600..649 only (claims.schema.json). Official documentation first (ADR-006 hierarchy): Claude Code docs at code.claude.com/docs (security, data usage, permissions, settings and managed settings, hooks, sandboxing, monitoring-usage, Amazon Bedrock, Google Vertex AI), the Anthropic Trust Center and commercial terms, AWS and Google Cloud docs for hosted-model data handling. For productivity use original sources only; candidates to look up are METR's randomized trial with experienced open-source developers, DORA's AI-assisted development research, large company field experiments and Anthropic's own published research. Check each; never use numbers from memory. Write each claim as it may be said aloud; use partial plus safeWording when a source says less than you want. Aim for 12 to 25 claims. Load WebSearch and WebFetch with ToolSearch query \"select:WebSearch,WebFetch\".\n\nStep 2, write the bank in the format of the acceptance criteria. Per objection: Asker; Answer (concede what is true, then reframe); If pushed (depth); Claims; Trust-review tag where it applies; Bridge (one line back to an ADR-005 ask: security review, pilot cohort, metrics owner, kickoff date).\n\nCover at least: code leaving our perimeter; training on our data; prompt injection and exfiltration; secrets and card data in repos; audit trail and evidence for auditors (SOX, PCI DSS, GLBA and model risk guidance appear as placeholders only, never quoted from memory); accountability for AI-written changes; hallucinated dependencies and subtle bugs; mixed productivity studies; \"show me the ROI\"; unpredictable token spend; the incumbent IDE assistant and other agents under evaluation; senior-engineer pushback and junior skill atrophy; single-vendor and model-availability risk, exit and portability (Bedrock and Vertex as deployment choices).\n\nPitfalls: never promise a productivity number; never say Claude Code makes FinTechCo compliant; placeholders must say exactly what to source."
+  "brief": "Audience: the candidate rehearsing, then answering live inside a 40-minute meeting, so every Answer must be sayable in about 25 seconds (65 words max at ~140 wpm). The CTO is blunt, security-first, 20+ years in financial services IT, skeptical without proven enterprise adoption. The Head of Digital Transformation needs lines to reuse with colleagues.\n\nStep 1, source first: shard research/claims/strategy.json, ids CLM-600..649 only (claims.schema.json). Official documentation first (ADR-006 hierarchy): Claude Code docs at code.claude.com/docs (security, data usage, permissions, settings and managed settings, hooks, sandboxing, monitoring-usage, Amazon Bedrock, Google Vertex AI), the Anthropic Trust Center and commercial terms, AWS and Google Cloud docs for hosted-model data handling. For productivity use original sources only; candidates to look up are METR's randomized trial with experienced open-source developers, DORA's AI-assisted development research, large company field experiments and Anthropic's own published research. Check each; never use numbers from memory. Write each claim as it may be said aloud; use partial plus safeWording when a source says less than you want. Aim for 12 to 25 claims. Load WebSearch and WebFetch with ToolSearch query \"select:WebSearch,WebFetch\".\n\nStep 2, write the bank in the format of the acceptance criteria. Per objection: Asker; Answer (concede what is true, then reframe); If pushed (depth); Claims; Trust-review tag where it applies; Bridge (one line back to an ADR-005 ask: security review, pilot cohort, metrics owner, kickoff date).\n\nCover at least: code leaving our perimeter; training on our data; prompt injection and exfiltration; secrets and card data in repos; audit trail and evidence for auditors (SOX, PCI DSS, GLBA and model risk guidance appear as placeholders only, never quoted from memory); accountability for AI-written changes; hallucinated dependencies and subtle bugs; mixed productivity studies; \"show me the ROI\"; unpredictable token spend; the incumbent IDE assistant and other agents under evaluation; senior-engineer pushback and junior skill atrophy; single-vendor and model-availability risk, exit and portability (Bedrock and Vertex as deployment choices).\n\nPitfalls: never promise a productivity number; never say Claude Code makes FinTechCo compliant; placeholders must say exactly what to source.",
+  "startedAt": "2026-10-20T17:39:18.999Z",
+  "notes": [
+    {
+      "at": "2026-10-20T17:58:31.911Z",
+      "text": "Carried over from Sprint 1 after the account spend limit; executed player-coach per ADR-007."
+    }
+  ]
 }

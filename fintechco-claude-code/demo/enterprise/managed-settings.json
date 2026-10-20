@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "disableBypassPermissionsMode": "disable",
+    "deny": [
+      "Read(**/.env)",
+      "Read(**/.env.*)",
+      "Read(**/secrets/**)",
+      "Read(~/.aws/**)",
+      "Read(~/.config/gcloud/**)",
+      "Bash(git push *)",
+      "Bash(curl *)",
+      "Bash(wget *)"
+    ]
+  },
+  "allowManagedHooksOnly": true,
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit|NotebookEdit|Bash",
+        "hooks": [{ "type": "command", "command": "python3 /opt/fintechco/claude/hooks/pci_guard.py" }]
+      }
+    ],
+    "PostToolUse": [
+      { "hooks": [{ "type": "command", "command": "python3 /opt/fintechco/claude/hooks/audit_log.py" }] }
+    ]
+  },
+  "sandbox": {
+    "enabled": true,
+    "network": { "allowedDomains": ["github.fintechco.example", "pypi.org", "files.pythonhosted.org", "registry.npmjs.org"] }
+  },
+  "availableModels": ["sonnet", "opus", "haiku"],
+  "enforceAvailableModels": true,
+  "env": {
+    "CLAUDE_CODE_USE_BEDROCK": "1",
+    "AWS_REGION": "us-east-1",
+    "CLAUDE_CODE_ENABLE_TELEMETRY": "1",
+    "OTEL_METRICS_EXPORTER": "otlp",
+    "OTEL_LOGS_EXPORTER": "otlp",
+    "OTEL_EXPORTER_OTLP_PROTOCOL": "grpc",
+    "OTEL_EXPORTER_OTLP_ENDPOINT": "https://otel-collector.fintechco.example:4317"
+  }
+}

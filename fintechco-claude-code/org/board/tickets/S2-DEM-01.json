@@ -1,0 +1,37 @@
+{
+  "id": "S2-DEM-01",
+  "team": "demo",
+  "title": "Act 3 SRE incident triage, runbook, setup/reset and fallbacks",
+  "story": "Act 3 SRE incident triage, runbook, setup/reset and fallbacks",
+  "points": 8,
+  "tier": "strong",
+  "owner": "eng-lead (for demo)",
+  "reviewer": "qe-acceptance (consolidated, ADR-007)",
+  "sprint": 2,
+  "status": "ready",
+  "dependsOn": [],
+  "createdAt": "2026-10-20T17:58:31.911Z",
+  "history": [],
+  "paths": [
+    "demo/sre-ops/",
+    "demo/RUNBOOK.md",
+    "demo/README.md",
+    "demo/setup.sh",
+    "demo/reset.sh",
+    "demo/fallback/"
+  ],
+  "contracts": [],
+  "acceptance": [
+    "setup.sh builds fresh git repos for all three acts; reset.sh restores the start state",
+    "RUNBOOK.md gives verbatim prompts, timings, expected results and a recovery line per step",
+    "Every live step has a fallback artifact"
+  ],
+  "requirements": [
+    "REQ-08",
+    "REQ-26",
+    "REQ-27"
+  ],
+  "deliverables": [
+    "D2"
+  ]
+}

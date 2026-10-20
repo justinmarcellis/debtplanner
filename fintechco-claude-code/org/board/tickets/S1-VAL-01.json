@@ -9,9 +9,9 @@
   "story": "As the candidate I need a tiered impact-measurement framework (adoption, engagement, flow, quality, experience, business) with baselines, guardrails and a one-page monthly scorecard so that the CTO sees impact will be proven on FinTechCo's own data and the Head of Digital Transformation can run it.",
   "points": 5,
   "tier": "mid",
-  "owner": "ic-value-metrics-designer",
-  "reviewer": "qe-acceptance",
-  "sprint": 1,
+  "owner": "eng-lead (for value)",
+  "reviewer": "qe-acceptance (consolidated, ADR-007)",
+  "sprint": 2,
   "paths": [
     "value/metrics.json",
     "value/metrics-framework.md",
@@ -47,5 +47,11 @@
   ],
   "deliverables": [
     "D5"
+  ],
+  "notes": [
+    {
+      "at": "2026-10-20T17:58:31.911Z",
+      "text": "Carried over from Sprint 1 after the account spend limit; executed player-coach per ADR-007."
+    }
   ]
 }

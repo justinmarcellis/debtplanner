@@ -1,0 +1,9 @@
+{
+  "id": "INC-2291",
+  "service": "payment-gateway",
+  "severity": "SEV-2",
+  "triggered": "2026-10-14T14:07:00Z",
+  "condition": "p99 latency > 1000 ms AND 5xx rate > 5% for 3 minutes",
+  "region": "us-east-1",
+  "impact": "Card authorizations failing or slow for online checkout"
+}

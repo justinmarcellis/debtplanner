@@ -1,5 +1,5 @@
 {
-  "status": "review",
+  "status": "done",
   "dependsOn": [],
   "createdAt": "2026-10-20T15:17:01.645Z",
   "history": [
@@ -22,6 +22,11 @@
       "at": "2026-10-20T17:03:45.487Z",
       "from": "in_progress",
       "to": "review"
+    },
+    {
+      "at": "2026-10-20T17:58:31.943Z",
+      "from": "review",
+      "to": "done"
     }
   ],
   "id": "S1-TRU-00",
@@ -41,5 +46,6 @@
   ],
   "requirements": [],
   "deliverables": [],
-  "startedAt": "2026-10-20T15:18:54.758Z"
+  "startedAt": "2026-10-20T15:18:54.758Z",
+  "doneAt": "2026-10-20T17:58:31.943Z"
 }

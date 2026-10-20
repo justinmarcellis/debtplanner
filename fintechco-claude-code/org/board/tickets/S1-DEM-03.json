@@ -4,14 +4,14 @@
   "createdAt": "2026-10-20T17:04:27.299Z",
   "history": [],
   "team": "demo",
-  "reviewer": "qe-acceptance",
-  "sprint": 1,
+  "reviewer": "qe-acceptance (consolidated, ADR-007)",
+  "sprint": 2,
   "id": "S1-DEM-03",
   "title": "Governance pack: Claude Code settings, PCI and audit hooks, enterprise controls, headless verification",
   "story": "As the candidate I need project settings, two working hooks, a fake .env and an enterprise control pack, all verified against current Claude Code docs and exercised headless, so that I can show the security-first CTO controls enforced in code, mapped to his concerns, and routed through Bedrock or Vertex in FinTechCo's own accounts.",
   "points": 13,
   "tier": "mid",
-  "owner": "ic-demo-governance-config-dev",
+  "owner": "eng-lead (for demo)",
   "paths": [
     "demo/payments-ledger/.claude/",
     "demo/payments-ledger/.env",
@@ -46,5 +46,11 @@
   "deliverables": [
     "D2",
     "D7"
+  ],
+  "notes": [
+    {
+      "at": "2026-10-20T17:58:31.911Z",
+      "text": "Carried over from Sprint 1 after the account spend limit; executed player-coach per ADR-007."
+    }
   ]
 }

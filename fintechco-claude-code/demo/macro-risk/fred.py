@@ -117,7 +117,7 @@ def parse_fred_csv(text: str, series_id: Optional[str] = None) -> pd.DataFrame:
         raise FredError(f"CSV is for {value_col!r}, expected {series_id!r}")
     values = raw[value_col].str.strip().replace({".": None, "": None})
     out = pd.DataFrame(
-        {"value": pd.to_numeric(values, errors="raise").astype("float64")},
+        {"value": pd.to_numeric(values, errors="raise").astype("float64").to_numpy()},  # positional, not index-aligned
         index=pd.DatetimeIndex(pd.to_datetime(raw[date_col], format="%Y-%m-%d"), name="date"),
     )
     if out.index.has_duplicates:

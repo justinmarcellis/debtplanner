@@ -1,5 +1,5 @@
 {
-  "status": "in_progress",
+  "status": "ready",
   "dependsOn": [],
   "createdAt": "2026-10-20T17:03:45.400Z",
   "history": [
@@ -7,6 +7,11 @@
       "at": "2026-10-20T17:07:03.733Z",
       "from": "ready",
       "to": "in_progress"
+    },
+    {
+      "at": "2026-10-20T17:58:31.945Z",
+      "from": "in_progress",
+      "to": "ready"
     }
   ],
   "id": "S1-TRU-02",
@@ -15,9 +20,9 @@
   "story": "As the candidate I need a STRIDE threat model of agentic coding at FinTechCo, with a one-page summary table and a sourced claims shard, so that when the security-conscious CTO asks to see the threat model I can show the top threats, their likelihood and impact, and the Claude Code and SDLC controls that mitigate each, including the residual risk.",
   "points": 5,
   "tier": "strong",
-  "owner": "ic-trust-threat-modeler",
-  "reviewer": "qe-acceptance",
-  "sprint": 1,
+  "owner": "eng-lead (for trust)",
+  "reviewer": "qe-acceptance (consolidated, ADR-007)",
+  "sprint": 2,
   "paths": [
     "security/threat-model.md",
     "research/claims/trust-threats.json"
@@ -50,5 +55,11 @@
   "deliverables": [
     "D7"
   ],
-  "startedAt": "2026-10-20T17:07:03.733Z"
+  "startedAt": "2026-10-20T17:07:03.733Z",
+  "notes": [
+    {
+      "at": "2026-10-20T17:58:31.911Z",
+      "text": "Carried over from Sprint 1 after the account spend limit; executed player-coach per ADR-007."
+    }
+  ]
 }

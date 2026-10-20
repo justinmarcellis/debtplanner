@@ -1,5 +1,5 @@
 {
-  "status": "in_progress",
+  "status": "ready",
   "dependsOn": [],
   "createdAt": "2026-10-20T17:04:27.299Z",
   "history": [
@@ -7,17 +7,22 @@
       "at": "2026-10-20T17:05:50.700Z",
       "from": "ready",
       "to": "in_progress"
+    },
+    {
+      "at": "2026-10-20T17:58:31.935Z",
+      "from": "in_progress",
+      "to": "ready"
     }
   ],
   "team": "demo",
-  "reviewer": "qe-acceptance",
-  "sprint": 1,
+  "reviewer": "qe-acceptance (consolidated, ADR-007)",
+  "sprint": 2,
   "id": "S1-DEM-02",
   "title": "Act 2 macro-risk: cached FRED data, Phillips-curve and Fed-policy/VIX analyses, findings",
   "story": "As the candidate I need a reproducible FRED data pull and two honest analyses (Phillips-curve slope over time, VIX around Fed hikes versus cuts) so that Act 2 shows the 40 data scientists' acquisition, EDA and modeling workflow and the dashboard sprint has verified numbers to draw.",
   "points": 8,
   "tier": "mid",
-  "owner": "ic-demo-data-demo-dev",
+  "owner": "eng-lead (for demo)",
   "paths": [
     "demo/macro-risk/",
     "research/claims/demo-fred.json"
@@ -50,5 +55,11 @@
   "deliverables": [
     "D2"
   ],
-  "startedAt": "2026-10-20T17:05:50.700Z"
+  "startedAt": "2026-10-20T17:05:50.700Z",
+  "notes": [
+    {
+      "at": "2026-10-20T17:58:31.911Z",
+      "text": "Carried over from Sprint 1 after the account spend limit; executed player-coach per ADR-007."
+    }
+  ]
 }

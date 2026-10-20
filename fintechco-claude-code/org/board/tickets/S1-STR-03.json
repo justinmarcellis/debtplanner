@@ -2,16 +2,27 @@
   "status": "ready",
   "dependsOn": [],
   "createdAt": "2026-10-20T17:06:01.758Z",
-  "history": [],
+  "history": [
+    {
+      "at": "2026-10-20T17:47:55.165Z",
+      "from": "ready",
+      "to": "in_progress"
+    },
+    {
+      "at": "2026-10-20T17:58:31.942Z",
+      "from": "in_progress",
+      "to": "ready"
+    }
+  ],
   "team": "strategy",
-  "reviewer": "qe-acceptance",
-  "sprint": 1,
+  "reviewer": "qe-acceptance (consolidated, ADR-007)",
+  "sprint": 2,
   "id": "S1-STR-03",
   "title": "Use-case catalog for the three teams",
   "story": "As the candidate I need a catalog of concrete use cases in each team's own stack, with value, risk, guardrails and two recommended pilot starters per team, so that the fit slide, the demo and the evaluation plan all draw on one consistent source.",
   "points": 5,
   "tier": "mid",
-  "owner": "ic-strategy-use-case-curator",
+  "owner": "eng-lead (for strategy)",
   "paths": [
     "strategy/use-cases.json",
     "strategy/use-case-catalog.md"
@@ -44,5 +55,12 @@
     "After the table the markdown has per-team sections (executive line first; each use case in 2 to 3 lines with its guardrail; a one-line \"fit line\" of 25 words or fewer the deck can quote; why these two starters), the demo-mapping table, and an \"Open placeholders\" list. It reads as prose a CTO can scan, not a JSON dump. Every entry maps to the priority team productivity or shipping new products.",
     "Only this ticket's two paths were changed; nothing about FinTechCo is stated beyond brief/facts.json; demo repo names (payments-ledger, macro-risk, sre-ops) appear only on demoAct entries and are described as demo assets, not FinTechCo systems; a handoff is posted to hub strategy and a request listing the [MET-?] placeholders is posted to hub value."
   ],
-  "brief": "Audience: Narrative (the 2-minute fit slide), Demo (the three acts), Adoption and Value (pilot starters, metrics) all read use-cases.json as their contract; executives scan the markdown table. Each use case must be something an engineer recognises and a CTO could approve.\n\nWrite the JSON first, then the markdown from it (a throwaway script outside the repo is fine, but the markdown must still read as prose). Per team 5 or 6 entries, plus 2 or 3 cross-team. Seeds to adapt, not copy:\nSWE: onboarding to an unfamiliar payments service (act 1); test-first fix of a rounding defect in fee calculation (act 1); characterization tests for untested banking-infrastructure Java; a TypeScript mobile feature from ticket to pull request; a dependency or API migration across services using subagents; pull-request descriptions and review preparation.\nDS: notebook EDA and data cleaning (act 2); fraud feature engineering in pandas and scikit-learn; notebooks to tested modules; model documentation and reproducibility notes for model-risk review; TensorFlow training-script debugging; stakeholder dashboards (act 2); customer-behavior cohorts.\nSRE: incident triage from logs, headless (act 3); post-incident reviews; runbook drafting and drift checks; debugging a Go service from an alert; shell-script hardening and toil automation; alert-noise review.\nCross: governance as code (managed settings, hooks, audit trail, the ADR-004 governance close); shared CLAUDE.md and skills for onboarding and standards; audit-ready change descriptions.\n\nPilot starters: pick for measurable baseline, low blast radius, existing tests and week-1 feasibility; prefer one per team that the audience saw in the demo, but only if it meets those tests.\n\nMetrics are placeholders only, written [MET-?: tier - metric] using the tier names in metrics.schema.json. Capability names: read code.claude.com/docs (read-only web research is allowed; load WebFetch with ToolSearch query \"select:WebFetch\") and use real feature names only. This ticket owns no claims shard, so use [CLM-?: ...] placeholders.\n\nPitfalls: no vendor hype; no invented FinTechCo systems; keep data boundaries explicit (pilot on approved repos, synthetic or non-production data); fraud and credit-scoring entries name model-risk sign-off."
+  "brief": "Audience: Narrative (the 2-minute fit slide), Demo (the three acts), Adoption and Value (pilot starters, metrics) all read use-cases.json as their contract; executives scan the markdown table. Each use case must be something an engineer recognises and a CTO could approve.\n\nWrite the JSON first, then the markdown from it (a throwaway script outside the repo is fine, but the markdown must still read as prose). Per team 5 or 6 entries, plus 2 or 3 cross-team. Seeds to adapt, not copy:\nSWE: onboarding to an unfamiliar payments service (act 1); test-first fix of a rounding defect in fee calculation (act 1); characterization tests for untested banking-infrastructure Java; a TypeScript mobile feature from ticket to pull request; a dependency or API migration across services using subagents; pull-request descriptions and review preparation.\nDS: notebook EDA and data cleaning (act 2); fraud feature engineering in pandas and scikit-learn; notebooks to tested modules; model documentation and reproducibility notes for model-risk review; TensorFlow training-script debugging; stakeholder dashboards (act 2); customer-behavior cohorts.\nSRE: incident triage from logs, headless (act 3); post-incident reviews; runbook drafting and drift checks; debugging a Go service from an alert; shell-script hardening and toil automation; alert-noise review.\nCross: governance as code (managed settings, hooks, audit trail, the ADR-004 governance close); shared CLAUDE.md and skills for onboarding and standards; audit-ready change descriptions.\n\nPilot starters: pick for measurable baseline, low blast radius, existing tests and week-1 feasibility; prefer one per team that the audience saw in the demo, but only if it meets those tests.\n\nMetrics are placeholders only, written [MET-?: tier - metric] using the tier names in metrics.schema.json. Capability names: read code.claude.com/docs (read-only web research is allowed; load WebFetch with ToolSearch query \"select:WebFetch\") and use real feature names only. This ticket owns no claims shard, so use [CLM-?: ...] placeholders.\n\nPitfalls: no vendor hype; no invented FinTechCo systems; keep data boundaries explicit (pilot on approved repos, synthetic or non-production data); fraud and credit-scoring entries name model-risk sign-off.",
+  "startedAt": "2026-10-20T17:47:55.165Z",
+  "notes": [
+    {
+      "at": "2026-10-20T17:58:31.911Z",
+      "text": "Carried over from Sprint 1 after the account spend limit; executed player-coach per ADR-007."
+    }
+  ]
 }

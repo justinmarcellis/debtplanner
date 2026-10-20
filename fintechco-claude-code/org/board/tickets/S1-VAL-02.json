@@ -9,9 +9,9 @@
   "story": "As the candidate I need a transparent, sourced ROI model with conservative, base and upside scenarios, payback, a sensitivity analysis and reusable calculation code so that I can articulate FinTechCo's business value, led by capacity for new products and payback, with cost shown openly.",
   "points": 8,
   "tier": "mid",
-  "owner": "ic-value-roi-modeler",
-  "reviewer": "qe-acceptance",
-  "sprint": 1,
+  "owner": "eng-lead (for value)",
+  "reviewer": "qe-acceptance (consolidated, ADR-007)",
+  "sprint": 2,
   "paths": [
     "value/roi-assumptions.json",
     "value/roi.mjs",
@@ -48,5 +48,11 @@
   ],
   "deliverables": [
     "D5"
+  ],
+  "notes": [
+    {
+      "at": "2026-10-20T17:58:31.911Z",
+      "text": "Carried over from Sprint 1 after the account spend limit; executed player-coach per ADR-007."
+    }
   ]
 }

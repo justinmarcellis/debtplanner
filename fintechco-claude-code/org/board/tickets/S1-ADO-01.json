@@ -1,5 +1,5 @@
 {
-  "status": "in_progress",
+  "status": "ready",
   "dependsOn": [],
   "createdAt": "2026-10-20T17:02:47.912Z",
   "history": [
@@ -7,6 +7,11 @@
       "at": "2026-10-20T17:03:35.156Z",
       "from": "ready",
       "to": "in_progress"
+    },
+    {
+      "at": "2026-10-20T17:58:31.932Z",
+      "from": "in_progress",
+      "to": "ready"
     }
   ],
   "id": "S1-ADO-01",
@@ -15,9 +20,9 @@
   "story": "As the Head of Digital Transformation I need a fair, tool-agnostic evaluation protocol, a Week 0 readiness list, a six-week cross-team pilot design with a decision gate, and a one-page charter I can circulate internally, so that I can sponsor a structured evaluation that compares every assistant on FinTechCo's own work and can end in a company-wide rollout.",
   "points": 8,
   "tier": "strong",
-  "owner": "ic-adoption-pilot-designer",
-  "reviewer": "qe-acceptance",
-  "sprint": 1,
+  "owner": "eng-lead (for adoption)",
+  "reviewer": "qe-acceptance (consolidated, ADR-007)",
+  "sprint": 2,
   "paths": [
     "rollout/evaluation-plan.md",
     "rollout/pilot-charter.md",
@@ -55,5 +60,11 @@
   "deliverables": [
     "D6"
   ],
-  "startedAt": "2026-10-20T17:03:35.156Z"
+  "startedAt": "2026-10-20T17:03:35.156Z",
+  "notes": [
+    {
+      "at": "2026-10-20T17:58:31.911Z",
+      "text": "Carried over from Sprint 1 after the account spend limit; executed player-coach per ADR-007."
+    }
+  ]
 }

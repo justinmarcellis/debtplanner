@@ -1,0 +1,40 @@
+{
+  "id": "S2-NAR-01",
+  "team": "narrative",
+  "title": "Build the deck from the slide spec",
+  "story": "Build the deck from the slide spec",
+  "points": 13,
+  "tier": "strong",
+  "owner": "eng-lead (for narrative)",
+  "reviewer": "qe-acceptance (consolidated, ADR-007)",
+  "sprint": 2,
+  "status": "ready",
+  "dependsOn": [],
+  "createdAt": "2026-10-20T17:58:31.911Z",
+  "history": [],
+  "paths": [
+    "deck/project/"
+  ],
+  "contracts": [],
+  "acceptance": [
+    "Every main and appendix slide in deck/slide-spec.md exists as deck/project/slides/<id>.html in the Slides format with speaker notes",
+    "No [CLM-?] placeholders remain; every [CLM-###] cited resolves to a verified or partial claim (validator)",
+    "Main-deck speaker notes total <= 26 minutes of speech at 140 wpm (demo time excluded)"
+  ],
+  "requirements": [
+    "REQ-02",
+    "REQ-03",
+    "REQ-04",
+    "REQ-05",
+    "REQ-06",
+    "REQ-07",
+    "REQ-09",
+    "REQ-10",
+    "REQ-12",
+    "REQ-22",
+    "REQ-25"
+  ],
+  "deliverables": [
+    "D1"
+  ]
+}

@@ -1,0 +1,31 @@
+# Illustrative GitHub Actions job: run the same read-only triage when an alert opens an incident issue.
+# Credentials: route through Amazon Bedrock with OIDC (no long-lived keys); see ../../enterprise/bedrock.env.example.
+name: incident-triage
+on:
+  issues:
+    types: [labeled]
+jobs:
+  triage:
+    if: github.event.label.name == 'incident'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::123456789012:role/claude-code-triage   # placeholder
+          aws-region: us-east-1
+      - name: Install Claude Code
+        run: curl -fsSL https://claude.ai/install.sh | bash
+      - name: Triage
+        env:
+          CLAUDE_CODE_USE_BEDROCK: "1"
+          AWS_REGION: us-east-1
+        run: ./triage.sh "incidents/${{ github.event.issue.title }}"
+      - name: Post triage to the incident issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh issue comment ${{ github.event.issue.number }} --body-file "incidents/${{ github.event.issue.title }}/triage.md"

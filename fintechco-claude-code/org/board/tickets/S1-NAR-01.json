@@ -1,5 +1,5 @@
 {
-  "status": "in_progress",
+  "status": "ready",
   "dependsOn": [],
   "createdAt": "2026-10-20T17:05:02.956Z",
   "history": [
@@ -7,6 +7,16 @@
       "at": "2026-10-20T17:06:02.869Z",
       "from": "ready",
       "to": "in_progress"
+    },
+    {
+      "at": "2026-10-20T17:38:17.112Z",
+      "from": "in_progress",
+      "to": "review"
+    },
+    {
+      "at": "2026-10-20T17:58:31.937Z",
+      "from": "review",
+      "to": "ready"
     }
   ],
   "id": "S1-NAR-01",
@@ -15,9 +25,9 @@
   "story": "As the candidate I need the storyline, the one thing the CTO and Head of Digital Transformation should remember, and a timed slide-by-slide spec (main deck of at most 20 slides plus 6-10 backup slides) so that the orchestrator can lock the narrative at G1 and Sprint 2 can build the deck without re-deciding anything.",
   "points": 8,
   "tier": "strong",
-  "owner": "ic-narrative-storyliner",
-  "reviewer": "qe-acceptance",
-  "sprint": 1,
+  "owner": "eng-lead (for narrative)",
+  "reviewer": "qe-acceptance (consolidated, ADR-007)",
+  "sprint": 2,
   "paths": [
     "deck/storyline.md",
     "deck/slide-spec.md"
@@ -66,5 +76,11 @@
   "deliverables": [
     "D1"
   ],
-  "startedAt": "2026-10-20T17:06:02.869Z"
+  "startedAt": "2026-10-20T17:06:02.869Z",
+  "notes": [
+    {
+      "at": "2026-10-20T17:58:31.911Z",
+      "text": "Carried over from Sprint 1 after the account spend limit; executed player-coach per ADR-007."
+    }
+  ]
 }

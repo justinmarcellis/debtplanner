@@ -2,7 +2,7 @@
 
 Ticket S1-NAR-01 · author ic-narrative-storyliner · draft for gate G1 · product facts as of October 2026.
 Inputs: ADR-005 (objective, agenda, checkpoints, spine, ask), ADR-004 (demo), ADR-006 (claims), ADR-003 (controls), `brief/facts.json`, `brief/requirements.json`, hub `adoption` (timeline spine), hub `trust` (control ids CC-1 to CC-9). Slide ids refer to `deck/slide-spec.md`.
-Claims: every external fact carries `[CLM-?: what needs sourcing]`; no claim shard, `strategy/use-cases.json` or `value/metrics.json` existed when this was written, so use cases, metrics and ROI inputs are `[UC-?: ...]`, `[MET-?: ...]` and `[ASM-?: ...]`. FinTechCo facts are only those in `brief/facts.json` (120 / 40 / 20, 180 total); anything else about FinTechCo is marked "Assumption:".
+Claims: every external fact carries a claim id or `[CLM-?: what needs sourcing]`. When this was finished, only the adoption shards existed (`research/claims/adoption-eval.json`, `adoption-rollout.json`, CLM-650 to CLM-697). Their verified or partial ids are cited where the wording matches, and partial claims use their safeWording verbatim. `strategy/use-cases.json`, `value/metrics.json` and `value/roi-assumptions.json` did not exist yet, so use cases, metrics and ROI inputs are `[UC-?: ...]`, `[MET-?: ...]` and `[ASM-?: ...]`. FinTechCo facts are only those in `brief/facts.json` (120 / 40 / 20, 180 total); anything else about FinTechCo is marked "Assumption:".
 
 Stance (ADR-005): a principal architect, not a salesperson. We recommend measuring every candidate tool the same way, show why we expect Claude Code to do well on FinTechCo's own work, and put proof and controls ahead of enthusiasm because the CTO is skeptical without proven enterprise adoption.
 
@@ -24,7 +24,7 @@ Beats
 1. Thank them and frame the forty minutes around one decision made well: which coding tool to roll out, and how to prove it (s01-cover).
 2. The agenda follows their three questions from the invitation: how it works, why it helps FinTechCo, how to evaluate and roll it out. Next steps start at 0:37 whatever is left (s02-agenda).
 3. Play back only what the brief gives: priorities are team productivity and shipping new products; cost-conscious but not cost-driven; one agentic tool company-wide within months; 180 technical staff on AWS and GCP; no agentic tools today; evaluating Claude Code alongside other assistants. "Agentic" gets its plain-English definition here (s03-priorities-context).
-4. Ask one question of each attendee. CTO: "What is the one concern that would stop this, whatever the benefits?" Head of Digital Transformation: "What pilot result would let you take this to the whole organization?" Write the CTO's answer down. It comes back on s18 with an owner.
+4. Ask one question of each attendee. CTO: "What is the one concern that would stop this, whatever the benefits?" Head of Digital Transformation: "What pilot result would let you take this organization-wide?" Write the CTO's answer down. It comes back on s18 with an owner.
 
 Proof: brief facts only. This section states no external facts.
 
@@ -38,9 +38,9 @@ Beats
 1. One mental model for both audiences: an agent inside the developer's environment (terminal, editor, repository, tests, cloud CLIs) running a loop of understand, plan, act with tools, verify. Ask permission is drawn as a gate on the step into act (s04-agent-loop).
 2. The CTO's hook is the gate. By default it asks before it edits or runs anything, administrators decide what is pre-approved, and engineers review every change (s04).
 3. The unit of help moves from the next line to a finished, tested task. In fairness, many assistants now have agent modes, and the pilot should measure how far each tool carries a task (s05-agents-autocomplete).
-4. Five extension points make it FinTechCo's own: CLAUDE.md, MCP, hooks, subagents and headless mode. Three of them appear in the demo (s06-extension-points).
+4. Five extension points make it FinTechCo's own: CLAUDE.md, MCP, hooks, subagents and headless mode, which the docs now call non-interactive mode. Three of them appear in the demo (s06-extension-points).
 
-Proof: [CLM-?: Claude Code overview: reads code, edits files, runs commands, October 2026]; [CLM-?: plan mode]; [CLM-?: permission defaults and rules]; [CLM-?: Claude Code docs for CLAUDE.md, MCP, hooks, subagents, headless mode]; [CLM-?: competitor agent modes, from each vendor's official docs, October 2026].
+Proof: [CLM-694] (agentic coding, the loop of gathering context, acting and verifying, plan mode, hooks, subagents, MCP, non-interactive mode formerly called headless); [CLM-693] (surfaces: terminal, VS Code, JetBrains, desktop, web); [CLM-683] (CLAUDE.md guides, hooks and permission rules enforce); [CLM-?: permission defaults and rules]; [CLM-?: competitor agent modes, from each vendor's official docs, October 2026].
 
 Transition: "You will see three of these in the demo. First, why this matters for FinTechCo."
 
@@ -52,14 +52,14 @@ Beats
 1. Value, in FinTechCo's own priorities (s07-value-fintechco):
    - Team productivity: learning unfamiliar services, writing tests and chasing defects become tasks the agent carries while engineers review.
    - Shipping new products: saved hours go back to roadmap work, and a data scientist can build a client-ready dashboard without a front-end queue (shown in Act 2).
-   - Safely: one policy, one audit trail and FinTechCo's own cloud accounts.
+   - Safely: one policy, one action log and FinTechCo's own cloud accounts.
 2. Proof before enthusiasm. Published enterprise results are shown with their sources and offered as reasons to run a pilot, not as a forecast (s07; full list on a08-evidence-base).
 3. A fair comparison on five dimensions, each with the pilot test that settles it. Other assistants' strengths, such as inline completion, are stated plainly. The detail is dated and comes from each vendor's own documentation (s08-competitive-differentiators; a04-competitive-detail).
 4. The stance, said out loud: measure every tool the same way on your code.
 
-Proof: [CLM-?: enterprise customer stories, financial services first, names and outcomes exactly as published]; [CLM-?: supported surfaces: terminal, editor, CI]; [CLM-?: Amazon Bedrock and Google Cloud Vertex AI support]; [CLM-?: managed settings]; [CLM-?: each competitor's official docs, October 2026].
+Proof: [CLM-?: enterprise customer stories, financial services first, names and outcomes exactly as published]; [CLM-693] (surfaces); [CLM-686] [CLM-687] (Amazon Bedrock; Google Cloud Agent Platform, formerly Vertex AI); [CLM-659] (managed settings take precedence); [CLM-?: each competitor's official docs, October 2026].
 
-Transition: "The fair test is the same tasks and the same metrics on your code. So let me make it concrete for your three teams."
+Transition: "The fair test is the same tasks and metrics on your code. So let me make it concrete for your three teams."
 
 ### Spine 4 · FinTechCo fit (deck §4, s09)
 
@@ -84,7 +84,7 @@ Beats
 2. Act 1, software engineers, 5 min, `payments-ledger`: a tour of an unfamiliar payments service; ticket PAY-1423 ("statements off by a cent") fixed test-first, `float` to `Decimal`, tests green, clean diff; Claude flags the pre-existing card-number logging line; the card-number hook (`pci_guard.py`) blocks a write that would log a full card number; reading `.env` is denied by policy.
 3. Act 2, data scientists, 6 min, `macro-risk`: FRED series fetched with a data dictionary; Phillips-curve flattening (slope by decade, rolling slope; correlation, not a causal claim); an event study of Fed policy moves against VIX; a one-file interactive dashboard.
 4. Act 3, SREs, 2 min, `sre-ops`: `./triage.sh incidents/INC-2291` runs Claude Code headless with read-only tools and returns a structured triage. The same command is shown as a CI job.
-5. Governance close, 1 min: `managed-settings.json`, project `settings.json`, the audit log the hooks wrote during Acts 1-3, the two environment variables that route through Amazon Bedrock or Vertex AI, OpenTelemetry export.
+5. Governance close, 1 min: `managed-settings.json`, project `settings.json`, the audit log the hooks wrote during Acts 1-3, the environment variables that route through Amazon Bedrock or Agent Platform (formerly Vertex AI) [CLM-686] [CLM-687], and OpenTelemetry export [CLM-656].
 6. s11-demo-recap: one agent, three teams, one policy, every step logged.
 
 Proof: the live run itself. Fallbacks are in `demo/fallback/` and the `complete` tag (ADR-004 reliability rules); [CLM-?: FRED attribution]; [CLM-?: settings, hook, permission and environment-variable names verified in Claude Code docs] (demo-claude-code shard). Checkpoints: 0:12 demo starts, 0:20 Act 2 has started, 0:26 demo ends.
@@ -101,12 +101,12 @@ Beats
    - What must it never do: hooks (CC-4).
    - Who sets policy: managed settings (CC-2).
    - What does it record: audit log and OpenTelemetry (CC-6).
-   - Where does it run: Bedrock or Vertex AI in FinTechCo's own accounts (CC-7).
-2. The deployment picture for their architects: laptop and CI, then Claude Code, then Amazon Bedrock in a FinTechCo AWS account or Vertex AI in a FinTechCo GCP project. Policy, audit and identity surround it (s13-deployment-aws-gcp).
+   - Where does it run: Bedrock or Agent Platform (formerly Vertex AI) in FinTechCo's own accounts (CC-7).
+2. The deployment picture for their architects: laptop and CI, then Claude Code, then Amazon Bedrock in a FinTechCo AWS account or Agent Platform in a FinTechCo GCP project. The docs recommend a dedicated account or project for each. Spend is seen and capped in the cloud billing console. Policy, audit and identity surround it (s13-deployment-aws-gcp).
 3. Data handling, retention and certifications are on the appendix slides and in the security brief, with sources. We invite their security team to test the claims rather than take our word for them (a01-a03).
 4. Compressed form at the 0:30 checkpoint: s12 only, plus "the leave-behind covers the rest."
 
-Proof: control ids CC-1 to CC-9 from hub `trust` and `security/security-brief.md`; [CLM-?: permission rules and sandboxing]; [CLM-?: blocking hooks]; [CLM-?: managed settings precedence]; [CLM-?: OpenTelemetry export]; [CLM-?: provider environment variables for Bedrock and Vertex AI]; [CLM-?: authentication options per deployment path]. Every statement here needs Trust review before release (ADR-003 §4.2).
+Proof: control ids CC-1 to CC-9 from hub `trust` and `security/security-brief.md`; [CLM-677] (permission rules, sandboxing); [CLM-683] (hooks enforce); [CLM-659] (managed settings precedence); [CLM-656] (OpenTelemetry export, prompts redacted by default); [CLM-686] [CLM-687] (provider variables, IAM); [CLM-660] [CLM-661] (dedicated account or project); [CLM-658] (cloud billing; no metrics back to Anthropic); [CLM-690] (authentication); [CLM-?: data handling, retention, certifications]. Every statement here needs Trust review before release (ADR-003 §4.2).
 
 Transition: "Controls make it safe to try; the next question is how you will know it worked."
 
@@ -115,10 +115,10 @@ Transition: "Controls make it safe to try; the next question is how you will kno
 > Measure it like any investment: adoption, flow, quality, then business outcomes, against your own baselines.
 
 Beats
-1. Evidence first, honestly. Published AI-productivity results are mixed: some studies report speedups, one reports experienced developers slowing down, and industry research ties AI adoption to both throughput and stability effects, which is why we measure on your work (s14-measurement-framework).
+1. Evidence first, honestly. The s14 notes speak CLM-666's safeWording verbatim (s14-measurement-framework): "The evidence on AI coding productivity is mixed: a 2025 randomized trial found experienced open-source developers took 19% longer with AI tools, a 2024 enterprise trial (preprint) estimated about 21% less time on task, the 2025 trial's authors now say current tools likely help but their newer data is unreliable, and DORA 2024 linked AI adoption to higher individual productivity but lower delivery throughput and stability. Which is why we measure on your work." [CLM-666]
 2. Five tiers:
    - Adoption and engagement: leading indicators.
-   - Flow: pull-request cycle time and lead time.
+   - Flow: pull-request cycle time and change lead time.
    - Quality: the guardrail tier.
    - Experience: a short developer survey.
    - Business outcomes: lagging indicators.
@@ -127,9 +127,9 @@ Beats
 3. ROI is the value of redirected hours, set against licence, usage and enablement costs. It is shown as conservative, base and upside scenarios with payback, sensitivity and a break-even line. Cost is the floor, not the lead, because FinTechCo is cost-conscious but not cost-driven (s15-roi-scenarios).
 4. The pilot replaces every assumption with a measured number before the decision gate.
 
-Proof: [CLM-?: controlled study reporting faster task completion]; [CLM-?: randomized study reporting experienced developers slower]; [CLM-?: DORA finding on AI adoption and delivery]; [MET-?: ...] from `value/metrics.json`; [ASM-?: ...] from `value/roi-assumptions.json`; the ROI calculator (D5).
+Proof: [CLM-666] (partial; mixed evidence, safeWording verbatim); [CLM-650] (2025 randomized trial, slowdown); [CLM-651] (2026 update, speedups, unreliable signal); [CLM-653] [CLM-654] (DORA 2024 and 2025); [CLM-655] (DORA metric definitions); [CLM-663] [CLM-685] (usage cost reference and spend caps); [MET-?: ...] from `value/metrics.json`; [ASM-?: ...] from `value/roi-assumptions.json`; the ROI calculator (D5).
 
-Transition: "Every assumption here is replaced by a measured number before the decision gate. Here is how we get those numbers."
+Transition: "Every assumption here is replaced by a measured number before the go or no-go decision. Here is how we get those numbers."
 
 ### Spine 8 · Evaluation, rollout and next steps (deck §7 s16-s17, deck §8 s18, buffer s19)
 
@@ -147,7 +147,7 @@ Beats
 3. The ask: three decisions, owners and dates. The CTO's top concern goes on the slide with an owner, and a follow-up email goes out on Day 1 (s18-next-steps-owners).
 4. Close on the one thing to remember and take questions (s19-questions).
 
-Proof: `rollout/evaluation-plan.md` and `rollout/rollout-plan.md` (timeline spine in hub `adoption`); [UC-?: two starters per team]; [MET-?: success criteria and guardrails]; install is one command (`brief/facts.json`, meeting.installCommand).
+Proof: `rollout/evaluation-plan.md` and `rollout/rollout-plan.md` (timeline spine in hub `adoption`); [UC-?: two starters per team]; [MET-?: success criteria and guardrails]; install is one command (`brief/facts.json`, meeting.installCommand; [CLM-693]); the kickoff falls after the year-end holidays ([CLM-665]).
 
 Transitions: "So here is who does what next." (closes s17) · "What would you change about these three steps?" (closes s18).
 
@@ -210,7 +210,7 @@ Success in the room (ADR-005): "both attendees agree to (1)-(3), and the CTO's t
 
 ## Glossary
 
-Each term is defined in plain English in the speaker notes of the slide listed, the first time it is used in the deck. Terms that s08 defines are defined again on s12, because s08 is compressed at the 0:12 checkpoint.
+Each term is defined in plain English in the speaker notes of the slide listed, the first time it is used in the deck. Terms that s08 defines are defined again on s12, because s08 is compressed at the 0:12 checkpoint. s09 is skipped at the same checkpoint, so s17 defines runbook and Jupyter notebook again.
 
 | Term | Plain English, as spoken | First defined |
 | --- | --- | --- |
@@ -228,10 +228,10 @@ Each term is defined in plain English in the speaker notes of the slide listed, 
 | MCP (Model Context Protocol) | An open standard for connecting the agent to other tools and data | s06-extension-points |
 | hooks | The team's own scripts that run automatically before or after the agent uses a tool; a hook can block the action | s06-extension-points |
 | subagent | A specialist helper with its own instructions, such as a security reviewer, that the main agent hands work to | s06-extension-points |
-| headless mode | The same agent run from a script or pipeline, with no person typing | s06-extension-points |
+| headless mode (non-interactive mode) | The same agent run from a script or pipeline, with no person typing; the docs now call it non-interactive mode ([CLM-694]) | s06-extension-points |
 | CI (continuous integration) | The automated build and test pipeline | s06-extension-points |
 | managed settings | A policy file administrators deploy centrally that engineers cannot override | s08-competitive-differentiators (again on s12) |
-| Amazon Bedrock / Google Cloud Vertex AI | The managed AI services inside AWS and GCP | s08-competitive-differentiators (again on s12) |
+| Amazon Bedrock / Google Cloud Agent Platform (formerly Vertex AI) | The managed AI services of AWS and Google Cloud ([CLM-686] [CLM-687]) | s08-competitive-differentiators (again on s12) |
 | test-first fix | The failing test is written before the fix, so the fix is proven | s09-fit-by-team |
 | Jupyter notebook | A document that mixes code, charts and notes | s09-fit-by-team |
 | SRE (site reliability engineer) | An engineer who manages incidents and keeps systems up | s09-fit-by-team |
@@ -239,7 +239,7 @@ Each term is defined in plain English in the speaker notes of the slide listed, 
 | postmortem | The written review after an incident | s09-fit-by-team |
 | FRED | The St. Louis Fed's public economic database | s10-demo-plan |
 | audit log | A record of every action the agent took | s11-demo-recap |
-| permission rules | Allow or deny lists for specific commands and files | s12-security-controls |
+| permission rules | Allow or deny lists for specific commands and files (first described on s06 as "allow and deny rules") | s12-security-controls |
 | sandboxing | Fencing off the file system and network for the commands the agent runs | s12-security-controls |
 | OpenTelemetry | An open standard for exporting telemetry, here usage and events, to monitoring tools | s12-security-controls |
 | environment variables | Settings a tool reads when it starts | s13-deployment-aws-gcp |
@@ -249,7 +249,9 @@ Each term is defined in plain English in the speaker notes of the slide listed, 
 | lagging indicator | A result that shows up over months, such as features shipped | s14-measurement-framework |
 | pull request | A proposed code change waiting for review | s14-measurement-framework |
 | cycle time | How long a pull request takes from opening to merge | s14-measurement-framework |
-| change failure rate | The share of changes that cause a failure in production | s14-measurement-framework |
+| change lead time | How long a change takes to reach production | s14-measurement-framework |
+| escaped defects | Defects that reach customers | s14-measurement-framework |
+| change fail rate | The share of changes that cause a failure in production (DORA's current name, [CLM-655]) | s14-measurement-framework |
 | guardrail | A counter-metric that must not get worse | s14-measurement-framework |
 | baseline | The measurement taken before anyone uses the tool | s14-measurement-framework |
 | ROI (return on investment) | The value of redirected engineering hours set against licence, usage and enablement costs | s15-roi-scenarios |
@@ -266,7 +268,7 @@ Each term is defined in plain English in the speaker notes of the slide listed, 
 | metrics owner | The person who captures baselines and reports the numbers | s18-next-steps-owners |
 | private connectivity | Network paths to the model endpoint that avoid the public internet | a01-deployment-architecture |
 | token | A small chunk of text, the unit API usage is priced in | a05-pricing-models |
-| DORA metrics | A published framework of software delivery measures (throughput and stability) | a06-metrics-detail |
+| DORA | Google Cloud's software delivery research program and its delivery metrics for throughput and stability ([CLM-653] [CLM-655]) | s14-measurement-framework (metrics detail on a06) |
 | MCP allowlisting | Limiting which external tool servers the agent may connect to | a03-controls-catalog |
 | kickoff (K) | The Monday the pilot programme starts; Assumption: illustratively 2027-01-11 | s16-evaluation-timeline |
 | PW (program week) | A week counted from kickoff: PW1 is the kickoff week, PW17 the last rollout week | s16-evaluation-timeline (axis note) |

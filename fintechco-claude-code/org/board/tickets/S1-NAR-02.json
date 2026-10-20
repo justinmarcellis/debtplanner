@@ -1,5 +1,5 @@
 {
-  "status": "in_progress",
+  "status": "ready",
   "dependsOn": [],
   "createdAt": "2026-10-20T17:05:02.958Z",
   "history": [
@@ -7,6 +7,16 @@
       "at": "2026-10-20T17:07:57.967Z",
       "from": "ready",
       "to": "in_progress"
+    },
+    {
+      "at": "2026-10-20T17:35:12.830Z",
+      "from": "in_progress",
+      "to": "review"
+    },
+    {
+      "at": "2026-10-20T17:58:31.937Z",
+      "from": "review",
+      "to": "ready"
     }
   ],
   "id": "S1-NAR-02",
@@ -15,9 +25,9 @@
   "story": "As the candidate I need a visual system and eight real slide templates plus the two diagrams the deck depends on, in the Slides artifact format and the ADR-001 look, so that Sprint 2 can build every slide from a proven template and the deck reads as one clean, readable system for both a CTO and a champion.",
   "points": 8,
   "tier": "mid",
-  "owner": "ic-narrative-slide-designer",
-  "reviewer": "qe-acceptance",
-  "sprint": 1,
+  "owner": "eng-lead (for narrative)",
+  "reviewer": "qe-acceptance (consolidated, ADR-007)",
+  "sprint": 2,
   "paths": [
     "deck/visual-system.md",
     "deck/templates/"
@@ -49,5 +59,11 @@
   "deliverables": [
     "D1"
   ],
-  "startedAt": "2026-10-20T17:07:57.967Z"
+  "startedAt": "2026-10-20T17:07:57.967Z",
+  "notes": [
+    {
+      "at": "2026-10-20T17:58:31.911Z",
+      "text": "Carried over from Sprint 1 after the account spend limit; executed player-coach per ADR-007."
+    }
+  ]
 }

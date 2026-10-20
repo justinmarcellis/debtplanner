@@ -1,0 +1,35 @@
+{
+  "number": 2,
+  "name": "Sprint 2",
+  "status": "planned",
+  "startedAt": "2026-10-20T17:58:32.105Z",
+  "committed": [
+    "S1-ADO-01",
+    "S1-DEM-01",
+    "S1-DEM-02",
+    "S1-DEM-03",
+    "S1-NAR-01",
+    "S1-NAR-02",
+    "S1-RES-01",
+    "S1-RES-02",
+    "S1-RES-03",
+    "S1-RES-04",
+    "S1-STR-01",
+    "S1-STR-02",
+    "S1-STR-03",
+    "S1-TRU-01",
+    "S1-TRU-02",
+    "S1-VAL-01",
+    "S1-VAL-02",
+    "S2-DEM-01",
+    "S2-NAR-01",
+    "S2-PMO-01",
+    "S2-QE-01",
+    "S2-STR-01",
+    "S2-VAL-01"
+  ],
+  "committedPoints": 174,
+  "targets": {
+    "committedPoints": 174
+  }
+}

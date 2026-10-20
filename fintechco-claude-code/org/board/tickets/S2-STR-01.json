@@ -1,0 +1,34 @@
+{
+  "id": "S2-STR-01",
+  "team": "strategy",
+  "title": "Run-of-show, talk track and wrap-up kit",
+  "story": "Run-of-show, talk track and wrap-up kit",
+  "points": 5,
+  "tier": "strong",
+  "owner": "eng-lead (for strategy)",
+  "reviewer": "qe-acceptance (consolidated, ADR-007)",
+  "sprint": 2,
+  "status": "ready",
+  "dependsOn": [],
+  "createdAt": "2026-10-20T17:58:31.911Z",
+  "history": [],
+  "paths": [
+    "strategy/run-of-show.md",
+    "strategy/wrap-up-kit.md"
+  ],
+  "contracts": [],
+  "acceptance": [
+    "Minute-by-minute plan sums to 40 minutes with checkpoints and a cut list",
+    "Next steps have owners and dates; follow-up email drafted"
+  ],
+  "requirements": [
+    "REQ-01",
+    "REQ-09",
+    "REQ-22",
+    "REQ-30"
+  ],
+  "deliverables": [
+    "D3",
+    "D8"
+  ]
+}
