@@ -78,3 +78,10 @@ def test_audit_appends_jsonl(monkeypatch, tmp_path):
         assert audit_log.main() == 0
     lines = (tmp_path / ".claude" / "audit" / "audit.jsonl").read_text().splitlines()
     assert len(lines) == 2 and json.loads(lines[0])["tool"] == "Read"
+
+
+def test_runbook_example_event_is_blocked(monkeypatch, capsys):
+    # demo/RUNBOOK.md step 1d fallback pipes this file into the guard live
+    event = json.loads((Path(__file__).parent / "examples" / "pan-edit.json").read_text())
+    code, err = run_guard(monkeypatch, capsys, event["tool_name"], event["tool_input"])
+    assert code == 2 and "PCI" in err

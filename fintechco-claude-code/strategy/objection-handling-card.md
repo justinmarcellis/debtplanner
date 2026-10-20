@@ -5,7 +5,7 @@
 Each answer: the short version to say first (2–3 sentences), then depth if pushed. Facts carry claim ids from `research/claims.md`; anything not in the register is not said.
 
 ## Security and data
-1. **"Will our code be used to train your models?"** No. Under Anthropic's commercial terms, Anthropic may not train models on customer content [CLM-600]. *If pushed:* with Bedrock or Vertex, inference runs in FinTechCo's own cloud account under your agreement [CLM-614].
+1. **"Will our code be used to train your models?"** No. Under Anthropic's commercial terms, Anthropic may not train models on customer content [CLM-600]. *If pushed:* with Bedrock or Vertex, calls use FinTechCo's own cloud credentials and IAM and bill to your cloud account; which agreement governs that route is for your counsel to confirm [CLM-614].
 2. **"Where does our code go?"** Only the prompt and the files Claude Code reads for the task, over TLS 1.2+ [CLM-604], to the endpoint you configure, ideally Bedrock in a dedicated FinTechCo AWS account [CLM-686] [CLM-688]. *If pushed:* AWS says model providers have no access to Bedrock logs or prompts; check retention for the specific model [CLM-615].
 3. **"How long is data retained?"** Direct with Anthropic, 30 days standard, with zero data retention available on Enterprise [CLM-602] [CLM-603]. On Bedrock, retention follows your AWS settings [CLM-615].
 4. **"What stops it reading secrets?"** Deny rules in central policy that developers can't override [CLM-606] [CLM-675]; you saw `.env` denied in the demo. *If pushed:* sandbox for shell commands [CLM-607]; secret scanning in CI stays.
@@ -29,19 +29,19 @@ Each answer: the short version to say first (2–3 sentences), then depth if pus
 16. **"Where's the proof it helps?"** The evidence is mixed. Field experiments with 4,867 developers found 26% more completed tasks [CLM-623]; one trial found experienced developers 19% slower [CLM-650]. That's why we measure on your work with baselines.
 17. **"Your own numbers?"** Anthropic's internal survey reported large self-reported gains, but vendor self-reports aren't evidence for you [CLM-625]; we'd rather measure.
 18. **"How will we know in six weeks?"** Weekly active use, hours saved, PR cycle time vs baseline, with quality guardrails (`value/metrics-framework.md`). The decision gate is pre-agreed.
-19. **"Your ROI looks optimistic."** It's deliberately modest: base 4 hours a week, 10% of time, below the trial results. Break-even is about one hour a week (`value/roi-model.md`).
+19. **"Your ROI looks optimistic."** It's deliberately modest: base 4 hours a week, 10% of time, below the positive field results, and one trial found experienced developers slower [CLM-623] [CLM-650]. Base-case break-even is about one hour a week; the pilot measures the real number (`value/roi-model.md`).
 
 ## Cost
 20. **"What will it cost?"** Anthropic publishes an enterprise average of about $150–250 per developer per month [CLM-619]; your actual price is to be quoted. On Bedrock or Vertex it bills to your cloud account under your budgets [CLM-620].
 21. **"How do we stop runaway spend?"** Spend limits by group, cloud budgets, model choice, and per-user cost in telemetry [CLM-685] [CLM-620].
 
 ## Competition
-22. **"We already have Copilot."** Then measure both the same way on the same tasks. Claude is also available inside Copilot as a coding agent [CLM-628]; Claude Code adds the full agent with enterprise policy, hooks and headless CI use.
-23. **"Why not Cursor or another IDE?"** Claude Code works where engineers already are: terminal, VS Code, JetBrains, desktop, web and CI, on one engine and one policy [CLM-002] [CLM-004]. No forced IDE switch for 180 people.
+22. **"We already have Copilot."** Then measure both the same way on the same tasks; I won't characterise their product beyond its own documentation. GitHub announced Claude as a coding agent in Copilot Business in February 2026, in public preview [CLM-628], so compare the full setups you would deploy: harness, controls and results.
+23. **"Why not Cursor or another IDE?"** Test them on the same tasks. Claude Code runs in the terminal, VS Code, JetBrains, a desktop app, the web and CI, under one policy [CLM-002] [CLM-004], so engineers can keep the environments they use today.
 24. **"Isn't this vendor lock-in?"** MCP is an open standard donated to the Linux Foundation [CLM-629]; CLAUDE.md, skills and hooks are files in your repos; models run through your AWS or GCP accounts.
 
 ## Change management and vendor risk
 25. **"Our engineers won't adopt it."** Start with volunteers and champions, measure weekly active use, and expand by waves (`rollout/rollout-plan.md`).
 26. **"Implementation looks heavy."** Install is one command [CLM-012]; Bedrock access takes one form per account [CLM-686]; the real work is policy and enablement, planned for the first two weeks.
 27. **"What if Anthropic changes direction or pricing?"** Cloud-provider routing, open standards and repo-level configuration keep switching costs low; the evaluation protocol works for any tool.
-28. **"What if the agent does something destructive?"** It asks before running unmatched commands in Manual mode [CLM-606]; push and destructive commands are denied; production credentials are never on dev machines.
+28. **"What if the agent does something destructive?"** Your managed policy starts sessions in Manual mode, where unmatched commands need approval, and can switch off auto and bypass modes [CLM-606] [CLM-013]; push, curl, wget and secret reads are denied; the sandbox and code review cover the rest; production credentials are never on dev machines.

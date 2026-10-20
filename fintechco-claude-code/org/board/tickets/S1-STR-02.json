@@ -1,5 +1,5 @@
 {
-  "status": "ready",
+  "status": "done",
   "dependsOn": [],
   "createdAt": "2026-10-20T17:06:01.758Z",
   "history": [
@@ -12,6 +12,16 @@
       "at": "2026-10-20T17:58:31.942Z",
       "from": "in_progress",
       "to": "ready"
+    },
+    {
+      "at": "2026-10-20T19:07:06.891Z",
+      "from": "ready",
+      "to": "in_progress"
+    },
+    {
+      "at": "2026-10-20T19:18:21.429Z",
+      "from": "in_progress",
+      "to": "done"
     }
   ],
   "team": "strategy",
@@ -65,5 +75,24 @@
       "at": "2026-10-20T17:58:31.911Z",
       "text": "Carried over from Sprint 1 after the account spend limit; executed player-coach per ADR-007."
     }
-  ]
+  ],
+  "review": {
+    "reworkCount": 1,
+    "verdicts": [
+      {
+        "at": "2026-10-20T19:07:06.891Z",
+        "by": "qe-acceptance",
+        "verdict": "rework",
+        "reason": "Full bank is careful, but the in-room card breaks its rules: objection-handling-card.md:39-40 unsourced Copilot/Cursor claims; :11,19 'you saw .env denied / hook block' not guaranteed by RUNBOOK; :47 'destructive commands are denied'; :8 'inference runs in your account / under your agreement'."
+      },
+      {
+        "at": "2026-10-20T19:18:21.429Z",
+        "by": "qe-recheck (mechanical gate, ADR-007)",
+        "verdict": "accept",
+        "reason": "F12 cards 22-23 rewritten without competitor characterisation; F2 demo now shows the denial and block; F5/F6 card 1 hedged; F8 card 28 accurate; m11 card 19. org/reviews/recheck.mjs 16/16; validate, timing and tests green"
+      }
+    ],
+    "firstPass": false
+  },
+  "doneAt": "2026-10-20T19:18:21.429Z"
 }

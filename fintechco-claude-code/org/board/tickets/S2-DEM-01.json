@@ -8,10 +8,21 @@
   "owner": "eng-lead (for demo)",
   "reviewer": "qe-acceptance (consolidated, ADR-007)",
   "sprint": 2,
-  "status": "ready",
+  "status": "done",
   "dependsOn": [],
   "createdAt": "2026-10-20T17:58:31.911Z",
-  "history": [],
+  "history": [
+    {
+      "at": "2026-10-20T19:07:07.227Z",
+      "from": "ready",
+      "to": "in_progress"
+    },
+    {
+      "at": "2026-10-20T19:18:21.611Z",
+      "from": "in_progress",
+      "to": "done"
+    }
+  ],
   "paths": [
     "demo/sre-ops/",
     "demo/RUNBOOK.md",
@@ -33,5 +44,25 @@
   ],
   "deliverables": [
     "D2"
-  ]
+  ],
+  "startedAt": "2026-10-20T19:07:07.227Z",
+  "review": {
+    "reworkCount": 1,
+    "verdicts": [
+      {
+        "at": "2026-10-20T19:07:07.227Z",
+        "by": "qe-acceptance",
+        "verdict": "rework",
+        "reason": "RUNBOOK has no .env-denial step and 1d may not fire the hook (dry-run: Claude declined); :41 audit log is Act 1 only; :8 fallback dashboard absent at start tag, :41 kit path unresolved; claude-triage.yml:27,31 injects issue title into run:. (F1, F2, F9, F10)"
+      },
+      {
+        "at": "2026-10-20T19:18:21.610Z",
+        "by": "qe-recheck (mechanical gate, ADR-007)",
+        "verdict": "accept",
+        "reason": "F1 audit hook in all three repos, headless re-verified (sre-ops 12 lines); F2 steps 1d' and 1e; F9 injection-safe CI with pinned model; F10 setup stages dashboard, enterprise/ and fallback/, python3, Shift+Tab to plan mode; hooks 14/14. org/reviews/recheck.mjs 16/16; validate, timing and tests green"
+      }
+    ],
+    "firstPass": false
+  },
+  "doneAt": "2026-10-20T19:18:21.611Z"
 }

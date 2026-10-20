@@ -28,7 +28,7 @@
 | Procurement and Finance | What does it cost, and how is it controlled? | ROI calculator, cost per active user (MET-14), cloud budgets on Bedrock/Vertex [CLM-620] |
 
 ## Three win themes
-1. **Finished, tested work, not autocomplete.** An agent that plans, uses FinTechCo's tools, verifies with tests, and asks before acting [CLM-001] [CLM-003].
+1. **Finished, tested work, not autocomplete.** An agent that plans, uses FinTechCo's tools and verifies with tests [CLM-001] [CLM-003], behind a permission check FinTechCo's policy sets [CLM-606].
 2. **Under FinTechCo's control.** Their cloud accounts, their policy, their audit trail [CLM-614] [CLM-675] [CLM-612].
 3. **Proven on FinTechCo's own work.** Measure every tool the same way; decide on evidence in eight weeks.
 

@@ -1,5 +1,7 @@
 # Storyline: Claude Code for FinTechCo (G1 input)
 
+> **Working paper (G1 input), superseded by the built deck in `deck/project/`.** Slide ids, placeholders and some wording here predate the build and the consolidated review (for example, permission wording now follows CLM-606: a permission check the organization sets, not "always asks first"). Present from `deck/project/` only.
+
 Ticket S1-NAR-01 · author ic-narrative-storyliner · draft for gate G1 · product facts as of October 2026.
 Inputs: ADR-005 (objective, agenda, checkpoints, spine, ask), ADR-004 (demo), ADR-006 (claims), ADR-003 (controls), `brief/facts.json`, `brief/requirements.json`, hub `adoption` (timeline spine), hub `trust` (control ids CC-1 to CC-9). Slide ids refer to `deck/slide-spec.md`.
 Claims: every external fact carries a claim id or `[CLM-?: what needs sourcing]`. When this was finished, only the adoption shards existed (`research/claims/adoption-eval.json`, `adoption-rollout.json`, CLM-650 to CLM-697). Their verified or partial ids are cited where the wording matches, and partial claims use their safeWording verbatim. `strategy/use-cases.json`, `value/metrics.json` and `value/roi-assumptions.json` did not exist yet, so use cases, metrics and ROI inputs are `[UC-?: ...]`, `[MET-?: ...]` and `[ASM-?: ...]`. FinTechCo facts are only those in `brief/facts.json` (120 / 40 / 20, 180 total); anything else about FinTechCo is marked "Assumption:".

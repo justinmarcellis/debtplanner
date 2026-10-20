@@ -1,5 +1,5 @@
 {
-  "status": "ready",
+  "status": "done",
   "dependsOn": [],
   "createdAt": "2026-10-20T17:05:02.958Z",
   "history": [
@@ -17,6 +17,11 @@
       "at": "2026-10-20T17:58:31.937Z",
       "from": "review",
       "to": "ready"
+    },
+    {
+      "at": "2026-10-20T19:07:06.539Z",
+      "from": "ready",
+      "to": "done"
     }
   ],
   "id": "S1-NAR-02",
@@ -65,5 +70,18 @@
       "at": "2026-10-20T17:58:31.911Z",
       "text": "Carried over from Sprint 1 after the account spend limit; executed player-coach per ADR-007."
     }
-  ]
+  ],
+  "doneAt": "2026-10-20T19:07:06.539Z",
+  "review": {
+    "reworkCount": 0,
+    "verdicts": [
+      {
+        "at": "2026-10-20T19:07:06.538Z",
+        "by": "qe-acceptance",
+        "verdict": "accept",
+        "reason": "Templates and visual system cover all slide kinds; no Anthropic logos or brand assets anywhere in deck/ (checked slides and visual-system.md:307); Google Slides port values in section 10 satisfy REQ-25."
+      }
+    ],
+    "firstPass": true
+  }
 }

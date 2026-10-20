@@ -8,10 +8,16 @@
   "owner": "eng-lead (for value)",
   "reviewer": "qe-acceptance (consolidated, ADR-007)",
   "sprint": 2,
-  "status": "ready",
+  "status": "done",
   "dependsOn": [],
   "createdAt": "2026-10-20T17:58:31.911Z",
-  "history": [],
+  "history": [
+    {
+      "at": "2026-10-20T19:07:07.425Z",
+      "from": "ready",
+      "to": "done"
+    }
+  ],
   "paths": [
     "value/calculator/"
   ],
@@ -25,5 +31,18 @@
   ],
   "deliverables": [
     "D5"
-  ]
+  ],
+  "doneAt": "2026-10-20T19:07:07.425Z",
+  "review": {
+    "reworkCount": 0,
+    "verdicts": [
+      {
+        "at": "2026-10-20T19:07:07.425Z",
+        "by": "qe-acceptance",
+        "verdict": "accept",
+        "reason": "Calculator inlines roi.mjs and roi-assumptions.json byte-identical (checked), script parses, no storage or external data, assumptions editable with sources. Nit: only external resource is the Google Fonts link."
+      }
+    ],
+    "firstPass": true
+  }
 }

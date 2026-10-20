@@ -11,17 +11,17 @@
 **Controls.** Central policy (deny rules, hooks, sandbox, MCP allowlist) that developers can't override; activity exported to our SIEM; model calls through our own AWS or GCP account; every merge reviewed by a person.
 
 **Timeline.**
-| Weeks | Milestone |
+| Program weeks | Milestone |
 | --- | --- |
-| 0–2 | Security review, cloud access, policy, baselines, cohort, workshops |
-| 3–8 | Pilot; weekly reviews; week-6 readout |
-| 9 | Decision gate: roll out, extend, or stop |
-| 10–17 | Rollout waves to all 180 (if approved) |
+| PW1–2 | Security review, cloud access, policy, baselines, cohort, workshops |
+| PW3–8 | Pilot; weekly reviews; mid-pilot readout in PW6 (Feb 16–19) |
+| PW9 | Decision gate: roll out, extend, or stop |
+| PW10–17 | Rollout waves to all 180 (if approved) |
 
 **Owners.** Executive sponsor: CTO. Pilot lead: Head of Digital Transformation. Security lead: [name]. Metrics owner: [name]. Champions: one per team, [names]. Vendor team: Anthropic account team and Applied AI Architect.
 
 **What we need from you.**
 - *Engineering managers:* nominate volunteers and protect two hours for the workshop.
-- *Security:* review package and pilot-scope approval in week 1–2.
+- *Security:* review package and pilot-scope approval in PW1–2.
 - *Platform/cloud:* Bedrock or Vertex access and the managed policy.
-- *Finance:* budget for six weeks of usage (enterprise average guidance: $150–250 per developer per month).
+- *Finance:* budget for six weeks of usage (enterprise average guidance: $150–250 per developer per month [CLM-619]).

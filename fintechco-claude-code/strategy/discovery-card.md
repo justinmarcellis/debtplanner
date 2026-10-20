@@ -13,7 +13,7 @@ Use in the first three minutes (one question to each attendee) and whenever the 
 
 | If they say… | Then… |
 | --- | --- |
-| "Data residency / where our code goes" | Move the deployment slide (Bedrock/Vertex) right after "How it works"; in the demo, name where inference runs |
+| "Data residency / where our code goes" | Move the deployment slide (Bedrock/Vertex) right after "How it works"; in the demo, name how model calls are routed (your cloud credentials and IAM) |
 | "Change management / audit" | In Act 1, dwell on plan mode, the diff, denied push and the audit log; in security, lead with SOX |
 | "We need proof it works for teams like ours" | Spend the demo time on Act 1 and Act 2; in ROI lead with the measurement plan, not the dollar figure |
 | "Cost" | Show break-even (~1 hour/week) and cost controls; avoid list-price debates |

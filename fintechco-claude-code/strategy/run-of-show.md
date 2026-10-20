@@ -11,7 +11,7 @@ The clock starts when I say "Let's begin" after the introductions. The *Latest* 
 | Planned | Latest | Segment | Slides | What I do | Watch for |
 | --- | --- | --- | --- | --- | --- |
 | 0:00 | — | Open | s01 → s03 | Thank them; state the one decision; agenda follows their three questions; play back priorities; **ask each attendee one question** (CTO: "What would have to be true for you to approve an agentic tool?" · HDT: "Which team would you start with, and why?") | The CTO's answer is the top concern I write on s18. Note it verbatim. |
-| 2:45 | — | How it works | s04 → s06 | One picture: an agent in their environment that understands, plans, acts, verifies, and asks first. Define *agent*, *terminal*, *MCP*, *hooks* on first use | Check understanding with the HDT: "Does that match how you'd explain it to your board?" |
+| 2:45 | — | How it works | s04 → s06 | One picture: an agent in their environment that understands, plans, acts, verifies, behind a permission check their policy sets. Define *agent*, *terminal*, *MCP*, *hooks* on first use | Check understanding with the HDT: "Does that match how you'd explain it to your board?" |
 | 6:25 | — | Why Claude Code | s07, s08 | Three reasons in their priority order; mixed evidence stated openly; five dimensions with the pilot test for each | If the CTO pushes on competitors: "Same tasks, same metrics, on your code" → appendix a03 |
 | 9:10 | — | Fit by team | s09 | One line per team: SWE, DS, SRE, in their stacks | Skip whole slide if past 0:11 (cut A) |
 | 10:55 | **0:12** | Demo: Act 1 (SWE) | s10 → terminal | payments-ledger: tour → find the penny bug → fix with test → PCI hook blocks a PAN log → secrets denied | Measured 2:06 terminal in the dry-run. Narrate while it works; don't read output aloud. |
@@ -19,7 +19,7 @@ The clock starts when I say "Let's begin" after the introductions. The *Latest* 
 | 21:55 | — | Demo: Act 3 (SRE) | terminal | `./triage.sh incidents/INC-2291`: read-only, headless triage; human approves rollback | Measured 0:45. **If past 0:24, use the 30-second narrated fallback (cut C).** |
 | 23:55 | **0:26** | Governance close | s11 | "One agent, three teams, one policy, one audit trail" — show the audit log line count | Back on slides by 0:26 at the latest. |
 | 24:55 | — | Security and deployment | s12, s13 | Five questions, five controls; AWS/GCP routing | The CTO's segment: allow 30 s for questions; answer, then point to the security brief. |
-| 28:35 | **0:30** | Impact and ROI | s14, s15 | Four layers of metrics with guardrails; ROI as a range from stated assumptions | HDT segment. Offer the calculator; don't open it live unless asked. |
+| 28:35 | **0:30** | Impact and ROI | s14, s15 | Five tiers of metrics (adoption, flow, quality, experience, business) with guardrails; ROI as a range from stated assumptions | HDT segment. Offer the calculator; don't open it live unless asked. |
 | 32:15 | — | Evaluation and rollout | s16, s17 | Eight weeks to a decision; gate in week 9; 180 people by week 17; six starter use cases | If past 0:36, skip s17 (cut E). |
 | 35:00 | **0:37** | Wrap-up (never cut) | s18 | Three decisions with owners and dates; write the top concern and owner live | Ask for each decision by name and wait for an answer (`strategy/wrap-up-kit.md`). |
 | 37:00 | — | Buffer | s19 | One sentence to remember; questions | Stop at 38:00–39:30 whatever is open; offer a follow-up. |
@@ -58,7 +58,7 @@ The full script is in the speaker notes. These are the lines to know without not
 | Moment | Line |
 | --- | --- |
 | Opening | "In forty minutes I want to help you make one decision well: which coding tool to roll out at FinTechCo, and how to prove it." |
-| The mental model | "Claude Code is an agent in your engineers' own environment. It understands, plans, acts with your tools, checks its own work, and asks before it acts." |
+| The mental model | "Claude Code is an agent in your engineers' own environment. It understands, plans, acts with your tools and checks its own work, and a permission check your policy sets stands in front of every action." |
 | Agents vs. autocomplete | "Autocomplete suggests the next line. An agent takes a goal and gives you back a finished, tested change to review." |
 | Into the demo | "Fourteen minutes, three acts, one for each of your teams, with the controls on the whole time." |
 | The PCI hook fires | "That's not the model being careful. That's your policy, in code, stopping a card number reaching a log." |

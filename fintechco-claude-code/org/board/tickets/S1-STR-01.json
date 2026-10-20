@@ -1,5 +1,5 @@
 {
-  "status": "ready",
+  "status": "done",
   "dependsOn": [],
   "createdAt": "2026-10-20T17:06:01.756Z",
   "history": [
@@ -17,6 +17,11 @@
       "at": "2026-10-20T17:58:31.941Z",
       "from": "review",
       "to": "ready"
+    },
+    {
+      "at": "2026-10-20T19:07:06.840Z",
+      "from": "ready",
+      "to": "done"
     }
   ],
   "team": "strategy",
@@ -67,5 +72,18 @@
       "at": "2026-10-20T17:58:31.911Z",
       "text": "Carried over from Sprint 1 after the account spend limit; executed player-coach per ADR-007."
     }
-  ]
+  ],
+  "doneAt": "2026-10-20T19:07:06.840Z",
+  "review": {
+    "reworkCount": 0,
+    "verdicts": [
+      {
+        "at": "2026-10-20T19:07:06.839Z",
+        "by": "qe-acceptance",
+        "verdict": "accept",
+        "reason": "Persona map, signals, discovery questions meet REQ-12/13/15/16/30. Nits: stakeholder-map-card.md:31 'asks before acting [CLM-001][CLM-003]' unsupported (CLM-606); stakeholder-map.md:16,136 'no named adopters in the room' vs s07 naming Citi."
+      }
+    ],
+    "firstPass": true
+  }
 }

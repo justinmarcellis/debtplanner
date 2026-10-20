@@ -1,8 +1,14 @@
 {
-  "status": "ready",
+  "status": "done",
   "dependsOn": [],
   "createdAt": "2026-10-20T17:02:51.938Z",
-  "history": [],
+  "history": [
+    {
+      "at": "2026-10-20T19:07:07.112Z",
+      "from": "ready",
+      "to": "done"
+    }
+  ],
   "id": "S1-VAL-01",
   "team": "value",
   "title": "Impact measurement framework: metrics contract, leave-behind and executive scorecard",
@@ -57,5 +63,18 @@
       "at": "2026-10-20T18:47:44.710Z",
       "text": "Rescoped under ADR-007: Metrics claims are CLM-653..657 in the adoption-eval shard."
     }
-  ]
+  ],
+  "doneAt": "2026-10-20T19:07:07.112Z",
+  "review": {
+    "reworkCount": 0,
+    "verdicts": [
+      {
+        "at": "2026-10-20T19:07:07.112Z",
+        "by": "qe-acceptance",
+        "verdict": "accept",
+        "reason": "Leading/lagging, baselines, guardrails and scorecard present; MET ids match metrics.json. Nits: metrics-framework.md:17 and ASM-07 cite the CLM-657 dashboard, unavailable on Bedrock/Vertex (CLM-658); 'four questions' vs s14 'five tiers'."
+      }
+    ],
+    "firstPass": true
+  }
 }

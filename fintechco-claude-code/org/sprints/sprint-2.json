@@ -1,7 +1,7 @@
 {
   "number": 2,
   "name": "Sprint 2: lean delivery (ADR-007)",
-  "status": "planned",
+  "status": "closed",
   "startedAt": "2026-10-20T17:58:32.105Z",
   "committed": [
     "S1-ADO-01",
@@ -36,7 +36,8 @@
     "went_well": [
       "Player-coach delivery finished D1-D11 in one context, with the board, gates and RTM kept as the accountability record",
       "Mechanical gates caught real defects: s07/s08 notes over their time budget, a shell route around the PCI hook, a NaN alignment bug in the FRED loader, a gate-week mismatch between the evaluation plan and the charter",
-      "Sprint 1 output reused as-is: 89 sourced claims, the slide spec and the rollout plan"
+      "Sprint 1 output reused as-is: 89 sourced claims, the slide spec and the rollout plan",
+      "One consolidated review found 3 blockers and 9 majors that self-checks missed (an untrue audit claim, unconditional contract wording, a CI script injection); all fixed and held by a scripted re-check"
     ],
     "went_badly": [
       "Sprint 1 fan-out spent about 2.3M subagent tokens for one accepted IC ticket; context loading dominated the cost",
@@ -47,8 +48,23 @@
       "Scale agents with output, not with the org chart: one author, machine gates, one independent reviewer",
       "Give any agent a small context pack (the brief and one ADR), never the whole playbook",
       "Check git status before writing to paths another agent owns",
-      "Facts enter the claims register before they enter a spec"
+      "Facts enter the claims register before they enter a spec",
+      "Run the independent review before publishing, not after: two republishes of the deck could have been one"
     ],
     "manager_retros": []
+  },
+  "closedAt": "2026-10-20T19:18:35.115Z",
+  "review": {
+    "completedPoints": 174,
+    "committedPoints": 174,
+    "usd": 0,
+    "pointsPerDollar": null,
+    "firstPassAcceptance": 0.652,
+    "reworkRate": 0.348,
+    "testPassRate": 1,
+    "testsPassed": "50/50",
+    "subagentTokens": 372793,
+    "measuredHeadlessUsd": 2.71,
+    "note": "Measured: consolidated review 372,793 subagent tokens (one Sonnet pass); headless Claude Code runs about $2.71 (G3 dry-run $2.30, hook verification $0.01, reviewer checks about $0.20, re-verification about $0.20). The placeholder-resolution subagent was not metered. Compare Sprint 1: about 2.3M subagent tokens for one accepted IC ticket."
   }
 }

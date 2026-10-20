@@ -1,8 +1,19 @@
 {
-  "status": "ready",
+  "status": "done",
   "dependsOn": [],
   "createdAt": "2026-10-20T17:02:51.939Z",
-  "history": [],
+  "history": [
+    {
+      "at": "2026-10-20T19:07:07.180Z",
+      "from": "ready",
+      "to": "in_progress"
+    },
+    {
+      "at": "2026-10-20T19:18:21.564Z",
+      "from": "in_progress",
+      "to": "done"
+    }
+  ],
   "id": "S1-VAL-02",
   "team": "value",
   "title": "ROI model: assumptions, pure roi.mjs with tests, and ROI model leave-behind",
@@ -56,5 +67,25 @@
       "at": "2026-10-20T18:47:44.710Z",
       "text": "Rescoped under ADR-007: value/roi.mjs renders roi-model.md itself (renderMarkdown); ROI cites CLM-619, 623, 650 from existing shards."
     }
-  ]
+  ],
+  "startedAt": "2026-10-20T19:07:07.180Z",
+  "review": {
+    "reworkCount": 1,
+    "verdicts": [
+      {
+        "at": "2026-10-20T19:07:07.180Z",
+        "by": "qe-acceptance",
+        "verdict": "rework",
+        "reason": "roi-model.md:3 says it pays back at ~1 h 'on conservative-to-base' but the table shows conservative break-even 2.2 h, -7% ROI; :40 'more than everything else combined' is false (1.62M vs 1.78M of other swings). Repeated in s15-roi.html:21; fix and rerun roi.test.mjs."
+      },
+      {
+        "at": "2026-10-20T19:18:21.564Z",
+        "by": "qe-recheck (mechanical gate, ADR-007)",
+        "verdict": "accept",
+        "reason": "F7 summary and read-out match the tables (conservative needs 2.2 h, slightly negative; hours saved 3x the next swing); ASM-06 labelled assumption with a stop rule; roi.test 6/6; calculator rebuilt and republished. org/reviews/recheck.mjs 16/16; validate, timing and tests green"
+      }
+    ],
+    "firstPass": false
+  },
+  "doneAt": "2026-10-20T19:18:21.564Z"
 }

@@ -1,5 +1,7 @@
 # Slide spec: Claude Code for FinTechCo (G1 input)
 
+> **Working paper (G1 input), superseded by the built deck in `deck/project/`.** Slide ids, placeholders and some wording here predate the build and the consolidated review (for example, permission wording now follows CLM-606: a permission check the organization sets, not "always asks first"). Present from `deck/project/` only.
+
 Ticket S1-NAR-01 · author ic-narrative-storyliner · storyline in `deck/storyline.md` · visual rules in `deck/visual-system.md` (S1-NAR-02) · product facts as of October 2026.
 
 ## Title sequence

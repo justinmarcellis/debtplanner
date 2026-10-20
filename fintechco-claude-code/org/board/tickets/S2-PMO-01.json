@@ -8,10 +8,16 @@
   "owner": "eng-lead (for pmo)",
   "reviewer": "qe-acceptance (consolidated, ADR-007)",
   "sprint": 2,
-  "status": "ready",
+  "status": "done",
   "dependsOn": [],
   "createdAt": "2026-10-20T17:58:31.911Z",
-  "history": [],
+  "history": [
+    {
+      "at": "2026-10-20T19:18:21.757Z",
+      "from": "ready",
+      "to": "done"
+    }
+  ],
   "paths": [
     "org/dashboard/"
   ],
@@ -24,5 +30,18 @@
   ],
   "deliverables": [
     "D11"
-  ]
+  ],
+  "doneAt": "2026-10-20T19:18:21.757Z",
+  "review": {
+    "reworkCount": 0,
+    "verdicts": [
+      {
+        "at": "2026-10-20T19:18:21.757Z",
+        "by": "qe-recheck (mechanical gate, ADR-007)",
+        "verdict": "accept",
+        "reason": "Built from board files by org/dashboard/build.mjs; renders with no console errors in light, dark and 390px mobile with no horizontal scroll; shows gates, sprints, deliverables, RTM, org, ADRs, hub. Mechanical acceptance per ADR-007 §2."
+      }
+    ],
+    "firstPass": true
+  }
 }

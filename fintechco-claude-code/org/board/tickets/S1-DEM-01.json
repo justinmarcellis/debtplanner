@@ -1,5 +1,5 @@
 {
-  "status": "ready",
+  "status": "done",
   "dependsOn": [],
   "createdAt": "2026-10-20T17:04:27.297Z",
   "history": [
@@ -12,6 +12,11 @@
       "at": "2026-10-20T17:58:31.933Z",
       "from": "in_progress",
       "to": "ready"
+    },
+    {
+      "at": "2026-10-20T19:07:06.327Z",
+      "from": "ready",
+      "to": "done"
     }
   ],
   "team": "demo",
@@ -69,5 +74,18 @@
       "at": "2026-10-20T18:47:44.710Z",
       "text": "Rescoped under ADR-007: No pyproject.toml needed: tests run with python -m pytest from the repo root."
     }
-  ]
+  ],
+  "doneAt": "2026-10-20T19:07:06.327Z",
+  "review": {
+    "reworkCount": 0,
+    "verdicts": [
+      {
+        "at": "2026-10-20T19:07:06.327Z",
+        "by": "qe-acceptance",
+        "verdict": "accept",
+        "reason": "Meets REQ-05/08/27. Verified: exactly 3 planned PAY-1423 failures, complete tag 19 passed, both patches apply, float defect fees.py:24-25 and PAN log settlement.py:44 match RUNBOOK. Nit: RUNBOOK:18 recovery uses 'python' (macOS has only python3)."
+      }
+    ],
+    "firstPass": true
+  }
 }

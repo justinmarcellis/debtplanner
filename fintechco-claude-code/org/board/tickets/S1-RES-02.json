@@ -1,8 +1,14 @@
 {
-  "status": "ready",
+  "status": "done",
   "dependsOn": [],
   "createdAt": "2026-10-20T17:05:30.540Z",
-  "history": [],
+  "history": [
+    {
+      "at": "2026-10-20T19:07:06.657Z",
+      "from": "ready",
+      "to": "done"
+    }
+  ],
   "team": "research",
   "reviewer": "qe-acceptance (consolidated, ADR-007)",
   "sprint": 2,
@@ -54,5 +60,18 @@
       "at": "2026-10-20T18:47:44.710Z",
       "text": "Rescoped under ADR-007: Rescoped: per-vendor profiles dropped (no budget to source competitor claims from vendor docs). Policy instead: no competitor feature, price or limitation claims anywhere; battlecard compares on five dimensions with a pilot test each; competitive facts CLM-628/629 in strategy.json. Acceptance re-based on: battlecard cites only verified/partial claims; fair protocol in rollout/evaluation-plan.md and deck a03."
     }
-  ]
+  ],
+  "doneAt": "2026-10-20T19:07:06.657Z",
+  "review": {
+    "reworkCount": 0,
+    "verdicts": [
+      {
+        "at": "2026-10-20T19:07:06.656Z",
+        "by": "qe-acceptance",
+        "verdict": "accept",
+        "reason": "Five-dimension card cites only verified/partial claims; CLM-616/617 marked do-not-cite. Nits: battlecard.md:34 unsourced remark on 'editor assistants'; :24 'Cost is predictable' overstates an average; :54 add 'announced Feb 2026, public preview' (CLM-628)."
+      }
+    ],
+    "firstPass": true
+  }
 }

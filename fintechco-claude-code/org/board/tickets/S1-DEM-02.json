@@ -1,5 +1,5 @@
 {
-  "status": "ready",
+  "status": "done",
   "dependsOn": [],
   "createdAt": "2026-10-20T17:04:27.299Z",
   "history": [
@@ -12,6 +12,11 @@
       "at": "2026-10-20T17:58:31.935Z",
       "from": "in_progress",
       "to": "ready"
+    },
+    {
+      "at": "2026-10-20T19:07:06.377Z",
+      "from": "ready",
+      "to": "done"
     }
   ],
   "team": "demo",
@@ -61,5 +66,18 @@
       "at": "2026-10-20T17:58:31.911Z",
       "text": "Carried over from Sprint 1 after the account spend limit; executed player-coach per ADR-007."
     }
-  ]
+  ],
+  "doneAt": "2026-10-20T19:07:06.377Z",
+  "review": {
+    "reworkCount": 0,
+    "verdicts": [
+      {
+        "at": "2026-10-20T19:07:06.377Z",
+        "by": "qe-acceptance",
+        "verdict": "accept",
+        "reason": "Meets REQ-08/27. 5 tests pass offline; findings.md slopes (2010s -0.02, 2020s -0.40) match RUNBOOK 2b; Oct 2025 UNRATE gap documented in data/README.md; dashboard single-file, no external scripts. Nit: the start tag has no dashboard to open as fallback (RUNBOOK:8)."
+      }
+    ],
+    "firstPass": true
+  }
 }

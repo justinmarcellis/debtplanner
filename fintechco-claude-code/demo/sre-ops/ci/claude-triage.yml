@@ -1,5 +1,5 @@
 # Illustrative GitHub Actions job: run the same read-only triage when an alert opens an incident issue.
-# Credentials: route through Amazon Bedrock with OIDC (no long-lived keys); see ../../enterprise/bedrock.env.example.
+# Credentials: route through Amazon Bedrock with OIDC (no long-lived keys); see enterprise/bedrock.env.example in the demo kit.
 name: incident-triage
 on:
   issues:
@@ -20,12 +20,22 @@ jobs:
           aws-region: us-east-1
       - name: Install Claude Code
         run: curl -fsSL https://claude.ai/install.sh | bash
+      # Untrusted input (the issue title) reaches the shell only through env and only after validation;
+      # never put a github.event expression directly into run: (script injection).
+      - name: Validate incident id
+        env:
+          TITLE: ${{ github.event.issue.title }}
+        run: |
+          [[ "$TITLE" =~ ^INC-[0-9]+$ ]] || { echo "issue title must be an incident id like INC-2291"; exit 1; }
+          echo "INC=$TITLE" >> "$GITHUB_ENV"
       - name: Triage
         env:
           CLAUDE_CODE_USE_BEDROCK: "1"
           AWS_REGION: us-east-1
-        run: ./triage.sh "incidents/${{ github.event.issue.title }}"
+          ANTHROPIC_DEFAULT_SONNET_MODEL: "<bedrock inference profile id for Claude Sonnet 5.5>"   # pin the version
+        run: ./triage.sh "incidents/$INC"
       - name: Post triage to the incident issue
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh issue comment ${{ github.event.issue.number }} --body-file "incidents/${{ github.event.issue.title }}/triage.md"
+          ISSUE: ${{ github.event.issue.number }}
+        run: gh issue comment "$ISSUE" --body-file "incidents/$INC/triage.md"

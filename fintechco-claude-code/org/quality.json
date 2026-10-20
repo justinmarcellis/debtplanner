@@ -1,11 +1,11 @@
 {
   "at": "2026-10-20",
-  "testsPassed": 49,
-  "testsTotal": 49,
+  "testsPassed": 50,
+  "testsTotal": 50,
   "suites": {
     "org tooling, validator, ROI model (node --test)": "13/13",
     "demo/payments-ledger (pytest)": "15/15 excluding the 3 planted PAY-1423 failures the demo fixes live",
-    "demo/payments-ledger hooks": "13/13",
+    "demo/payments-ledger hooks": "14/14",
     "demo/macro-risk (pytest)": "5/5",
     "demo/sre-ops payment-gateway (go test)": "3/3"
   },

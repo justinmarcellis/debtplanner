@@ -1,5 +1,5 @@
 {
-  "status": "ready",
+  "status": "done",
   "dependsOn": [],
   "createdAt": "2026-10-20T17:06:01.758Z",
   "history": [
@@ -12,6 +12,11 @@
       "at": "2026-10-20T17:58:31.942Z",
       "from": "in_progress",
       "to": "ready"
+    },
+    {
+      "at": "2026-10-20T19:07:06.941Z",
+      "from": "ready",
+      "to": "done"
     }
   ],
   "team": "strategy",
@@ -62,5 +67,18 @@
       "at": "2026-10-20T17:58:31.911Z",
       "text": "Carried over from Sprint 1 after the account spend limit; executed player-coach per ADR-007."
     }
-  ]
+  ],
+  "doneAt": "2026-10-20T19:07:06.941Z",
+  "review": {
+    "reworkCount": 0,
+    "verdicts": [
+      {
+        "at": "2026-10-20T19:07:06.941Z",
+        "by": "qe-acceptance",
+        "verdict": "accept",
+        "reason": "17 use cases, ids match value/metrics.json, six starters with stacks per team, validator passes; s17 and evaluation-plan.md agree. Nit: UC-SWE-01 measured by MET-01 (weekly users), not time to first merged PR."
+      }
+    ],
+    "firstPass": true
+  }
 }

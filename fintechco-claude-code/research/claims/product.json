@@ -178,5 +178,20 @@
       }
     ],
     "accessed": "2026-10-20"
+  },
+  {
+    "id": "CLM-013",
+    "claim": "As of October 2026, permissions.defaultMode sets the permission mode Claude Code sessions start in (default, labelled Manual; acceptEdits; plan; auto; dontAsk; bypassPermissions), and setting permissions.disableBypassPermissionsMode or permissions.disableAutoMode to \"disable\" prevents bypass or auto mode from being used; both are most useful in managed settings, where they cannot be overridden.",
+    "category": "product",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Configure permissions",
+        "url": "https://code.claude.com/docs/en/permissions",
+        "publisher": "Anthropic (Claude Code docs)",
+        "excerpt": "To prevent bypassPermissions or auto mode from being used, set permissions.disableBypassPermissionsMode or permissions.disableAutoMode to \"disable\" in any settings file."
+      }
+    ],
+    "accessed": "2026-10-20"
   }
 ]

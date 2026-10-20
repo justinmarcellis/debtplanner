@@ -73,7 +73,7 @@ Close: "Thank you. I enjoyed preparing this. Is there anything about my backgrou
 
 ## 4. Rehearsal log
 
-Record each run. Two clean runs within 38:00 ± 1:00 are the exit criterion for gate G4 (human rehearsal), on top of the scripted check `node org/timing.mjs --check`.
+Record each run. Gate G4 passed on the scripted check (`node org/timing.mjs --check`); the two human runs below, each within 38:00 ± 1:00, are still to do and are the presenter's last exit criterion before the interview.
 
 | Run | Date | Total | Demo (A1 / A2 / A3) | Checkpoints hit (12 · 20 · 26 · 30 · 37) | Cuts used | Spend | Fix before next run |
 | --- | --- | --- | --- | --- | --- | --- | --- |

@@ -8,10 +8,21 @@
   "owner": "eng-lead (for narrative)",
   "reviewer": "qe-acceptance (consolidated, ADR-007)",
   "sprint": 2,
-  "status": "ready",
+  "status": "done",
   "dependsOn": [],
   "createdAt": "2026-10-20T17:58:31.911Z",
-  "history": [],
+  "history": [
+    {
+      "at": "2026-10-20T19:07:07.275Z",
+      "from": "ready",
+      "to": "in_progress"
+    },
+    {
+      "at": "2026-10-20T19:18:21.661Z",
+      "from": "in_progress",
+      "to": "done"
+    }
+  ],
   "paths": [
     "deck/project/"
   ],
@@ -36,5 +47,25 @@
   ],
   "deliverables": [
     "D1"
-  ]
+  ],
+  "startedAt": "2026-10-20T19:07:07.275Z",
+  "review": {
+    "reworkCount": 1,
+    "verdicts": [
+      {
+        "at": "2026-10-20T19:07:07.274Z",
+        "by": "qe-acceptance",
+        "verdict": "rework",
+        "reason": "s11:3 and s12:16 claim audit of Acts 1-3 (only Act 1 hooked); s12:13-14 '.env denied/card write blocked' not reliably shown; a01:15,19 telemetry scope; a01:12 'inference runs in your AWS account'; s13:28 'existing commercial agreement'; s15:21 'more than everything else combined'."
+      },
+      {
+        "at": "2026-10-20T19:18:21.661Z",
+        "by": "qe-recheck (mechanical gate, ADR-007)",
+        "verdict": "accept",
+        "reason": "F1/F2 now true in the demo; F4-F7, F12 fixed on slides and notes; m1, m3-m7, m11, m16 fixed; 15 slides re-rendered at 1920x1080 without overlap and republished (deck v11). org/reviews/recheck.mjs 16/16; validate, timing and tests green"
+      }
+    ],
+    "firstPass": false
+  },
+  "doneAt": "2026-10-20T19:18:21.661Z"
 }

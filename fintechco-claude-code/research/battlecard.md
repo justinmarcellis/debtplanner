@@ -21,7 +21,7 @@ Claude Code is an agent that takes a task from ticket to tested change inside th
 ## Proof points we can use
 
 - **Adoption inside the regulated sector:** Anthropic's financial-services page carries executive statements from named financial firms, including one attributed to Citi. Send the page; don't paraphrase it. [CLM-631]
-- **Cost is predictable:** about $13 per developer per active day and $150–250 per developer per month on average across enterprise deployments [CLM-619], with spend limits at organization, group or member level [CLM-620] [CLM-685].
+- **Cost is bounded and visible:** about $13 per developer per active day and $150–250 per developer per month on average (an average, not a cap) across enterprise deployments [CLM-619], with spend limits at organization, group or member level [CLM-620] [CLM-685].
 - **Measured in their tools:** OpenTelemetry export of usage, cost and tool events to their own collector [CLM-656] [CLM-612]; an analytics dashboard on Teams and Enterprise [CLM-657].
 - **The demo itself:** the PCI hook blocked a card number reaching a log, and a deny rule kept the agent out of `.env`. Both are in the repo for the security team to inspect (`demo/payments-ledger/.claude/`).
 
@@ -31,7 +31,7 @@ Claude Code is an agent that takes a task from ticket to tested change inside th
 | --- | --- | --- |
 | Productivity evidence | Mixed: field experiments found +26% completed tasks [CLM-623]; one trial with experienced developers found them 19% slower [CLM-650]; DORA 2024 saw delivery stability fall [CLM-653]. | "The evidence is mixed, and I'd rather show you all of it. That's why the pilot measures on your work with guardrails." |
 | MCP connections | By default anyone can connect any MCP server; Anthropic doesn't audit third-party servers. [CLM-610] [CLM-678] | "Out of the box it's open; for a bank you'd allowlist servers in managed settings, and we'd set that up in readiness." [CLM-679] |
-| Inline completion | Editor assistants are built around inline completion, and some developers value it most. | "If inline completion is what your developers want most, test it. Our claim is about finished tasks." |
+| Inline completion | Not part of our claim; we make no statement about other tools here. | "If inline completion matters most to your developers, put it in the pilot test. Our claim is about finished tasks." |
 | Retention on Google Cloud | Not verified for Claude on Google Cloud's Agent Platform. (CLM-616, unverified: do not cite) | "I'll get you the exact Google Cloud terms in writing; I won't guess." |
 | Compliance API coverage of Claude Code | Not verified. (CLM-617, unverified: do not cite) | "Let me confirm exactly what the audit feeds cover for Claude Code, and on which plan." |
 | Certifications | Partly verified: listed for commercial products such as Claude for Work and the API. [CLM-618] | Point to the trust center for the current list; the security team should verify. |
@@ -51,7 +51,7 @@ Claude Code is an agent that takes a task from ticket to tested change inside th
 
 ## Special case: Claude inside GitHub Copilot
 
-Claude is available as a coding agent inside GitHub Copilot Business and Pro. [CLM-628] If FinTechCo already uses Copilot, the question is not "which model?" but "which harness, controls and results?". Recommend comparing the full setups they would deploy, on the same tasks. (Deck s08 and appendix a03.)
+GitHub announced on February 26, 2026 that Claude is available as a coding agent in Copilot Business and Pro, in public preview; check its current status before relying on it [CLM-628]. If FinTechCo already uses Copilot, the question is not "which model?" but "which harness, controls and results?". Recommend comparing the full setups they would deploy, on the same tasks. (Deck s08 and appendix a03.)
 
 ## Never
 

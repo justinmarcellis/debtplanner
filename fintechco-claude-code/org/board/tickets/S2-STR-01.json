@@ -8,10 +8,21 @@
   "owner": "eng-lead (for strategy)",
   "reviewer": "qe-acceptance (consolidated, ADR-007)",
   "sprint": 2,
-  "status": "ready",
+  "status": "done",
   "dependsOn": [],
   "createdAt": "2026-10-20T17:58:31.911Z",
-  "history": [],
+  "history": [
+    {
+      "at": "2026-10-20T19:07:07.369Z",
+      "from": "ready",
+      "to": "in_progress"
+    },
+    {
+      "at": "2026-10-20T19:18:21.712Z",
+      "from": "in_progress",
+      "to": "done"
+    }
+  ],
   "paths": [
     "strategy/run-of-show.md",
     "strategy/wrap-up-kit.md"
@@ -30,5 +41,25 @@
   "deliverables": [
     "D3",
     "D8"
-  ]
+  ],
+  "startedAt": "2026-10-20T19:07:07.369Z",
+  "review": {
+    "reworkCount": 1,
+    "verdicts": [
+      {
+        "at": "2026-10-20T19:07:07.369Z",
+        "by": "qe-acceptance",
+        "verdict": "rework",
+        "reason": "run-of-show.md:14,61 tell the CTO it 'asks before it acts' (CLM-606: Auto is the default start mode; objection-handling.md:229 says never say it); :20,65 claim an audit record for all acts; wrap-up-kit.md:48 mid-pilot PW5 vs rollout-plan.md:282 PW6."
+      },
+      {
+        "at": "2026-10-20T19:18:21.711Z",
+        "by": "qe-recheck (mechanical gate, ADR-007)",
+        "verdict": "accept",
+        "reason": "F3 talk-track lines use the CLM-606 wording; F1 audit count matches the runbook; m6 five tiers and the s08 cut line aligned; m10 PW6. org/reviews/recheck.mjs 16/16; validate, timing and tests green"
+      }
+    ],
+    "firstPass": false
+  },
+  "doneAt": "2026-10-20T19:18:21.712Z"
 }

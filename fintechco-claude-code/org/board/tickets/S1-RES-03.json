@@ -1,8 +1,14 @@
 {
-  "status": "ready",
+  "status": "done",
   "dependsOn": [],
   "createdAt": "2026-10-20T17:05:30.541Z",
-  "history": [],
+  "history": [
+    {
+      "at": "2026-10-20T19:07:06.729Z",
+      "from": "ready",
+      "to": "done"
+    }
+  ],
   "team": "research",
   "reviewer": "qe-acceptance (consolidated, ADR-007)",
   "sprint": 2,
@@ -53,5 +59,18 @@
       "at": "2026-10-20T18:47:44.710Z",
       "text": "Rescoped under ADR-007: Proof points are CLM-621..627 and CLM-650..655 (strategy and adoption-eval shards), presented in deck a05 and s07."
     }
-  ]
+  ],
+  "doneAt": "2026-10-20T19:07:06.729Z",
+  "review": {
+    "reworkCount": 0,
+    "verdicts": [
+      {
+        "at": "2026-10-20T19:07:06.729Z",
+        "by": "qe-acceptance",
+        "verdict": "accept",
+        "reason": "a05 matches CLM-623/652/650/651/653/626 and presents the evidence as mixed. Nits: a05-evidence.html:17 '52 juniors' should be 'mostly junior' (CLM-626); add METR 2026 intervals; s07:11 should say the 26% is an AI assistant, not Claude Code."
+      }
+    ],
+    "firstPass": true
+  }
 }

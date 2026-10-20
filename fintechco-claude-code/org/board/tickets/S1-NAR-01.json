@@ -1,5 +1,5 @@
 {
-  "status": "ready",
+  "status": "done",
   "dependsOn": [],
   "createdAt": "2026-10-20T17:05:02.956Z",
   "history": [
@@ -17,6 +17,11 @@
       "at": "2026-10-20T17:58:31.937Z",
       "from": "review",
       "to": "ready"
+    },
+    {
+      "at": "2026-10-20T19:07:06.493Z",
+      "from": "ready",
+      "to": "done"
     }
   ],
   "id": "S1-NAR-01",
@@ -82,5 +87,18 @@
       "at": "2026-10-20T17:58:31.911Z",
       "text": "Carried over from Sprint 1 after the account spend limit; executed player-coach per ADR-007."
     }
-  ]
+  ],
+  "doneAt": "2026-10-20T19:07:06.493Z",
+  "review": {
+    "reworkCount": 0,
+    "verdicts": [
+      {
+        "at": "2026-10-20T19:07:06.493Z",
+        "by": "qe-acceptance",
+        "verdict": "accept",
+        "reason": "Covers every brief topic; checkpoints match ADR-005. Nits (internal docs): storyline.md:35,39,224 and slide-spec.md:153 say it 'asks before it acts', contradicting CLM-606 (s04 notes are right); slide-spec.md:246,250 unresolved placeholders and stale slide ids."
+      }
+    ],
+    "firstPass": true
+  }
 }

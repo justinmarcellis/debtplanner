@@ -4,6 +4,8 @@
 
 ## Four questions, in order
 
+The deck (s14) shows the same metrics as five tiers, with developer experience (MET-11) as its own tier; here it sits with the guardrails in question 3.
+
 | Question | Leading or lagging | Metrics | Owner |
 | --- | --- | --- | --- |
 | 1. Are people using it? | Leading, week 1+ | MET-01 weekly active users · MET-02 active days · MET-03 agent-assisted PRs | Head of Digital Transformation |
@@ -14,7 +16,7 @@
 Speed metrics never count without the guardrails in row 3: DORA's 2024 research linked AI adoption with lower delivery stability [CLM-653], so change failure rate (MET-08) is a hard gate, not a nice-to-have.
 
 ## Where the numbers come from
-- **Claude Code itself:** an analytics dashboard on Claude for Teams and Enterprise [CLM-657], and OpenTelemetry metrics and events (sessions, active time, commits, PRs, cost, tool permission decisions) exported to FinTechCo's own collector [CLM-656] [CLM-684]. On Bedrock or Vertex, usage bills to FinTechCo's cloud account and OpenTelemetry carries per-user cost [CLM-620].
+- **Claude Code itself:** an analytics dashboard on Claude for Teams and Enterprise [CLM-657] (it does not cover usage through Bedrock or Google Cloud [CLM-658]), and OpenTelemetry metrics and events (sessions, active time, commits, PRs, cost, tool permission decisions) exported to FinTechCo's own collector [CLM-656] [CLM-684]. On Bedrock or Vertex, usage bills to FinTechCo's cloud account and OpenTelemetry carries per-user cost [CLM-620].
 - **Systems FinTechCo already runs:** the Git host (PR cycle time, attribution trailers that Claude Code adds by default [CLM-664]), CI/CD (DORA metrics [CLM-655]), Jira, incident tooling, security scanners.
 - **People:** a 2-question weekly pulse and a monthly experience survey. Self-reports are cross-checked against system data: in one trial developers believed AI sped them up by 20% while measured time rose 19% [CLM-650].
 

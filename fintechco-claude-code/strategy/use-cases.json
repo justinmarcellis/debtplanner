@@ -16,7 +16,7 @@
     ],
     "valueDriver": "onboarding",
     "metrics": [
-      "MET-01",
+      "MET-15",
       "MET-11"
     ],
     "pilotStarter": true,

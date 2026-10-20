@@ -242,7 +242,7 @@ $('tiles').innerHTML = [
 $('gates').innerHTML = D.gates.map((g) => {
   const kind = g.status === 'passed' ? 'ok' : g.status === 'failed' ? 'fail' : 'pend';
   return '<div class="card gate"><h3>' + esc(g.id) + pill(kind, g.status) + '</h3><p>' + esc(cap((g.text.split(' — ')[1] ?? g.text).replace(/\\s*\\((?:end of )?(?:Sprint \\d|Release)\\)/, ''))) + '</p>' +
-    (g.record ? '<p class="rec">' + esc(g.record.replace(/^G\\d \\w+(?: \\([^)]*\\))?: /, '')) + '</p>' : '') + '</div>';
+    (g.record ? '<p class="rec">' + esc(cap(g.record.replace(/^G\\d \\w+(?: \\([^)]*\\))?: /, ''))) + '</p>' : '') + '</div>';
 }).join('');
 
 $('sprints').innerHTML = D.sprints.map((s) => {
@@ -251,6 +251,8 @@ $('sprints').innerHTML = D.sprints.map((s) => {
     ['First-pass acceptance', r.firstPassAcceptance != null ? Math.round(r.firstPassAcceptance * 100) + '%' : '—']];
   if (r.subagentTokens) rows.push(['Subagent tokens', (r.subagentTokens / 1e6).toFixed(1) + 'M']);
   if (r.usd) rows.push(['Measured spend', '$' + r.usd.toFixed(2)]);
+  if (r.measuredHeadlessUsd) rows.push(['Headless Claude Code runs', '≈ $' + r.measuredHeadlessUsd.toFixed(2)]);
+  if (r.testsPassed) rows.push(['Tests passing', r.testsPassed]);
   const notes = [...(r.shipped ?? []).slice(0, 3), ...(s.retro?.went_badly ?? []).slice(0, 1), ...(s.retro?.improvements ?? []).slice(0, 2)];
   return '<div class="card sprint"><h3>' + esc(s.name) + '</h3>' + rows.map(([k, v]) => '<div class="row"><span>' + esc(k) + '</span><b>' + esc(v) + '</b></div>').join('') +
     (notes.length ? '<ul>' + notes.map((n) => '<li>' + esc(n) + '</li>').join('') + '</ul>' : '') + '</div>';

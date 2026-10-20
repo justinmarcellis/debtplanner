@@ -1,5 +1,5 @@
 {
-  "status": "ready",
+  "status": "done",
   "dependsOn": [],
   "createdAt": "2026-10-20T17:03:45.398Z",
   "history": [
@@ -12,6 +12,16 @@
       "at": "2026-10-20T17:58:31.943Z",
       "from": "in_progress",
       "to": "ready"
+    },
+    {
+      "at": "2026-10-20T19:07:07.012Z",
+      "from": "ready",
+      "to": "in_progress"
+    },
+    {
+      "at": "2026-10-20T19:18:21.475Z",
+      "from": "in_progress",
+      "to": "done"
     }
   ],
   "id": "S1-TRU-01",
@@ -67,5 +77,24 @@
       "at": "2026-10-20T18:47:44.710Z",
       "text": "Rescoped under ADR-007: Reference architecture is the mermaid data-flow diagram inside security/security-brief.md; trust claims are CLM-600..618 in strategy.json."
     }
-  ]
+  ],
+  "review": {
+    "reworkCount": 1,
+    "verdicts": [
+      {
+        "at": "2026-10-20T19:07:07.011Z",
+        "by": "qe-acceptance",
+        "verdict": "rework",
+        "reason": "security-brief.md:33 says telemetry/error reporting off by default on the laptop, but CLM-605 limits that to Bedrock/Vertex; :30 'existing commercial agreement applies' drops CLM-614 'unless otherwise agreed'; :40 admin-console delivery ignores CLM-676 on Bedrock/Vertex."
+      },
+      {
+        "at": "2026-10-20T19:18:21.475Z",
+        "by": "qe-recheck (mechanical gate, ADR-007)",
+        "verdict": "accept",
+        "reason": "F4 telemetry default per route; F5 agreement hedged with counsel note; m8 admin-console bypass on Bedrock/Vertex [CLM-676]; m2 sandbox off by default, required by policy; m17 mapping labelled judgment. org/reviews/recheck.mjs 16/16; validate, timing and tests green"
+      }
+    ],
+    "firstPass": false
+  },
+  "doneAt": "2026-10-20T19:18:21.475Z"
 }

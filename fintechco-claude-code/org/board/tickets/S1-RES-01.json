@@ -1,8 +1,14 @@
 {
-  "status": "ready",
+  "status": "done",
   "dependsOn": [],
   "createdAt": "2026-10-20T17:05:30.539Z",
-  "history": [],
+  "history": [
+    {
+      "at": "2026-10-20T19:07:06.585Z",
+      "from": "ready",
+      "to": "done"
+    }
+  ],
   "team": "research",
   "reviewer": "qe-acceptance (consolidated, ADR-007)",
   "sprint": 2,
@@ -52,5 +58,18 @@
       "at": "2026-10-20T18:47:44.710Z",
       "text": "Rescoped under ADR-007: Fact base is the merged claims register (research/claims.md) plus the product shard; Sprint 1 shards reused per ADR-007 §4."
     }
-  ]
+  ],
+  "doneAt": "2026-10-20T19:07:06.585Z",
+  "review": {
+    "reworkCount": 0,
+    "verdicts": [
+      {
+        "at": "2026-10-20T19:07:06.584Z",
+        "by": "qe-acceptance",
+        "verdict": "accept",
+        "reason": "Register validates: 89 claims, 1017 citations resolve to verified/partial, CLM-616/617 never cited in customer material. 48 deck-to-claim spot checks found no register error; deck-side wording problems are logged under S2-NAR-01."
+      }
+    ],
+    "firstPass": true
+  }
 }

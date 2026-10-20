@@ -45,7 +45,7 @@ R = responsible, A = accountable. FinTechCo owners in **bold** are proposals unt
 | 8 | Thresholds and comparison design agreed | **HDT** (A), **metrics owner** (R) | Proposal (`rollout/evaluation-plan.md` §4) | Before PW3 (by Jan 22) | Written thresholds signed by both sponsors |
 | 9 | Enablement: a 2-hour workshop per team, CLAUDE.md per pilot repo | **Champions** (R) | Workshop delivery | PW2–3 | Every cohort member has completed one task |
 | 10 | Pilot runs, with a weekly metrics review | **Metrics owner** (R) | Office hours | PW3–8 (Jan 25–Mar 5) | Weekly report published |
-| 11 | Mid-pilot check-in | **HDT**, **CTO** | Account team | PW5 (Feb 8–12) | Course corrections agreed |
+| 11 | Mid-pilot readout | **HDT**, **CTO** | Account team | PW6 (Feb 16–19) | Course corrections agreed |
 | 12 | Decision gate: go, extend four weeks, or stop | **CTO** (A), **HDT** (R) | Results readout | PW9 (Mar 8–12) | Decision recorded |
 | 13 | Rollout waves to all 180 | **HDT** (A), **champions** (R) | Wave enablement | PW10–17 (Mar 15–May 7) | All three teams enabled |
 

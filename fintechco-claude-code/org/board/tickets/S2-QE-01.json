@@ -8,10 +8,16 @@
   "owner": "eng-lead (for quality)",
   "reviewer": "qe-acceptance (consolidated, ADR-007)",
   "sprint": 2,
-  "status": "ready",
+  "status": "done",
   "dependsOn": [],
   "createdAt": "2026-10-20T17:58:31.911Z",
-  "history": [],
+  "history": [
+    {
+      "at": "2026-10-20T19:07:07.322Z",
+      "from": "ready",
+      "to": "done"
+    }
+  ],
   "paths": [
     "rehearsal/interview-kit.md"
   ],
@@ -27,5 +33,18 @@
   ],
   "deliverables": [
     "D9"
-  ]
+  ],
+  "doneAt": "2026-10-20T19:07:07.322Z",
+  "review": {
+    "reworkCount": 0,
+    "verdicts": [
+      {
+        "at": "2026-10-20T19:07:07.321Z",
+        "by": "qe-acceptance",
+        "verdict": "accept",
+        "reason": "Meets REQ-23/24/26/28: 5-minute intro structure and transition, six ranked questions, Meet screen-share test at T-24h and T-30, $25 budget (about $8 incl. rehearsals), curl install. Nits: RUNBOOK lacks the install step REQ-26 expects; human rehearsal rows still blank."
+      }
+    ],
+    "firstPass": true
+  }
 }

@@ -39,8 +39,15 @@ fresh sre-ops
 commit sre-ops "sre-ops: payment-gateway and INC-2291 bundle"
 git -C "$DEST/sre-ops" tag start
 
+# Presenter files next to the repos, so every RUNBOOK path works from any tab.
+git -C "$DEST/macro-risk" show complete:dashboard/index.html > "$DEST/dashboard-complete.html"
+rm -rf "${DEST:?}/enterprise" "${DEST:?}/fallback"
+cp -R "$SRC/enterprise" "$SRC/fallback" "$DEST/"
+
 echo "Demo repos ready in $DEST:"
 for a in payments-ledger macro-risk sre-ops; do echo "  $DEST/$a  ($(git -C "$DEST/$a" log --oneline -1))"; done
+echo "  $DEST/dashboard-complete.html  (Act 2 fallback; open it in browser tab 2)"
+echo "  $DEST/enterprise/  $DEST/fallback/  (governance close and fallbacks)"
 echo
 echo "Pre-flight:"
 command -v claude >/dev/null && echo "  claude: $(claude --version)" || echo "  claude: MISSING  (curl -fsSL https://claude.ai/install.sh | bash)"

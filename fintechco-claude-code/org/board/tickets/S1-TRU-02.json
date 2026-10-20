@@ -1,5 +1,5 @@
 {
-  "status": "ready",
+  "status": "done",
   "dependsOn": [],
   "createdAt": "2026-10-20T17:03:45.400Z",
   "history": [
@@ -12,6 +12,16 @@
       "at": "2026-10-20T17:58:31.945Z",
       "from": "in_progress",
       "to": "ready"
+    },
+    {
+      "at": "2026-10-20T19:07:07.064Z",
+      "from": "ready",
+      "to": "in_progress"
+    },
+    {
+      "at": "2026-10-20T19:18:21.520Z",
+      "from": "in_progress",
+      "to": "done"
     }
   ],
   "id": "S1-TRU-02",
@@ -65,5 +75,24 @@
       "at": "2026-10-20T18:47:44.710Z",
       "text": "Rescoped under ADR-007: Threat-model claims cite the strategy shard (CLM-600..618)."
     }
-  ]
+  ],
+  "review": {
+    "reworkCount": 1,
+    "verdicts": [
+      {
+        "at": "2026-10-20T19:07:07.063Z",
+        "by": "qe-acceptance",
+        "verdict": "rework",
+        "reason": "threat-model.md:13 T3 rests on 'Manual mode asks'; CLM-606 says Auto is the built-in starting mode and managed-settings.json sets none. State the control needs a configured starting mode; label likelihood ratings as judgment (all rows)."
+      },
+      {
+        "at": "2026-10-20T19:18:21.519Z",
+        "by": "qe-recheck (mechanical gate, ADR-007)",
+        "verdict": "accept",
+        "reason": "F8 T3 now rests on a managed policy that starts in Manual and disables auto/bypass [CLM-013] [CLM-677], present in managed-settings.json; m2 sandbox required by policy; m17 ratings labelled judgment. org/reviews/recheck.mjs 16/16; validate, timing and tests green"
+      }
+    ],
+    "firstPass": false
+  },
+  "doneAt": "2026-10-20T19:18:21.520Z"
 }

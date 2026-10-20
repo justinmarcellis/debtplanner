@@ -10,7 +10,7 @@ Product facts are as of October 2026 and carry a claim id such as [CLM-675] from
 
 | Term | What it means |
 | --- | --- |
-| Agentic | Given a task, the tool reads files, runs commands and edits code, checks its own work, and asks permission as it goes; a person reviews the result [CLM-694] |
+| Agentic | Given a task, the tool reads files, runs commands and edits code, and checks its own work, under permission rules the organization sets; a person reviews the result [CLM-694] [CLM-606] |
 | Plan mode | Claude researches and proposes changes without editing files; Shift+Tab switches it on [CLM-694] |
 | Non-interactive mode | `claude -p` runs one prompt and exits, for scripts and CI; formerly called headless mode [CLM-694] |
 | MCP (Model Context Protocol) | An open standard for connecting Claude Code to outside tools and data, such as a ticket tracker or a database; each connection is an MCP server [CLM-694] |
@@ -279,7 +279,7 @@ K is the Monday of PW1. **K = Monday 2027-01-11 is an illustrative assumption, n
 | PW3 | 2027-01-25 | Pilot week 1 | Pilot kickoff: 30-person cohort trained and enabled across all three teams | 30 |
 | PW4 | 2027-02-01 | Pilot week 2 | Champions share first wins; baseline comparison starts; first office hours | 30 |
 | PW5 | 2027-02-08 | Pilot week 3 | First approved MCP servers published; weekly adoption health check begins | 30 |
-| PW6 | 2027-02-15 | Pilot week 4 | Mid-pilot review: issues, cost run-rate and policy changes triaged | 30 |
+| PW6 | 2027-02-15 | Pilot week 4 | Mid-pilot readout (Feb 16–19; Feb 15 is Washington's Birthday): issues, cost run-rate and policy changes triaged | 30 |
 | PW7 | 2027-02-22 | Pilot week 5 | Internal showcase, one demo per team; wave workshop content finalized | 30 |
 | PW8 | 2027-03-01 | Pilot week 6 | Pilot ends; results compiled against baselines for the gate | 30 |
 | PW9 | 2027-03-08 | Decision gate | Go, extend or stop decision; pilot cohort keeps working | 30 |

@@ -4,7 +4,7 @@ Seventeen ways FinTechCo's three teams would use Claude Code, in their own stack
 
 | ID | Use case | Value driver | Complexity | Pilot starter | Demo | Metrics |
 | --- | --- | --- | --- | --- | --- | --- |
-| UC-SWE-01 | Onboard to an unfamiliar service | onboarding | low | yes | Act 1 | MET-01, MET-11 |
+| UC-SWE-01 | Onboard to an unfamiliar service | onboarding | low | yes | Act 1 | MET-15, MET-11 |
 | UC-SWE-02 | Fix a defect test-first | quality | low | yes | Act 1 | MET-05, MET-09 |
 | UC-SWE-03 | Ship a cross-stack feature | time-to-market | medium |  |  | MET-05, MET-06, MET-12 |
 | UC-SWE-04 | Raise test coverage on legacy banking code | quality | low |  |  | MET-09, MET-08 |
@@ -30,7 +30,7 @@ Seventeen ways FinTechCo's three teams would use Claude Code, in their own stack
 - **Problem:** Engineers moving between payments, mobile and core-banking services lose days learning code they did not write.
 - **Workflow:** Ask for a tour of the service and its risks; Claude Code reads the code and CLAUDE.md and explains flows, conventions and hotspots.
 - **Uses:** codebase reading, CLAUDE.md · **Stack:** Python, Java, TypeScript
-- **Measure:** MET-01, MET-11 · **Risk and guardrail:** Explanations can be wrong; engineers verify against code and tests.
+- **Measure:** MET-15 (time to first merged PR), MET-11 · **Risk and guardrail:** Explanations can be wrong; engineers verify against code and tests.
 
 ### UC-SWE-02 · Fix a defect test-first
 - **Problem:** Bugs like rounding errors in fee calculation take hours to reproduce and fix safely.

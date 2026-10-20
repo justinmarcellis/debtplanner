@@ -1,5 +1,5 @@
 {
-  "status": "ready",
+  "status": "done",
   "dependsOn": [],
   "createdAt": "2026-10-20T17:02:47.912Z",
   "history": [
@@ -12,6 +12,16 @@
       "at": "2026-10-20T17:58:31.932Z",
       "from": "in_progress",
       "to": "ready"
+    },
+    {
+      "at": "2026-10-20T19:07:06.272Z",
+      "from": "ready",
+      "to": "in_progress"
+    },
+    {
+      "at": "2026-10-20T19:18:21.382Z",
+      "from": "in_progress",
+      "to": "done"
     }
   ],
   "id": "S1-ADO-01",
@@ -66,5 +76,24 @@
       "at": "2026-10-20T17:58:31.911Z",
       "text": "Carried over from Sprint 1 after the account spend limit; executed player-coach per ADR-007."
     }
-  ]
+  ],
+  "review": {
+    "reworkCount": 1,
+    "verdicts": [
+      {
+        "at": "2026-10-20T19:07:06.272Z",
+        "by": "qe-acceptance",
+        "verdict": "rework",
+        "reason": "evaluation-plan.md:37 claims blinded review but never says what cannot be blinded (Claude Code adds commit/PR trailers by default, CLM-664), no counterbalancing; :52-60 only 5 risks, no cadence table; pilot-charter.md:27 $150-250 lacks [CLM-619]; :17 'week-6 readout' vs PW5/PW6. (F11, m10)"
+      },
+      {
+        "at": "2026-10-20T19:18:21.382Z",
+        "by": "qe-recheck (mechanical gate, ADR-007)",
+        "verdict": "accept",
+        "reason": "F11 fixed: unblindable signals and attribution handling, counterbalancing, AI-tool tracking, 12 risks, cadence table, PW labels, [CLM-619] in charter; m10 PW6 readout. org/reviews/recheck.mjs 16/16; validate, timing and tests green"
+      }
+    ],
+    "firstPass": false
+  },
+  "doneAt": "2026-10-20T19:18:21.382Z"
 }

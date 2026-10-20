@@ -1,8 +1,14 @@
 {
-  "status": "ready",
+  "status": "done",
   "dependsOn": [],
   "createdAt": "2026-10-20T17:04:27.299Z",
-  "history": [],
+  "history": [
+    {
+      "at": "2026-10-20T19:07:06.426Z",
+      "from": "ready",
+      "to": "done"
+    }
+  ],
   "team": "demo",
   "reviewer": "qe-acceptance (consolidated, ADR-007)",
   "sprint": 2,
@@ -56,5 +62,18 @@
       "at": "2026-10-20T18:47:44.710Z",
       "text": "Rescoped under ADR-007: Demo product facts (hooks exit code 2, workspace trust, install) live in the product shard, CLM-001..012."
     }
-  ]
+  ],
+  "doneAt": "2026-10-20T19:07:06.426Z",
+  "review": {
+    "reworkCount": 0,
+    "verdicts": [
+      {
+        "at": "2026-10-20T19:07:06.425Z",
+        "by": "qe-acceptance",
+        "verdict": "accept",
+        "reason": "Settings and managed-settings JSON valid; 13 hook tests pass; live check: Read(./.env) deny also stopped 'cat .env'. Nits: enterprise/README.md:10 cites CLM-606 (use CLM-011); :7 add CLM-676 caveat; managed-settings.json sets no starting mode (F8); vertex.env.example:7-9."
+      }
+    ],
+    "firstPass": true
+  }
 }

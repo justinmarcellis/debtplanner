@@ -31,3 +31,14 @@ Claude Code's reply, verbatim:
 ## What this means for the live demo
 - Open each demo repo interactively once and accept the trust dialog before the meeting, or allow rules (pytest, git status) will prompt.
 - With `CLAUDE.md` in place, Claude usually refuses to log a PAN on its own (instruction layer). The hook is the enforcement layer when instructions are ignored or bypassed. Both outcomes make the point; the runbook covers each.
+
+## Re-verification after the consolidated review (2026-10-20)
+
+Finding F1 of `org/reviews/consolidated-review.md`: only Act 1 had hooks, so "every step logged" was true for one act. Fix: macro-risk and sre-ops now carry the same audit-only PostToolUse hook (`.claude/hooks/audit_log.py`) and their own deny rules. Checked headless on a fresh `setup.sh` build:
+
+| Repo | Run | Audit lines | Other changes in the work tree |
+| --- | --- | --- | --- |
+| macro-risk | one Glob call (Haiku) | 1 | none |
+| sre-ops | `CLAUDE_MODEL=haiku ./triage.sh incidents/INC-2291` (59 s) | 12 (every Read, Grep, Glob) | `incidents/INC-2291/triage.md` only; cause commit 7c1e9a2 found |
+
+Finding F2: the runbook now shows the `.env` denial live (step 1e) and pipes a recorded edit event into the PCI guard (step 1d′, exit 2), so the hook is seen even when Claude declines in 1d. `test_hooks.py` checks that event file.

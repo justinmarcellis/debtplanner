@@ -3,7 +3,7 @@
 
 Records who/what/where, never file contents or command output, so the audit log
 itself cannot leak secrets or card data. In production the same events go to the
-SIEM through Claude Code's OpenTelemetry export (see ../../enterprise/).
+SIEM through Claude Code's OpenTelemetry export (see the enterprise/ folder of the demo kit).
 """
 from __future__ import annotations
 

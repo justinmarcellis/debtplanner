@@ -1,8 +1,14 @@
 {
-  "status": "ready",
+  "status": "done",
   "dependsOn": [],
   "createdAt": "2026-10-20T17:05:30.541Z",
-  "history": [],
+  "history": [
+    {
+      "at": "2026-10-20T19:07:06.791Z",
+      "from": "ready",
+      "to": "done"
+    }
+  ],
   "team": "research",
   "reviewer": "qe-acceptance (consolidated, ADR-007)",
   "sprint": 2,
@@ -55,5 +61,18 @@
       "at": "2026-10-20T18:47:44.710Z",
       "text": "Rescoped under ADR-007: Pricing and deployment facts are CLM-602, 614, 619-620, 660-663, 685-689; presented in deck a04 and s13 and in security/security-brief.md."
     }
-  ]
+  ],
+  "doneAt": "2026-10-20T19:07:06.791Z",
+  "review": {
+    "reworkCount": 0,
+    "verdicts": [
+      {
+        "at": "2026-10-20T19:07:06.790Z",
+        "by": "qe-acceptance",
+        "verdict": "accept",
+        "reason": "a04-cost.html matches CLM-619/620/685/696; cost framed as controls, price 'to be quoted'. Nit: CLM-685 spend limits apply 'once usage credits are on'; a04 omits that."
+      }
+    ],
+    "firstPass": true
+  }
 }

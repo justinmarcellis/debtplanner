@@ -29,7 +29,7 @@ Everything prepared for a 40-minute mock customer meeting with FinTechCo's CTO a
 
 - Deck: https://claude.ai/artifact/DgnjYMdh64AZj2sZGBmstc
 - ROI calculator: https://claude.ai/artifact/PiQrFkVDM5WA6NHpkpVqgR
-- Program dashboard: see `org/dashboard/` (published link in the PR description)
+- Program dashboard: https://claude.ai/artifact/Vc6LQmtoBhuFLr6Reuahcx
 
 ## How it was built
 
@@ -37,6 +37,8 @@ Everything prepared for a 40-minute mock customer meeting with FinTechCo's CTO a
 - **Decisions:** `org/decisions/ADR-000` … `ADR-007`. ADR-007 records the mid-engagement correction to lean delivery after the agent fan-out proved too expensive for its output.
 - **Board and sprints:** `org/board/tickets/`, `org/sprints/`, hubs in `org/hubs/`.
 - **Gates:** G1 narrative lock, G2 claims, G3 demo dry-run, G4 timing, G5 release; outcomes in `org/hubs/decisions.jsonl` and on the dashboard.
+- **Independent review:** one consolidated pass (`org/reviews/consolidated-review.md`): 3 blockers, 9 major and 18 minor findings, all fixed and held by `org/reviews/recheck.mjs`.
+- **Still for the presenter:** two timed human rehearsals (`rehearsal/interview-kit.md` §4) and the meeting-day fields ([Your Name], dates, names).
 
 ## Checks
 
@@ -45,6 +47,7 @@ node org/contracts/validate.mjs                       # claims schema, every [CL
 node --test 'org/**/*.test.mjs' value/roi.test.mjs    # tooling, validator, ROI model (doc matches code)
 node org/timing.mjs --check                           # G4: speaker notes fit the 38:00 plan
 node org/rtm.mjs --check                              # G5: every requirement has a done ticket
+node org/reviews/recheck.mjs                          # the consolidated review's findings stay fixed
 (cd demo/payments-ledger && python3 -m pytest -q)     # 3 failures by design: the planted PAY-1423 defect
 (cd demo/payments-ledger && python3 -m pytest -q .claude/hooks/test_hooks.py)
 (cd demo/macro-risk && python3 -m pytest -q)

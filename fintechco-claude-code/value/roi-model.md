@@ -1,6 +1,6 @@
 # ROI model: Claude Code at FinTechCo (D5)
 
-**Executive summary.** On conservative-to-base assumptions, Claude Code pays for itself if each active engineer saves about **one hour a week**. The base case — 4 hours a week, 75% of 180 staff active, 60% of saved time turned into delivered work — frees about **8 FTE of capacity for new products**, worth about $1.6M a year against about $0.4M of annual cost. The single assumption that matters most is hours saved, which is exactly what the pilot measures on FinTechCo's own work.
+**Executive summary.** In the base case, Claude Code pays for itself if each active engineer saves about **one hour a week**; the conservative stress case, with every pessimistic assumption at once, needs 2.2 hours and at its 2-hour value stays slightly negative. The base case — 4 hours a week, 75% of 180 staff active, 60% of saved time turned into delivered work — frees about **8 FTE of capacity for new products**, worth about $1.6M a year against about $0.4M of annual cost. The single assumption that matters most is hours saved, which is exactly what the pilot measures on FinTechCo's own work.
 
 ## Method
 - **Value** = active users × hours saved per week × 46 weeks × realization factor × loaded hourly cost. It is capacity redirected to the roadmap (new products, backlog, reliability work), not a headcount reduction.
@@ -37,7 +37,7 @@ One assumption at a time, from its conservative to its upside value, everything 
 | Claude Code usage cost per active user per month | $1.11M | $1.28M | $0.16M |
 | Platform and governance team (ongoing) | $1.10M | $1.20M | $0.10M |
 
-**Read-out:** hours saved per week moves the answer more than everything else combined. Usage price barely moves it. That is why the evaluation plan measures time saved and flow metrics against a baseline instead of debating list prices.
+**Read-out:** hours saved per week moves the answer about three times as much as the next assumption ($1.62M swing against $0.54M). Usage price barely moves it. That is why the evaluation plan measures time saved and flow metrics against a baseline instead of debating list prices.
 
 ## Why the base case is deliberately modest
 - Field experiments at Microsoft, Accenture and a Fortune 100 company found 26% more completed tasks with an AI coding assistant [CLM-623]; a Google trial found about 21% less time on task, with wide intervals [CLM-652]. Base here is 10% of a 40-hour week.
