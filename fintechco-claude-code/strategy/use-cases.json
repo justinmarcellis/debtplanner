@@ -1,0 +1,431 @@
+[
+  {
+    "id": "UC-SWE-01",
+    "team": "swe",
+    "title": "Onboard to an unfamiliar service",
+    "problem": "Engineers moving between payments, mobile and core-banking services lose days learning code they did not write.",
+    "workflow": "Ask for a tour of the service and its risks; Claude Code reads the code and CLAUDE.md and explains flows, conventions and hotspots.",
+    "capabilities": [
+      "codebase reading",
+      "CLAUDE.md"
+    ],
+    "stack": [
+      "Python",
+      "Java",
+      "TypeScript"
+    ],
+    "valueDriver": "onboarding",
+    "metrics": [
+      "MET-15",
+      "MET-11"
+    ],
+    "pilotStarter": true,
+    "complexity": "low",
+    "risk": "Explanations can be wrong; engineers verify against code and tests.",
+    "demoAct": 1,
+    "claims": []
+  },
+  {
+    "id": "UC-SWE-02",
+    "team": "swe",
+    "title": "Fix a defect test-first",
+    "problem": "Bugs like rounding errors in fee calculation take hours to reproduce and fix safely.",
+    "workflow": "Paste the ticket; Claude Code plans, writes a failing test, fixes the code, runs the suite; engineer reviews the diff.",
+    "capabilities": [
+      "plan mode",
+      "test execution",
+      "git"
+    ],
+    "stack": [
+      "Python",
+      "Java"
+    ],
+    "valueDriver": "quality",
+    "metrics": [
+      "MET-05",
+      "MET-09"
+    ],
+    "pilotStarter": true,
+    "complexity": "low",
+    "risk": "Fix passes tests but misses intent; mandatory human review.",
+    "demoAct": 1,
+    "claims": []
+  },
+  {
+    "id": "UC-SWE-03",
+    "team": "swe",
+    "title": "Ship a cross-stack feature",
+    "problem": "A product change touches a Java API, a TypeScript web client and a mobile app, so it waits on three queues.",
+    "workflow": "Describe the feature; Claude Code plans changes across services, writes code and tests in each, and opens PRs for review.",
+    "capabilities": [
+      "plan mode",
+      "subagents",
+      "git"
+    ],
+    "stack": [
+      "Java",
+      "TypeScript"
+    ],
+    "valueDriver": "time-to-market",
+    "metrics": [
+      "MET-05",
+      "MET-06",
+      "MET-12"
+    ],
+    "pilotStarter": false,
+    "complexity": "medium",
+    "risk": "Large diffs are hard to review; split into small PRs per service.",
+    "demoAct": null,
+    "claims": []
+  },
+  {
+    "id": "UC-SWE-04",
+    "team": "swe",
+    "title": "Raise test coverage on legacy banking code",
+    "problem": "Older modules have thin tests, so every change is risky.",
+    "workflow": "Ask for characterization tests for a module; Claude Code reads the code, writes tests that pin current behaviour, and runs them.",
+    "capabilities": [
+      "test execution",
+      "codebase reading"
+    ],
+    "stack": [
+      "Java",
+      "Python"
+    ],
+    "valueDriver": "quality",
+    "metrics": [
+      "MET-09",
+      "MET-08"
+    ],
+    "pilotStarter": false,
+    "complexity": "low",
+    "risk": "Tests that pin bugs as behaviour; reviewers check intent.",
+    "demoAct": null,
+    "claims": []
+  },
+  {
+    "id": "UC-SWE-05",
+    "team": "swe",
+    "title": "Framework and dependency upgrades",
+    "problem": "Version upgrades sit in the backlog because they touch hundreds of files.",
+    "workflow": "Ask for an upgrade plan, then let Claude Code apply it module by module with the build and tests as the check.",
+    "capabilities": [
+      "plan mode",
+      "subagents",
+      "headless"
+    ],
+    "stack": [
+      "Java",
+      "TypeScript",
+      "Python"
+    ],
+    "valueDriver": "throughput",
+    "metrics": [
+      "MET-05",
+      "MET-12"
+    ],
+    "pilotStarter": false,
+    "complexity": "medium",
+    "risk": "Behaviour changes hidden in upgrades; run full suites and canary deploys.",
+    "demoAct": null,
+    "claims": []
+  },
+  {
+    "id": "UC-DS-01",
+    "team": "ds",
+    "title": "Data acquisition and exploratory analysis",
+    "problem": "Analysts spend most of a day finding, cleaning and documenting data before analysis starts.",
+    "workflow": "Ask Claude Code to load sources, check coverage and gaps, and write a data dictionary; then explore and summarize with caveats.",
+    "capabilities": [
+      "code execution",
+      "file editing"
+    ],
+    "stack": [
+      "Python",
+      "pandas",
+      "Jupyter"
+    ],
+    "valueDriver": "throughput",
+    "metrics": [
+      "MET-15",
+      "MET-04"
+    ],
+    "pilotStarter": true,
+    "complexity": "low",
+    "risk": "Silent data issues; require coverage checks and a data dictionary.",
+    "demoAct": 2,
+    "claims": []
+  },
+  {
+    "id": "UC-DS-02",
+    "team": "ds",
+    "title": "Notebook to production package",
+    "problem": "Fraud and credit models stall between a notebook and a tested, reviewable package.",
+    "workflow": "Point Claude Code at a notebook; it refactors into a package with tests and a CLI, keeping outputs identical, and opens a PR.",
+    "capabilities": [
+      "test execution",
+      "git"
+    ],
+    "stack": [
+      "Python",
+      "Jupyter",
+      "scikit-learn"
+    ],
+    "valueDriver": "time-to-market",
+    "metrics": [
+      "MET-15",
+      "MET-06"
+    ],
+    "pilotStarter": true,
+    "complexity": "medium",
+    "risk": "Numeric drift during refactor; compare outputs on a fixed dataset before merge.",
+    "demoAct": null,
+    "claims": []
+  },
+  {
+    "id": "UC-DS-03",
+    "team": "ds",
+    "title": "Fraud feature experiments",
+    "problem": "Each new fraud signal needs boilerplate for features, splits and evaluation.",
+    "workflow": "Describe the hypothesis; Claude Code writes feature code and a reproducible evaluation, runs it, and reports metrics with caveats.",
+    "capabilities": [
+      "code execution",
+      "subagents"
+    ],
+    "stack": [
+      "Python",
+      "pandas",
+      "scikit-learn",
+      "TensorFlow"
+    ],
+    "valueDriver": "throughput",
+    "metrics": [
+      "MET-15"
+    ],
+    "pilotStarter": false,
+    "complexity": "medium",
+    "risk": "Leakage or overfitting; validation stays with model risk (SR 11-7).",
+    "demoAct": null,
+    "claims": []
+  },
+  {
+    "id": "UC-DS-04",
+    "team": "ds",
+    "title": "Model documentation for validation",
+    "problem": "Validation packs for credit models take weeks to write from code and results.",
+    "workflow": "Ask Claude Code to draft documentation sections from the code, data dictionary and results; the modeler edits and owns it.",
+    "capabilities": [
+      "codebase reading",
+      "file editing"
+    ],
+    "stack": [
+      "Python",
+      "Jupyter"
+    ],
+    "valueDriver": "risk-reduction",
+    "metrics": [
+      "MET-15"
+    ],
+    "pilotStarter": false,
+    "complexity": "low",
+    "risk": "Plausible but wrong descriptions; modeler signs off every section.",
+    "demoAct": null,
+    "claims": []
+  },
+  {
+    "id": "UC-DS-05",
+    "team": "ds",
+    "title": "Client-ready dashboards",
+    "problem": "Analysts need front-end help to turn results into something a client can use.",
+    "workflow": "Ask for a single-file interactive dashboard from the analysis outputs; review it in the browser.",
+    "capabilities": [
+      "file editing",
+      "code execution"
+    ],
+    "stack": [
+      "Python",
+      "HTML"
+    ],
+    "valueDriver": "time-to-market",
+    "metrics": [
+      "MET-04"
+    ],
+    "pilotStarter": false,
+    "complexity": "low",
+    "risk": "Numbers typed by hand drift from the analysis; generate from outputs only.",
+    "demoAct": 2,
+    "claims": []
+  },
+  {
+    "id": "UC-SRE-01",
+    "team": "sre",
+    "title": "Incident triage from logs and metrics",
+    "problem": "At 3 a.m. the on-call engineer correlates alerts, logs, deploys and config by hand.",
+    "workflow": "Run a read-only headless triage script or CI job; Claude Code returns timeline, probable cause with evidence, red herrings and a rollback for a human to approve.",
+    "capabilities": [
+      "headless",
+      "read-only tools",
+      "CI"
+    ],
+    "stack": [
+      "Python",
+      "shell",
+      "Go"
+    ],
+    "valueDriver": "reliability",
+    "metrics": [
+      "MET-15"
+    ],
+    "pilotStarter": true,
+    "complexity": "low",
+    "risk": "Wrong root cause; triage is advice, the incident commander decides.",
+    "demoAct": 3,
+    "claims": []
+  },
+  {
+    "id": "UC-SRE-02",
+    "team": "sre",
+    "title": "Toil automation with tests",
+    "problem": "Repeated manual operational tasks consume on-call time.",
+    "workflow": "Describe the manual procedure; Claude Code writes a script with tests and dry-run mode, and a runbook entry.",
+    "capabilities": [
+      "test execution",
+      "file editing"
+    ],
+    "stack": [
+      "Python",
+      "shell"
+    ],
+    "valueDriver": "reliability",
+    "metrics": [
+      "MET-15"
+    ],
+    "pilotStarter": true,
+    "complexity": "low",
+    "risk": "Scripts with destructive steps; dry-run by default and review before use.",
+    "demoAct": null,
+    "claims": []
+  },
+  {
+    "id": "UC-SRE-03",
+    "team": "sre",
+    "title": "Postmortem drafts",
+    "problem": "Postmortems are written days later from memory.",
+    "workflow": "Feed the incident bundle; Claude Code drafts the timeline, contributing factors and follow-ups for the team to edit.",
+    "capabilities": [
+      "headless",
+      "codebase reading"
+    ],
+    "stack": [
+      "Markdown"
+    ],
+    "valueDriver": "reliability",
+    "metrics": [
+      "MET-15"
+    ],
+    "pilotStarter": false,
+    "complexity": "low",
+    "risk": "Blame or speculation in drafts; the team edits and approves.",
+    "demoAct": null,
+    "claims": []
+  },
+  {
+    "id": "UC-SRE-04",
+    "team": "sre",
+    "title": "Reliability fixes in Go services",
+    "problem": "Timeouts, retries and pool settings are tuned by trial and error.",
+    "workflow": "Ask for a fix with tests (e.g., bounded retries, config floors); Claude Code changes code and adds tests.",
+    "capabilities": [
+      "test execution",
+      "plan mode"
+    ],
+    "stack": [
+      "Go"
+    ],
+    "valueDriver": "reliability",
+    "metrics": [
+      "MET-08",
+      "MET-05"
+    ],
+    "pilotStarter": false,
+    "complexity": "medium",
+    "risk": "Behaviour change under load; canary and load test before rollout.",
+    "demoAct": null,
+    "claims": []
+  },
+  {
+    "id": "UC-SRE-05",
+    "team": "sre",
+    "title": "Config and infrastructure guardrails",
+    "problem": "Bad config values reach production, as in the demo incident.",
+    "workflow": "Ask Claude Code to write CI checks that reject unsafe values and to add them to the pipeline.",
+    "capabilities": [
+      "file editing",
+      "CI"
+    ],
+    "stack": [
+      "Python",
+      "shell",
+      "YAML"
+    ],
+    "valueDriver": "risk-reduction",
+    "metrics": [
+      "MET-08"
+    ],
+    "pilotStarter": false,
+    "complexity": "low",
+    "risk": "False positives blocking deploys; start in warn mode.",
+    "demoAct": null,
+    "claims": []
+  },
+  {
+    "id": "UC-X-01",
+    "team": "cross",
+    "title": "PR review assistant in CI",
+    "problem": "Reviewers are the bottleneck and miss repetitive issues.",
+    "workflow": "Run Claude Code in GitHub Actions on each PR to flag issues against CLAUDE.md rules; humans still approve.",
+    "capabilities": [
+      "CI",
+      "headless",
+      "CLAUDE.md"
+    ],
+    "stack": [
+      "all"
+    ],
+    "valueDriver": "quality",
+    "metrics": [
+      "MET-05",
+      "MET-09"
+    ],
+    "pilotStarter": false,
+    "complexity": "low",
+    "risk": "Noise; tune rules and keep human approval.",
+    "demoAct": null,
+    "claims": []
+  },
+  {
+    "id": "UC-X-02",
+    "team": "cross",
+    "title": "Security hygiene sweeps",
+    "problem": "Secrets, PAN handling and float money math hide in old code.",
+    "workflow": "Ask Claude Code to find and fix a class of issue across repositories, one PR per repo, with tests.",
+    "capabilities": [
+      "subagents",
+      "hooks",
+      "git"
+    ],
+    "stack": [
+      "all"
+    ],
+    "valueDriver": "risk-reduction",
+    "metrics": [
+      "MET-09",
+      "MET-10"
+    ],
+    "pilotStarter": false,
+    "complexity": "medium",
+    "risk": "Over-broad changes; one issue class per PR.",
+    "demoAct": null,
+    "claims": []
+  }
+]

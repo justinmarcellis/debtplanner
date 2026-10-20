@@ -1,0 +1,20 @@
+<!--
+KIND: statement (paper)
+USE WHEN: one idea the room must remember: the recommendation, the stance, or one number. At most one amber variant per deck (see deck/visual-system.md).
+SLOTS TO REPLACE: eyebrow, title (h2, one line), the sentence (serif, 96px), footer source line, speaker notes.
+LIMITS: sentence 18 words or fewer and at most 4 lines at 96px (about 100 characters); title 44 characters or fewer on one line; one sentence, no list, no second paragraph.
+NUMBER FORM: replace the sentence block with a 160px number plus a caption: the block is a div (flex:1; display:flex; flex-direction:column; justify-content:center; gap:8px) holding a p in Source Serif 4 at 160px, weight 600, line-height 1, color #1F6F6B, then a p at 28px, line-height 1.4, color #4A5560, width 960px. Number 6 characters or fewer; caption 90 characters or fewer; every number needs a claim id or a placeholder in the footer.
+AMBER VARIANT: wrap the sentence in a painted div (background #D9952B, padding 64px, border-radius 16px) and keep the text ink (#1B1F24). Amber never carries any other text colour.
+BUILD: content kind: padding 128px 128px 160px, header block (eyebrow + h2) identical on all content kinds, one pinned 24px footer at bottom:64px.
+-->
+<section id="tpl-statement" data-transition="fade" style="background:#F6F4EF; padding:128px 128px 160px; display:flex; flex-direction:column; gap:32px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:28px; color:#1B1F24">
+  <div style="display:flex; flex-direction:column; gap:12px">
+    <p style="font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; font-weight:600; line-height:1.2; letter-spacing:3px; text-transform:uppercase; color:#1F6F6B">Our stance</p>
+    <h2 style="font-family:'Source Serif 4', Georgia, serif; font-size:64px; font-weight:600; line-height:1.15; color:#1B1F24">How we recommend deciding</h2>
+  </div>
+  <div style="flex:1; display:flex; flex-direction:column; justify-content:center">
+    <p style="font-family:'Source Serif 4', Georgia, serif; font-size:96px; font-weight:600; line-height:1.1; color:#1B1F24; width:1500px">Measure every tool the same way, on your own work, before choosing one.</p>
+  </div>
+  <p style="position:absolute; left:128px; bottom:64px; width:1664px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; line-height:1.2; color:#4A5560">Source: [CLM-?: source]</p>
+  <aside>NOTES STUB (statement). Spoken script, about 140 words per minute; target 30 s. Say the sentence once, then give the reason and the proof in your own words. Define each term at first use. Replace this stub.</aside>
+</section>

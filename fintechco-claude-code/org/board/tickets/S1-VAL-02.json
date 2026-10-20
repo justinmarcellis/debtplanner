@@ -1,0 +1,91 @@
+{
+  "status": "done",
+  "dependsOn": [],
+  "createdAt": "2026-10-20T17:02:51.939Z",
+  "history": [
+    {
+      "at": "2026-10-20T19:07:07.180Z",
+      "from": "ready",
+      "to": "in_progress"
+    },
+    {
+      "at": "2026-10-20T19:18:21.564Z",
+      "from": "in_progress",
+      "to": "done"
+    }
+  ],
+  "id": "S1-VAL-02",
+  "team": "value",
+  "title": "ROI model: assumptions, pure roi.mjs with tests, and ROI model leave-behind",
+  "story": "As the candidate I need a transparent, sourced ROI model with conservative, base and upside scenarios, payback, a sensitivity analysis and reusable calculation code so that I can articulate FinTechCo's business value, led by capacity for new products and payback, with cost shown openly.",
+  "points": 8,
+  "tier": "mid",
+  "owner": "eng-lead (for value)",
+  "reviewer": "qe-acceptance (consolidated, ADR-007)",
+  "sprint": 2,
+  "paths": [
+    "value/roi-assumptions.json",
+    "value/roi.mjs",
+    "value/roi.test.mjs",
+    "value/roi-model.md"
+  ],
+  "contracts": [
+    "org/contracts/roi-assumptions.schema.json",
+    "org/contracts/claims.schema.json",
+    "org/contracts/README.md",
+    "org/decisions/ADR-001-layout-and-formats.md",
+    "org/decisions/ADR-003-delegation-controls.md",
+    "org/decisions/ADR-005-meeting-format-and-narrative.md",
+    "org/decisions/ADR-006-claims-and-evidence.md"
+  ],
+  "acceptance": [
+    "`node --test value/roi.test.mjs` passes with at least 12 tests, including: a hand-calculated tiny case checked against arithmetic written in the test; ramp monotone and bounded in [0,1]; cost savings plus capacity value equal total realized value (no double count); payback is null when cumulative net never reaches zero; scenario ordering conservative <= base <= upside on net benefit; break-even hours per week gives net benefit of approximately zero; sensitivity output sorted by swing; same inputs give identical output; headcounts in roi-assumptions.json equal 120, 40 and 20 as in brief/facts.json; every assumption id maps to a model input and every model input has an assumption.",
+    "`node org/contracts/validate.mjs` exits 0 with value/roi-assumptions.json and research/claims/value-roi.json present.",
+    "value/roi-assumptions.json: ids ASM-01 upward; conservative is the less favourable value for FinTechCo and upside the more favourable (for cost inputs conservative is the higher cost); every basis begins with a [CLM-###] that exists in the shard or with 'assumption:' plus reasoning, and headcounts cite brief/facts.json. Inputs cover at least: headcount per team, loaded annual cost per person per team, working weeks per year, hours saved per adopting user per week per team, steady-state adoption per team, ramp (pilot cohort share, wave timing), realization factor, share of realized hours redirected to new products, value per redirected hour, learning-curve dip, seat price, usage cost per active user per month, enablement hours per person, admin and platform time. Inputs a finance reader would flex have editableInCalculator true. No extra keys beyond the schema.",
+    "value/roi.mjs is a Node 22 ES module with zero imports (no import statements and no require calls), no Date, no Math.random, no I/O. It exports documented (JSDoc: params, return shape, units) functions: inputsFromAssumptions(assumptions, scenario, overrides), adoptionRamp(inputs), costModel(inputs) supporting pricing mode seat or usage, computeRoi(inputs), paybackMonths(cumulativeNetByMonth), breakEvenHoursPerWeek(inputs), runScenarios(assumptions), sensitivity(assumptions, options). computeRoi returns per-team (swe, ds, sre) and total objects with separate costSavingsValue and newProductCapacityValue, annualCost with breakdown (seats or usage, enablement, admin and platform), netBenefit, roiPct, paybackMonths, plus a monthly array (adoption, value, cost, cumulative net) over a 12-month horizon from pilot start with ramp included.",
+    "`node value/roi-report.mjs` runs from a clean checkout and prints the Markdown scenario table, cost table and sensitivity table; the scenario table and sensitivity ranking in value/roi-model.md match that output number for number (reviewer diffs them).",
+    "value/roi-model.md opens with a three-line executive summary led by value and payback, then: method with the formulas; assumptions summary (ASM ids, three scenarios, basis); scenarios table (per-team and total; cost savings and capacity redirected to new products in separate columns; annual cost; net benefit; ROI percent; payback months); cost table comparing seat and usage-based options plus enablement and admin time; break-even hours per week per adopter; sensitivity naming the two assumptions that move net benefit most, taken from the code output; caveats (at least six: mixed productivity evidence, time saved is not cash saved, double counting, rework and quality offsets, price placeholders, assumptions to be replaced by pilot baselines, headcount as the only FinTechCo fact).",
+    "Conservative scenario is genuinely unfavourable and reported as computed, including if its payback exceeds 12 months or its ROI is negative. Prices are placeholders [CLM-?: ...] with the modelling value labelled 'assumption', unless sourced to an official page with date and link (check research/claims/pricing-deployment.json first and cite its ids rather than duplicating); text says FinTechCo pricing is 'to be quoted'.",
+    "research/claims/value-roi.json holds 8 to 20 claims in CLM-580..599 only, in the claims schema, each with official or primary URL, publisher and accessed date: loaded labour cost sources (for example BLS wage and employer compensation data), at least one study finding time savings and at least one finding no gain or a slowdown (partial claims carry safeWording), and Claude Code cost documentation if used. Every external fact in value/ carries [CLM-###] or [CLM-?: ...]. Each time-saved assumption names the metric that will replace it as [MET-?: ...].",
+    "A handoff is posted to `hub narrative` (ROI slide inputs: three scenario headlines, break-even) and to `hub value` (function signatures and result shape for the Sprint 2 calculator)."
+  ],
+  "brief": "Audience: a cost-conscious but not cost-driven CTO and the champion who must defend this to finance. Lead with value and payback; show cost openly. Executives read the first three lines and the scenario table; engineers read the code.\n\nShared anchors (identical in the metrics ticket): headcount 120 SWE / 40 DS / 20 SRE from brief/facts.json; 8-week pilot then waves to all 180 in about four months (ADR-005; label as assumption until the rollout plan exists). Headline horizon is the first 12 months from pilot start, ramp included; steady-state run-rate is secondary.\n\nModel, kept small enough to explain aloud: per team per month, headcount x adoption x hours saved per week x weeks/12 gives hours saved; x realization factor gives realized hours; a redirect share sends those hours to newProductCapacityValue (priced at loaded hourly cost as a floor; any revenue uplift is a separate input defaulting to zero) and the rest to costSavingsValue. Subtract a learning-curve dip. Cost is seats or usage (a switch), enablement hours and admin and platform time. ROI percent is net over cost; payback is the first month cumulative net reaches zero.\n\nSource before you assume, from primary sources, not memory: BLS for wages and compensation load; field experiments and trials on AI coding assistants, deliberately including a null or slowdown result; Claude Code cost documentation for typical usage cost. Verify every number you cite.\n\nPitfalls: time saved is not cash saved, hence the realization factor and the split. Never count one hour twice. The sensitivity result must come from the code, not from narration. The conservative case must not be a straw man. Do not invent prices or FinTechCo salaries; use labelled placeholders and say what the pilot will measure instead.\n\nDesign for reuse: the Sprint 2 calculator inlines roi.mjs, so no node: imports, no globals, plain numbers in USD, rounding only at presentation. Only roi-report.mjs and the tests read files. Do not wait on other teams: use [MET-?: ...] and [UC-?: ...] placeholders. Report what you built, how you verified it and what you assumed.",
+  "requirements": [
+    "REQ-14",
+    "REQ-18",
+    "REQ-06"
+  ],
+  "deliverables": [
+    "D5"
+  ],
+  "notes": [
+    {
+      "at": "2026-10-20T17:58:31.911Z",
+      "text": "Carried over from Sprint 1 after the account spend limit; executed player-coach per ADR-007."
+    },
+    {
+      "at": "2026-10-20T18:47:44.710Z",
+      "text": "Rescoped under ADR-007: value/roi.mjs renders roi-model.md itself (renderMarkdown); ROI cites CLM-619, 623, 650 from existing shards."
+    }
+  ],
+  "startedAt": "2026-10-20T19:07:07.180Z",
+  "review": {
+    "reworkCount": 1,
+    "verdicts": [
+      {
+        "at": "2026-10-20T19:07:07.180Z",
+        "by": "qe-acceptance",
+        "verdict": "rework",
+        "reason": "roi-model.md:3 says it pays back at ~1 h 'on conservative-to-base' but the table shows conservative break-even 2.2 h, -7% ROI; :40 'more than everything else combined' is false (1.62M vs 1.78M of other swings). Repeated in s15-roi.html:21; fix and rerun roi.test.mjs."
+      },
+      {
+        "at": "2026-10-20T19:18:21.564Z",
+        "by": "qe-recheck (mechanical gate, ADR-007)",
+        "verdict": "accept",
+        "reason": "F7 summary and read-out match the tables (conservative needs 2.2 h, slightly negative; hours saved 3x the next swing); ASM-06 labelled assumption with a stop rule; roi.test 6/6; calculator rebuilt and republished. org/reviews/recheck.mjs 16/16; validate, timing and tests green"
+      }
+    ],
+    "firstPass": false
+  },
+  "doneAt": "2026-10-20T19:18:21.564Z"
+}

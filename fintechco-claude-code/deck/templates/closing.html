@@ -1,0 +1,42 @@
+<!--
+KIND: closing (night)
+USE WHEN: the wrap-up slide that starts at 0:37 and is never cut. Mirrors the ADR-005 ask: three rows of owner, action, date.
+SLOTS TO REPLACE: eyebrow, title (h1, 96px), the three rows (owner, action, date chip), the top-concern strip (concern and its owner, filled in live), the follow-up line, speaker notes.
+LIMITS: exactly 3 rows of equal height (120px); owner 30 characters or fewer; action 2 lines or fewer at 960px (about 110 characters); each row has one date chip that keeps the placeholder [date] until a real date is agreed in the room (a second date goes into the action text as [date]); the amber chip carries ink text only; the top-concern strip is one line; the follow-up line is one line. No pinned footer on this kind.
+BUILD: night background; paper text; teal-light labels; hairline rules in paper at 20 percent. No slate and no #1F6F6B text on night.
+-->
+<section id="tpl-closing" data-transition="fade" style="background:#13202B; padding:128px; display:flex; flex-direction:column; gap:32px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:28px; color:#F6F4EF">
+  <div style="display:flex; flex-direction:column; gap:12px">
+    <p style="font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; font-weight:600; line-height:1.2; letter-spacing:3px; text-transform:uppercase; color:#4FB3A9">The ask</p>
+    <h1 style="font-family:'Source Serif 4', Georgia, serif; font-size:96px; font-weight:600; line-height:1.1; color:#F6F4EF">Next steps</h1>
+  </div>
+  <div style="display:flex; flex-direction:column">
+    <div style="display:flex; align-items:center; gap:32px; padding:0 0 16px 0">
+      <p style="width:480px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; font-weight:600; line-height:1.2; letter-spacing:3px; text-transform:uppercase; color:#4FB3A9">Owner</p>
+      <p style="width:960px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; font-weight:600; line-height:1.2; letter-spacing:3px; text-transform:uppercase; color:#4FB3A9">Action</p>
+      <p style="width:152px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; font-weight:600; line-height:1.2; letter-spacing:3px; text-transform:uppercase; color:#4FB3A9">Date</p>
+    </div>
+    <div style="display:flex; align-items:center; gap:32px; height:120px; border-top:1px solid rgba(246,244,239,0.2)">
+      <p style="width:480px; font-size:28px; font-weight:600; line-height:1.3; color:#F6F4EF">Chief Technology Officer</p>
+      <p style="width:960px; font-size:28px; line-height:1.4; color:#F6F4EF">Open the security and compliance review with us</p>
+      <p style="width:152px; font-size:24px; font-weight:600; line-height:1.2; text-align:center; padding:8px 0; border-radius:32px; background:#D9952B; color:#1B1F24">[date]</p>
+    </div>
+    <div style="display:flex; align-items:center; gap:32px; height:120px; border-top:1px solid rgba(246,244,239,0.2)">
+      <p style="width:480px; font-size:28px; font-weight:600; line-height:1.3; color:#F6F4EF">Head of Digital Transformation</p>
+      <p style="width:960px; font-size:28px; line-height:1.4; color:#F6F4EF">Name the pilot cohort across all three teams and a metrics owner</p>
+      <p style="width:152px; font-size:24px; font-weight:600; line-height:1.2; text-align:center; padding:8px 0; border-radius:32px; background:#D9952B; color:#1B1F24">[date]</p>
+    </div>
+    <div style="display:flex; align-items:center; gap:32px; height:120px; border-top:1px solid rgba(246,244,239,0.2); border-bottom:1px solid rgba(246,244,239,0.2)">
+      <p style="width:480px; font-size:28px; font-weight:600; line-height:1.3; color:#F6F4EF">Together</p>
+      <p style="width:960px; font-size:28px; line-height:1.4; color:#F6F4EF">Set the pilot kickoff date</p>
+      <p style="width:152px; font-size:24px; font-weight:600; line-height:1.2; text-align:center; padding:8px 0; border-radius:32px; background:#D9952B; color:#1B1F24">[date]</p>
+    </div>
+  </div>
+  <div style="display:flex; align-items:center; gap:32px; padding:20px 32px; border:1px solid rgba(246,244,239,0.2); border-radius:16px">
+    <p style="width:1000px; font-size:28px; font-weight:600; line-height:1.4; color:#F6F4EF">Top concern: [named in the room]</p>
+    <p style="width:520px; font-size:28px; line-height:1.4; color:#F6F4EF">Owner: [name]</p>
+  </div>
+  <div style="flex:1"></div>
+  <p style="font-size:24px; line-height:1.4; color:rgba(246,244,239,0.8)">Follow-up email on Day 1: deck, security brief, evaluation plan, ROI model</p>
+  <aside>NOTES STUB (closing). Spoken script, about 140 words per minute; target 90 s. Restate the three asks in order, one owner and one date each, and ask for agreement before you stop. Wrap-up starts at 0:37 and is never cut. Replace this stub.</aside>
+</section>

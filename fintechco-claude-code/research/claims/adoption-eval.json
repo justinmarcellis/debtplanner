@@ -1,0 +1,321 @@
+[
+  {
+    "id": "CLM-650",
+    "claim": "In METR's randomized controlled trial published July 2025, 16 experienced open-source developers working on 246 real issues from their own repositories took 19% longer when AI tools were allowed; before the study they forecast a 24% speedup, and afterwards they still believed AI had sped them up by 20%.",
+    "category": "productivity-evidence",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity",
+        "url": "https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/",
+        "publisher": "METR",
+        "date": "2025-07-10",
+        "excerpt": "when developers use AI tools, they take 19% longer to complete issues ... developers expected AI to speed them up by 24% ... they still believed AI had sped them up by 20%."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": ["rollout/evaluation-plan.md"],
+    "notes": "Part of the mixed evidence base (see CLM-666). Randomization unit was the issue, not the developer. METR states it does not claim the developers or repositories represent most software work, and cannot rule out learning effects beyond 50 hours of tool use. METR has since marked these results as superseded by its February 2026 update (CLM-651). Design lessons used in the plan: randomize at task level where possible; do not rely on self-reported speedup."
+  },
+  {
+    "id": "CLM-651",
+    "claim": "METR's February 2026 update, with data from 57 developers across 143 repositories and 800+ tasks using late-2025 tools, estimated speedups of 18% (confidence interval from 38% faster to 9% slower) for returning developers and 4% (15% faster to 9% slower) for newly recruited developers, but METR calls this an unreliable signal because developers increasingly declined to participate since they did not want to work without AI.",
+    "category": "productivity-evidence",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "We are Changing our Developer Productivity Experiment Design",
+        "url": "https://metr.org/blog/2026-02-24-uplift-update/",
+        "publisher": "METR",
+        "date": "2026-02-24",
+        "excerpt": "We have data from 57 developers, across 143 repos, and 800+ tasks ... we now estimate a speedup of -18% with a confidence interval between -38% and +9% ... developers choosing not to participate in the study because they do not wish to work without AI"
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": ["rollout/evaluation-plan.md"],
+    "notes": "METR's sign convention: negative values mean tasks took less time with AI. METR concludes the new data 'gives us an unreliable signal of the current productivity effect of AI tools' and is redesigning its study. Design lesson used in the plan: participants who must work without a tool may decline or drop out (selection and attrition risk for comparison groups)."
+  },
+  {
+    "id": "CLM-652",
+    "claim": "A 2024 randomized controlled trial with 96 full-time Google software engineers estimated that AI features shortened time spent on an enterprise-grade task by about 21%, with a large confidence interval.",
+    "category": "productivity-evidence",
+    "status": "partial",
+    "safeWording": "A 2024 randomized trial with 96 Google engineers (published as a preprint) estimated about 21% less time on task with AI assistance, with a wide confidence interval; the authors caution that the effect may not apply more broadly.",
+    "sources": [
+      {
+        "title": "How much does AI impact development speed? An enterprise-based randomized controlled trial (arXiv:2410.12944)",
+        "url": "https://arxiv.org/abs/2410.12944",
+        "publisher": "arXiv (Paradis et al., Google)",
+        "date": "2024-10-16 (v3 2024-11-11)",
+        "excerpt": "We found that AI significantly shortened the time developers spent on task. Our best estimate of the size of this effect ... stands at about 21%, although our confidence interval is large."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": ["rollout/evaluation-plan.md"],
+    "notes": "Partial because it is a preprint (no peer-reviewed venue listed on arXiv) using internal Google tooling in summer 2024. Part of the mixed evidence base (CLM-666)."
+  },
+  {
+    "id": "CLM-653",
+    "claim": "Google Cloud's DORA 2024 Accelerate State of DevOps Report found that AI adoption significantly increases individual productivity, flow and job satisfaction, but also negatively impacts software delivery stability and throughput.",
+    "category": "productivity-evidence",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Accelerate State of DevOps Report 2024",
+        "url": "https://dora.dev/research/2024/dora-report/",
+        "publisher": "DORA (Google Cloud)",
+        "date": "2024 report; page last updated 2026-04-13",
+        "excerpt": "AI adoption significantly increases individual productivity, flow, and job satisfaction. However, it also negatively impacts software delivery stability and throughput."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": ["rollout/evaluation-plan.md"],
+    "notes": "The web page states the direction of the effects without magnitudes; do not quote percentages from secondary sources. Part of the mixed evidence base (CLM-666). Design lesson: measure team delivery and stability guardrails, not only individual speed."
+  },
+  {
+    "id": "CLM-654",
+    "claim": "DORA's 2025 State of AI-assisted Software Development report describes AI's primary role as an amplifier that magnifies an organization's existing strengths and weaknesses, with the greatest returns coming from the surrounding practices rather than the tools themselves.",
+    "category": "productivity-evidence",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "State of AI-assisted Software Development 2025",
+        "url": "https://dora.dev/research/2025/dora-report/",
+        "publisher": "DORA (Google Cloud)",
+        "date": "2025",
+        "excerpt": "AI's primary role is as an amplifier, magnifying an organization's existing strengths and weaknesses. ... The greatest returns on AI investment come not from the tools themselves"
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": ["rollout/evaluation-plan.md"],
+    "notes": "Supports measuring on FinTechCo's own delivery system rather than importing external effect sizes."
+  },
+  {
+    "id": "CLM-655",
+    "claim": "DORA defines software delivery performance with throughput metrics (change lead time, deployment frequency, failed deployment recovery time) and instability metrics (change fail rate, deployment rework rate).",
+    "category": "productivity-evidence",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "DORA's software delivery performance metrics",
+        "url": "https://dora.dev/guides/dora-metrics/",
+        "publisher": "DORA (Google Cloud)",
+        "excerpt": "Change lead time: The amount of time it takes for a change to go from committed to version control to deployed in production. ... Change fail rate: The ratio of deployments that require immediate intervention following a deployment."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": ["rollout/evaluation-plan.md"],
+    "notes": "Used as the vendor-neutral definitions for flow and quality metrics and guardrails."
+  },
+  {
+    "id": "CLM-656",
+    "claim": "As of October 2026, Claude Code can export usage, cost and tool telemetry through OpenTelemetry when CLAUDE_CODE_ENABLE_TELEMETRY=1 is set, including metrics such as claude_code.session.count, claude_code.lines_of_code.count, claude_code.pull_request.count, claude_code.commit.count, claude_code.cost.usage, claude_code.token.usage and claude_code.active_time.total; administrators can set these variables for all users through managed settings, and prompt text is redacted by default.",
+    "category": "product",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Monitoring (OpenTelemetry)",
+        "url": "https://code.claude.com/docs/en/monitoring-usage",
+        "publisher": "Anthropic (Claude Code docs)",
+        "excerpt": "export CLAUDE_CODE_ENABLE_TELEMETRY=1 ... claude_code.session.count: Count of CLI sessions started ... Administrators can set these variables for all users through the managed settings file."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": ["rollout/evaluation-plan.md"],
+    "notes": "Prompt text and tool details require opt-in variables (OTEL_LOG_USER_PROMPTS, OTEL_LOG_TOOL_DETAILS). Repository-level settings cannot enable telemetry or choose its destination. Product fact as of October 2026."
+  },
+  {
+    "id": "CLM-657",
+    "claim": "As of October 2026, the Claude Code analytics dashboard for Claude for Teams and Enterprise shows usage metrics (lines of code accepted, suggestion accept rate, daily active users and sessions) and, with a GitHub integration in public beta, contribution metrics that label merged pull requests containing Claude Code-assisted lines as claude-code-assisted; contribution metrics are not available with Zero Data Retention.",
+    "category": "product",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Track team usage with analytics",
+        "url": "https://code.claude.com/docs/en/analytics",
+        "publisher": "Anthropic (Claude Code docs)",
+        "excerpt": "Usage metrics: lines of code accepted, suggestion accept rate, daily active users and sessions ... Merged pull requests containing Claude Code-assisted lines are labeled as claude-code-assisted in GitHub."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": ["rollout/evaluation-plan.md"],
+    "notes": "The dashboard itself says the metrics are deliberately conservative. Relevance to the plan: vendor dashboards are tool-specific and not comparable across arms; the PR label is a tool marker that must be stripped before blinded review. Product fact as of October 2026."
+  },
+  {
+    "id": "CLM-658",
+    "claim": "As of October 2026, when Claude Code runs through Amazon Bedrock, Google Cloud's Agent Platform (formerly Vertex AI) or Microsoft Foundry, it does not send metrics from the customer's cloud back to Anthropic, so Anthropic's analytics dashboards and Claude Code Analytics API do not cover that usage; spend is seen and capped in the cloud provider's billing console, and per-user attribution comes from OpenTelemetry or a gateway.",
+    "category": "deployment",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Manage costs effectively",
+        "url": "https://code.claude.com/docs/en/costs",
+        "publisher": "Anthropic (Claude Code docs)",
+        "excerpt": "Claude Code does not send metrics from your cloud back to Anthropic, so the analytics dashboards and the Claude Code Analytics API do not cover this usage."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": ["rollout/evaluation-plan.md"],
+    "notes": "Why the plan's primary metrics come from FinTechCo's own systems, with tool telemetry exported to FinTechCo's collector. Product fact as of October 2026."
+  },
+  {
+    "id": "CLM-659",
+    "claim": "As of October 2026, Claude Code managed settings (a managed-settings.json file, an MDM policy, or server-managed settings from the claude.ai admin console) have the highest precedence: nothing in a user's own settings files or --settings overrides a managed key, and /status names the managed source that applies.",
+    "category": "security",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Settings files and precedence",
+        "url": "https://code.claude.com/docs/en/settings",
+        "publisher": "Anthropic (Claude Code docs)",
+        "excerpt": "Managed settings: settings your organization deploys, by a managed-settings.json file, an MDM policy, or server-managed settings from the claude.ai console. Nothing in your own settings files or --settings overrides a managed key"
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": ["rollout/evaluation-plan.md"],
+    "notes": "The settings page lists a few security-sensitive keys where a stricter lower-level value wins. Security wording to be reviewed by Trust (ADR-003 section 4). Product fact as of October 2026."
+  },
+  {
+    "id": "CLM-660",
+    "claim": "As of October 2026, running Claude Code on Amazon Bedrock requires an AWS account with Bedrock access and access to the desired Claude models (a one-time use case form per account), IAM permissions including bedrock:InvokeModel and bedrock:InvokeModelWithResponseStream, and CLAUDE_CODE_USE_BEDROCK=1; the documentation recommends pinning model versions for team deployments and a dedicated AWS account to simplify cost tracking and access control.",
+    "category": "deployment",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Claude Code on Amazon Bedrock",
+        "url": "https://code.claude.com/docs/en/amazon-bedrock",
+        "publisher": "Anthropic (Claude Code docs)",
+        "excerpt": "An AWS account with Amazon Bedrock access enabled ... export CLAUDE_CODE_USE_BEDROCK=1 ... Create a dedicated AWS account for Claude Code to simplify cost tracking and access control."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": ["rollout/evaluation-plan.md"],
+    "notes": "Product fact as of October 2026."
+  },
+  {
+    "id": "CLM-661",
+    "claim": "As of October 2026, Claude Code's documentation refers to Google Cloud's Agent Platform, formerly Vertex AI; setup requires a GCP project with the API (aiplatform.googleapis.com) enabled, access to Claude models requested in Model Garden (approval may take 24-48 hours), the roles/aiplatform.user role and CLAUDE_CODE_USE_VERTEX=1, and the documentation recommends a dedicated GCP project to simplify cost tracking and access control.",
+    "category": "deployment",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Claude Code on Google Cloud's Agent Platform",
+        "url": "https://code.claude.com/docs/en/google-vertex-ai",
+        "publisher": "Anthropic (Claude Code docs)",
+        "excerpt": "Request access to desired Claude models ... Wait for approval (may take 24-48 hours) ... export CLAUDE_CODE_USE_VERTEX=1 ... Assign the roles/aiplatform.user role"
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": ["rollout/evaluation-plan.md"],
+    "notes": "Product fact as of October 2026. FinTechCo material may say 'Google Vertex AI'; note the documentation's new name on first use."
+  },
+  {
+    "id": "CLM-662",
+    "claim": "As of October 2026, Claude for Teams includes SSO, Claude for Enterprise adds domain capture, role-based permissions and the compliance API, and organizations that route inference through their own cloud provider can run a self-hosted Claude apps gateway that signs developers in with corporate SSO; administrators can restrict claude.ai logins to their organization with forceLoginMethod and forceLoginOrgUUID in managed settings.",
+    "category": "product",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Authentication",
+        "url": "https://code.claude.com/docs/en/authentication",
+        "publisher": "Anthropic (Claude Code docs)",
+        "excerpt": "Claude for Teams: self-service plan with collaboration features, admin tools, SSO ... Claude for Enterprise: adds domain capture, role-based permissions, and the compliance API ... sign in with corporate SSO through /login."
+      },
+      {
+        "title": "Claude apps gateway for Amazon Bedrock, Claude Platform on AWS, Google Cloud, and Microsoft Foundry",
+        "url": "https://code.claude.com/docs/en/claude-apps-gateway",
+        "publisher": "Anthropic (Claude Code docs)",
+        "excerpt": "Run Claude Code through Amazon Bedrock, Claude Platform on AWS, Google Cloud, or Microsoft Foundry behind a self-hosted gateway with SSO sign-in, per-group model access, and OTLP telemetry."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": ["rollout/evaluation-plan.md"],
+    "notes": "When using Bedrock or Vertex directly, users authenticate with cloud credentials (for example an AWS IAM Identity Center profile). Product fact as of October 2026."
+  },
+  {
+    "id": "CLM-663",
+    "claim": "As of October 2026, Anthropic's Claude Code documentation states that across enterprise deployments the average cost is around $13 per developer per active day and $150-250 per developer per month, with costs below $30 per active day for 90% of users, and recommends starting with a small pilot group to establish a baseline before wider rollout.",
+    "category": "pricing",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Manage costs effectively",
+        "url": "https://code.claude.com/docs/en/costs",
+        "publisher": "Anthropic (Claude Code docs)",
+        "excerpt": "Across enterprise deployments, the average cost is around $13 per developer per active day and $150-250 per developer per month, with costs remaining below $30 per active day for 90% of users."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": ["rollout/evaluation-plan.md"],
+    "notes": "Vendor-published average, not a quote for FinTechCo; FinTechCo pricing is to be quoted. Planning input for the Claude Code arm's budget envelope only. Product fact as of October 2026."
+  },
+  {
+    "id": "CLM-664",
+    "claim": "As of October 2026, Claude Code adds attribution to the git commits and pull requests it creates by default (a Co-Authored-By trailer on commits and a plain-text line in pull request descriptions), configurable or removable with the attribution setting.",
+    "category": "product",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Settings reference: attribution",
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "publisher": "Anthropic (Claude Code docs)",
+        "excerpt": "Customize the attribution Claude Code adds to git commits and pull requests. Commits get a git trailer such as Co-Authored-By by default; pull request descriptions get plain text."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": ["rollout/evaluation-plan.md"],
+    "notes": "A tool marker the blinded review must strip; other arms' markers are identified from their own documentation in Week 0. Product fact as of October 2026."
+  },
+  {
+    "id": "CLM-665",
+    "claim": "US federal holidays per OPM: Thanksgiving Day is Thursday 26 November 2026, Christmas Day is Friday 25 December 2026, New Year's Day is Friday 1 January 2027, the Birthday of Martin Luther King, Jr. is Monday 18 January 2027 and Washington's Birthday is Monday 15 February 2027.",
+    "category": "adoption",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Federal Holidays",
+        "url": "https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/",
+        "publisher": "U.S. Office of Personnel Management",
+        "excerpt": "2026: Thursday, November 26 Thanksgiving Day; Friday, December 25 Christmas Day. 2027: Friday, January 01 New Year's Day; Monday, January 18 Birthday of Martin Luther King, Jr.; Monday, February 15 Washington's Birthday"
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": ["rollout/evaluation-plan.md", "rollout/pilot-charter.md"],
+    "notes": "Federal holiday dates only; whether FinTechCo observes each one is an assumption to confirm. Used for the Thanksgiving/year-end calendar risk and per-working-day normalization."
+  },
+  {
+    "id": "CLM-666",
+    "claim": "Published evidence on AI coding assistants' effect on developer productivity is mixed: randomized trials have found both slowdowns and speedups, and DORA's 2024 survey research linked AI adoption to higher individual productivity but lower delivery throughput and stability.",
+    "category": "productivity-evidence",
+    "status": "partial",
+    "safeWording": "The evidence on AI coding productivity is mixed: a 2025 randomized trial found experienced open-source developers took 19% longer with AI tools, a 2024 enterprise trial (preprint) estimated about 21% less time on task, the 2025 trial's authors now say current tools likely help but their newer data is unreliable, and DORA 2024 linked AI adoption to higher individual productivity but lower delivery throughput and stability. Which is why we measure on your work.",
+    "sources": [
+      {
+        "title": "Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity",
+        "url": "https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/",
+        "publisher": "METR",
+        "date": "2025-07-10"
+      },
+      {
+        "title": "We are Changing our Developer Productivity Experiment Design",
+        "url": "https://metr.org/blog/2026-02-24-uplift-update/",
+        "publisher": "METR",
+        "date": "2026-02-24"
+      },
+      {
+        "title": "How much does AI impact development speed? An enterprise-based randomized controlled trial",
+        "url": "https://arxiv.org/abs/2410.12944",
+        "publisher": "arXiv (Paradis et al., Google)",
+        "date": "2024-10-16"
+      },
+      {
+        "title": "Accelerate State of DevOps Report 2024",
+        "url": "https://dora.dev/research/2024/dora-report/",
+        "publisher": "DORA (Google Cloud)"
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": ["rollout/evaluation-plan.md"],
+    "notes": "Synthesis claim recording that AI productivity evidence is mixed (ADR-006). Partial because the synthesis is ours; use the safeWording verbatim. Components: CLM-650, CLM-651, CLM-652, CLM-653."
+  }
+]

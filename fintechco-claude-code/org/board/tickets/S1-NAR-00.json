@@ -1,0 +1,51 @@
+{
+  "status": "done",
+  "dependsOn": [],
+  "createdAt": "2026-10-20T15:17:01.644Z",
+  "history": [
+    {
+      "at": "2026-10-20T15:19:07.439Z",
+      "from": "ready",
+      "to": "in_progress"
+    },
+    {
+      "at": "2026-10-20T16:57:49.626Z",
+      "from": "in_progress",
+      "to": "ready"
+    },
+    {
+      "at": "2026-10-20T17:05:02.906Z",
+      "from": "ready",
+      "to": "in_progress"
+    },
+    {
+      "at": "2026-10-20T17:05:03.148Z",
+      "from": "in_progress",
+      "to": "review"
+    },
+    {
+      "at": "2026-10-20T17:58:31.936Z",
+      "from": "review",
+      "to": "done"
+    }
+  ],
+  "id": "S1-NAR-00",
+  "team": "narrative",
+  "title": "Sprint 1 planning: Narrative & Deck",
+  "story": "Decompose the sprint stories into parallel tickets",
+  "points": 1,
+  "tier": "mid",
+  "owner": "mgr-narrative",
+  "reviewer": "dir-narrative",
+  "sprint": 1,
+  "paths": [
+    "org/board/tickets/"
+  ],
+  "acceptance": [
+    "Tickets created in the fabric with disjoint paths, points, tier, acceptance criteria and requirement ids"
+  ],
+  "requirements": [],
+  "deliverables": [],
+  "startedAt": "2026-10-20T15:19:07.439Z",
+  "doneAt": "2026-10-20T17:58:31.936Z"
+}

@@ -1,0 +1,50 @@
+{
+  "id": "S2-QE-01",
+  "team": "quality",
+  "title": "Interview logistics kit",
+  "story": "Interview logistics kit",
+  "points": 3,
+  "tier": "strong",
+  "owner": "eng-lead (for quality)",
+  "reviewer": "qe-acceptance (consolidated, ADR-007)",
+  "sprint": 2,
+  "status": "done",
+  "dependsOn": [],
+  "createdAt": "2026-10-20T17:58:31.911Z",
+  "history": [
+    {
+      "at": "2026-10-20T19:07:07.322Z",
+      "from": "ready",
+      "to": "done"
+    }
+  ],
+  "paths": [
+    "rehearsal/interview-kit.md"
+  ],
+  "contracts": [],
+  "acceptance": [
+    "60-second intro, prioritized questions for Anthropic, pre-flight checklist incl. Google Meet screen share and demo install"
+  ],
+  "requirements": [
+    "REQ-23",
+    "REQ-24",
+    "REQ-26",
+    "REQ-28"
+  ],
+  "deliverables": [
+    "D9"
+  ],
+  "doneAt": "2026-10-20T19:07:07.322Z",
+  "review": {
+    "reworkCount": 0,
+    "verdicts": [
+      {
+        "at": "2026-10-20T19:07:07.321Z",
+        "by": "qe-acceptance",
+        "verdict": "accept",
+        "reason": "Meets REQ-23/24/26/28: 5-minute intro structure and transition, six ranked questions, Meet screen-share test at T-24h and T-30, $25 budget (about $8 incl. rehearsals), curl install. Nits: RUNBOOK lacks the install step REQ-26 expects; human rehearsal rows still blank."
+      }
+    ],
+    "firstPass": true
+  }
+}

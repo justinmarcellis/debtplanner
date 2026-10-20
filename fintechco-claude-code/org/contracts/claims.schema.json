@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Claims register (research/claims.json)",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "claim", "category", "status", "sources", "accessed"],
+    "properties": {
+      "id": { "type": "string", "pattern": "^CLM-[0-9]{3}$" },
+      "claim": { "type": "string", "description": "The fact as it may be said in the meeting." },
+      "category": { "enum": ["product", "deployment", "security", "compliance", "adoption", "productivity-evidence", "competitive", "pricing", "model", "fred-data", "regulatory"] },
+      "status": { "enum": ["verified", "partial", "unverified", "refuted"] },
+      "safeWording": { "type": "string", "description": "Required when status is partial or refuted: what may be said instead." },
+      "sources": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+          "type": "object",
+          "required": ["title", "url", "publisher"],
+          "properties": {
+            "title": { "type": "string" },
+            "url": { "type": "string" },
+            "publisher": { "type": "string" },
+            "date": { "type": "string", "description": "Publication or last-updated date if shown." },
+            "excerpt": { "type": "string", "description": "Short supporting excerpt (<= 300 chars)." }
+          }
+        }
+      },
+      "accessed": { "type": "string", "description": "YYYY-MM-DD" },
+      "usedIn": { "type": "array", "items": { "type": "string" }, "description": "Paths that cite this claim." },
+      "notes": { "type": "string" },
+      "retired": { "type": "boolean" }
+    }
+  }
+}

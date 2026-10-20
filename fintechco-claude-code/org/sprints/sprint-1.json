@@ -1,0 +1,18 @@
+{
+  "number": 1,
+  "name": "Sprint 1: agent fan-out (stopped)",
+  "status": "closed",
+  "closedAt": "2026-10-20T17:58:32.021Z",
+  "review": {
+    "completedPoints": 15,
+    "committedPoints": 15,
+    "usd": 0,
+    "pointsPerDollar": null,
+    "firstPassAcceptance": 0.125,
+    "reworkRate": 0,
+    "testPassRate": null,
+    "testsPassed": null,
+    "subagentTokens": 2300000,
+    "note": "Halted twice by account limits (weekly usage, then monthly spend); one IC ticket accepted plus seven planning tickets; source: ADR-007"
+  }
+}

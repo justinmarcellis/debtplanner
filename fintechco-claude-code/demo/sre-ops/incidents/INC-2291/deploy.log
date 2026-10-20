@@ -1,0 +1,3 @@
+2026-10-14T13:12:09Z deploy payment-gateway 2026.10.14-1 image only (no config change) by platform-ci  status=success
+2026-10-14T14:02:05Z deploy payment-gateway 2026.10.14-2 config commit 7c1e9a2 'Tune DB pool for cost (copy staging values)' by platform-ci  status=success
+2026-10-14T14:02:31Z payment-gateway rollout complete 6/6 replicas

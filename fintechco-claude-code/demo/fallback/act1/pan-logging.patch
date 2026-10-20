@@ -1,0 +1,13 @@
+Binary files b/ledger/__pycache__/settlement.cpython-313.pyc and c/ledger/__pycache__/settlement.cpython-313.pyc differ
+diff -ruN b/ledger/settlement.py c/ledger/settlement.py
+--- b/ledger/settlement.py	2026-10-20 18:00:56.286070274 +0000
++++ c/ledger/settlement.py	2026-10-20 18:00:56.692971292 +0000
+@@ -41,7 +41,7 @@
+             gross = txn.amount - txn.refunded
+             fee = fee_for(txn, merchant)
+             net = convert(gross - fee, day, txn.currency, merchant.settlement_currency, rates)
+-            log.debug("settled txn=%s pan=%s gross=%s fee=%s", txn.id, txn.card.pan, gross, fee)
++            log.debug("settled txn=%s card=%s gross=%s fee=%s", txn.id, txn.card.token, gross, fee)
+             statement.lines.append(
+                 StatementLine(txn_id=txn.id, card_last4=txn.card.last4, gross=gross, fee=fee, net=net)
+             )

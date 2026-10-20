@@ -1,0 +1,65 @@
+<!--
+KIND: diagram (paper), variant diagram-how-it-works
+USE WHEN: the one mental model for both audiences: an agent that works inside the developer's environment in a loop of Understand, Plan, Act with tools, Verify, and that asks permission before it acts. Used once in the main deck (how-it-works section) and may be reused in backup.
+SLOTS TO REPLACE: speaker notes, footer source line, and (only if the narrative changes) the subtitle lines. Do not rename the five labels, the loop order or the gate position.
+LIMITS: loop steps are numbered 1 to 4; 5 Ask permission is a GATE on the step into Act and never a sixth loop step; an arrow returns from Verify to Understand; each node has a plain-English label (bold) and a one-line technical subtitle; environment items are nouns: Repo, Terminal, Tests, Git, Cloud CLIs. Host 1664px by 640px, labels 24px, at most 24 pinned children (this file has 19).
+BUILD: content kind (padding 128px 128px 160px, identical header block, pinned 24px footer). Artwork is one inline svg listed first; every word is a pinned p over it; connectors are straight and start and end on the edge midpoints in the node list. Product behaviour shown in the subtitles needs sources before release.
+-->
+<section id="tpl-diagram-how-it-works" data-transition="fade" style="background:#F6F4EF; padding:128px 128px 160px; display:flex; flex-direction:column; gap:32px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:28px; color:#1B1F24">
+  <div style="display:flex; flex-direction:column; gap:12px">
+    <p style="font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; font-weight:600; line-height:1.2; letter-spacing:3px; text-transform:uppercase; color:#1F6F6B">How it works</p>
+    <h2 style="font-family:'Source Serif 4', Georgia, serif; font-size:64px; font-weight:600; line-height:1.15; color:#1B1F24">An agent loop inside your environment</h2>
+  </div>
+  <!-- [CLM-?: product behaviour named in the node subtitles (search and read, plan, edit and run, test, permission prompt)] Sprint 2 attaches claim ids from the claims register before release. -->
+  <!--
+  NODE LIST (host-relative px; host 1664 x 640): id left top width height  label
+  REGION 0 0 1664 640  Developer's environment (dashed frame, label text "Developer’s environment")
+  U 48 104 420 144  1 Understand | Search code, read files
+  P 668 104 420 144  2 Plan | Steps drafted before edits
+  A 668 464 420 144  3 Act with tools | Edit files, run commands
+  V 48 464 420 144  4 Verify | Run tests, review the diff
+  G 728 308 300 96  5 Ask permission | Approve or deny (gate pill on the P to A step; not a loop step)
+  T1 1208 104 408 64  Repo
+  T2 1208 214 408 64  Terminal
+  T3 1208 324 408 64  Tests
+  T4 1208 434 408 64  Git
+  T5 1208 544 408 64  Cloud CLIs
+  EDGE MIDPOINTS: U right (468,176) bottom (258,248); P left (668,176) bottom (878,248); A top (878,464) left (668,536); V right (468,536) top (258,464); G top (878,308) bottom (878,404)
+  FLOW: U to P (468,176)-(668,176); P to G (878,248)-(878,308); G to A (878,404)-(878,464); A to V (668,536)-(468,536); V back to U (258,464)-(258,248)
+  -->
+  <div style="position:relative; width:1664px; height:640px">
+    <svg style="position:absolute; left:0; top:0" width="1664" height="640" viewBox="0 0 1664 640" aria-label="Developer’s environment containing a loop: 1 Understand, 2 Plan, 3 Act with tools, 4 Verify, then back to Understand; 5 Ask permission is a gate on the step into Act">
+      <rect x="1" y="1" width="1662" height="638" rx="24" fill="#E2DED5" fill-opacity="0.4" stroke="#1F6F6B" stroke-width="2" stroke-dasharray="12 8"/>
+      <rect x="48" y="104" width="420" height="144" rx="16" fill="#F6F4EF" stroke="#1F6F6B" stroke-width="3"/>
+      <rect x="668" y="104" width="420" height="144" rx="16" fill="#F6F4EF" stroke="#1F6F6B" stroke-width="3"/>
+      <rect x="668" y="464" width="420" height="144" rx="16" fill="#F6F4EF" stroke="#1F6F6B" stroke-width="3"/>
+      <rect x="48" y="464" width="420" height="144" rx="16" fill="#F6F4EF" stroke="#1F6F6B" stroke-width="3"/>
+      <rect x="728" y="308" width="300" height="96" rx="48" fill="#D9952B" stroke="#1B1F24" stroke-width="2"/>
+      <rect x="1208" y="104" width="408" height="64" rx="12" fill="#F6F4EF" stroke="#4A5560" stroke-width="2"/>
+      <rect x="1208" y="214" width="408" height="64" rx="12" fill="#F6F4EF" stroke="#4A5560" stroke-width="2"/>
+      <rect x="1208" y="324" width="408" height="64" rx="12" fill="#F6F4EF" stroke="#4A5560" stroke-width="2"/>
+      <rect x="1208" y="434" width="408" height="64" rx="12" fill="#F6F4EF" stroke="#4A5560" stroke-width="2"/>
+      <rect x="1208" y="544" width="408" height="64" rx="12" fill="#F6F4EF" stroke="#4A5560" stroke-width="2"/>
+    </svg>
+    <x-connector x1="468" y1="176" x2="668" y2="176" style="color:#1F6F6B; border-width:3px"></x-connector>
+    <x-connector x1="878" y1="248" x2="878" y2="308" head="none" style="color:#1F6F6B; border-width:3px"></x-connector>
+    <x-connector x1="878" y1="404" x2="878" y2="464" style="color:#1F6F6B; border-width:3px"></x-connector>
+    <x-connector x1="668" y1="536" x2="468" y2="536" style="color:#1F6F6B; border-width:3px"></x-connector>
+    <x-connector x1="258" y1="464" x2="258" y2="248" style="color:#1F6F6B; border-width:3px"></x-connector>
+    <p style="position:absolute; left:32px; top:40px; width:640px; height:34px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; font-weight:600; line-height:1.4; letter-spacing:3px; text-transform:uppercase; color:#1F6F6B">Developer’s environment</p>
+    <p style="position:absolute; left:48px; top:104px; width:420px; height:144px; padding:38px 24px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; line-height:1.4; color:#1B1F24"><b>1 Understand</b><br><span style="color:#4A5560">Search code, read files</span></p>
+    <p style="position:absolute; left:668px; top:104px; width:420px; height:144px; padding:38px 24px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; line-height:1.4; color:#1B1F24"><b>2 Plan</b><br><span style="color:#4A5560">Steps drafted before edits</span></p>
+    <p style="position:absolute; left:728px; top:308px; width:300px; height:96px; padding:14px 24px; text-align:center; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; line-height:1.4; color:#1B1F24"><b>5 Ask permission</b><br>Approve or deny</p>
+    <p style="position:absolute; left:668px; top:464px; width:420px; height:144px; padding:38px 24px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; line-height:1.4; color:#1B1F24"><b>3 Act with tools</b><br><span style="color:#4A5560">Edit files, run commands</span></p>
+    <p style="position:absolute; left:48px; top:464px; width:420px; height:144px; padding:38px 24px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; line-height:1.4; color:#1B1F24"><b>4 Verify</b><br><span style="color:#4A5560">Run tests, review the diff</span></p>
+    <p style="position:absolute; left:290px; top:322px; width:380px; height:68px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; line-height:1.4; color:#4A5560">The loop repeats<br>until the checks pass.</p>
+    <p style="position:absolute; left:1208px; top:40px; width:408px; height:34px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; font-weight:600; line-height:1.4; color:#4A5560">What it works with</p>
+    <p style="position:absolute; left:1208px; top:104px; width:408px; height:64px; padding:15px 24px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; line-height:1.4; color:#1B1F24"><b>Repo</b></p>
+    <p style="position:absolute; left:1208px; top:214px; width:408px; height:64px; padding:15px 24px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; line-height:1.4; color:#1B1F24"><b>Terminal</b></p>
+    <p style="position:absolute; left:1208px; top:324px; width:408px; height:64px; padding:15px 24px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; line-height:1.4; color:#1B1F24"><b>Tests</b></p>
+    <p style="position:absolute; left:1208px; top:434px; width:408px; height:64px; padding:15px 24px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; line-height:1.4; color:#1B1F24"><b>Git</b></p>
+    <p style="position:absolute; left:1208px; top:544px; width:408px; height:64px; padding:15px 24px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; line-height:1.4; color:#1B1F24"><b>Cloud CLIs</b></p>
+  </div>
+  <p style="position:absolute; left:128px; bottom:64px; width:1664px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; line-height:1.2; color:#4A5560">Source: [CLM-?: source]</p>
+  <aside>NOTES STUB (diagram-how-it-works). Spoken script, about 140 words per minute; target 60 s. Executive line first: an agent that works in your engineers’ environment. Then walk 1 to 4 clockwise, point at the gate before Act and say the agent asks before it acts, then the arrow from Verify back to Understand. Define agentic, tool and permission in plain English at first use. Replace this stub.</aside>
+</section>

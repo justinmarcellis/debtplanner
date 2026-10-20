@@ -1,0 +1,2 @@
+{"at":"2026-10-20T16:57:49.583Z","hub":"blockers","type":"status","text":"Sprint 1 launch 1 failed: account weekly usage limit (HTTP 429) hit all agents; limit cleared on re-probe; relaunching","from":"eng-lead"}
+{"at":"2026-10-20T17:28:45.091Z","hub":"blockers","type":"blocker","text":"Sprint 1 attempt 2 halted: org monthly spend limit reached (HTTP 429, admin must raise at claude.ai/admin-settings/usage; weekly limit resets 2026-10-22 22:00 UTC). 1/18 build tickets done (S1-ADO-02). Dispatch stopped; partial outputs preserved as unreviewed WIP.","from":"eng-lead"}

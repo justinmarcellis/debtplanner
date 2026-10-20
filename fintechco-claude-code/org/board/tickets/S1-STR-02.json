@@ -1,0 +1,98 @@
+{
+  "status": "done",
+  "dependsOn": [],
+  "createdAt": "2026-10-20T17:06:01.758Z",
+  "history": [
+    {
+      "at": "2026-10-20T17:39:18.999Z",
+      "from": "ready",
+      "to": "in_progress"
+    },
+    {
+      "at": "2026-10-20T17:58:31.942Z",
+      "from": "in_progress",
+      "to": "ready"
+    },
+    {
+      "at": "2026-10-20T19:07:06.891Z",
+      "from": "ready",
+      "to": "in_progress"
+    },
+    {
+      "at": "2026-10-20T19:18:21.429Z",
+      "from": "in_progress",
+      "to": "done"
+    }
+  ],
+  "team": "strategy",
+  "reviewer": "qe-acceptance (consolidated, ADR-007)",
+  "sprint": 2,
+  "id": "S1-STR-02",
+  "title": "Objection and Q&A bank with sourced claims",
+  "story": "As the candidate I need a rehearsed bank of the questions a skeptical CTO and an AI champion will ask, with crisp answers, depth if pushed and sourced facts, so that I answer honestly and briefly under pressure and keep the 40 minutes on track.",
+  "points": 8,
+  "tier": "mid",
+  "owner": "eng-lead (for strategy)",
+  "paths": [
+    "strategy/objection-handling.md",
+    "research/claims/strategy.json"
+  ],
+  "contracts": [
+    "org/contracts/claims.schema.json",
+    "org/contracts/README.md",
+    "org/decisions/ADR-006-claims-and-evidence.md",
+    "org/decisions/ADR-003-delegation-controls.md",
+    "org/decisions/ADR-005-meeting-format-and-narrative.md"
+  ],
+  "requirements": [
+    "REQ-12",
+    "REQ-13",
+    "REQ-15",
+    "REQ-18",
+    "REQ-21",
+    "REQ-30"
+  ],
+  "deliverables": [
+    "D4",
+    "D10"
+  ],
+  "acceptance": [
+    "strategy/objection-handling.md has exactly 8 group headings \"## 1.\" to \"## 8.\" in this order: security and data; compliance and regulation; quality and risk of AI-written code; productivity evidence; cost; competition and 'we already have Copilot'; change management and skills; vendor and concentration risk. grep -c '^## [1-8]\\. ' strategy/objection-handling.md prints 8.",
+    "At least 25 objections and at least 3 per group, each a \"### O-nn.\" heading holding the objection in the asker's own words (CTO or champion): grep -c '^### O-' strategy/objection-handling.md prints 25 or more. Each objection has the lines \"- **Asker:**\", \"- **Answer:**\", \"- **If pushed:**\" (followed by 3 to 6 indented sub-bullets), \"- **Claims:**\" and \"- **Bridge:**\"; for each label  grep -c '^- \\*\\*<label>:\\*\\*' strategy/objection-handling.md  equals the objection count.",
+    "Answers are crisp and sayable: node -e 'const t=require(\"fs\").readFileSync(\"strategy/objection-handling.md\",\"utf8\");const a=[...t.matchAll(/^- \\*\\*Answer:\\*\\* (.+)$/gm)].map(m=>m[1].trim().split(/\\s+/).length);console.log(a.length,Math.max(...a))'  prints the objection count and a maximum of 65 or less (about 28 seconds at 140 wpm). Each Answer is 2 to 3 sentences, executive line first, conceding what is true before reframing. Each \"If pushed\" gives engineer-level depth and names where more lives (leave-behind or backup slide by deliverable id: D5, D6, D7 or D10).",
+    "The top of the file has a three-line summary, an index table of every objection (id, short form, group, asker) so it can be scanned live, and a \"Top 8 to rehearse\" list ranked by how much a wrong answer would hurt the meeting.",
+    "Honesty rules (ADR-006): productivity answers acknowledge mixed evidence, then point to measuring on FinTechCo's own work; no superlative without a named, dated source; no disparagement of any competitor; the Copilot objection is framed as \"if we already license an IDE assistant\" and never asserts FinTechCo owns any product (facts.json: no agentic tools today, evaluating several); compliance answers say what controls Claude Code provides and that FinTechCo's compliance team decides fit, never \"Claude Code is compliant\".",
+    "Every external fact carries a [CLM-6xx] id that exists in the shard with status verified or partial, or a specific [CLM-?: ...] placeholder. Every objection in groups 1 and 2, and any other touching data handling, retention, training, certifications, deployment boundaries or regulatory fit, carries the line \"- **Trust-review:** required\" (ADR-003 section 4.2): grep -c 'Trust-review' strategy/objection-handling.md prints 8 or more.",
+    "research/claims/strategy.json validates against org/contracts/claims.schema.json with ids only in CLM-600..CLM-649: node -e 'const c=require(\"./research/claims/strategy.json\");console.log(c.length,c.every(x=>/^CLM-6[0-4][0-9]$/.test(x.id)))'  prints a count of 12 or more and true. Every claim has at least one official source (title, url, publisher, date if shown), accessed 2026-10-xx, a safeWording when partial or refuted, and usedIn listing strategy/objection-handling.md.",
+    "The shard covers at least: data handling, retention and training on commercial inputs; the permission model and sandboxing; managed settings and policy enforcement; hooks, audit logging or OpenTelemetry monitoring; deployment through Amazon Bedrock and Google Cloud Vertex AI; certifications exactly as listed on Anthropic's Trust Center; and productivity evidence including at least one result that found a slowdown and one that found a speedup. Anything not verifiable is recorded as unverified with notes and appears in the document only as a placeholder.",
+    "node org/contracts/validate.mjs passes for this ticket's files: no FAIL line names research/claims/strategy.json or strategy/objection-handling.md (failures naming other teams' files are out of scope).",
+    "Only this ticket's two paths were changed; no secrets, Anthropic brand assets, invented customer names, quotes or numbers; a handoff listing remaining placeholders is posted to hub strategy."
+  ],
+  "brief": "Audience: the candidate rehearsing, then answering live inside a 40-minute meeting, so every Answer must be sayable in about 25 seconds (65 words max at ~140 wpm). The CTO is blunt, security-first, 20+ years in financial services IT, skeptical without proven enterprise adoption. The Head of Digital Transformation needs lines to reuse with colleagues.\n\nStep 1, source first: shard research/claims/strategy.json, ids CLM-600..649 only (claims.schema.json). Official documentation first (ADR-006 hierarchy): Claude Code docs at code.claude.com/docs (security, data usage, permissions, settings and managed settings, hooks, sandboxing, monitoring-usage, Amazon Bedrock, Google Vertex AI), the Anthropic Trust Center and commercial terms, AWS and Google Cloud docs for hosted-model data handling. For productivity use original sources only; candidates to look up are METR's randomized trial with experienced open-source developers, DORA's AI-assisted development research, large company field experiments and Anthropic's own published research. Check each; never use numbers from memory. Write each claim as it may be said aloud; use partial plus safeWording when a source says less than you want. Aim for 12 to 25 claims. Load WebSearch and WebFetch with ToolSearch query \"select:WebSearch,WebFetch\".\n\nStep 2, write the bank in the format of the acceptance criteria. Per objection: Asker; Answer (concede what is true, then reframe); If pushed (depth); Claims; Trust-review tag where it applies; Bridge (one line back to an ADR-005 ask: security review, pilot cohort, metrics owner, kickoff date).\n\nCover at least: code leaving our perimeter; training on our data; prompt injection and exfiltration; secrets and card data in repos; audit trail and evidence for auditors (SOX, PCI DSS, GLBA and model risk guidance appear as placeholders only, never quoted from memory); accountability for AI-written changes; hallucinated dependencies and subtle bugs; mixed productivity studies; \"show me the ROI\"; unpredictable token spend; the incumbent IDE assistant and other agents under evaluation; senior-engineer pushback and junior skill atrophy; single-vendor and model-availability risk, exit and portability (Bedrock and Vertex as deployment choices).\n\nPitfalls: never promise a productivity number; never say Claude Code makes FinTechCo compliant; placeholders must say exactly what to source.",
+  "startedAt": "2026-10-20T17:39:18.999Z",
+  "notes": [
+    {
+      "at": "2026-10-20T17:58:31.911Z",
+      "text": "Carried over from Sprint 1 after the account spend limit; executed player-coach per ADR-007."
+    }
+  ],
+  "review": {
+    "reworkCount": 1,
+    "verdicts": [
+      {
+        "at": "2026-10-20T19:07:06.891Z",
+        "by": "qe-acceptance",
+        "verdict": "rework",
+        "reason": "Full bank is careful, but the in-room card breaks its rules: objection-handling-card.md:39-40 unsourced Copilot/Cursor claims; :11,19 'you saw .env denied / hook block' not guaranteed by RUNBOOK; :47 'destructive commands are denied'; :8 'inference runs in your account / under your agreement'."
+      },
+      {
+        "at": "2026-10-20T19:18:21.429Z",
+        "by": "qe-recheck (mechanical gate, ADR-007)",
+        "verdict": "accept",
+        "reason": "F12 cards 22-23 rewritten without competitor characterisation; F2 demo now shows the denial and block; F5/F6 card 1 hedged; F8 card 28 accurate; m11 card 19. org/reviews/recheck.mjs 16/16; validate, timing and tests green"
+      }
+    ],
+    "firstPass": false
+  },
+  "doneAt": "2026-10-20T19:18:21.429Z"
+}

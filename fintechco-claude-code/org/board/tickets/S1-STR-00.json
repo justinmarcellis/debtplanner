@@ -1,0 +1,41 @@
+{
+  "status": "done",
+  "dependsOn": [],
+  "createdAt": "2026-10-20T15:17:01.642Z",
+  "history": [
+    {
+      "at": "2026-10-20T17:00:47.294Z",
+      "from": "ready",
+      "to": "in_progress"
+    },
+    {
+      "at": "2026-10-20T17:06:01.805Z",
+      "from": "in_progress",
+      "to": "review"
+    },
+    {
+      "at": "2026-10-20T17:58:31.941Z",
+      "from": "review",
+      "to": "done"
+    }
+  ],
+  "id": "S1-STR-00",
+  "team": "strategy",
+  "title": "Sprint 1 planning: Account Strategy & Discovery",
+  "story": "Decompose the sprint stories into parallel tickets",
+  "points": 1,
+  "tier": "mid",
+  "owner": "mgr-strategy",
+  "reviewer": "dir-strategy",
+  "sprint": 1,
+  "paths": [
+    "org/board/tickets/"
+  ],
+  "acceptance": [
+    "Tickets created in the fabric with disjoint paths, points, tier, acceptance criteria and requirement ids"
+  ],
+  "requirements": [],
+  "deliverables": [],
+  "startedAt": "2026-10-20T17:00:47.294Z",
+  "doneAt": "2026-10-20T17:58:31.941Z"
+}

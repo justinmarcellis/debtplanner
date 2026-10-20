@@ -1,0 +1,20 @@
+<section id="a01-data-handling" data-transition="fade" style="background:#F6F4EF; padding:128px 128px 160px; display:flex; flex-direction:column; gap:32px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:28px; color:#1B1F24">
+<div style="display:flex; flex-direction:column; gap:12px">
+<p style="font-size:24px; font-weight:600; letter-spacing:3px; text-transform:uppercase; color:#1F6F6B">Appendix · security</p>
+<h2 style="font-family:'Source Serif 4', Georgia, serif; font-size:64px; font-weight:600; line-height:1.15">Data Handling</h2>
+</div>
+<table style="width:1664px; font-size:25px; color:#1B1F24">
+<tr style="background:#E2DED5">
+<th style="width:22%; padding:16px 20px; text-align:left; font-weight:600">Route</th>
+<th style="width:26%; text-align:left; font-weight:600">How it is called</th>
+<th style="width:52%; text-align:left; font-weight:600">Retention and access</th>
+</tr>
+<tr><td>Amazon Bedrock</td><td>Your AWS credentials and IAM, billed to your account; Bedrock in your Region</td><td>AWS: providers can’t see your prompts or logs; set retention per Region, check per model</td></tr>
+<tr><td>Google Cloud</td><td>Your GCP credentials and IAM, billed to your project</td><td>Confirm retention terms in your Google contract (not verified by us)</td></tr>
+<tr><td>Claude for Enterprise</td><td>Anthropic</td><td>30-day standard; zero data retention for qualified Enterprise organizations, set per organization</td></tr>
+<tr><td>Developer laptop</td><td>—</td><td>Local transcripts 30 days, adjustable; telemetry off by default via Bedrock or Google Cloud, one setting otherwise</td></tr>
+</table>
+<p style="font-size:26px; line-height:1.4; color:#4A5560">All routes: no training on your content under the commercial terms unless you opt in; TLS 1.2+ in transit; you own outputs, with an IP defense commitment (read the exclusions).</p>
+<p style="position:absolute; left:128px; bottom:64px; width:1664px; font-size:24px; line-height:1.2; color:#4A5560">Sources: [CLM-615] [CLM-614] [CLM-602] [CLM-603] [CLM-605] [CLM-600] [CLM-604] [CLM-601]</p>
+<aside>If asked where data goes: on Bedrock, calls use your AWS credentials and IAM and bill to your account, and AWS says model providers including Anthropic cannot see your prompts or logs; retention is set per Region, and a few newer models need AWS-side retention for review, so check the specific model [CLM-615] [CLM-614]. On Google Cloud I have not verified the retention terms for Claude, so your GCP team should confirm them in your Google contract. Direct with Anthropic, standard retention is thirty days; qualified Enterprise organizations can turn on zero data retention, which also switches off features that store data, such as cloud sessions [CLM-602] [CLM-603]. On the laptop, transcripts stay locally for thirty days by default; telemetry is off by default through Bedrock or Google Cloud, and one setting switches it off on the direct route [CLM-602] [CLM-605]. Under the commercial terms Anthropic does not train on your content unless you choose to share it [CLM-600]; traffic is TLS 1.2 or higher [CLM-604]; you own the outputs, and there is an IP defense commitment whose exclusions your counsel should read [CLM-601].</aside>
+</section>

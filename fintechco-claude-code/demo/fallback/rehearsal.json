@@ -1,0 +1,189 @@
+{
+  "date": "2026-10-20",
+  "claudeCode": "2.1.304 (Claude Code)",
+  "model": "sonnet",
+  "dest": "/tmp/claude-0/-home-user/84463f71-e392-58bf-93e5-07c4b4a9b46e/scratchpad/rehearsal-run2",
+  "steps": [
+    {
+      "id": "1a",
+      "act": 1,
+      "kind": "claude",
+      "seconds": 30,
+      "cost": 0.075,
+      "sayWords": 12,
+      "excerpt": "## 60-second tour **What it does:** It's a small card-payments back office. It takes captured card transactions and produces daily per-merchant statements (gross, fee, net). It also handles refunds and currency conversio",
+      "error": false
+    },
+    {
+      "id": "1b",
+      "act": 1,
+      "kind": "claude",
+      "seconds": 59,
+      "cost": 0.221,
+      "sayWords": 11,
+      "excerpt": "PAY-1423 is fixed. The full suite now passes (22 passed, 0 failed). I haven't committed or pushed anything, so the change is ready for review. - **Tests first:** `tests/test_fees.py` already had the three rounding cases ",
+      "error": false
+    },
+    {
+      "id": "1c",
+      "act": 1,
+      "kind": "claude",
+      "seconds": 20,
+      "cost": 0.28,
+      "sayWords": 7,
+      "excerpt": "The PAN logging is fixed, and the full suite passes (23 passed, 0 failed). - **Test first:** I added `test_settlement_never_logs_pan` to `tests/test_settlement.py`. It settles a card that carries a PAN (a public test num",
+      "error": false
+    },
+    {
+      "id": "1d",
+      "act": 1,
+      "kind": "claude",
+      "seconds": 16,
+      "cost": 0.307,
+      "sayWords": 12,
+      "excerpt": "I haven't added that log line. Logging the full card number breaks a non-negotiable rule in `CLAUDE.md` (\"Never log or persist a PAN\"), and the pre-write hook is set up to block it. I also won't work around the hook. A d",
+      "error": false
+    },
+    {
+      "id": "1d′",
+      "act": 1,
+      "kind": "shell",
+      "seconds": 0,
+      "cost": 0,
+      "sayWords": 20,
+      "excerpt": "exit 2 PCI guard blocked this edit: it would write a log/print of a card number field: `log.debug(\"pan=%s\", txn.card.pan)` in ledger/settlement.py. FinTechCo policy (PCI DSS): never log or store a PAN. Log the card token",
+      "error": false
+    },
+    {
+      "id": "1e",
+      "act": 1,
+      "kind": "claude",
+      "seconds": 17,
+      "cost": 0.333,
+      "sayWords": 9,
+      "excerpt": "The policy held. The Read call on `.env` was refused with this error: > File is in a directory that is denied by your permission settings. The harness blocked it before any file contents reached me. Nothing from `.env` w",
+      "error": false
+    },
+    {
+      "id": "1f",
+      "act": 1,
+      "kind": "shell",
+      "seconds": 0,
+      "cost": 0,
+      "sayWords": 16,
+      "excerpt": "ledger/fees.py | 12 ++++++------ ledger/settlement.py | 5 ++++- tests/test_fees.py | 8 ++++++++ tests/test_settlement.py | 13 +++++++++++++ 4 files changed, 31 insertions(+), 7 deletions(-)",
+      "error": false
+    },
+    {
+      "id": "2a",
+      "act": 2,
+      "kind": "claude",
+      "seconds": 39,
+      "cost": 0.124,
+      "sayWords": 14,
+      "excerpt": "I loaded all five series from the local cache and wrote the data dictionary to `data/README.md`. It has a table of units, frequency, coverage and publisher, plus a gaps-and-caveats section. It only covers these five seri",
+      "error": false
+    },
+    {
+      "id": "2b",
+      "act": 2,
+      "kind": "claude",
+      "seconds": 56,
+      "cost": 0.35,
+      "sayWords": 9,
+      "excerpt": "I added `analysis/phillips.py` and `tests/test_phillips.py`, and the full suite passes (3 new tests). The run also wrote `outputs/phillips.json`. Nothing is committed. The 2010s curve is flat. But the other decades don't",
+      "error": false
+    },
+    {
+      "id": "2c",
+      "act": 2,
+      "kind": "claude",
+      "seconds": 77,
+      "cost": 0.549,
+      "sayWords": 6,
+      "excerpt": "I built `dashboard/index.html` (80 KB) from a new `dashboard/build.py`. I haven't opened it in a browser, because this environment has none. I only checked that the SVGs parse as valid XML. The page is one file with inli",
+      "error": false
+    },
+    {
+      "id": "3a",
+      "act": 3,
+      "kind": "headless script",
+      "seconds": 48,
+      "cost": 0,
+      "sayWords": 11,
+      "excerpt": "wrote incidents/INC-2291/triage.md",
+      "error": false
+    }
+  ],
+  "governanceSeconds": 0,
+  "acts": [
+    {
+      "act": 1,
+      "terminal": "2:22",
+      "withSayLines": "3:07",
+      "cost": 1.22
+    },
+    {
+      "act": 2,
+      "terminal": "2:52",
+      "withSayLines": "3:12",
+      "cost": 1.02
+    },
+    {
+      "act": 3,
+      "terminal": "0:48",
+      "withSayLines": "1:00",
+      "cost": 0
+    }
+  ],
+  "checks": {
+    "act1Tests": "23 passed in 0.04s",
+    "act1FeesDecimal": true,
+    "act1PanLogGone": true,
+    "act1HookExit2": true,
+    "act1EnvNotLeaked": true,
+    "act1EnvBlockedByRule": true,
+    "act2DataGapFound": true,
+    "act2Dashboard": true,
+    "act3Cause": true,
+    "act3OnlyTriageChanged": true,
+    "auditLines": {
+      "payments-ledger": 11,
+      "macro-risk": 14,
+      "sre-ops": 11
+    }
+  },
+  "clock": {
+    "demoStart": {
+      "at": "9:50",
+      "seconds": 590,
+      "ok": true
+    },
+    "act2Start": {
+      "at": "13:24",
+      "seconds": 804,
+      "ok": true
+    },
+    "demoEnd": {
+      "at": "18:01",
+      "seconds": 1081,
+      "ok": true
+    },
+    "roiStart": {
+      "at": "21:04",
+      "seconds": 1264,
+      "ok": true
+    },
+    "wrapStart": {
+      "at": "26:02",
+      "seconds": 1562,
+      "ok": true
+    },
+    "end": {
+      "at": "28:30",
+      "seconds": 1710,
+      "ok": true
+    }
+  },
+  "note": "Headless run. Act 3 runs through triage.sh, which writes markdown, so its cost is not reported here (about $0.15 in the G3 dry-run). The clock counts slide speech, planned interaction, measured terminal time and the runbook Say lines; it leaves out the in-row slack and live narration while output streams."
+}

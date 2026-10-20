@@ -1,0 +1,309 @@
+{"time": "2026-10-14T13:30:09Z", "level": "INFO", "msg": "authorized", "latency_ms": 49, "card": "tok_664310"}
+{"time": "2026-10-14T13:30:15Z", "level": "INFO", "msg": "authorized", "latency_ms": 97, "card": "tok_679698"}
+{"time": "2026-10-14T13:30:28Z", "level": "INFO", "msg": "authorized", "latency_ms": 124, "card": "tok_130622"}
+{"time": "2026-10-14T13:30:34Z", "level": "INFO", "msg": "authorized", "latency_ms": 75, "card": "tok_755061"}
+{"time": "2026-10-14T13:30:47Z", "level": "INFO", "msg": "authorized", "latency_ms": 63, "card": "tok_918419"}
+{"time": "2026-10-14T13:30:52Z", "level": "INFO", "msg": "authorized", "latency_ms": 99, "card": "tok_462363"}
+{"time": "2026-10-14T13:30:59Z", "level": "INFO", "msg": "authorized", "latency_ms": 82, "card": "tok_239775"}
+{"time": "2026-10-14T13:31:11Z", "level": "INFO", "msg": "authorized", "latency_ms": 45, "card": "tok_418478"}
+{"time": "2026-10-14T13:31:25Z", "level": "INFO", "msg": "authorized", "latency_ms": 117, "card": "tok_423993"}
+{"time": "2026-10-14T13:31:35Z", "level": "INFO", "msg": "authorized", "latency_ms": 114, "card": "tok_537566"}
+{"time": "2026-10-14T13:31:39Z", "level": "INFO", "msg": "authorized", "latency_ms": 53, "card": "tok_409689"}
+{"time": "2026-10-14T13:31:46Z", "level": "INFO", "msg": "authorized", "latency_ms": 82, "card": "tok_536208"}
+{"time": "2026-10-14T13:31:57Z", "level": "INFO", "msg": "authorized", "latency_ms": 74, "card": "tok_347163"}
+{"time": "2026-10-14T13:32:08Z", "level": "INFO", "msg": "authorized", "latency_ms": 128, "card": "tok_501751"}
+{"time": "2026-10-14T13:32:19Z", "level": "INFO", "msg": "authorized", "latency_ms": 60, "card": "tok_145361"}
+{"time": "2026-10-14T13:32:26Z", "level": "INFO", "msg": "authorized", "latency_ms": 85, "card": "tok_770058"}
+{"time": "2026-10-14T13:32:33Z", "level": "INFO", "msg": "authorized", "latency_ms": 79, "card": "tok_571255"}
+{"time": "2026-10-14T13:32:48Z", "level": "INFO", "msg": "authorized", "latency_ms": 70, "card": "tok_521573"}
+{"time": "2026-10-14T13:32:56Z", "level": "INFO", "msg": "authorized", "latency_ms": 89, "card": "tok_280979"}
+{"time": "2026-10-14T13:33:03Z", "level": "INFO", "msg": "authorized", "latency_ms": 130, "card": "tok_645102"}
+{"time": "2026-10-14T13:33:12Z", "level": "INFO", "msg": "authorized", "latency_ms": 80, "card": "tok_191445"}
+{"time": "2026-10-14T13:33:20Z", "level": "INFO", "msg": "authorized", "latency_ms": 92, "card": "tok_489152"}
+{"time": "2026-10-14T13:33:35Z", "level": "INFO", "msg": "authorized", "latency_ms": 70, "card": "tok_611760"}
+{"time": "2026-10-14T13:33:47Z", "level": "INFO", "msg": "authorized", "latency_ms": 96, "card": "tok_258164"}
+{"time": "2026-10-14T13:33:51Z", "level": "INFO", "msg": "authorized", "latency_ms": 78, "card": "tok_689993"}
+{"time": "2026-10-14T13:34:05Z", "level": "INFO", "msg": "authorized", "latency_ms": 87, "card": "tok_124207"}
+{"time": "2026-10-14T13:34:11Z", "level": "INFO", "msg": "authorized", "latency_ms": 54, "card": "tok_487827"}
+{"time": "2026-10-14T13:34:17Z", "level": "INFO", "msg": "authorized", "latency_ms": 123, "card": "tok_152082"}
+{"time": "2026-10-14T13:34:32Z", "level": "INFO", "msg": "authorized", "latency_ms": 82, "card": "tok_576125"}
+{"time": "2026-10-14T13:34:41Z", "level": "INFO", "msg": "authorized", "latency_ms": 85, "card": "tok_119088"}
+{"time": "2026-10-14T13:34:55Z", "level": "INFO", "msg": "authorized", "latency_ms": 58, "card": "tok_147553"}
+{"time": "2026-10-14T13:35:10Z", "level": "INFO", "msg": "authorized", "latency_ms": 68, "card": "tok_947176"}
+{"time": "2026-10-14T13:35:21Z", "level": "INFO", "msg": "authorized", "latency_ms": 113, "card": "tok_513140"}
+{"time": "2026-10-14T13:35:27Z", "level": "INFO", "msg": "authorized", "latency_ms": 55, "card": "tok_864598"}
+{"time": "2026-10-14T13:35:41Z", "level": "INFO", "msg": "authorized", "latency_ms": 129, "card": "tok_650059"}
+{"time": "2026-10-14T13:35:56Z", "level": "INFO", "msg": "authorized", "latency_ms": 128, "card": "tok_791365"}
+{"time": "2026-10-14T13:36:09Z", "level": "INFO", "msg": "authorized", "latency_ms": 46, "card": "tok_186018"}
+{"time": "2026-10-14T13:36:13Z", "level": "INFO", "msg": "authorized", "latency_ms": 79, "card": "tok_696547"}
+{"time": "2026-10-14T13:36:27Z", "level": "INFO", "msg": "authorized", "latency_ms": 53, "card": "tok_487745"}
+{"time": "2026-10-14T13:36:39Z", "level": "INFO", "msg": "authorized", "latency_ms": 94, "card": "tok_840839"}
+{"time": "2026-10-14T13:36:52Z", "level": "INFO", "msg": "authorized", "latency_ms": 90, "card": "tok_634595"}
+{"time": "2026-10-14T13:37:06Z", "level": "INFO", "msg": "authorized", "latency_ms": 70, "card": "tok_830283"}
+{"time": "2026-10-14T13:37:16Z", "level": "INFO", "msg": "authorized", "latency_ms": 74, "card": "tok_173241"}
+{"time": "2026-10-14T13:37:22Z", "level": "INFO", "msg": "authorized", "latency_ms": 92, "card": "tok_993686"}
+{"time": "2026-10-14T13:37:27Z", "level": "INFO", "msg": "authorized", "latency_ms": 129, "card": "tok_320303"}
+{"time": "2026-10-14T13:37:37Z", "level": "INFO", "msg": "authorized", "latency_ms": 64, "card": "tok_656363"}
+{"time": "2026-10-14T13:37:46Z", "level": "INFO", "msg": "authorized", "latency_ms": 94, "card": "tok_303962"}
+{"time": "2026-10-14T13:37:59Z", "level": "INFO", "msg": "authorized", "latency_ms": 67, "card": "tok_138407"}
+{"time": "2026-10-14T13:38:10Z", "level": "INFO", "msg": "authorized", "latency_ms": 115, "card": "tok_621100"}
+{"time": "2026-10-14T13:38:17Z", "level": "INFO", "msg": "authorized", "latency_ms": 107, "card": "tok_474142"}
+{"time": "2026-10-14T13:38:31Z", "level": "INFO", "msg": "authorized", "latency_ms": 130, "card": "tok_383638"}
+{"time": "2026-10-14T13:38:40Z", "level": "INFO", "msg": "authorized", "latency_ms": 60, "card": "tok_441803"}
+{"time": "2026-10-14T13:38:52Z", "level": "INFO", "msg": "authorized", "latency_ms": 87, "card": "tok_828986"}
+{"time": "2026-10-14T13:39:01Z", "level": "INFO", "msg": "authorized", "latency_ms": 61, "card": "tok_921746"}
+{"time": "2026-10-14T13:39:14Z", "level": "INFO", "msg": "authorized", "latency_ms": 122, "card": "tok_161338"}
+{"time": "2026-10-14T13:39:27Z", "level": "INFO", "msg": "authorized", "latency_ms": 69, "card": "tok_421428"}
+{"time": "2026-10-14T13:39:39Z", "level": "INFO", "msg": "authorized", "latency_ms": 125, "card": "tok_875613"}
+{"time": "2026-10-14T13:39:48Z", "level": "INFO", "msg": "authorized", "latency_ms": 46, "card": "tok_903727"}
+{"time": "2026-10-14T13:39:59Z", "level": "INFO", "msg": "authorized", "latency_ms": 92, "card": "tok_778227"}
+{"time": "2026-10-14T13:40:13Z", "level": "INFO", "msg": "authorized", "latency_ms": 127, "card": "tok_209264"}
+{"time": "2026-10-14T13:40:20Z", "level": "INFO", "msg": "authorized", "latency_ms": 76, "card": "tok_188200"}
+{"time": "2026-10-14T13:40:29Z", "level": "INFO", "msg": "authorized", "latency_ms": 64, "card": "tok_992298"}
+{"time": "2026-10-14T13:40:33Z", "level": "INFO", "msg": "authorized", "latency_ms": 59, "card": "tok_797601"}
+{"time": "2026-10-14T13:40:44Z", "level": "INFO", "msg": "authorized", "latency_ms": 65, "card": "tok_265308"}
+{"time": "2026-10-14T13:40:56Z", "level": "INFO", "msg": "authorized", "latency_ms": 58, "card": "tok_330663"}
+{"time": "2026-10-14T13:41:00Z", "level": "INFO", "msg": "authorized", "latency_ms": 122, "card": "tok_330730"}
+{"time": "2026-10-14T13:41:11Z", "level": "INFO", "msg": "authorized", "latency_ms": 111, "card": "tok_513301"}
+{"time": "2026-10-14T13:41:24Z", "level": "INFO", "msg": "authorized", "latency_ms": 88, "card": "tok_804539"}
+{"time": "2026-10-14T13:41:34Z", "level": "INFO", "msg": "authorized", "latency_ms": 116, "card": "tok_909898"}
+{"time": "2026-10-14T13:41:43Z", "level": "INFO", "msg": "authorized", "latency_ms": 122, "card": "tok_349999"}
+{"time": "2026-10-14T13:41:58Z", "level": "INFO", "msg": "authorized", "latency_ms": 97, "card": "tok_564579"}
+{"time": "2026-10-14T13:42:10Z", "level": "INFO", "msg": "authorized", "latency_ms": 55, "card": "tok_513145"}
+{"time": "2026-10-14T13:42:20Z", "level": "INFO", "msg": "authorized", "latency_ms": 50, "card": "tok_674203"}
+{"time": "2026-10-14T13:42:30Z", "level": "INFO", "msg": "authorized", "latency_ms": 46, "card": "tok_140660"}
+{"time": "2026-10-14T13:42:39Z", "level": "INFO", "msg": "authorized", "latency_ms": 128, "card": "tok_167719"}
+{"time": "2026-10-14T13:42:51Z", "level": "INFO", "msg": "authorized", "latency_ms": 107, "card": "tok_140530"}
+{"time": "2026-10-14T13:43:02Z", "level": "INFO", "msg": "authorized", "latency_ms": 116, "card": "tok_699773"}
+{"time": "2026-10-14T13:43:17Z", "level": "INFO", "msg": "authorized", "latency_ms": 104, "card": "tok_387408"}
+{"time": "2026-10-14T13:43:24Z", "level": "INFO", "msg": "authorized", "latency_ms": 59, "card": "tok_455956"}
+{"time": "2026-10-14T13:43:38Z", "level": "INFO", "msg": "authorized", "latency_ms": 118, "card": "tok_738183"}
+{"time": "2026-10-14T13:43:43Z", "level": "INFO", "msg": "authorized", "latency_ms": 110, "card": "tok_102129"}
+{"time": "2026-10-14T13:43:56Z", "level": "INFO", "msg": "authorized", "latency_ms": 73, "card": "tok_849999"}
+{"time": "2026-10-14T13:44:03Z", "level": "INFO", "msg": "authorized", "latency_ms": 113, "card": "tok_842208"}
+{"time": "2026-10-14T13:44:17Z", "level": "INFO", "msg": "authorized", "latency_ms": 86, "card": "tok_158026"}
+{"time": "2026-10-14T13:44:23Z", "level": "INFO", "msg": "authorized", "latency_ms": 110, "card": "tok_938421"}
+{"time": "2026-10-14T13:44:30Z", "level": "INFO", "msg": "authorized", "latency_ms": 115, "card": "tok_342025"}
+{"time": "2026-10-14T13:44:36Z", "level": "INFO", "msg": "authorized", "latency_ms": 110, "card": "tok_140765"}
+{"time": "2026-10-14T13:44:47Z", "level": "INFO", "msg": "authorized", "latency_ms": 81, "card": "tok_683030"}
+{"time": "2026-10-14T13:45:00Z", "level": "INFO", "msg": "authorized", "latency_ms": 111, "card": "tok_721981"}
+{"time": "2026-10-14T13:45:14Z", "level": "INFO", "msg": "authorized", "latency_ms": 57, "card": "tok_434356"}
+{"time": "2026-10-14T13:45:20Z", "level": "INFO", "msg": "authorized", "latency_ms": 92, "card": "tok_609485"}
+{"time": "2026-10-14T13:45:35Z", "level": "INFO", "msg": "authorized", "latency_ms": 126, "card": "tok_174965"}
+{"time": "2026-10-14T13:45:39Z", "level": "INFO", "msg": "authorized", "latency_ms": 63, "card": "tok_160575"}
+{"time": "2026-10-14T13:45:52Z", "level": "INFO", "msg": "authorized", "latency_ms": 91, "card": "tok_786376"}
+{"time": "2026-10-14T13:46:01Z", "level": "INFO", "msg": "authorized", "latency_ms": 57, "card": "tok_228134"}
+{"time": "2026-10-14T13:46:14Z", "level": "INFO", "msg": "authorized", "latency_ms": 129, "card": "tok_791274"}
+{"time": "2026-10-14T13:46:25Z", "level": "INFO", "msg": "authorized", "latency_ms": 72, "card": "tok_777676"}
+{"time": "2026-10-14T13:46:30Z", "level": "INFO", "msg": "authorized", "latency_ms": 70, "card": "tok_167996"}
+{"time": "2026-10-14T13:46:35Z", "level": "INFO", "msg": "authorized", "latency_ms": 102, "card": "tok_726911"}
+{"time": "2026-10-14T13:46:41Z", "level": "INFO", "msg": "authorized", "latency_ms": 120, "card": "tok_994591"}
+{"time": "2026-10-14T13:46:54Z", "level": "INFO", "msg": "authorized", "latency_ms": 74, "card": "tok_115751"}
+{"time": "2026-10-14T13:47:09Z", "level": "INFO", "msg": "authorized", "latency_ms": 75, "card": "tok_166155"}
+{"time": "2026-10-14T13:47:19Z", "level": "INFO", "msg": "authorized", "latency_ms": 81, "card": "tok_143734"}
+{"time": "2026-10-14T13:47:30Z", "level": "INFO", "msg": "authorized", "latency_ms": 93, "card": "tok_462826"}
+{"time": "2026-10-14T13:47:36Z", "level": "INFO", "msg": "authorized", "latency_ms": 81, "card": "tok_497771"}
+{"time": "2026-10-14T13:47:42Z", "level": "INFO", "msg": "authorized", "latency_ms": 64, "card": "tok_961225"}
+{"time": "2026-10-14T13:47:54Z", "level": "INFO", "msg": "authorized", "latency_ms": 115, "card": "tok_722451"}
+{"time": "2026-10-14T13:48:05Z", "level": "INFO", "msg": "authorized", "latency_ms": 65, "card": "tok_342140"}
+{"time": "2026-10-14T13:48:10Z", "level": "INFO", "msg": "authorized", "latency_ms": 62, "card": "tok_803770"}
+{"time": "2026-10-14T13:48:25Z", "level": "INFO", "msg": "authorized", "latency_ms": 74, "card": "tok_151384"}
+{"time": "2026-10-14T13:48:37Z", "level": "INFO", "msg": "authorized", "latency_ms": 68, "card": "tok_882956"}
+{"time": "2026-10-14T13:48:49Z", "level": "INFO", "msg": "authorized", "latency_ms": 76, "card": "tok_168260"}
+{"time": "2026-10-14T13:48:59Z", "level": "INFO", "msg": "authorized", "latency_ms": 96, "card": "tok_742171"}
+{"time": "2026-10-14T13:49:12Z", "level": "INFO", "msg": "authorized", "latency_ms": 73, "card": "tok_589343"}
+{"time": "2026-10-14T13:49:27Z", "level": "INFO", "msg": "authorized", "latency_ms": 100, "card": "tok_486865"}
+{"time": "2026-10-14T13:49:42Z", "level": "INFO", "msg": "authorized", "latency_ms": 115, "card": "tok_846929"}
+{"time": "2026-10-14T13:49:57Z", "level": "INFO", "msg": "authorized", "latency_ms": 86, "card": "tok_700193"}
+{"time": "2026-10-14T13:50:02Z", "level": "INFO", "msg": "authorized", "latency_ms": 81, "card": "tok_333957"}
+{"time": "2026-10-14T13:50:06Z", "level": "INFO", "msg": "authorized", "latency_ms": 115, "card": "tok_214739"}
+{"time": "2026-10-14T13:50:10Z", "level": "INFO", "msg": "authorized", "latency_ms": 100, "card": "tok_323404"}
+{"time": "2026-10-14T13:50:22Z", "level": "INFO", "msg": "authorized", "latency_ms": 126, "card": "tok_181085"}
+{"time": "2026-10-14T13:50:37Z", "level": "INFO", "msg": "authorized", "latency_ms": 83, "card": "tok_481785"}
+{"time": "2026-10-14T13:50:51Z", "level": "INFO", "msg": "authorized", "latency_ms": 79, "card": "tok_145860"}
+{"time": "2026-10-14T13:50:59Z", "level": "INFO", "msg": "authorized", "latency_ms": 121, "card": "tok_346590"}
+{"time": "2026-10-14T13:51:13Z", "level": "INFO", "msg": "authorized", "latency_ms": 95, "card": "tok_596431"}
+{"time": "2026-10-14T13:51:24Z", "level": "INFO", "msg": "authorized", "latency_ms": 81, "card": "tok_196533"}
+{"time": "2026-10-14T13:51:35Z", "level": "INFO", "msg": "authorized", "latency_ms": 93, "card": "tok_213368"}
+{"time": "2026-10-14T13:51:50Z", "level": "INFO", "msg": "authorized", "latency_ms": 118, "card": "tok_436082"}
+{"time": "2026-10-14T13:51:57Z", "level": "INFO", "msg": "authorized", "latency_ms": 53, "card": "tok_633938"}
+{"time": "2026-10-14T13:52:08Z", "level": "INFO", "msg": "authorized", "latency_ms": 61, "card": "tok_523658"}
+{"time": "2026-10-14T13:52:16Z", "level": "INFO", "msg": "authorized", "latency_ms": 116, "card": "tok_729532"}
+{"time": "2026-10-14T13:52:26Z", "level": "INFO", "msg": "authorized", "latency_ms": 86, "card": "tok_177561"}
+{"time": "2026-10-14T13:52:39Z", "level": "INFO", "msg": "authorized", "latency_ms": 130, "card": "tok_646669"}
+{"time": "2026-10-14T13:52:53Z", "level": "INFO", "msg": "authorized", "latency_ms": 96, "card": "tok_614635"}
+{"time": "2026-10-14T13:52:59Z", "level": "INFO", "msg": "authorized", "latency_ms": 77, "card": "tok_603071"}
+{"time": "2026-10-14T13:53:12Z", "level": "INFO", "msg": "authorized", "latency_ms": 67, "card": "tok_587836"}
+{"time": "2026-10-14T13:53:26Z", "level": "INFO", "msg": "authorized", "latency_ms": 82, "card": "tok_186915"}
+{"time": "2026-10-14T13:53:31Z", "level": "INFO", "msg": "authorized", "latency_ms": 99, "card": "tok_594079"}
+{"time": "2026-10-14T13:53:43Z", "level": "INFO", "msg": "authorized", "latency_ms": 130, "card": "tok_979238"}
+{"time": "2026-10-14T13:53:50Z", "level": "INFO", "msg": "authorized", "latency_ms": 106, "card": "tok_815609"}
+{"time": "2026-10-14T13:53:56Z", "level": "INFO", "msg": "authorized", "latency_ms": 60, "card": "tok_914534"}
+{"time": "2026-10-14T13:54:11Z", "level": "INFO", "msg": "authorized", "latency_ms": 101, "card": "tok_170942"}
+{"time": "2026-10-14T13:54:17Z", "level": "INFO", "msg": "authorized", "latency_ms": 79, "card": "tok_646215"}
+{"time": "2026-10-14T13:54:31Z", "level": "INFO", "msg": "authorized", "latency_ms": 51, "card": "tok_156510"}
+{"time": "2026-10-14T13:54:41Z", "level": "WARN", "msg": "card network TLS handshake retry", "attempt": 2, "ok": true}
+{"time": "2026-10-14T13:54:51Z", "level": "WARN", "msg": "card network TLS handshake retry", "attempt": 2, "ok": true}
+{"time": "2026-10-14T13:55:01Z", "level": "WARN", "msg": "card network TLS handshake retry", "attempt": 2, "ok": true}
+{"time": "2026-10-14T13:55:11Z", "level": "WARN", "msg": "card network TLS handshake retry", "attempt": 2, "ok": true}
+{"time": "2026-10-14T13:55:16Z", "level": "WARN", "msg": "card network TLS handshake retry", "attempt": 2, "ok": true}
+{"time": "2026-10-14T13:55:27Z", "level": "INFO", "msg": "authorized", "latency_ms": 97, "card": "tok_794498"}
+{"time": "2026-10-14T13:55:42Z", "level": "INFO", "msg": "authorized", "latency_ms": 114, "card": "tok_593290"}
+{"time": "2026-10-14T13:55:51Z", "level": "INFO", "msg": "authorized", "latency_ms": 127, "card": "tok_808831"}
+{"time": "2026-10-14T13:56:06Z", "level": "INFO", "msg": "authorized", "latency_ms": 75, "card": "tok_833078"}
+{"time": "2026-10-14T13:56:11Z", "level": "INFO", "msg": "authorized", "latency_ms": 101, "card": "tok_725112"}
+{"time": "2026-10-14T13:56:22Z", "level": "INFO", "msg": "authorized", "latency_ms": 103, "card": "tok_618246"}
+{"time": "2026-10-14T13:56:28Z", "level": "INFO", "msg": "authorized", "latency_ms": 122, "card": "tok_778504"}
+{"time": "2026-10-14T13:56:39Z", "level": "INFO", "msg": "authorized", "latency_ms": 92, "card": "tok_712199"}
+{"time": "2026-10-14T13:56:45Z", "level": "INFO", "msg": "authorized", "latency_ms": 53, "card": "tok_422109"}
+{"time": "2026-10-14T13:56:52Z", "level": "INFO", "msg": "authorized", "latency_ms": 98, "card": "tok_222734"}
+{"time": "2026-10-14T13:56:58Z", "level": "INFO", "msg": "authorized", "latency_ms": 78, "card": "tok_601679"}
+{"time": "2026-10-14T13:57:11Z", "level": "INFO", "msg": "authorized", "latency_ms": 51, "card": "tok_785416"}
+{"time": "2026-10-14T13:57:20Z", "level": "INFO", "msg": "authorized", "latency_ms": 73, "card": "tok_229402"}
+{"time": "2026-10-14T13:57:24Z", "level": "INFO", "msg": "authorized", "latency_ms": 86, "card": "tok_257138"}
+{"time": "2026-10-14T13:57:29Z", "level": "INFO", "msg": "authorized", "latency_ms": 119, "card": "tok_318706"}
+{"time": "2026-10-14T13:57:36Z", "level": "INFO", "msg": "authorized", "latency_ms": 108, "card": "tok_774997"}
+{"time": "2026-10-14T13:57:51Z", "level": "INFO", "msg": "authorized", "latency_ms": 85, "card": "tok_223107"}
+{"time": "2026-10-14T13:58:02Z", "level": "INFO", "msg": "authorized", "latency_ms": 52, "card": "tok_909740"}
+{"time": "2026-10-14T13:58:17Z", "level": "INFO", "msg": "authorized", "latency_ms": 82, "card": "tok_779248"}
+{"time": "2026-10-14T13:58:21Z", "level": "INFO", "msg": "authorized", "latency_ms": 110, "card": "tok_993888"}
+{"time": "2026-10-14T13:58:36Z", "level": "INFO", "msg": "authorized", "latency_ms": 73, "card": "tok_667339"}
+{"time": "2026-10-14T13:58:45Z", "level": "INFO", "msg": "authorized", "latency_ms": 58, "card": "tok_501599"}
+{"time": "2026-10-14T13:58:56Z", "level": "INFO", "msg": "authorized", "latency_ms": 99, "card": "tok_620305"}
+{"time": "2026-10-14T13:59:08Z", "level": "INFO", "msg": "authorized", "latency_ms": 125, "card": "tok_787958"}
+{"time": "2026-10-14T13:59:23Z", "level": "INFO", "msg": "authorized", "latency_ms": 64, "card": "tok_770543"}
+{"time": "2026-10-14T13:59:32Z", "level": "INFO", "msg": "authorized", "latency_ms": 127, "card": "tok_435772"}
+{"time": "2026-10-14T13:59:43Z", "level": "INFO", "msg": "authorized", "latency_ms": 79, "card": "tok_188130"}
+{"time": "2026-10-14T13:59:53Z", "level": "INFO", "msg": "authorized", "latency_ms": 49, "card": "tok_271664"}
+{"time": "2026-10-14T14:00:08Z", "level": "INFO", "msg": "authorized", "latency_ms": 46, "card": "tok_221022"}
+{"time": "2026-10-14T14:00:12Z", "level": "INFO", "msg": "authorized", "latency_ms": 100, "card": "tok_582099"}
+{"time": "2026-10-14T14:00:27Z", "level": "INFO", "msg": "authorized", "latency_ms": 88, "card": "tok_142779"}
+{"time": "2026-10-14T14:00:40Z", "level": "INFO", "msg": "authorized", "latency_ms": 120, "card": "tok_660779"}
+{"time": "2026-10-14T14:00:48Z", "level": "INFO", "msg": "authorized", "latency_ms": 76, "card": "tok_977343"}
+{"time": "2026-10-14T14:01:01Z", "level": "INFO", "msg": "authorized", "latency_ms": 82, "card": "tok_644134"}
+{"time": "2026-10-14T14:01:06Z", "level": "INFO", "msg": "authorized", "latency_ms": 81, "card": "tok_284734"}
+{"time": "2026-10-14T14:01:12Z", "level": "INFO", "msg": "authorized", "latency_ms": 53, "card": "tok_869640"}
+{"time": "2026-10-14T14:01:24Z", "level": "INFO", "msg": "authorized", "latency_ms": 76, "card": "tok_815173"}
+{"time": "2026-10-14T14:01:35Z", "level": "INFO", "msg": "authorized", "latency_ms": 89, "card": "tok_499586"}
+{"time": "2026-10-14T14:01:46Z", "level": "INFO", "msg": "authorized", "latency_ms": 100, "card": "tok_162368"}
+{"time": "2026-10-14T14:01:57Z", "level": "INFO", "msg": "authorized", "latency_ms": 105, "card": "tok_229435"}
+{"time": "2026-10-14T14:02:04Z", "level": "INFO", "msg": "authorized", "latency_ms": 75, "card": "tok_809322"}
+{"time": "2026-10-14T14:02:19Z", "level": "INFO", "msg": "authorized", "latency_ms": 108, "card": "tok_558058"}
+{"time": "2026-10-14T14:02:23Z", "level": "INFO", "msg": "authorized", "latency_ms": 94, "card": "tok_763341"}
+{"time": "2026-10-14T14:02:30Z", "level": "INFO", "msg": "authorized", "latency_ms": 46, "card": "tok_185792"}
+{"time": "2026-10-14T14:02:31Z", "level": "INFO", "msg": "starting", "db_max_conns": 5, "acquire_timeout_ms": 2000, "version": "2026.10.14-2"}
+{"time": "2026-10-14T14:02:40Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:02:44Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:02:50Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:03:02Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:03:07Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:03:21Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:03:25Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:03:35Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:03:43Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:03:48Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:03:54Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:04:08Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:04:12Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:04:21Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:04:27Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:04:36Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:04:43Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:04:48Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:04:58Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:05:07Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:05:15Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:05:22Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:05:28Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:05:32Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:05:40Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:05:55Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:06:10Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:06:21Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:06:30Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:06:37Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:06:48Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:06:58Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:07:05Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:07:13Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:07:23Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:07:37Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:07:47Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:07:53Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:08:00Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:08:06Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:08:12Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:08:23Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:08:30Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:08:44Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:08:57Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:09:01Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:09:06Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:09:10Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:09:14Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:09:27Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:09:41Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:09:52Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:10:01Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:10:15Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:10:29Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:10:39Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:10:47Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:10:53Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:11:05Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:11:20Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:11:31Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:11:39Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:11:50Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:12:00Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:12:05Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:12:18Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:12:30Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:12:38Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:12:45Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:12:51Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:12:58Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:13:06Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:13:17Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:13:23Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:13:35Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:13:47Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:13:59Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:14:04Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:14:12Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:14:20Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:14:33Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:14:37Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:14:44Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:14:49Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:15:03Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:15:15Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:15:21Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:15:27Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:15:31Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:15:46Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:16:00Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:16:15Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:16:20Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:16:35Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:16:50Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:17:03Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:17:13Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:17:23Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:17:32Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:17:41Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:17:47Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:17:57Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:18:08Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:18:23Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:18:38Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:18:48Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:18:55Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:19:03Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:19:14Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:19:22Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:19:29Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:19:35Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:19:45Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:19:59Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}
+{"time": "2026-10-14T14:20:05Z", "level": "WARN", "msg": "acquire conn timeout", "wait_ms": 2000, "in_use": 5, "max": 5}

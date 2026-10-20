@@ -1,0 +1,1993 @@
+[
+  {
+    "id": "CLM-001",
+    "claim": "As of October 2026, Anthropic describes Claude Code as an agentic coding tool that reads your codebase, edits files, runs commands, and integrates with your development tools.",
+    "category": "product",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Claude Code overview",
+        "url": "https://code.claude.com/docs/en/overview",
+        "publisher": "Anthropic (Claude Code docs)",
+        "excerpt": "Claude Code is an agentic coding tool that reads your codebase, edits files, runs commands, and integrates with your development tools."
+      }
+    ],
+    "accessed": "2026-10-20"
+  },
+  {
+    "id": "CLM-002",
+    "claim": "Claude Code runs in the terminal, in IDE extensions (VS Code, and JetBrains IDEs such as IntelliJ IDEA and PyCharm), in a desktop app and on the web; each surface uses the same engine, so a repository's CLAUDE.md files, settings and MCP servers work across all of them.",
+    "category": "product",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Claude Code overview",
+        "url": "https://code.claude.com/docs/en/overview",
+        "publisher": "Anthropic (Claude Code docs)",
+        "excerpt": "Each surface connects to the same underlying Claude Code engine, so your repo's CLAUDE.md files, settings, and MCP servers work across all of them."
+      }
+    ],
+    "accessed": "2026-10-20"
+  },
+  {
+    "id": "CLM-003",
+    "claim": "For bugs and features, Claude Code plans the approach, writes code across multiple files and verifies it works; for a bug it traces the issue through the codebase to the root cause.",
+    "category": "product",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Claude Code overview",
+        "url": "https://code.claude.com/docs/en/overview",
+        "publisher": "Anthropic (Claude Code docs)",
+        "excerpt": "Claude Code plans the approach, writes the code across multiple files, and verifies it works."
+      }
+    ],
+    "accessed": "2026-10-20"
+  },
+  {
+    "id": "CLM-004",
+    "claim": "Claude Code works directly with git (stages changes, writes commit messages, creates branches, opens pull requests) and can run in CI through GitHub Actions or GitLab CI/CD to automate code review and issue triage.",
+    "category": "product",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Claude Code overview",
+        "url": "https://code.claude.com/docs/en/overview",
+        "publisher": "Anthropic (Claude Code docs)",
+        "excerpt": "In CI, you can automate code review and issue triage with GitHub Actions or GitLab CI/CD."
+      }
+    ],
+    "accessed": "2026-10-20"
+  },
+  {
+    "id": "CLM-005",
+    "claim": "Claude Code is scriptable: `claude -p` runs it non-interactively, so it can take piped logs, run in CI, or chain with other tools.",
+    "category": "product",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Claude Code overview",
+        "url": "https://code.claude.com/docs/en/overview",
+        "publisher": "Anthropic (Claude Code docs)",
+        "excerpt": "Claude Code is composable and follows the Unix philosophy. Pipe logs into it, run it in CI, or chain it with other tools."
+      }
+    ],
+    "accessed": "2026-10-20"
+  },
+  {
+    "id": "CLM-006",
+    "claim": "Claude Code connects to external tools and data through the Model Context Protocol (MCP), an open standard (for example design docs in Google Drive, Jira tickets, or custom tooling).",
+    "category": "product",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Claude Code overview",
+        "url": "https://code.claude.com/docs/en/overview",
+        "publisher": "Anthropic (Claude Code docs)",
+        "excerpt": "The Model Context Protocol (MCP) is an open standard for connecting AI tools to external data sources."
+      }
+    ],
+    "accessed": "2026-10-20"
+  },
+  {
+    "id": "CLM-007",
+    "claim": "Teams customize Claude Code with CLAUDE.md (project instructions read at the start of every session), skills (shareable repeatable workflows such as /review-pr) and hooks (commands that run before or after Claude Code actions).",
+    "category": "product",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Claude Code overview",
+        "url": "https://code.claude.com/docs/en/overview",
+        "publisher": "Anthropic (Claude Code docs)",
+        "excerpt": "CLAUDE.md is a markdown file you add to your project root that Claude Code reads at the start of every session."
+      }
+    ],
+    "accessed": "2026-10-20"
+  },
+  {
+    "id": "CLM-008",
+    "claim": "Claude Code can spawn multiple agents (subagents) that work on different parts of a task in parallel under a lead agent, and the Agent SDK lets teams build their own agents on Claude Code's tools and permissions.",
+    "category": "product",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Claude Code overview",
+        "url": "https://code.claude.com/docs/en/overview",
+        "publisher": "Anthropic (Claude Code docs)",
+        "excerpt": "Spawn multiple Claude Code agents that work on different parts of a task simultaneously. A lead agent coordinates the work."
+      }
+    ],
+    "accessed": "2026-10-20"
+  },
+  {
+    "id": "CLM-009",
+    "claim": "The terminal CLI, VS Code and JetBrains surfaces support third-party providers (Amazon Bedrock, Google Cloud, Microsoft Foundry), so they can run on cloud-provider credentials.",
+    "category": "deployment",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Claude Code overview",
+        "url": "https://code.claude.com/docs/en/overview",
+        "publisher": "Anthropic (Claude Code docs)",
+        "excerpt": "The Terminal CLI, VS Code, and JetBrains also support third-party providers."
+      }
+    ],
+    "accessed": "2026-10-20"
+  },
+  {
+    "id": "CLM-010",
+    "claim": "A PreToolUse hook receives the tool name and input as JSON on stdin and can block the call by exiting with code 2 (its stderr is returned to Claude) or by returning a permissionDecision of deny.",
+    "category": "product",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Hooks reference",
+        "url": "https://code.claude.com/docs/en/hooks",
+        "publisher": "Anthropic (Claude Code docs)",
+        "excerpt": "Exit code 2 blocks the call... permissionDecision accepts allow, deny, ask, or defer."
+      }
+    ],
+    "accessed": "2026-10-20"
+  },
+  {
+    "id": "CLM-011",
+    "claim": "Project permission `allow` rules in a committed .claude/settings.json apply only after each developer trusts the folder, while `deny` and `ask` rules apply right away; OpenTelemetry exporter variables do not take effect from a repository file.",
+    "category": "security",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Settings files and precedence",
+        "url": "https://code.claude.com/docs/en/settings",
+        "publisher": "Anthropic (Claude Code docs)",
+        "excerpt": "permissions.allow rules... apply only after each teammate trusts the folder... deny and ask rules apply right away."
+      }
+    ],
+    "accessed": "2026-10-20"
+  },
+  {
+    "id": "CLM-012",
+    "claim": "Claude Code installs on macOS, Linux and WSL with `curl -fsSL https://claude.ai/install.sh | bash`, and native installations update automatically in the background.",
+    "category": "product",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Claude Code overview",
+        "url": "https://code.claude.com/docs/en/overview",
+        "publisher": "Anthropic (Claude Code docs)",
+        "excerpt": "Native installations automatically update in the background to keep you on the latest version."
+      }
+    ],
+    "accessed": "2026-10-20"
+  },
+  {
+    "id": "CLM-013",
+    "claim": "As of October 2026, permissions.defaultMode sets the permission mode Claude Code sessions start in (default, labelled Manual; acceptEdits; plan; auto; dontAsk; bypassPermissions), and setting permissions.disableBypassPermissionsMode or permissions.disableAutoMode to \"disable\" prevents bypass or auto mode from being used; both are most useful in managed settings, where they cannot be overridden.",
+    "category": "product",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Configure permissions",
+        "url": "https://code.claude.com/docs/en/permissions",
+        "publisher": "Anthropic (Claude Code docs)",
+        "excerpt": "To prevent bypassPermissions or auto mode from being used, set permissions.disableBypassPermissionsMode or permissions.disableAutoMode to \"disable\" in any settings file."
+      }
+    ],
+    "accessed": "2026-10-20"
+  },
+  {
+    "id": "CLM-500",
+    "claim": "FRED (Federal Reserve Economic Data) is a public database run by the Federal Reserve Bank of St. Louis; series can be downloaded as CSV without an API key.",
+    "category": "fred-data",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "FRED, Federal Reserve Bank of St. Louis",
+        "url": "https://fred.stlouisfed.org/",
+        "publisher": "Federal Reserve Bank of St. Louis (FRED)",
+        "excerpt": "fredgraph.csv?id=<SERIES> returned HTTP 200 without a key"
+      }
+    ],
+    "accessed": "2026-10-20",
+    "notes": "Verified by downloading the series CSV on 2026-10-20 (demo/macro-risk/data/raw)."
+  },
+  {
+    "id": "CLM-501",
+    "claim": "FRED series UNRATE (unemployment rate, BLS) has no October 2025 observation in the October 2026 download; the adjacent months are present.",
+    "category": "fred-data",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "FRED, Federal Reserve Bank of St. Louis",
+        "url": "https://fred.stlouisfed.org/series/UNRATE",
+        "publisher": "Federal Reserve Bank of St. Louis (FRED)",
+        "excerpt": "row 2025-10-01 is blank; 2025-11-01 is 4.5"
+      }
+    ],
+    "accessed": "2026-10-20",
+    "notes": "Verified by downloading the series CSV on 2026-10-20 (demo/macro-risk/data/raw)."
+  },
+  {
+    "id": "CLM-502",
+    "claim": "The analysis uses core PCE prices (PCEPILFE, BEA), the CBO noncyclical rate of unemployment (NROU), the federal funds target (DFEDTAR, DFEDTARU, Federal Reserve Board) and VIX closes (VIXCLS, CBOE), all from FRED.",
+    "category": "fred-data",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "FRED, Federal Reserve Bank of St. Louis",
+        "url": "https://fred.stlouisfed.org/series/VIXCLS",
+        "publisher": "Federal Reserve Bank of St. Louis (FRED)",
+        "excerpt": "series downloaded 2026-10-20; see demo/macro-risk/data/README.md"
+      }
+    ],
+    "accessed": "2026-10-20",
+    "notes": "Verified by downloading the series CSV on 2026-10-20 (demo/macro-risk/data/raw)."
+  },
+  {
+    "id": "CLM-600",
+    "claim": "As of October 2026, Anthropic's Commercial Terms say Anthropic may not train models on Customer Content from its Services, and Claude Code's data-usage documentation says Anthropic does not train generative models on code or prompts sent to Claude Code under commercial terms (Team, Enterprise, API and third-party platforms) unless the customer chooses to provide data for model improvement.",
+    "category": "security",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Commercial Terms of Service (Section B)",
+        "url": "https://www.anthropic.com/legal/commercial-terms",
+        "publisher": "Anthropic",
+        "date": "Effective Jun 17, 2025",
+        "excerpt": "Anthropic may not train models on Customer Content from Services."
+      },
+      {
+        "title": "Claude Code docs: Data usage (Data training policy)",
+        "url": "https://code.claude.com/docs/en/data-usage",
+        "publisher": "Anthropic",
+        "excerpt": "Anthropic does not train generative models using code or prompts sent to Claude Code under commercial terms, unless the customer has chosen to provide their data to us for model improvement."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "strategy/objection-handling.md"
+    ],
+    "notes": "Consumer plans (Free, Pro, Max) have a different, opt-in training setting, so FinTechCo must use a commercial plan or a cloud provider; say so if asked. The Development Partner Program is an explicit opt-in available only on Anthropic's first-party API, not Bedrock or Vertex. The Commercial Terms page shows an Effective date of Jun 17, 2025 and no separate last-updated date; FinTechCo's signed agreement governs."
+  },
+  {
+    "id": "CLM-601",
+    "claim": "Under Anthropic's Commercial Terms, the customer retains all rights to its Inputs and owns its Outputs, and Anthropic agrees to defend the customer against third-party claims that paid use of the Services, or Outputs generated through authorized use, violates intellectual property rights, subject to listed exclusions.",
+    "category": "compliance",
+    "status": "partial",
+    "safeWording": "Anthropic's Commercial Terms say you keep your inputs and own the outputs, and include an intellectual-property defense commitment with exclusions such as your own modifications, combinations with other technology, your inputs, and knowing infringement. Your counsel should read sections B and K against the contract you would actually sign.",
+    "sources": [
+      {
+        "title": "Commercial Terms of Service (Sections B and K)",
+        "url": "https://www.anthropic.com/legal/commercial-terms",
+        "publisher": "Anthropic",
+        "date": "Effective Jun 17, 2025",
+        "excerpt": "Customer (a) retains all rights to its Inputs, and (b) owns its Outputs. ... Anthropic will defend Customer ... from and against any Customer Claim ... alleging that Customer's paid use of the Services ... or Outputs ... violates any third-party intellectual property right."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "strategy/objection-handling.md"
+    ],
+    "notes": "Partial because the standard online terms are not FinTechCo's negotiated agreement, and the assignment of Outputs is conditioned on compliance with the terms. Exclusions in K.3 include modifications by the customer, combination with technology or content not provided by Anthropic, customer Inputs, knowing infringement, patented inventions in an Output, and trademark use of an Output. Legal review needed; do not characterise as a guarantee."
+  },
+  {
+    "id": "CLM-602",
+    "claim": "As of October 2026, for Claude Code under commercial plans (Team, Enterprise and API) Anthropic's standard retention period is 30 days; zero data retention is available to qualified accounts on Claude for Enterprise, enabled per organization and not part of the standard plan. Claude Code also keeps session transcripts locally in plaintext under ~/.claude/projects for 30 days by default, adjustable with cleanupPeriodDays.",
+    "category": "security",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Claude Code docs: Data usage (Data retention)",
+        "url": "https://code.claude.com/docs/en/data-usage",
+        "publisher": "Anthropic",
+        "excerpt": "Commercial users (Team, Enterprise, and API): Standard: 30-day retention period. Zero data retention: available to qualified accounts for Claude Code on Claude for Enterprise. ZDR is not included in the standard Enterprise plan."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "strategy/objection-handling.md"
+    ],
+    "notes": "Feedback transcripts shared with /feedback, /bug or /share are retained for 5 years; optional session-survey transcripts for up to 6 months; both are user-initiated and can be disabled (DISABLE_FEEDBACK_COMMAND, or by using Bedrock/Vertex where /feedback writes a local archive instead). Local transcript caching is on the developer machine, not at Anthropic."
+  },
+  {
+    "id": "CLM-603",
+    "claim": "With zero data retention enabled for a Claude for Enterprise organization, prompts and responses from Claude Code sessions are processed in real time and not stored by Anthropic after the response is returned, except where needed to comply with law or combat misuse; it covers Anthropic's direct platform only, does not cover third-party integrations such as MCP servers, and switches off features that need storage such as cloud sessions, Remote Control and /feedback.",
+    "category": "security",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Claude Code docs: Zero data retention",
+        "url": "https://code.claude.com/docs/en/zero-data-retention",
+        "publisher": "Anthropic",
+        "excerpt": "When ZDR is enabled, prompts and model responses generated during Claude Code sessions are processed in real time and not stored by Anthropic after the response is returned, except where needed to comply with law or combat misuse."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "strategy/objection-handling.md"
+    ],
+    "notes": "ZDR is per organization and requires separate enablement by the Anthropic account team after eligibility review; sessions must authenticate into the ZDR organization (forceLoginOrgUUID managed setting). Data flagged for policy violations may be retained up to 2 years. The page lists the Fable models as covered models that require data retention by default and not available to ZDR organizations; other models remain available. For Bedrock and Vertex, refer to those platforms' retention policies."
+  },
+  {
+    "id": "CLM-604",
+    "claim": "Claude Code sends prompts and model outputs over the network encrypted in transit with TLS 1.2 or higher. At rest, the Anthropic API uses infrastructure-level AES-256 disk encryption; Amazon Bedrock uses AES-256 with AWS-managed keys and customer-managed keys through AWS KMS; Google Cloud's Agent Platform uses Google-managed keys with customer-managed keys (CMEK) available.",
+    "category": "security",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Claude Code docs: Data usage (Local Claude Code data flow)",
+        "url": "https://code.claude.com/docs/en/data-usage",
+        "publisher": "Anthropic",
+        "excerpt": "This data includes all user prompts and model outputs, encrypted in transit via TLS 1.2+. ... Amazon Bedrock: AES-256 with AWS-managed keys. Customer-managed keys available via AWS KMS."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "strategy/objection-handling.md"
+    ],
+    "notes": "Claude Code runs locally; only prompts, tool results sent as context and outputs go to the model endpoint. Claude Code is compatible with most VPNs and LLM proxies."
+  },
+  {
+    "id": "CLM-605",
+    "claim": "Claude Code's operational metrics never include your code, prompts or file paths, and telemetry, error reporting and /feedback reports are off by default when it runs through Amazon Bedrock or Google Cloud's Agent Platform; an administrator can switch off all non-essential traffic with one setting, CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC.",
+    "category": "security",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Claude Code docs: Data usage (Telemetry services; Default behaviors by API provider)",
+        "url": "https://code.claude.com/docs/en/data-usage",
+        "publisher": "Anthropic",
+        "excerpt": "Metrics never include your code, prompts, or file paths. ... By default, error reporting, telemetry, and bug reporting are disabled when using Amazon Bedrock, Google Cloud's Agent Platform, Microsoft Foundry, or Claude Platform on AWS."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "strategy/objection-handling.md"
+    ],
+    "notes": "Two checks run regardless of provider: session quality surveys (own opt-out variable) and a WebFetch domain safety check that sends only the hostname to api.anthropic.com. On the first-party API, /feedback sends conversation history including code to Anthropic unless disabled with DISABLE_FEEDBACK_COMMAND=1."
+  },
+  {
+    "id": "CLM-606",
+    "claim": "As of October 2026, Claude Code's permission system lets an organization control what it does without asking: in Manual mode it starts read-only and asks before editing files or running commands, unmatched commands need approval, file reads inside the working directory do not prompt, and rules are evaluated deny, then ask, then allow. Auto mode, where a separate classifier model reviews actions, is the built-in starting mode for interactive terminal sessions, and administrators can set the starting mode and disable auto and bypass modes in managed settings.",
+    "category": "security",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Claude Code docs: Security (Permission-based architecture)",
+        "url": "https://code.claude.com/docs/en/security",
+        "publisher": "Anthropic",
+        "excerpt": "Manual mode: Claude Code starts with read-only permissions. When it needs to edit files, run tests, or execute commands, it asks you first. ... Auto mode is the built-in starting permission mode for interactive terminal and VS Code sessions. File reads, Grep: no approval required within the working directory and additional directories (Permissions table)."
+      },
+      {
+        "title": "Claude Code docs: Permissions",
+        "url": "https://code.claude.com/docs/en/permissions",
+        "publisher": "Anthropic",
+        "excerpt": "Rules are evaluated in order: deny, then ask, then allow. ... To prevent bypassPermissions or auto mode from being used, set permissions.disableBypassPermissionsMode or permissions.disableAutoMode to 'disable' ... most useful in managed settings where they can't be overridden."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "strategy/objection-handling.md"
+    ],
+    "notes": "Do not say 'it always asks first': the documented default starting mode is Auto, which delegates some approvals to a classifier; the organization chooses the starting mode. Bash deny and ask rules match the command text and are not a security boundary around a program (the permissions page says so); pair them with the sandbox for OS-level enforcement. The security page states the user is responsible for reviewing proposed code and commands."
+  },
+  {
+    "id": "CLM-607",
+    "claim": "Claude Code includes an optional sandbox for shell commands, enforced by the operating system (Seatbelt on macOS, bubblewrap on Linux and WSL2), that limits which files they can write and which network domains they can reach; it is off by default, administrators can require it through managed settings, and it covers shell commands only, so file tools, MCP servers and hooks run outside it and, by default, sandboxed commands can still read most of the machine including credential files unless an administrator denies those paths.",
+    "category": "security",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Claude Code docs: Configure the sandboxed Bash tool",
+        "url": "https://code.claude.com/docs/en/sandboxing",
+        "publisher": "Anthropic",
+        "excerpt": "The Bash sandbox is a boundary that the operating system enforces around the shell commands Claude runs on your machine. ... The sandbox is off by default. ... The sandbox covers shell commands only. Claude's file tools, MCP servers, and hooks run outside it."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "strategy/objection-handling.md"
+    ],
+    "notes": "Network default: no direct route out; connections go through a local proxy that checks each host against allowed domains, which start empty. Reads default: most of the machine, including ~/.ssh and ~/.aws/credentials, changeable with filesystem.denyRead and credentials settings. On native Windows, commands run unsandboxed; by default Claude Code runs commands unsandboxed if the sandbox cannot start, unless sandbox.failIfUnavailable is true. Enforcement in managed settings: sandbox.enabled, failIfUnavailable, allowUnsandboxedCommands=false, allowManagedDomainsOnly. For stronger isolation the docs suggest running the whole process in a container or VM."
+  },
+  {
+    "id": "CLM-608",
+    "claim": "Claude Code's documented safeguards against prompt injection include permission prompts for sensitive operations, no automatic approval of network fetch commands such as curl and wget, detection of commands it cannot fully analyze, fail-closed matching of unrecognised commands, and a separate model call that summarizes fetched web pages; Anthropic's documentation also states that no system is completely immune to all attacks.",
+    "category": "security",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Claude Code docs: Security (Protect against prompt injection)",
+        "url": "https://code.claude.com/docs/en/security",
+        "publisher": "Anthropic",
+        "excerpt": "While these protections significantly reduce risk, no system is completely immune to all attacks. Always maintain good security practices when working with any AI tool."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "strategy/objection-handling.md"
+    ],
+    "notes": "The safeguards named in Manual mode: network request approval, web page summaries via a separate model call, trust verification of folders and .mcp.json servers, command injection detection, fail-closed matching, secure credential storage. Best practices listed: review commands before approval, avoid piping untrusted content directly to Claude, verify changes to critical files, use VMs for scripts that touch external services. Never claim prompt injection is solved."
+  },
+  {
+    "id": "CLM-609",
+    "claim": "Administrators can deploy managed settings through the claude.ai admin console (Teams and Enterprise), device management policy, or a file on disk; they sit above user and project settings and can lock permission rules, disable bypass and auto permission modes, require the sandbox, restrict MCP servers, hooks, models and providers, require login to the company's own organization, and load an organization-wide CLAUDE.md that cannot be excluded. Developers can extend managed permission lists but not remove from them.",
+    "category": "security",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Claude Code docs: Set up Claude Code for your organization",
+        "url": "https://code.claude.com/docs/en/admin-setup",
+        "publisher": "Anthropic",
+        "excerpt": "Claude Code enforces organization policy through managed settings that take precedence over local developer configuration. ... Array settings such as permissions.allow and permissions.deny merge entries from all sources, so developers can extend managed lists but not remove from them."
+      },
+      {
+        "title": "Claude Code docs: Deploy managed settings",
+        "url": "https://code.claude.com/docs/en/managed-settings",
+        "publisher": "Anthropic",
+        "excerpt": "Claude Code applies them above every other level, so no user, project, local, or --settings value overrides them, apart from a few security-sensitive exceptions."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "strategy/objection-handling.md"
+    ],
+    "notes": "Named keys: allowManagedPermissionRulesOnly, permissions.disableBypassPermissionsMode, permissions.disableAutoMode, permissions.defaultMode, sandbox.enabled, allowManagedHooksOnly, allowManagedMcpServersOnly, forceLoginMethod, forceLoginOrgUUID, allowedProviders (newer versions), availableModels with enforceAvailableModels. Server-managed delivery needs a Teams or Enterprise plan; Bedrock and Vertex deployments use device management or a file, or a Claude apps gateway. Plist/HKLM/file locations resist tampering because they need admin rights to write; the Windows HKCU registry location does not."
+  },
+  {
+    "id": "CLM-610",
+    "claim": "By default anyone running Claude Code can connect any MCP server (a connector to a tool or data source), and Anthropic does not security-audit or manage MCP servers; administrators can disable MCP entirely, deploy a fixed set of servers, or enforce an allowlist or denylist through managed settings.",
+    "category": "security",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Claude Code docs: Control MCP server access for your organization",
+        "url": "https://code.claude.com/docs/en/managed-mcp",
+        "publisher": "Anthropic",
+        "excerpt": "By default, anyone running Claude Code can connect any MCP server they choose. Anthropic reviews connectors against its listing criteria before adding them to the Anthropic Directory, but doesn't security-audit or manage any MCP server."
+      },
+      {
+        "title": "Claude Code docs: Security (MCP security)",
+        "url": "https://code.claude.com/docs/en/security",
+        "publisher": "Anthropic",
+        "excerpt": "We encourage either writing your own MCP servers or using MCP servers from providers that you trust."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "strategy/objection-handling.md"
+    ],
+    "notes": "Patterns: managed-mcp.json for exclusive control, managedMcpServers to provide servers, allowedMcpServers plus allowManagedMcpServersOnly for an approved catalog. A serverName entry is not a security control; use serverUrl or serverCommand entries. OpenTelemetry can record which MCP servers and tools are invoked when OTEL_LOG_TOOL_DETAILS is set."
+  },
+  {
+    "id": "CLM-611",
+    "claim": "Hooks are user-defined commands, HTTP endpoints, LLM prompts or subagents that run automatically at points in Claude Code's lifecycle; a PreToolUse hook can block a tool call before it runs, and administrators can restrict Claude Code to managed hooks only with allowManagedHooksOnly. Hooks themselves run outside the sandbox with the user's access.",
+    "category": "security",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Claude Code docs: Hooks reference",
+        "url": "https://code.claude.com/docs/en/hooks",
+        "publisher": "Anthropic",
+        "excerpt": "Hooks are user-defined shell commands, HTTP endpoints, MCP tool calls, LLM prompts, or subagents that execute automatically at specific points in Claude Code's lifecycle. ... PreToolUse: Before a tool call executes. Can block it."
+      },
+      {
+        "title": "Claude Code docs: Configure the sandboxed Bash tool (What runs outside the sandbox)",
+        "url": "https://code.claude.com/docs/en/sandboxing",
+        "publisher": "Anthropic",
+        "excerpt": "Other processes Claude Code starts: command hooks, local MCP servers ... run with your full access."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "strategy/objection-handling.md"
+    ],
+    "notes": "Blocking: exit code 2, or JSON permissionDecision 'deny'. A blocking hook takes precedence over allow rules; a PreToolUse hook cannot override a deny or ask rule. Managed hooks merge with user hooks and disableAllHooks cannot disable managed hooks from outside managed settings. ConfigChange hooks can audit or block settings changes mid-session (security page). Hook page read to character 100000 of about 273000; the full security note on hook permissions was not read."
+  },
+  {
+    "id": "CLM-612",
+    "claim": "Claude Code can export OpenTelemetry metrics and events, including user prompts, tool results, API requests and tool permission decisions, to a collector the organization runs; it is opt-in, prompt content is redacted unless OTEL_LOG_USER_PROMPTS is set, and administrators can set the configuration for all users through managed settings.",
+    "category": "security",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Claude Code docs: Monitoring usage (OpenTelemetry)",
+        "url": "https://code.claude.com/docs/en/monitoring-usage",
+        "publisher": "Anthropic",
+        "excerpt": "Claude Code exports metrics as time series data via the standard metrics protocol, events via the logs/events protocol, and optionally distributed traces ... Administrators can configure OpenTelemetry settings for all users through the managed settings file."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "strategy/objection-handling.md"
+    ],
+    "notes": "Event names include claude_code.user_prompt, tool_result, api_request, tool_decision. Tool parameters (for example Bash commands) are logged only if OTEL_LOG_TOOL_DETAILS is enabled; traces are beta and need a second variable. When managed settings set the OTLP endpoint, developers cannot redirect that signal; exporter variables in a repository's .claude/settings.json are ignored. Page read to character 100000 of about 156000. OpenTelemetry is a usage and activity feed; whether it satisfies a given audit control is for FinTechCo's audit and compliance teams."
+  },
+  {
+    "id": "CLM-613",
+    "claim": "For request-level audit logging, Anthropic's administrator guidance recommends placing a gateway between developers and the model provider, such as a self-hosted Claude apps gateway that records a per-request audit log with the identity provider's user identity; on Amazon Bedrock, AWS recommends API and user activity logging with AWS CloudTrail.",
+    "category": "security",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Claude Code docs: Set up Claude Code for your organization (Review data handling)",
+        "url": "https://code.claude.com/docs/en/admin-setup",
+        "publisher": "Anthropic",
+        "excerpt": "If you need request-level audit logging or to route traffic by data sensitivity, we recommend you place a gateway between developers and your provider: a self-hosted Claude apps gateway records a per-request audit log with IdP identity, or you can use another LLM gateway."
+      },
+      {
+        "title": "Amazon Bedrock User Guide: Data protection",
+        "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/data-protection.html",
+        "publisher": "Amazon Web Services",
+        "excerpt": "Set up API and user activity logging with AWS CloudTrail."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "strategy/objection-handling.md"
+    ],
+    "notes": "Sessions that go through a gateway are not eligible for the HIPAA configuration (not relevant to FinTechCo unless asked). Whether any of these records satisfies a specific SOX, PCI DSS, GLBA or model-risk control is for FinTechCo's compliance team; see the unverified Compliance API entry."
+  },
+  {
+    "id": "CLM-614",
+    "claim": "As of October 2026, Claude Code can run through Amazon Bedrock or Google Cloud's Agent Platform (formerly Vertex AI) using your own AWS or GCP credentials, IAM and pinned model versions, and the documentation recommends a dedicated AWS account or GCP project for Claude Code to simplify cost tracking and access control. Anthropic's legal page says your existing commercial agreement applies to Claude Code usage through those clouds unless otherwise agreed. Some features, such as cloud sessions, need a claude.ai account and are not available through cloud-provider credentials alone.",
+    "category": "deployment",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Claude Code docs: Claude Code on Amazon Bedrock",
+        "url": "https://code.claude.com/docs/en/amazon-bedrock",
+        "publisher": "Anthropic",
+        "excerpt": "Create a dedicated AWS account for Claude Code to simplify cost tracking and access control."
+      },
+      {
+        "title": "Claude Code docs: Claude Code on Google Cloud's Agent Platform",
+        "url": "https://code.claude.com/docs/en/google-vertex-ai",
+        "publisher": "Anthropic",
+        "excerpt": "Learn about configuring Claude Code through Google Cloud's Agent Platform, formerly Vertex AI ... Create a dedicated GCP project for Claude Code to simplify cost tracking and access control."
+      },
+      {
+        "title": "Claude Code docs: Set up Claude Code for your organization (Choose your API provider)",
+        "url": "https://code.claude.com/docs/en/admin-setup",
+        "publisher": "Anthropic",
+        "excerpt": "Cloud sessions, cloud scheduled tasks, Code Review, Remote Control, and the Chrome extension aren't available through Console API keys or cloud-provider credentials alone."
+      },
+      {
+        "title": "Claude Code docs: Legal and compliance (Commercial agreements)",
+        "url": "https://code.claude.com/docs/en/legal-and-compliance",
+        "publisher": "Anthropic",
+        "excerpt": "Whether you're using the Claude API directly (1P) or accessing it through Amazon Bedrock or Google Cloud's Agent Platform (3P), your existing commercial agreement will apply to Claude Code usage, unless we've mutually agreed otherwise."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "strategy/objection-handling.md"
+    ],
+    "notes": "Naming: Anthropic's docs call Google's service 'Google Cloud's Agent Platform, formerly Vertex AI'; the login prompt still says Google Vertex AI. Say 'Vertex AI (now Google Cloud's Agent Platform)' once, then Vertex. Bedrock: AWS credential chain, IAM Identity Center SSO, IAM actions bedrock:InvokeModel and related, Guardrails via headers; the WebSearch tool is not available on Bedrock. Vertex: Application Default Credentials, role roles/aiplatform.user, global, multi-region and regional endpoints. Both docs say to pin model versions before a team rollout. The admin-setup page lists Claude for Teams or Enterprise as the default recommendation when you want one per-seat subscription with no infrastructure to run, and Bedrock or Vertex when you want to inherit existing AWS or GCP compliance controls and billing."
+  },
+  {
+    "id": "CLM-615",
+    "claim": "AWS states that model providers, including Anthropic, have no access to Amazon Bedrock's model deployment accounts, logs, or customer prompts and completions, and that data retention is configurable per account and Region; a few newer models require retention within the AWS boundary for up to 30 days for AWS human review, with content not shared with the model provider.",
+    "category": "deployment",
+    "status": "partial",
+    "safeWording": "AWS says model providers do not have access to Amazon Bedrock logs or to customer prompts and completions, and you set the retention mode per Region; a few newer models require AWS-side retention for review, so check the retention requirement of the specific model before approving it.",
+    "sources": [
+      {
+        "title": "Amazon Bedrock User Guide: Data protection (Model Deployment Account)",
+        "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/data-protection.html",
+        "publisher": "Amazon Web Services",
+        "excerpt": "Because the model providers don't have access to those accounts, they don't have access to Amazon Bedrock logs or to customer prompts and completions."
+      },
+      {
+        "title": "Amazon Bedrock User Guide: Data retention",
+        "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/data-retention.html",
+        "publisher": "Amazon Web Services",
+        "excerpt": "Amazon Bedrock gives you explicit control over whether the prompts and outputs from your inference requests are retained. ... For models requiring aws_review ... retained within the AWS boundary for up to 30 days ... Your content is not shared with the model provider."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "strategy/objection-handling.md"
+    ],
+    "notes": "Partial because retention is model-specific: the data-retention page says models released before the Fable generation see no change, most models permit zero retention (mode none), and the Fable models require aws_review. Organizations can enforce a retention policy with IAM or service control policies. Abuse-detection retention under default mode is described on a separate AWS page that was not read. Candidate must confirm the retention requirement of whichever model FinTechCo's security team approves."
+  },
+  {
+    "id": "CLM-616",
+    "claim": "UNVERIFIED: the prompt-retention, prompt-logging and abuse-monitoring terms that apply to Claude (a partner model) on Google Cloud's Agent Platform (formerly Vertex AI).",
+    "category": "deployment",
+    "status": "unverified",
+    "sources": [
+      {
+        "title": "Gemini Enterprise Agent Platform: Data governance (checked, does not address partner models)",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/data-governance",
+        "publisher": "Google Cloud",
+        "date": "Last updated 2026-10-15 UTC",
+        "excerpt": "Google won't use your data to train or fine-tune any AI/ML models without your prior permission or instruction."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "strategy/objection-handling.md"
+    ],
+    "notes": "Not verifiable from sources read. Google's data-governance page covers Google's managed models and does not mention Anthropic, Claude or partner models, and says abuse-monitoring prompt logging applies to customers under the Google Cloud Platform terms. The Claude-on-Agent-Platform model page was fetched but its body text was not returned. Do not state Vertex retention or logging terms for Claude; use the placeholder in the document and ask Google Cloud or the Anthropic account team for the partner-model terms. Anthropic's own data-usage page says commercial terms cover third-party platforms for training purposes (see CLM-600)."
+  },
+  {
+    "id": "CLM-617",
+    "claim": "UNVERIFIED: that Anthropic's Compliance API or audit-log feeds cover Claude Code activity (who prompted, what ran, what changed), which plans include them, and what local CLI sessions are excluded.",
+    "category": "compliance",
+    "status": "unverified",
+    "sources": [
+      {
+        "title": "Claude Code docs: Set up Claude Code for your organization (checked, mentions Compliance API only for GitHub app link events on Enterprise)",
+        "url": "https://code.claude.com/docs/en/admin-setup",
+        "publisher": "Anthropic",
+        "excerpt": "On Enterprise plans, the Compliance API activity types for linking and unlinking are github_app_installation_linked and github_app_installation_unlinked."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "strategy/objection-handling.md"
+    ],
+    "notes": "Third-party summaries returned by search disagree on plan eligibility and say local CLI transcripts are not covered; none is an acceptable source under ADR-006. The Claude Code docs read here describe OpenTelemetry (CLM-612), hooks (CLM-611) and gateways (CLM-613) as the audit routes. Research to confirm from platform.claude.com Compliance API docs before anyone claims coverage."
+  },
+  {
+    "id": "CLM-618",
+    "claim": "Anthropic's help center lists these credentials for its commercial products such as Claude for Work and the Anthropic API: a HIPAA-ready configuration (BAA available), ISO 27001:2022 (Information Security Management), ISO/IEC 42001:2023 (AI Management Systems) and SOC 2 Type I and Type II, and Claude Code's security documentation points to the Trust Center for the SOC 2 Type 2 report and ISO 27001 certificate.",
+    "category": "compliance",
+    "status": "partial",
+    "safeWording": "Anthropic's help center, dated March 16, 2026, lists SOC 2 Type I and Type II, ISO 27001:2022, ISO/IEC 42001:2023 and a HIPAA-ready configuration for its commercial products, and the reports are available through the Trust Center. I would ask your team to request the reports and read their scope themselves.",
+    "sources": [
+      {
+        "title": "Do you have SOC 2 or HIPAA certifications? (Anthropic Help Center)",
+        "url": "https://support.claude.com/en/articles/10015870-do-you-have-a-soc-2-or-hipaa-certifications",
+        "publisher": "Anthropic",
+        "date": "2026-03-16",
+        "excerpt": "HIPAA-ready configuration (BAA available); ISO 27001:2022 (Information Security Management); ISO/IEC 42001:2023 (AI Management Systems); SOC 2 Type I & Type II."
+      },
+      {
+        "title": "Claude Code docs: Security (Security foundation)",
+        "url": "https://code.claude.com/docs/en/security",
+        "publisher": "Anthropic",
+        "excerpt": "Learn more and access resources (SOC 2 Type 2 report, ISO 27001 certificate, etc.) at Anthropic Trust Center."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "strategy/objection-handling.md"
+    ],
+    "notes": "Partial because trust.anthropic.com renders its listing client-side (hosted on Vanta) and returned no certification text to the tooling used; the list above comes from Anthropic's help article and the Claude Code security page. The article does not say which certification covers which product or what the audit scope and period are. The candidate must open trust.anthropic.com before the meeting and reconcile its live list with this wording. Third-party sites mention other frameworks (for example FedRAMP) that appear in no Anthropic source read; do not say them. HIPAA is not relevant to FinTechCo; mention only if asked. Trust review required (ADR-003 section 4.2)."
+  },
+  {
+    "id": "CLM-619",
+    "claim": "Anthropic's Claude Code cost documentation says that across enterprise deployments the average cost is around $13 per developer per active day and $150 to $250 per developer per month, with costs below $30 per active day for 90 percent of users, and recommends starting with a small pilot group to establish a baseline before wider rollout.",
+    "category": "pricing",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Claude Code docs: Manage costs effectively",
+        "url": "https://code.claude.com/docs/en/costs",
+        "publisher": "Anthropic",
+        "excerpt": "Across enterprise deployments, the average cost is around $13 per developer per active day and $150-250 per developer per month, with costs remaining below $30 per active day for 90% of users. To estimate spend for your own team, start with a small pilot group."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "strategy/objection-handling.md"
+    ],
+    "notes": "Verified as Anthropic's published statement, not as a forecast for FinTechCo: the same page says per-developer costs vary widely with model selection, codebase size, and usage patterns such as running multiple instances or automation. These are API token costs; FinTechCo's actual pricing is to be quoted (ADR-006). Always attribute and caveat; never present as a quote or a promise. Levers the page lists: clear context between tasks, choose the model to fit the job (Sonnet handles most coding tasks and costs less than Opus), lower the effort level, delegate verbose work to subagents, and rely on prompt caching and auto-compaction. Agent teams (disabled by default) use roughly 7x the tokens of a standard session when teammates run in plan mode."
+  },
+  {
+    "id": "CLM-620",
+    "claim": "On Claude for Teams and Enterprise, administrators can see estimated spend per user and model, set spend limits at organization, group or member level, and see adoption in an analytics dashboard; on Amazon Bedrock and Google Cloud's Agent Platform, usage is billed to your cloud account under your cloud's budget controls, a gateway can add per-user spend limits, and OpenTelemetry can stream per-user token and cost metrics into your own observability stack, because Claude Code does not send metrics from your cloud back to Anthropic.",
+    "category": "pricing",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Claude Code docs: Manage costs effectively (Manage costs for your organization)",
+        "url": "https://code.claude.com/docs/en/costs",
+        "publisher": "Anthropic",
+        "excerpt": "Claude Code does not send metrics from your cloud back to Anthropic, so the analytics dashboards and the Claude Code Analytics API do not cover this usage. ... OpenTelemetry export works on every setup and is the only option that streams per-user token and cost metrics into your own observability stack in near real time."
+      },
+      {
+        "title": "Claude Code docs: Set up Claude Code for your organization (Set up usage visibility)",
+        "url": "https://code.claude.com/docs/en/admin-setup",
+        "publisher": "Anthropic",
+        "excerpt": "Spend controls: Spend limits and rate limits ... on third-party clouds, cloud budget controls or a Claude apps gateway with per-user spend limits."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "strategy/objection-handling.md"
+    ],
+    "notes": "On Teams and Enterprise each member's usage draws from a per-seat allowance that resets on a rolling five-hour window and a weekly window, shared with chat and Cowork; the seat allowance is the default ceiling and usage credits plus spend limits let admins permit more. Console organizations use workspace spend limits. The docs give TPM and RPM per-user rate-limit recommendations by team size. Admins can set a modelPricing managed setting so reported cost matches contracted rates."
+  },
+  {
+    "id": "CLM-621",
+    "claim": "In METR's randomized controlled trial published July 10, 2025, 16 experienced open-source developers working on 246 issues in their own repositories took 19 percent longer when AI tools were allowed, although before the study they forecast a 24 percent speedup and afterwards still believed AI had sped them up by 20 percent; METR's February 24, 2026 follow-up on late-2025 tools no longer showed a slowdown in its point estimates, with confidence intervals that include no effect, but METR called its own data an unreliable signal because many developers declined to work without AI.",
+    "category": "productivity-evidence",
+    "status": "partial",
+    "sources": [
+      {
+        "title": "Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity",
+        "url": "https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/",
+        "publisher": "METR",
+        "date": "2025-07-10",
+        "excerpt": "when developers use AI tools, they take 19% longer ... developers expected AI to speed them up by 24% ... they still believed AI had sped them up by 20%."
+      },
+      {
+        "title": "We are Changing our Developer Productivity Experiment Design",
+        "url": "https://metr.org/blog/2026-02-24-uplift-update/",
+        "publisher": "METR",
+        "date": "2026-02-24",
+        "excerpt": "the data from our new experiment gives us an unreliable signal of the current productivity effect of AI tools ... developers choosing not to participate in the study because they do not wish to work without AI"
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "strategy/objection-handling.md"
+    ],
+    "notes": "Partial because the 2026 direction relies on METR's sign convention, which its page implies (a speedup of -18% against an earlier slowdown reported as +19%) but does not define. This is the slowdown result. METR's own page now opens with 'These results are out of date' and points to the February 2026 update. METR does not claim its developers or repositories represent most software work, notes possible participation bias, and cannot rule out learning effects beyond 50 hours of Cursor usage. February 2026 figures per METR: 57 developers, 143 repositories, 800+ tasks; -18% (CI -38% to +9%) for the original-developer subset and -4% (CI -15% to +9%) for new recruits, where negative means less time; the page implies this sign convention without defining it. Lessons for FinTechCo's pilot: randomize at task level, measure outcomes from systems rather than self-report, and watch for selection when a group must work without the tool. Overlaps CLM-650 and CLM-651 in the adoption shard; kept separate so this shard stands alone.",
+    "safeWording": "METR's July 2025 randomized trial found experienced open-source developers took 19 percent longer with AI tools while believing it had sped them up; METR's February 2026 follow-up on later tools did not reproduce a slowdown, but METR itself calls that data an unreliable signal because developers declined to work without AI. That is why we measure on your own work."
+  },
+  {
+    "id": "CLM-622",
+    "claim": "A 2024 randomized controlled trial with 96 full-time Google software engineers estimated that AI features shortened the time spent on an enterprise-grade task by about 21 percent, with a large confidence interval.",
+    "category": "productivity-evidence",
+    "status": "partial",
+    "safeWording": "A 2024 randomized trial with 96 Google engineers, published as a preprint, estimated about 21 percent less time on one enterprise-grade task, with a wide confidence interval, and the authors caution that the effect may not carry over to other settings or tools.",
+    "sources": [
+      {
+        "title": "How much does AI impact development speed? An enterprise-based randomized controlled trial (arXiv:2410.12944)",
+        "url": "https://arxiv.org/abs/2410.12944",
+        "publisher": "arXiv (Paradis et al., Google)",
+        "date": "2024-10-16 (v3 2024-11-11)",
+        "excerpt": "We found that AI significantly shortened the time developers spent on task. Our best estimate of the size of this effect ... stands at about 21%, although our confidence interval is large."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "strategy/objection-handling.md"
+    ],
+    "notes": "Speedup result. Partial because it is a preprint with no journal listed, used internal Google tooling in summer 2024, and the authors say the effect size from a lab-style study cannot be assumed to apply more broadly. Same study as CLM-652 in the adoption shard."
+  },
+  {
+    "id": "CLM-623",
+    "claim": "Combining three randomized field experiments at Microsoft, Accenture and an anonymous Fortune 100 company with 4,867 developers, researchers estimated a 26.08 percent increase (standard error 10.3 percent) in completed tasks among developers using an AI coding assistant, with less experienced developers showing higher adoption and larger gains.",
+    "category": "productivity-evidence",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "The Effects of Generative AI on High-Skilled Work: Evidence from Three Field Experiments with Software Developers",
+        "url": "https://www.microsoft.com/en-us/research/?p=1148213",
+        "publisher": "Microsoft Research",
+        "date": "June 2025",
+        "excerpt": "combined across three experiments and 4,867 developers ... a 26.08% increase (SE: 10.3%) in completed tasks among developers using the AI tool. Less experienced developers had higher adoption rates and greater productivity gains."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "strategy/objection-handling.md"
+    ],
+    "notes": "Speedup result, measured as completed tasks (output), not time per task, and for an earlier-generation assistant (the Copilot-style tool). Quote the standard error with the estimate; the SSRN and INFORMS pages returned HTTP 403 so the Management Science publication was seen only in a search result and is not asserted here. Use to show the evidence is mixed, never as a forecast for FinTechCo."
+  },
+  {
+    "id": "CLM-624",
+    "claim": "Google Cloud's DORA 2024 report found that AI adoption significantly increases individual productivity, flow and job satisfaction but negatively impacts software delivery stability and throughput; DORA's 2025 research, surveying nearly 5,000 technology professionals with 90 percent AI adoption, found AI adoption now linked to higher delivery throughput and describes AI as a mirror and multiplier of an organization's existing strengths and weaknesses.",
+    "category": "productivity-evidence",
+    "status": "partial",
+    "safeWording": "DORA's 2024 report found AI raised individual productivity but hurt delivery stability and throughput; its 2025 research reports 90 percent adoption and throughput now linked to AI, and describes AI as a mirror and multiplier of how a team already works, which is why we measure delivery quality alongside speed.",
+    "sources": [
+      {
+        "title": "DORA Accelerate State of DevOps Report 2024",
+        "url": "https://dora.dev/research/2024/dora-report/",
+        "publisher": "DORA (Google Cloud)",
+        "date": "Page last updated 2026-04-13",
+        "excerpt": "AI adoption significantly increases individual productivity, flow, and job satisfaction. However, it also negatively impacts software delivery stability and throughput."
+      },
+      {
+        "title": "How are developers using AI? Inside our 2025 DORA report",
+        "url": "https://blog.google/technology/developers/dora-report-2025/",
+        "publisher": "Google",
+        "date": "2025-09-23",
+        "excerpt": "AI adoption among software development professionals has surged to 90% ... AI adoption is now linked to higher software delivery throughput ... AI can act as a mirror and a multiplier."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "strategy/objection-handling.md"
+    ],
+    "notes": "Partial because only the DORA 2024 summary page and Google's 2025 blog summary were read, not the full 2025 report; the blog did not state a stability finding, and the dora.dev 2025 page says 'AI's primary role is as an amplifier, magnifying an organization's existing strengths and weaknesses'. DORA numbers on 2024 effect sizes are not quoted because the page shows none. Survey-based, associations not causal effects. See also CLM-653 and CLM-654 in the adoption shard. The 2024 page also notes that fundamentals such as keeping batches small and maintaining solid test coverage remain important when adopting AI."
+  },
+  {
+    "id": "CLM-625",
+    "claim": "In a December 2025 Anthropic study of 132 engineers and researchers at Anthropic, employees self-reported about a 50 percent productivity boost from using Claude and said 27 percent of Claude-assisted work consists of tasks that would not have been done otherwise.",
+    "category": "productivity-evidence",
+    "status": "partial",
+    "safeWording": "Anthropic's own December 2025 survey of 132 of its engineers and researchers found a self-reported productivity boost of about 50 percent; those are self-reports from the vendor's own staff, so I would not use them as evidence for your results, and we measure on your work.",
+    "sources": [
+      {
+        "title": "How AI is transforming work at Anthropic",
+        "url": "https://www.anthropic.com/research/how-ai-is-transforming-work-at-anthropic",
+        "publisher": "Anthropic",
+        "date": "2025-12-02",
+        "excerpt": "Employees estimated a 50% productivity boost ... 27% of Claude-assisted work consists of tasks that wouldn't have been done otherwise."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "strategy/objection-handling.md"
+    ],
+    "notes": "Partial: survey and interviews are self-reported by the vendor's own employees; the article cautions that responses were not anonymous (social desirability bias) and that recalling productivity from 12 months earlier is subject to recency bias. The page also reports a 67 percent rise in merged pull requests per engineer, a usage metric. METR's perception-gap finding (CLM-621) shows self-reports can diverge from measured results. Never lead with this number; use it only to show we know its limits."
+  },
+  {
+    "id": "CLM-626",
+    "claim": "In an Anthropic randomized trial published January 29, 2026, 52 mostly junior software engineers learning an unfamiliar Python library scored 17 percent lower on a follow-up quiz when they used AI assistance than when they coded by hand (50 percent versus 67 percent), the largest gap was on debugging questions, and the small speed gain was not statistically significant; participants who asked conceptual questions instead of delegating the code scored higher.",
+    "category": "productivity-evidence",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "How AI assistance impacts the formation of coding skills",
+        "url": "https://www.anthropic.com/research/AI-assistance-coding-skills",
+        "publisher": "Anthropic (Shen and Tamkin)",
+        "date": "2026-01-29",
+        "excerpt": "participants in the AI group scored 17% lower than those who coded by hand ... Using AI sped up the task slightly, but this didn't reach the threshold of statistical significance."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "strategy/objection-handling.md"
+    ],
+    "notes": "Study limits stated by the authors: small sample, comprehension measured shortly after the task, one library, and the setup differs from agentic tools like Claude Code, which they expect could have more pronounced effects. Interaction patterns are qualitative (delegation n=4, quiz about 39 percent; conceptual inquiry n=7, about 65 percent) and not causal. A vendor study that cuts against the vendor; use it to show candor and to motivate learning-oriented usage guidelines."
+  },
+  {
+    "id": "CLM-627",
+    "claim": "A 2025 USENIX Security paper that generated 576,000 code samples with 16 popular code-generation models found that the average share of hallucinated (nonexistent) packages was at least 5.2 percent for commercial models and 21.7 percent for open-source models, with 205,474 unique hallucinated package names, creating a supply-chain risk if attackers register those names.",
+    "category": "security",
+    "status": "partial",
+    "safeWording": "A 2025 USENIX Security study of 16 code-generation models found invented package names in at least 5.2 percent of samples from commercial models and 21.7 percent from open-source ones. It measured models generating code from prompts, not an agent with an approved-package policy, so whether the rate changes inside your environment is something to test in the pilot.",
+    "sources": [
+      {
+        "title": "We Have a Package for You! A Comprehensive Analysis of Package Hallucinations by Code Generating LLMs (arXiv:2406.10279)",
+        "url": "https://arxiv.org/abs/2406.10279",
+        "publisher": "arXiv (Spracklen et al., University of Texas at San Antonio; USENIX Security 2025)",
+        "date": "2024-06-12 (v3 2025-03-02)",
+        "excerpt": "the average percentage of hallucinated packages is at least 5.2% for commercial models and 21.7% for open-source models, including a staggering 205,474 unique examples of hallucinated package names"
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "strategy/objection-handling.md"
+    ],
+    "notes": "Partial: only the abstract was read, so which models were tested and whether any was an agentic tool is unconfirmed; the study covers Python and JavaScript and does not measure Claude Code. Do not apply the percentages to Claude Code. The point for the CTO is that the risk class is real and documented, and the controls (internal registry, allowlisted installs via hooks or permission rules, dependency scanning in CI) are FinTechCo's existing ones."
+  },
+  {
+    "id": "CLM-628",
+    "claim": "GitHub announced on February 26, 2026 that Claude by Anthropic and OpenAI Codex are available as coding agents for Copilot Business and Copilot Pro customers, included in the existing Copilot subscription and in public preview, with an administrator enabling agents at both the enterprise and organization levels on Copilot Business.",
+    "category": "competitive",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Claude and Codex now available for Copilot Business and Pro users",
+        "url": "https://github.blog/changelog/2026-02-26-claude-and-codex-now-available-for-copilot-business-pro-users/",
+        "publisher": "GitHub",
+        "date": "2026-02-26",
+        "excerpt": "Claude by Anthropic and OpenAI Codex are now available as coding agents for Copilot Business and Copilot Pro customers. Access to Claude and Codex is fully included with your existing Copilot subscription."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "strategy/objection-handling.md"
+    ],
+    "notes": "A competitor's own statement, factual and dated; the changelog says each coding agent session consumes one premium request during public preview, and status may have changed since February 2026, so check the live page before the meeting. It shows assistants and agents are converging and that Claude models can be reached through other products; it says nothing about FinTechCo owning any product and must not be used to imply it. Differences between Claude Code and that offering are for the evaluation to measure, not for assertion; competitive detail belongs in the D10 battlecard."
+  },
+  {
+    "id": "CLM-629",
+    "claim": "On December 9, 2025 Anthropic announced it is donating the Model Context Protocol (MCP) to the Linux Foundation's Agentic AI Foundation, a directed fund co-founded by Anthropic, Block and OpenAI, and said it is committed to ensuring MCP remains open-source, community-driven and vendor-neutral.",
+    "category": "product",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Donating the Model Context Protocol and establishing the Agentic AI Foundation",
+        "url": "https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation",
+        "publisher": "Anthropic",
+        "date": "2025-12-09",
+        "excerpt": "Anthropic is donating the Model Context Protocol to the Linux Foundation's new Agentic AI Foundation ... committed to ensuring MCP remains open-source, community-driven and vendor-neutral."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "strategy/objection-handling.md"
+    ],
+    "notes": "Supports portability of tool and data integrations built as MCP servers. It does not make Claude Code's own configuration (CLAUDE.md, hooks, skills, managed settings) portable to other tools; say so. The Claude Code binary is Anthropic's product and the legal page says it must not be modified."
+  },
+  {
+    "id": "CLM-630",
+    "claim": "When deploying Claude Code through Amazon Bedrock or Google Cloud's Agent Platform, Anthropic's documentation advises pinning specific model versions for multiple users; an unpinned tier falls back to an earlier or lower-tier model if the default is unavailable, whereas a pinned model stays pinned and requests fail unless a fallback model chain is configured, and administrators can restrict allowed models through managed settings.",
+    "category": "deployment",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Claude Code docs: Claude Code on Amazon Bedrock (Pin model versions; Startup model checks)",
+        "url": "https://code.claude.com/docs/en/amazon-bedrock",
+        "publisher": "Anthropic",
+        "excerpt": "Pin specific model versions when deploying to multiple users. ... A session on a specific version you picked keeps its model and, without a fallback model chain, the request fails instead."
+      },
+      {
+        "title": "Claude Code docs: Claude Code on Google Cloud's Agent Platform (Pin model versions)",
+        "url": "https://code.claude.com/docs/en/google-vertex-ai",
+        "publisher": "Anthropic",
+        "excerpt": "pinning lets you control when your users move to a new model."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "strategy/objection-handling.md"
+    ],
+    "notes": "This describes Claude Code's behavior when a model is unavailable in the customer's account or project, not an uptime guarantee: availability and service-level commitments are separate and are placeholders in the document. availableModels with enforceAvailableModels restricts startup model checks on Bedrock and Vertex (Claude Code v2.1.287 or later per the Bedrock page). Opus models cost more per token than Sonnet models; an unpinned primary model bills at the Opus rate. The Vertex page adds that model availability varies across specific regions, multi-region locations and global endpoints, so you may need to switch location or specify a supported model."
+  },
+  {
+    "id": "CLM-631",
+    "claim": "Anthropic's financial services page publishes executive statements about Claude and Claude Code from named financial firms, including a statement attributed to Citi that it chose Claude as part of its AI-powered Developer Platform.",
+    "category": "adoption",
+    "status": "partial",
+    "safeWording": "Anthropic's financial-services page carries customer statements from named firms, including one attributed to Citi about choosing Claude for its developer platform. I would send you the page so you can read the exact wording and attribution, and I am not describing any firm's deployment size or results.",
+    "sources": [
+      {
+        "title": "Claude for financial services",
+        "url": "https://claude.com/solutions/financial-services",
+        "publisher": "Anthropic",
+        "excerpt": "Citi chose to leverage Claude as part of its AI powered Developer Platform because of its advanced planning and agentic coding capabilities, focus on safety and reliability, and compatibility with our workloads."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "strategy/objection-handling.md"
+    ],
+    "notes": "Partial: the page shows no last-updated date (footer is 2026), the quote was retrieved in two tool passes that agree on the Citi wording, and the company for each quote was identified from the logo next to it, with name and title only in the text. Other quotes on the page name firms such as Travelers, FactSet and Walleye Capital in connection with Claude Code, but those were seen only in truncated form and are not asserted here. Re-read the live page and quote only verbatim, with the attribution as published. The proof-points shard (CLM-200 to 299) owns customer stories; defer to it when it lands."
+  },
+  {
+    "id": "CLM-632",
+    "claim": "Claude Code can add an attribution trailer to commits and an attribution line to pull request descriptions, which administrators or developers can change or hide with the attribution setting, and Anthropic's documentation says the user is responsible for reviewing proposed code and commands before approval.",
+    "category": "product",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Claude Code docs: Settings reference (attribution)",
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "publisher": "Anthropic",
+        "excerpt": "attribution: Customize the attribution Claude Code adds to commits and pull requests. attribution.commit: Change or hide the trailer Claude Code adds to commits."
+      },
+      {
+        "title": "Claude Code docs: Security (User responsibility)",
+        "url": "https://code.claude.com/docs/en/security",
+        "publisher": "Anthropic",
+        "excerpt": "You're responsible for reviewing proposed code and commands for safety before approval."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "strategy/objection-handling.md"
+    ],
+    "notes": "Only the settings index rows were read for attribution; default values and how managed settings enforce it were not confirmed (the index lists scope 'Any file', so it is not obviously managed-only). Because the trailer can be hidden by whoever controls the setting, FinTechCo should rely on its own branch protection, code review and ticket linkage rather than the trailer alone for who-did-what."
+  },
+  {
+    "id": "CLM-633",
+    "claim": "Anthropic's Claude Code guidance recommends giving it verification targets such as test cases or expected output so it can check its own work, keeping project conventions in a CLAUDE.md file that is loaded into context at the start of every session, and using plan mode so it proposes an approach for approval before editing; Claude Code also includes an on-demand /security-review command that runs a security pass over the changes on the current branch.",
+    "category": "product",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Claude Code docs: Manage costs effectively (Work efficiently on complex tasks)",
+        "url": "https://code.claude.com/docs/en/costs",
+        "publisher": "Anthropic",
+        "excerpt": "Use plan mode for complex tasks ... Give verification targets: Include test cases, paste screenshots, or define expected output in your prompt. When Claude can verify its own work, it catches issues before you need to request fixes. Your CLAUDE.md file is loaded into context at session start."
+      },
+      {
+        "title": "Claude Code docs: Security (Related resources)",
+        "url": "https://code.claude.com/docs/en/security",
+        "publisher": "Anthropic",
+        "excerpt": "/security-review: run an on-demand security pass over the changes on your current branch"
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "strategy/objection-handling.md"
+    ],
+    "notes": "These are documented practices and tools, not a guarantee of correct output; the security page states users must review changes. Pair with FinTechCo's existing CI, tests, static analysis and code review. Whether they reduce defects on FinTechCo's code is a pilot measurement (change failure rate, escaped defects)."
+  },
+  {
+    "id": "CLM-650",
+    "claim": "In METR's randomized controlled trial published July 2025, 16 experienced open-source developers working on 246 real issues from their own repositories took 19% longer when AI tools were allowed; before the study they forecast a 24% speedup, and afterwards they still believed AI had sped them up by 20%.",
+    "category": "productivity-evidence",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity",
+        "url": "https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/",
+        "publisher": "METR",
+        "date": "2025-07-10",
+        "excerpt": "when developers use AI tools, they take 19% longer to complete issues ... developers expected AI to speed them up by 24% ... they still believed AI had sped them up by 20%."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "rollout/evaluation-plan.md"
+    ],
+    "notes": "Part of the mixed evidence base (see CLM-666). Randomization unit was the issue, not the developer. METR states it does not claim the developers or repositories represent most software work, and cannot rule out learning effects beyond 50 hours of tool use. METR has since marked these results as superseded by its February 2026 update (CLM-651). Design lessons used in the plan: randomize at task level where possible; do not rely on self-reported speedup."
+  },
+  {
+    "id": "CLM-651",
+    "claim": "METR's February 2026 update, with data from 57 developers across 143 repositories and 800+ tasks using late-2025 tools, estimated speedups of 18% (confidence interval from 38% faster to 9% slower) for returning developers and 4% (15% faster to 9% slower) for newly recruited developers, but METR calls this an unreliable signal because developers increasingly declined to participate since they did not want to work without AI.",
+    "category": "productivity-evidence",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "We are Changing our Developer Productivity Experiment Design",
+        "url": "https://metr.org/blog/2026-02-24-uplift-update/",
+        "publisher": "METR",
+        "date": "2026-02-24",
+        "excerpt": "We have data from 57 developers, across 143 repos, and 800+ tasks ... we now estimate a speedup of -18% with a confidence interval between -38% and +9% ... developers choosing not to participate in the study because they do not wish to work without AI"
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "rollout/evaluation-plan.md"
+    ],
+    "notes": "METR's sign convention: negative values mean tasks took less time with AI. METR concludes the new data 'gives us an unreliable signal of the current productivity effect of AI tools' and is redesigning its study. Design lesson used in the plan: participants who must work without a tool may decline or drop out (selection and attrition risk for comparison groups)."
+  },
+  {
+    "id": "CLM-652",
+    "claim": "A 2024 randomized controlled trial with 96 full-time Google software engineers estimated that AI features shortened time spent on an enterprise-grade task by about 21%, with a large confidence interval.",
+    "category": "productivity-evidence",
+    "status": "partial",
+    "safeWording": "A 2024 randomized trial with 96 Google engineers (published as a preprint) estimated about 21% less time on task with AI assistance, with a wide confidence interval; the authors caution that the effect may not apply more broadly.",
+    "sources": [
+      {
+        "title": "How much does AI impact development speed? An enterprise-based randomized controlled trial (arXiv:2410.12944)",
+        "url": "https://arxiv.org/abs/2410.12944",
+        "publisher": "arXiv (Paradis et al., Google)",
+        "date": "2024-10-16 (v3 2024-11-11)",
+        "excerpt": "We found that AI significantly shortened the time developers spent on task. Our best estimate of the size of this effect ... stands at about 21%, although our confidence interval is large."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "rollout/evaluation-plan.md"
+    ],
+    "notes": "Partial because it is a preprint (no peer-reviewed venue listed on arXiv) using internal Google tooling in summer 2024. Part of the mixed evidence base (CLM-666)."
+  },
+  {
+    "id": "CLM-653",
+    "claim": "Google Cloud's DORA 2024 Accelerate State of DevOps Report found that AI adoption significantly increases individual productivity, flow and job satisfaction, but also negatively impacts software delivery stability and throughput.",
+    "category": "productivity-evidence",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Accelerate State of DevOps Report 2024",
+        "url": "https://dora.dev/research/2024/dora-report/",
+        "publisher": "DORA (Google Cloud)",
+        "date": "2024 report; page last updated 2026-04-13",
+        "excerpt": "AI adoption significantly increases individual productivity, flow, and job satisfaction. However, it also negatively impacts software delivery stability and throughput."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "rollout/evaluation-plan.md"
+    ],
+    "notes": "The web page states the direction of the effects without magnitudes; do not quote percentages from secondary sources. Part of the mixed evidence base (CLM-666). Design lesson: measure team delivery and stability guardrails, not only individual speed."
+  },
+  {
+    "id": "CLM-654",
+    "claim": "DORA's 2025 State of AI-assisted Software Development report describes AI's primary role as an amplifier that magnifies an organization's existing strengths and weaknesses, with the greatest returns coming from the surrounding practices rather than the tools themselves.",
+    "category": "productivity-evidence",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "State of AI-assisted Software Development 2025",
+        "url": "https://dora.dev/research/2025/dora-report/",
+        "publisher": "DORA (Google Cloud)",
+        "date": "2025",
+        "excerpt": "AI's primary role is as an amplifier, magnifying an organization's existing strengths and weaknesses. ... The greatest returns on AI investment come not from the tools themselves"
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "rollout/evaluation-plan.md"
+    ],
+    "notes": "Supports measuring on FinTechCo's own delivery system rather than importing external effect sizes."
+  },
+  {
+    "id": "CLM-655",
+    "claim": "DORA defines software delivery performance with throughput metrics (change lead time, deployment frequency, failed deployment recovery time) and instability metrics (change fail rate, deployment rework rate).",
+    "category": "productivity-evidence",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "DORA's software delivery performance metrics",
+        "url": "https://dora.dev/guides/dora-metrics/",
+        "publisher": "DORA (Google Cloud)",
+        "excerpt": "Change lead time: The amount of time it takes for a change to go from committed to version control to deployed in production. ... Change fail rate: The ratio of deployments that require immediate intervention following a deployment."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "rollout/evaluation-plan.md"
+    ],
+    "notes": "Used as the vendor-neutral definitions for flow and quality metrics and guardrails."
+  },
+  {
+    "id": "CLM-656",
+    "claim": "As of October 2026, Claude Code can export usage, cost and tool telemetry through OpenTelemetry when CLAUDE_CODE_ENABLE_TELEMETRY=1 is set, including metrics such as claude_code.session.count, claude_code.lines_of_code.count, claude_code.pull_request.count, claude_code.commit.count, claude_code.cost.usage, claude_code.token.usage and claude_code.active_time.total; administrators can set these variables for all users through managed settings, and prompt text is redacted by default.",
+    "category": "product",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Monitoring (OpenTelemetry)",
+        "url": "https://code.claude.com/docs/en/monitoring-usage",
+        "publisher": "Anthropic (Claude Code docs)",
+        "excerpt": "export CLAUDE_CODE_ENABLE_TELEMETRY=1 ... claude_code.session.count: Count of CLI sessions started ... Administrators can set these variables for all users through the managed settings file."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "rollout/evaluation-plan.md"
+    ],
+    "notes": "Prompt text and tool details require opt-in variables (OTEL_LOG_USER_PROMPTS, OTEL_LOG_TOOL_DETAILS). Repository-level settings cannot enable telemetry or choose its destination. Product fact as of October 2026."
+  },
+  {
+    "id": "CLM-657",
+    "claim": "As of October 2026, the Claude Code analytics dashboard for Claude for Teams and Enterprise shows usage metrics (lines of code accepted, suggestion accept rate, daily active users and sessions) and, with a GitHub integration in public beta, contribution metrics that label merged pull requests containing Claude Code-assisted lines as claude-code-assisted; contribution metrics are not available with Zero Data Retention.",
+    "category": "product",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Track team usage with analytics",
+        "url": "https://code.claude.com/docs/en/analytics",
+        "publisher": "Anthropic (Claude Code docs)",
+        "excerpt": "Usage metrics: lines of code accepted, suggestion accept rate, daily active users and sessions ... Merged pull requests containing Claude Code-assisted lines are labeled as claude-code-assisted in GitHub."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "rollout/evaluation-plan.md"
+    ],
+    "notes": "The dashboard itself says the metrics are deliberately conservative. Relevance to the plan: vendor dashboards are tool-specific and not comparable across arms; the PR label is a tool marker that must be stripped before blinded review. Product fact as of October 2026."
+  },
+  {
+    "id": "CLM-658",
+    "claim": "As of October 2026, when Claude Code runs through Amazon Bedrock, Google Cloud's Agent Platform (formerly Vertex AI) or Microsoft Foundry, it does not send metrics from the customer's cloud back to Anthropic, so Anthropic's analytics dashboards and Claude Code Analytics API do not cover that usage; spend is seen and capped in the cloud provider's billing console, and per-user attribution comes from OpenTelemetry or a gateway.",
+    "category": "deployment",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Manage costs effectively",
+        "url": "https://code.claude.com/docs/en/costs",
+        "publisher": "Anthropic (Claude Code docs)",
+        "excerpt": "Claude Code does not send metrics from your cloud back to Anthropic, so the analytics dashboards and the Claude Code Analytics API do not cover this usage."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "rollout/evaluation-plan.md"
+    ],
+    "notes": "Why the plan's primary metrics come from FinTechCo's own systems, with tool telemetry exported to FinTechCo's collector. Product fact as of October 2026."
+  },
+  {
+    "id": "CLM-659",
+    "claim": "As of October 2026, Claude Code managed settings (a managed-settings.json file, an MDM policy, or server-managed settings from the claude.ai admin console) have the highest precedence: nothing in a user's own settings files or --settings overrides a managed key, and /status names the managed source that applies.",
+    "category": "security",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Settings files and precedence",
+        "url": "https://code.claude.com/docs/en/settings",
+        "publisher": "Anthropic (Claude Code docs)",
+        "excerpt": "Managed settings: settings your organization deploys, by a managed-settings.json file, an MDM policy, or server-managed settings from the claude.ai console. Nothing in your own settings files or --settings overrides a managed key"
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "rollout/evaluation-plan.md"
+    ],
+    "notes": "The settings page lists a few security-sensitive keys where a stricter lower-level value wins. Security wording to be reviewed by Trust (ADR-003 section 4). Product fact as of October 2026."
+  },
+  {
+    "id": "CLM-660",
+    "claim": "As of October 2026, running Claude Code on Amazon Bedrock requires an AWS account with Bedrock access and access to the desired Claude models (a one-time use case form per account), IAM permissions including bedrock:InvokeModel and bedrock:InvokeModelWithResponseStream, and CLAUDE_CODE_USE_BEDROCK=1; the documentation recommends pinning model versions for team deployments and a dedicated AWS account to simplify cost tracking and access control.",
+    "category": "deployment",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Claude Code on Amazon Bedrock",
+        "url": "https://code.claude.com/docs/en/amazon-bedrock",
+        "publisher": "Anthropic (Claude Code docs)",
+        "excerpt": "An AWS account with Amazon Bedrock access enabled ... export CLAUDE_CODE_USE_BEDROCK=1 ... Create a dedicated AWS account for Claude Code to simplify cost tracking and access control."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "rollout/evaluation-plan.md"
+    ],
+    "notes": "Product fact as of October 2026."
+  },
+  {
+    "id": "CLM-661",
+    "claim": "As of October 2026, Claude Code's documentation refers to Google Cloud's Agent Platform, formerly Vertex AI; setup requires a GCP project with the API (aiplatform.googleapis.com) enabled, access to Claude models requested in Model Garden (approval may take 24-48 hours), the roles/aiplatform.user role and CLAUDE_CODE_USE_VERTEX=1, and the documentation recommends a dedicated GCP project to simplify cost tracking and access control.",
+    "category": "deployment",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Claude Code on Google Cloud's Agent Platform",
+        "url": "https://code.claude.com/docs/en/google-vertex-ai",
+        "publisher": "Anthropic (Claude Code docs)",
+        "excerpt": "Request access to desired Claude models ... Wait for approval (may take 24-48 hours) ... export CLAUDE_CODE_USE_VERTEX=1 ... Assign the roles/aiplatform.user role"
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "rollout/evaluation-plan.md"
+    ],
+    "notes": "Product fact as of October 2026. FinTechCo material may say 'Google Vertex AI'; note the documentation's new name on first use."
+  },
+  {
+    "id": "CLM-662",
+    "claim": "As of October 2026, Claude for Teams includes SSO, Claude for Enterprise adds domain capture, role-based permissions and the compliance API, and organizations that route inference through their own cloud provider can run a self-hosted Claude apps gateway that signs developers in with corporate SSO; administrators can restrict claude.ai logins to their organization with forceLoginMethod and forceLoginOrgUUID in managed settings.",
+    "category": "product",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Authentication",
+        "url": "https://code.claude.com/docs/en/authentication",
+        "publisher": "Anthropic (Claude Code docs)",
+        "excerpt": "Claude for Teams: self-service plan with collaboration features, admin tools, SSO ... Claude for Enterprise: adds domain capture, role-based permissions, and the compliance API ... sign in with corporate SSO through /login."
+      },
+      {
+        "title": "Claude apps gateway for Amazon Bedrock, Claude Platform on AWS, Google Cloud, and Microsoft Foundry",
+        "url": "https://code.claude.com/docs/en/claude-apps-gateway",
+        "publisher": "Anthropic (Claude Code docs)",
+        "excerpt": "Run Claude Code through Amazon Bedrock, Claude Platform on AWS, Google Cloud, or Microsoft Foundry behind a self-hosted gateway with SSO sign-in, per-group model access, and OTLP telemetry."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "rollout/evaluation-plan.md"
+    ],
+    "notes": "When using Bedrock or Vertex directly, users authenticate with cloud credentials (for example an AWS IAM Identity Center profile). Product fact as of October 2026."
+  },
+  {
+    "id": "CLM-663",
+    "claim": "As of October 2026, Anthropic's Claude Code documentation states that across enterprise deployments the average cost is around $13 per developer per active day and $150-250 per developer per month, with costs below $30 per active day for 90% of users, and recommends starting with a small pilot group to establish a baseline before wider rollout.",
+    "category": "pricing",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Manage costs effectively",
+        "url": "https://code.claude.com/docs/en/costs",
+        "publisher": "Anthropic (Claude Code docs)",
+        "excerpt": "Across enterprise deployments, the average cost is around $13 per developer per active day and $150-250 per developer per month, with costs remaining below $30 per active day for 90% of users."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "rollout/evaluation-plan.md"
+    ],
+    "notes": "Vendor-published average, not a quote for FinTechCo; FinTechCo pricing is to be quoted. Planning input for the Claude Code arm's budget envelope only. Product fact as of October 2026."
+  },
+  {
+    "id": "CLM-664",
+    "claim": "As of October 2026, Claude Code adds attribution to the git commits and pull requests it creates by default (a Co-Authored-By trailer on commits and a plain-text line in pull request descriptions), configurable or removable with the attribution setting.",
+    "category": "product",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Settings reference: attribution",
+        "url": "https://code.claude.com/docs/en/settings-reference",
+        "publisher": "Anthropic (Claude Code docs)",
+        "excerpt": "Customize the attribution Claude Code adds to git commits and pull requests. Commits get a git trailer such as Co-Authored-By by default; pull request descriptions get plain text."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "rollout/evaluation-plan.md"
+    ],
+    "notes": "A tool marker the blinded review must strip; other arms' markers are identified from their own documentation in Week 0. Product fact as of October 2026."
+  },
+  {
+    "id": "CLM-665",
+    "claim": "US federal holidays per OPM: Thanksgiving Day is Thursday 26 November 2026, Christmas Day is Friday 25 December 2026, New Year's Day is Friday 1 January 2027, the Birthday of Martin Luther King, Jr. is Monday 18 January 2027 and Washington's Birthday is Monday 15 February 2027.",
+    "category": "adoption",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Federal Holidays",
+        "url": "https://www.opm.gov/policy-data-oversight/pay-leave/federal-holidays/",
+        "publisher": "U.S. Office of Personnel Management",
+        "excerpt": "2026: Thursday, November 26 Thanksgiving Day; Friday, December 25 Christmas Day. 2027: Friday, January 01 New Year's Day; Monday, January 18 Birthday of Martin Luther King, Jr.; Monday, February 15 Washington's Birthday"
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "rollout/evaluation-plan.md",
+      "rollout/pilot-charter.md"
+    ],
+    "notes": "Federal holiday dates only; whether FinTechCo observes each one is an assumption to confirm. Used for the Thanksgiving/year-end calendar risk and per-working-day normalization."
+  },
+  {
+    "id": "CLM-666",
+    "claim": "Published evidence on AI coding assistants' effect on developer productivity is mixed: randomized trials have found both slowdowns and speedups, and DORA's 2024 survey research linked AI adoption to higher individual productivity but lower delivery throughput and stability.",
+    "category": "productivity-evidence",
+    "status": "partial",
+    "safeWording": "The evidence on AI coding productivity is mixed: a 2025 randomized trial found experienced open-source developers took 19% longer with AI tools, a 2024 enterprise trial (preprint) estimated about 21% less time on task, the 2025 trial's authors now say current tools likely help but their newer data is unreliable, and DORA 2024 linked AI adoption to higher individual productivity but lower delivery throughput and stability. Which is why we measure on your work.",
+    "sources": [
+      {
+        "title": "Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity",
+        "url": "https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/",
+        "publisher": "METR",
+        "date": "2025-07-10"
+      },
+      {
+        "title": "We are Changing our Developer Productivity Experiment Design",
+        "url": "https://metr.org/blog/2026-02-24-uplift-update/",
+        "publisher": "METR",
+        "date": "2026-02-24"
+      },
+      {
+        "title": "How much does AI impact development speed? An enterprise-based randomized controlled trial",
+        "url": "https://arxiv.org/abs/2410.12944",
+        "publisher": "arXiv (Paradis et al., Google)",
+        "date": "2024-10-16"
+      },
+      {
+        "title": "Accelerate State of DevOps Report 2024",
+        "url": "https://dora.dev/research/2024/dora-report/",
+        "publisher": "DORA (Google Cloud)"
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "rollout/evaluation-plan.md"
+    ],
+    "notes": "Synthesis claim recording that AI productivity evidence is mixed (ADR-006). Partial because the synthesis is ours; use the safeWording verbatim. Components: CLM-650, CLM-651, CLM-652, CLM-653."
+  },
+  {
+    "id": "CLM-675",
+    "claim": "As of October 2026, Claude Code applies managed settings above user, project and local settings. An organization can deliver them from the claude.ai admin console (server-managed settings), through MDM or OS policy (macOS configuration profile, Windows registry), or as a managed-settings.json file at /Library/Application Support/ClaudeCode/ (macOS), /etc/claude-code/ (Linux and WSL) or C:\\Program Files\\ClaudeCode\\ (Windows). A managed-settings.d/ directory lets several teams own parts of one file-based policy. Settings layers from highest to lowest are managed policy, the --settings flag, .claude/settings.local.json, the shared project file .claude/settings.json, then the user file ~/.claude/settings.json.",
+    "category": "product",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Deploy managed settings",
+        "url": "https://code.claude.com/docs/en/managed-settings",
+        "publisher": "Anthropic",
+        "excerpt": "Managed settings are the settings your organization deploys to every developer's machine. Claude Code applies them above every other level, so no user, project, local, or `--settings` value overrides them"
+      },
+      {
+        "title": "Set up Claude Code for your organization",
+        "url": "https://code.claude.com/docs/en/admin-setup",
+        "publisher": "Anthropic",
+        "excerpt": "File-based managed | macOS: `/Library/Application Support/ClaudeCode/managed-settings.json` Linux and WSL: `/etc/claude-code/managed-settings.json` Windows: `C:\\Program Files\\ClaudeCode\\managed-settings.json`"
+      },
+      {
+        "title": "Glossary",
+        "url": "https://code.claude.com/docs/en/glossary",
+        "publisher": "Anthropic",
+        "excerpt": "Settings layers: managed policy, settings you pass with the `--settings` flag, local settings at `.claude/settings.local.json`, project settings at `.claude/settings.json`, then user settings at `~/.claude/settings.json`."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "rollout/rollout-plan.md"
+    ],
+    "notes": "Drop-in directory: managed-settings.json is merged first, then every *.json in managed-settings.d/ in alphabetical order (numeric prefixes such as 10-telemetry.json, 20-security.json control order)."
+  },
+  {
+    "id": "CLM-676",
+    "claim": "As of October 2026, server-managed settings are fetched at startup and polled hourly, require a Claude for Teams or Enterprise plan and an Owner or Primary Owner role, apply uniformly to every user (per-group configuration is not yet supported), and are bypassed when a session is set up for a third-party provider such as CLAUDE_CODE_USE_BEDROCK or CLAUDE_CODE_USE_VERTEX. MDM or OS policy is checked for changes every 30 minutes and a managed settings file is reloaded when it changes. /status (the Setting sources line) and claude doctor show which policy applied.",
+    "category": "product",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Configure server-managed settings",
+        "url": "https://code.claude.com/docs/en/server-managed-settings",
+        "publisher": "Anthropic",
+        "excerpt": "Settings apply uniformly to all users in the organization. Per-group configurations are not yet supported. | User configures a third-party model provider | Server-managed settings are bypassed. This includes setting `CLAUDE_CODE_USE_BEDROCK`"
+      },
+      {
+        "title": "Deploy managed settings",
+        "url": "https://code.claude.com/docs/en/managed-settings",
+        "publisher": "Anthropic",
+        "excerpt": "MDM or OS-level policy: Read at startup and checked for changes every 30 minutes. File-based: Read at startup and reloaded when a file changes. Run `/status` and read the `Setting sources` line."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "rollout/rollout-plan.md"
+    ],
+    "notes": "Implication used in the plan: if FinTechCo routes Claude Code through its own Bedrock or Vertex accounts, deliver managed settings as endpoint-managed policy (MDM or managed-settings.json), or through a self-hosted Claude apps gateway, not through the claude.ai admin console."
+  },
+  {
+    "id": "CLM-677",
+    "claim": "As of October 2026, managed settings can lock down permissions and extensions: allowManagedPermissionRulesOnly and permissions.disableBypassPermissionsMode make managed settings the only source of permission rules and disable --dangerously-skip-permissions; allowManagedHooksOnly restricts which hooks run; strictPluginOnlyCustomization limits skills, agents, hooks and MCP servers to plugins or managed settings; sandbox.enabled and sandbox.network.allowedDomains add OS-level isolation. Array settings such as permissions.allow and permissions.deny merge across sources, so developers can extend managed lists but not remove from them.",
+    "category": "security",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Set up Claude Code for your organization",
+        "url": "https://code.claude.com/docs/en/admin-setup",
+        "publisher": "Anthropic",
+        "excerpt": "Array settings such as `permissions.allow` and `permissions.deny` merge entries from all sources, so developers can extend managed lists but not remove from them."
+      },
+      {
+        "title": "Configure server-managed settings",
+        "url": "https://code.claude.com/docs/en/server-managed-settings",
+        "publisher": "Anthropic",
+        "excerpt": "\"deny\": [\"Bash(curl *)\", \"Read(./.env)\", \"Read(./.env.*)\", \"Read(./secrets/**)\"], \"disableBypassPermissionsMode\": \"disable\" ... \"allowManagedPermissionRulesOnly\": true"
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "rollout/rollout-plan.md"
+    ],
+    "notes": "The example deny rules Read(./.env) and Read(./secrets/**) are the documentation's own example policy. Permission rules and sandboxing cover different layers: denying WebFetch blocks the fetch tool, but with Bash allowed, curl can still reach any URL unless the sandbox network allowlist is on."
+  },
+  {
+    "id": "CLM-678",
+    "claim": "As of October 2026, by default anyone running Claude Code can connect any MCP server they choose; Anthropic reviews connectors for its directory but does not security-audit or manage any MCP server. Administrators can deploy a fixed set with managed-mcp.json, provide remote servers to every user with managedMcpServers, or filter with allowedMcpServers, deniedMcpServers and allowManagedMcpServersOnly. managed-mcp.json cannot be delivered through server-managed settings, and credentials should not go in its env blocks because any user on the machine can read the file. Claude Code has no built-in registry that users can browse, so an approved list is shared on an internal page or distributed as plugins; claude mcp list shows which servers load.",
+    "category": "security",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Control MCP server access for your organization",
+        "url": "https://code.claude.com/docs/en/managed-mcp",
+        "publisher": "Anthropic",
+        "excerpt": "By default, anyone running Claude Code can connect any MCP server they choose. ... Anthropic ... doesn't security-audit or manage any MCP server."
+      },
+      {
+        "title": "Control MCP server access for your organization",
+        "url": "https://code.claude.com/docs/en/managed-mcp",
+        "publisher": "Anthropic",
+        "excerpt": "Any user on the machine can read this file, so don't store API keys or other credentials in `env` blocks."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "rollout/rollout-plan.md"
+    ],
+    "notes": "The Security page covers the MCP threat model and how to evaluate a server before approving it. managed-mcp.json paths: /Library/Application Support/ClaudeCode/managed-mcp.json (macOS), /etc/claude-code/managed-mcp.json (Linux and WSL), C:\\Program Files\\ClaudeCode\\managed-mcp.json (Windows). managedMcpServers requires Claude Code v2.1.259 or later and accepts https http or sse servers only."
+  },
+  {
+    "id": "CLM-679",
+    "claim": "As of October 2026, MCP allowlist and denylist entries match servers by serverUrl (exact or with * wildcards), serverCommand (the exact command and arguments of a stdio server) or serverName. A serverName entry is not a security control because it is only the label a user assigns. A denylist match overrides everything. An unset allowedMcpServers allows all servers while an empty array allows none. With allowManagedMcpServersOnly set to true, user, project and local allowlists are ignored while denylists still merge from every scope. A blocked claude mcp add reports that the server is not allowed by enterprise policy.",
+    "category": "security",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Control MCP server access for your organization",
+        "url": "https://code.claude.com/docs/en/managed-mcp",
+        "publisher": "Anthropic",
+        "excerpt": "A `serverName` entry, in either list, is not a security control. The name is the label a user assigns when running `claude mcp add` or editing a config file, not the underlying server"
+      },
+      {
+        "title": "Control MCP server access for your organization",
+        "url": "https://code.claude.com/docs/en/managed-mcp",
+        "publisher": "Anthropic",
+        "excerpt": "When `allowManagedMcpServersOnly` is `true`, allowlists from user, project, and local settings are ignored. The denylist still merges from every settings scope. | Nothing overrides a denylist match."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "rollout/rollout-plan.md"
+    ],
+    "notes": "User-visible message when an unlisted server is added: Cannot add MCP server \"<name>\": not allowed by enterprise policy. A server that silently disappears after a new restriction gives the user no signal that policy is the reason, so tell users what is blocked."
+  },
+  {
+    "id": "CLM-680",
+    "claim": "As of October 2026, with OpenTelemetry export configured, setting OTEL_LOG_TOOL_DETAILS=1 records MCP server and tool names in tool events and on the cost and token counters, and Claude Code logs a claude_code.mcp_server_connection event (status connected, failed or disconnected) when an MCP server connects, so administrators can see which MCP servers their users actually use. Without OTEL_LOG_TOOL_DETAILS=1, user-configured server names are replaced with \"custom\".",
+    "category": "security",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Control MCP server access for your organization",
+        "url": "https://code.claude.com/docs/en/managed-mcp",
+        "publisher": "Anthropic",
+        "excerpt": "Set `OTEL_LOG_TOOL_DETAILS=1` to include MCP server and tool names in tool events and on the cost and token counters, then aggregate them in your collector to see which servers your users actually connect to."
+      },
+      {
+        "title": "Monitoring",
+        "url": "https://code.claude.com/docs/en/monitoring-usage",
+        "publisher": "Anthropic",
+        "excerpt": "MCP server connection event: Logged when an MCP server connects, disconnects, or fails to connect. Event Name: `claude_code.mcp_server_connection`. `status`: \"connected\", \"failed\", or \"disconnected\""
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "rollout/rollout-plan.md"
+    ]
+  },
+  {
+    "id": "CLM-681",
+    "claim": "As of October 2026, an organization can register a private plugin marketplace on every machine with extraKnownMarketplaces, force-install plugins with enabledPlugins (plugin-name@marketplace-name), restrict where plugins may come from with the strictKnownMarketplaces allowlist and blockedMarketplaces blocklist, and reject --plugin-dir and similar sideload flags with disableSideloadFlags. A plugin bundles skills, hooks, subagents and MCP servers. Installs and loads are recorded as OpenTelemetry events (claude_code.plugin_installed, claude_code.plugin_loaded).",
+    "category": "product",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Manage Claude Code plugins for your organization",
+        "url": "https://code.claude.com/docs/en/plugins/org",
+        "publisher": "Anthropic",
+        "excerpt": "`extraKnownMarketplaces` registers a marketplace on each machine, and `enabledPlugins` names the plugins to install and enable from it."
+      },
+      {
+        "title": "Manage Claude Code plugins for your organization",
+        "url": "https://code.claude.com/docs/en/plugins/org",
+        "publisher": "Anthropic",
+        "excerpt": "`claude_code.plugin_installed` records each install, and `claude_code.plugin_loaded` records each enabled plugin at session start."
+      },
+      {
+        "title": "Glossary",
+        "url": "https://code.claude.com/docs/en/glossary",
+        "publisher": "Anthropic",
+        "excerpt": "Plugin: A bundle of skills, hooks, subagents, and MCP servers packaged as a single installable unit."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "rollout/rollout-plan.md"
+    ],
+    "notes": "Control matrix on the org page: strictKnownMarketplaces and blockedMarketplaces match the source of the marketplace, not individual plugins inside it; to block one plugin from an allowed marketplace set it to false in managed enabledPlugins."
+  },
+  {
+    "id": "CLM-682",
+    "claim": "As of October 2026, a skill is a SKILL.md file in .claude/skills/<name>/ (project scope, committed so the team gets it), ~/.claude/skills/<name>/ (personal), a plugin's skills/ directory, or the managed settings directory (organization-wide). Custom commands in .claude/commands/ still work: a command file and a skill with the same name both create the same /name command.",
+    "category": "product",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Extend Claude with skills",
+        "url": "https://code.claude.com/docs/en/skills",
+        "publisher": "Anthropic",
+        "excerpt": "Custom commands have been merged into skills. A file at `.claude/commands/deploy.md` and a skill at `.claude/skills/deploy/SKILL.md` both create `/deploy` and work the same way."
+      },
+      {
+        "title": "Extend Claude with skills",
+        "url": "https://code.claude.com/docs/en/skills",
+        "publisher": "Anthropic",
+        "excerpt": "Project skills: Commit `.claude/skills/` to version control. Plugins: Create a `skills/` directory in your plugin. Managed: Deploy organization-wide through managed settings."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "rollout/rollout-plan.md"
+    ]
+  },
+  {
+    "id": "CLM-683",
+    "claim": "As of October 2026, CLAUDE.md files give Claude persistent instructions at the start of every session: project (./CLAUDE.md or ./.claude/CLAUDE.md, shared through source control), user (~/.claude/CLAUDE.md) and an organization-wide managed policy file at /Library/Application Support/ClaudeCode/CLAUDE.md (macOS), /etc/claude-code/CLAUDE.md (Linux and WSL) or C:\\Program Files\\ClaudeCode\\CLAUDE.md (Windows), which individual settings cannot exclude. /init generates a starter file, the documentation targets under 200 lines per file, and modular rules can live in .claude/rules/. CLAUDE.md is context, not enforced configuration: blocking an action needs a hook or permission rule.",
+    "category": "product",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "How Claude remembers your project",
+        "url": "https://code.claude.com/docs/en/memory",
+        "publisher": "Anthropic",
+        "excerpt": "Run `/init` to generate a starting CLAUDE.md automatically. ... target under 200 lines per CLAUDE.md file. ... Managed policy CLAUDE.md files cannot be excluded."
+      },
+      {
+        "title": "How Claude remembers your project",
+        "url": "https://code.claude.com/docs/en/memory",
+        "publisher": "Anthropic",
+        "excerpt": "Claude treats them as context, not enforced configuration. To block an action regardless of what Claude decides, use a PreToolUse hook instead."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "rollout/rollout-plan.md"
+    ]
+  },
+  {
+    "id": "CLM-684",
+    "claim": "As of October 2026, beyond the basic OpenTelemetry switch, administrators can set the exporter variables centrally in the env block of managed settings (OTEL_METRICS_EXPORTER, OTEL_LOGS_EXPORTER, OTEL_EXPORTER_OTLP_PROTOCOL, OTEL_EXPORTER_OTLP_ENDPOINT, OTEL_EXPORTER_OTLP_HEADERS); Claude Code ignores the OpenTelemetry exporter variables in a repository's .claude/settings.json. Prompt content is not logged unless OTEL_LOG_USER_PROMPTS is enabled (default: disabled), the user.email attribute is always included when available, the cost counter can carry model, subagent, skill, plugin and MCP server attribution (third-party names are redacted unless OTEL_LOG_TOOL_DETAILS=1), and a claude_code.tool_decision event logs each accept or reject permission decision.",
+    "category": "product",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Monitoring",
+        "url": "https://code.claude.com/docs/en/monitoring-usage",
+        "publisher": "Anthropic",
+        "excerpt": "Administrators can set these in the `env` block of the managed settings file: CLAUDE_CODE_ENABLE_TELEMETRY, OTEL_METRICS_EXPORTER, OTEL_LOGS_EXPORTER, OTEL_EXPORTER_OTLP_PROTOCOL, OTEL_EXPORTER_OTLP_ENDPOINT, OTEL_EXPORTER_OTLP_HEADERS"
+      },
+      {
+        "title": "Monitoring",
+        "url": "https://code.claude.com/docs/en/monitoring-usage",
+        "publisher": "Anthropic",
+        "excerpt": "`OTEL_LOG_USER_PROMPTS` | Enable logging of user prompt content (default: disabled). `user.email` | User email address, from your sign-in ... | Always included when available"
+      },
+      {
+        "title": "Monitoring",
+        "url": "https://code.claude.com/docs/en/monitoring-usage",
+        "publisher": "Anthropic",
+        "excerpt": "Tool decision event: Logged when a tool permission decision is made (accept/reject). Event Name: `claude_code.tool_decision`"
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "rollout/rollout-plan.md"
+    ],
+    "notes": "Basic enablement and the metric names are in CLM-656 (adoption-eval shard). Cost counter attributes: model, query_source (main, subagent, auxiliary), skill.name, plugin.name, mcp_server.name, mcp_tool.name. Tracing is off by default."
+  },
+  {
+    "id": "CLM-685",
+    "claim": "As of October 2026, spend can be capped per setup: spend limits in admin settings at organization, group or individual level on Claude for Teams and Enterprise (once usage credits are on), workspace spend limits on the Claude Console, and the cloud provider's budget controls on Bedrock or Vertex. The modelPricing managed setting makes cost figures in /usage, the status line and OpenTelemetry use contracted rates (reporting only, not billing). For rate limits on the Console the documentation suggests 15k-20k tokens per minute and 0.37-0.47 requests per minute per user for 100-500 users, and notes that live training sessions with large groups may need higher allocations. A self-hosted Claude apps gateway adds per-user spend limits on Bedrock and Vertex.",
+    "category": "pricing",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Manage costs effectively",
+        "url": "https://code.claude.com/docs/en/costs",
+        "publisher": "Anthropic",
+        "excerpt": "Cap spend: ... Spend limits in admin settings | Workspace spend limits | Your cloud's budget controls. The setting changes what Claude Code reports, not what Anthropic charges."
+      },
+      {
+        "title": "Manage costs effectively",
+        "url": "https://code.claude.com/docs/en/costs",
+        "publisher": "Anthropic",
+        "excerpt": "A Claude apps gateway: a self-hosted Claude apps gateway provides per-user usage attribution, OTLP metrics with token counts, and per-user spend limits on these providers."
+      },
+      {
+        "title": "Manage costs effectively",
+        "url": "https://code.claude.com/docs/en/costs",
+        "publisher": "Anthropic",
+        "excerpt": "100-500 users | 15k-20k | 0.37-0.47 ... If you anticipate scenarios with unusually high concurrent usage (such as live training sessions with large groups), you may need higher TPM allocations per user."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "rollout/rollout-plan.md"
+    ],
+    "notes": "The rate-limit table sits under the Claude Console heading and applies to organization-level limits; the plan uses it only as a starting point for Bedrock and Vertex quota requests, labelled an assumption."
+  },
+  {
+    "id": "CLM-686",
+    "claim": "As of October 2026, Claude Code on Amazon Bedrock is enabled with CLAUDE_CODE_USE_BEDROCK=1 and an AWS region (AWS_REGION). Each AWS account submits the Anthropic use case form once in the Bedrock console and access is granted immediately after submission (AWS Organizations can submit once from the management account with PutUseCaseForModelAccess). The IAM policy needs bedrock:InvokeModel, bedrock:InvokeModelWithResponseStream, bedrock:ListInferenceProfiles and bedrock:GetInferenceProfile.",
+    "category": "deployment",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Claude Code on Amazon Bedrock",
+        "url": "https://code.claude.com/docs/en/amazon-bedrock",
+        "publisher": "Anthropic",
+        "excerpt": "Before you invoke an Anthropic model for the first time, submit use case details. You do this once per AWS account. ... Complete the use case form. Access is granted immediately after submission."
+      },
+      {
+        "title": "Claude Code on Amazon Bedrock",
+        "url": "https://code.claude.com/docs/en/amazon-bedrock",
+        "publisher": "Anthropic",
+        "excerpt": "export CLAUDE_CODE_USE_BEDROCK=1 | Action: bedrock:InvokeModel, bedrock:InvokeModelWithResponseStream, bedrock:ListInferenceProfiles, bedrock:GetInferenceProfile"
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "rollout/rollout-plan.md"
+    ],
+    "notes": "Base prerequisites and the dedicated-account recommendation are in CLM-660 (adoption-eval shard); this claim adds the immediate-access detail, the Organizations route and the full IAM action list."
+  },
+  {
+    "id": "CLM-687",
+    "claim": "As of October 2026, Claude Code on Google Cloud's Agent Platform (formerly Vertex AI) is enabled with CLAUDE_CODE_USE_VERTEX=1, CLOUD_ML_REGION and ANTHROPIC_VERTEX_PROJECT_ID, after enabling aiplatform.googleapis.com in the project, requesting Claude model access in Model Garden (the documentation says approval may take 24-48 hours), allocating quota in the chosen region, and granting the roles/aiplatform.user role. Rate-limit increases go through Google Cloud support.",
+    "category": "deployment",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Claude Code on Google Cloud's Agent Platform",
+        "url": "https://code.claude.com/docs/en/google-vertex-ai",
+        "publisher": "Anthropic",
+        "excerpt": "Request access to desired Claude models ... Wait for approval (may take 24-48 hours). | export CLAUDE_CODE_USE_VERTEX=1 export CLOUD_ML_REGION=global export ANTHROPIC_VERTEX_PROJECT_ID=YOUR-PROJECT-ID"
+      },
+      {
+        "title": "Claude Code on Google Cloud's Agent Platform",
+        "url": "https://code.claude.com/docs/en/google-vertex-ai",
+        "publisher": "Anthropic",
+        "excerpt": "Assign the `roles/aiplatform.user` role ... To raise your rate limits, contact Google Cloud support."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "rollout/rollout-plan.md"
+    ],
+    "notes": "Base setup facts (API enablement, Model Garden approval window, roles/aiplatform.user, dedicated project) are in CLM-661 (adoption-eval shard); this claim adds region, project variables, quota and the rate-limit route. The Claude Code login prompt still labels the option Google Vertex AI."
+  },
+  {
+    "id": "CLM-688",
+    "claim": "As of October 2026, the documentation tells administrators to pin specific model versions when deploying to multiple users on Bedrock or Vertex (ANTHROPIC_DEFAULT_OPUS_MODEL, ANTHROPIC_DEFAULT_SONNET_MODEL, ANTHROPIC_DEFAULT_HAIKU_MODEL), because unpinned aliases resolve to a built-in default that can lag or be unavailable and an unpinned primary model is billed at the Opus rate. It recommends a dedicated AWS account or GCP project for Claude Code to simplify cost tracking and access control. Corporate proxies are configured with HTTPS_PROXY or HTTP_PROXY, and an LLM gateway can sit between Claude Code and the provider.",
+    "category": "deployment",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Claude Code on Amazon Bedrock",
+        "url": "https://code.claude.com/docs/en/amazon-bedrock",
+        "publisher": "Anthropic",
+        "excerpt": "Pin specific model versions when deploying to multiple users. Without pinning, model aliases such as `sonnet` and `opus` resolve to Claude Code's built-in default ... which can lag the newest release and may not yet be available in your account."
+      },
+      {
+        "title": "Enterprise deployment overview",
+        "url": "https://code.claude.com/docs/en/third-party-integrations",
+        "publisher": "Anthropic",
+        "excerpt": "Corporate proxy: Routes traffic through an HTTP/HTTPS proxy. ... Configure with the `HTTPS_PROXY` or `HTTP_PROXY` environment variables."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "rollout/rollout-plan.md"
+    ],
+    "notes": "Vertex page: Create a dedicated GCP project for Claude Code to simplify cost tracking and access control. Bedrock page: Create a dedicated AWS account for Claude Code to simplify cost tracking and access control."
+  },
+  {
+    "id": "CLM-689",
+    "claim": "As of October 2026, managed settings can restrict which models and providers a machine may use and which versions may run: availableModels filters the model picker and, with enforceAvailableModels, also constrains the default model; allowedProviders limits the API providers (Claude Code v2.1.285 or later); minimumVersion stops auto-update installing below a floor and requiredMinimumVersion with requiredMaximumVersion refuse to start outside an approved range. On Bedrock, Vertex and Foundry the claude.ai organization model controls do not apply, so these managed settings are the route.",
+    "category": "security",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Set up Claude Code for your organization",
+        "url": "https://code.claude.com/docs/en/admin-setup",
+        "publisher": "Anthropic",
+        "excerpt": "`availableModels` filters which models appear in the picker. Adding `enforceAvailableModels` also constrains the auto-selected default model. | Limit which API providers a machine may use ... Requires Claude Code v2.1.285 or later | `allowedProviders`"
+      },
+      {
+        "title": "Set up Claude Code for your organization",
+        "url": "https://code.claude.com/docs/en/admin-setup",
+        "publisher": "Anthropic",
+        "excerpt": "Refuse to start at all when the running version is outside an org-approved range. Stronger than `minimumVersion`, which only blocks downgrades | `requiredMinimumVersion`, `requiredMaximumVersion`"
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "rollout/rollout-plan.md"
+    ]
+  },
+  {
+    "id": "CLM-690",
+    "claim": "As of October 2026, SSO, SCIM provisioning and seat assignment for Claude for Teams and Enterprise are configured at the Claude account level, not in Claude Code settings. On Amazon Bedrock, Claude Code uses the standard AWS credential chain, including an IAM Identity Center SSO profile (aws sso login with AWS_PROFILE), and awsAuthRefresh can re-run a command such as aws sso login when credentials expire. On Google Cloud's Agent Platform it uses standard Google Cloud authentication (Application Default Credentials, including Workload Identity Federation) and gcpAuthRefresh can re-run gcloud auth application-default login. A self-hosted Claude apps gateway can instead sign developers in with the corporate identity provider. Corporate VPNs or TLS-inspecting proxies can interrupt browser-based SSO flows.",
+    "category": "security",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Set up Claude Code for your organization",
+        "url": "https://code.claude.com/docs/en/admin-setup",
+        "publisher": "Anthropic",
+        "excerpt": "SSO, SCIM provisioning, and seat assignment are configured at the Claude account level."
+      },
+      {
+        "title": "Claude Code on Amazon Bedrock",
+        "url": "https://code.claude.com/docs/en/amazon-bedrock",
+        "publisher": "Anthropic",
+        "excerpt": "Create a profile with `aws configure sso` ... sign in to IAM Identity Center and set `AWS_PROFILE` ... \"awsAuthRefresh\": \"aws sso login --profile myprofile\" ... corporate VPNs or TLS inspection proxies interrupt the SSO browser flow."
+      },
+      {
+        "title": "Claude Code on Google Cloud's Agent Platform",
+        "url": "https://code.claude.com/docs/en/google-vertex-ai",
+        "publisher": "Anthropic",
+        "excerpt": "Claude Code supports automatic credential refresh for GCP through the `gcpAuthRefresh` setting. \"gcpAuthRefresh\": \"gcloud auth application-default login\""
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "rollout/rollout-plan.md"
+    ],
+    "notes": "Account-tier facts (Teams includes SSO; Enterprise adds domain capture, role-based permissions, compliance API; forceLoginMethod and forceLoginOrgUUID) are in CLM-662 (adoption-eval shard). Authentication page: Cloud gateway - if your organization runs a self-hosted Claude apps gateway, sign in with corporate SSO through /login."
+  },
+  {
+    "id": "CLM-691",
+    "claim": "As of October 2026, Anthropic's champion kit sizes the champion role at about 15 minutes a week posting wins and prompts, about 20 minutes answering questions in a shared channel, about 5 minutes hosting a weekly show-and-tell thread, and 0 to 30 minutes of optional pairing (a single fifteen-minute session offered to anyone getting started). It recommends a dedicated channel, a Friday thread asking what Claude helped with this week, a four-week playbook (seed the channel, start the rhythm, pair and consolidate, hand off) with a signal of success for each week such as the same colleagues returning to use it, identifying the next champion, sending security and data-handling questions to the administrator, and /team-onboarding to generate a setup guide from a champion's own sessions.",
+    "category": "adoption",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Champion kit",
+        "url": "https://code.claude.com/docs/en/champion-kit",
+        "publisher": "Anthropic",
+        "excerpt": "Posting wins and prompts | About 15 minutes. Answering questions in a shared channel | About 20 minutes. Hosting a weekly show-and-tell thread | About 5 minutes. Optional pairing or walkthroughs | 0 to 30 minutes"
+      },
+      {
+        "title": "Champion kit",
+        "url": "https://code.claude.com/docs/en/champion-kit",
+        "publisher": "Anthropic",
+        "excerpt": "Run `/team-onboarding` in a project you have spent real time in. ... Your organization's deployment and data-handling policy is already configured, and champions should not improvise this answer."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "rollout/rollout-plan.md"
+    ]
+  },
+  {
+    "id": "CLM-692",
+    "claim": "Anthropic's communications kit recommends a pre-launch checklist: a #claude-code channel, the install command tested on at least one machine in your environment, a security and data-handling link ready, one concrete first task from a real codebase, a named owner for the channel for the first 48 hours, and a C-suite sponsor to send or co-sign the announcement. The kit says executive-sent launches consistently see higher first-week adoption than admin-sent ones, without publishing a figure. The kit also warns that Claude Code ships frequently and version-specific details should be re-verified before internal distribution.",
+    "category": "adoption",
+    "status": "partial",
+    "safeWording": "Anthropic's rollout guidance recommends an executive sponsor co-sign the launch announcement and lists a pre-launch checklist. The guidance asserts higher first-week adoption for executive-sent launches but publishes no measured effect size, so do not quote a number.",
+    "sources": [
+      {
+        "title": "Communications kit",
+        "url": "https://code.claude.com/docs/en/communications-kit",
+        "publisher": "Anthropic",
+        "excerpt": "A named owner for the channel for the first 48 hours | A C-suite sponsor lined up to send or co-sign the announcement | Exec-sent launches consistently see higher first-week adoption than admin-sent ones"
+      },
+      {
+        "title": "Communications kit",
+        "url": "https://code.claude.com/docs/en/communications-kit",
+        "publisher": "Anthropic",
+        "excerpt": "Install command tested on at least one machine in your environment | Security and data-handling link ready | One concrete first task chosen, a real bug or file in your codebase | `#claude-code` channel created and linked in the message"
+      },
+      {
+        "title": "Communications kit",
+        "url": "https://code.claude.com/docs/en/communications-kit",
+        "publisher": "Anthropic",
+        "excerpt": "Claude Code ships frequently. Verify version-specific details against the documentation home page before distributing internally."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "rollout/rollout-plan.md"
+    ],
+    "notes": "Partial because the kit's statement that exec-sent launches see higher first-week adoption is vendor-asserted and unquantified."
+  },
+  {
+    "id": "CLM-693",
+    "claim": "As of October 2026, Claude Code installs with a single command (curl -fsSL https://claude.ai/install.sh | bash on macOS, Linux and WSL; native installs update in the background) and runs in the terminal, VS Code, JetBrains IDEs, a desktop app and the web. Anthropic's enterprise guidance is to make installation one-click, start new users on guided uses such as codebase Q&A and small bug fixes with a plan first, and have one central team configure MCP servers and check a .mcp.json into the codebase. Free self-paced courses (Claude Code 101 and Claude Code in Action) are on Claude Academy.",
+    "category": "adoption",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Enterprise deployment overview",
+        "url": "https://code.claude.com/docs/en/third-party-integrations",
+        "publisher": "Anthropic",
+        "excerpt": "Start with guided usage: Encourage new users to try Claude Code for codebase Q&A, or on smaller bug fixes or feature requests. Ask Claude Code to make a plan. | Have one central team configure MCP servers and check a `.mcp.json` configuration into the codebase"
+      },
+      {
+        "title": "Overview",
+        "url": "https://code.claude.com/docs/en/overview",
+        "publisher": "Anthropic",
+        "excerpt": "curl -fsSL https://claude.ai/install.sh | bash ... Native installations automatically update in the background. | Claude Code runs on several surfaces: the terminal, IDE extensions, a desktop app, and the web."
+      },
+      {
+        "title": "Set up Claude Code for your organization",
+        "url": "https://code.claude.com/docs/en/admin-setup",
+        "publisher": "Anthropic",
+        "excerpt": "Claude Code 101 and Claude Code in Action: free self-paced courses on Claude Academy"
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "rollout/rollout-plan.md"
+    ]
+  },
+  {
+    "id": "CLM-694",
+    "claim": "As of October 2026, Anthropic's glossary defines agentic coding as a workflow where the AI can read files, run commands and make changes autonomously while you watch, redirect or step away, as opposed to chat-based assistants that only respond with text you must apply yourself. Claude Code works in a loop of gathering context, taking action and verifying results. Plan mode (entered with Shift+Tab or /plan) lets Claude research and propose changes without editing source files. Non-interactive mode (claude -p, formerly called headless mode) runs a single prompt and exits, for CI and scripts. A hook is a user-defined handler that runs automatically at a fixed point in Claude Code's lifecycle, deterministically rather than at the model's discretion. A subagent is a specialized assistant with its own context window, tools and permissions that returns a summary. MCP is an open standard for connecting AI tools to external data sources and services.",
+    "category": "product",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Glossary",
+        "url": "https://code.claude.com/docs/en/glossary",
+        "publisher": "Anthropic",
+        "excerpt": "Agentic coding: A workflow where the AI can read files, run commands, and make changes autonomously while you watch, redirect, or step away, as opposed to chat-based assistants that only respond with text you must apply yourself."
+      },
+      {
+        "title": "Glossary",
+        "url": "https://code.claude.com/docs/en/glossary",
+        "publisher": "Anthropic",
+        "excerpt": "Hook: A user-defined handler that executes automatically at a specific point in Claude Code's lifecycle. Subagent: A specialized AI assistant that runs in its own context window with a custom system prompt, specific tool access, and independent permissions."
+      },
+      {
+        "title": "How Claude Code works",
+        "url": "https://code.claude.com/docs/en/how-claude-code-works",
+        "publisher": "Anthropic",
+        "excerpt": "When you give Claude a task, it works through three phases: gather context, take action, and verify results."
+      },
+      {
+        "title": "Glossary",
+        "url": "https://code.claude.com/docs/en/glossary",
+        "publisher": "Anthropic",
+        "excerpt": "Plan mode: ... Enter plan mode with `/plan` or by pressing `Shift+Tab`. Non-interactive mode: A mode that executes a single prompt and exits ... invoked with `-p` or `--print`. ... Formerly called headless mode."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "rollout/rollout-plan.md"
+    ]
+  },
+  {
+    "id": "CLM-695",
+    "claim": "As of October 2026, Anthropic support is written, through the in-product Get help messenger (click your initials in claude.ai or the Console). Owners and admins have access to Product Support specialists; other seats start with an AI assistant and escalate through an Owner or Admin; qualifying Enterprise owners and admins have prioritized options, and Enterprise customers can arrange a live working session through their Anthropic account team. Anthropic's support article gives no response-time commitment.",
+    "category": "adoption",
+    "status": "partial",
+    "safeWording": "Say: customers reach Anthropic through the in-product Get help messenger; owners and admins reach human specialists, other seats go through an owner or admin; response targets and any live working sessions are agreed in FinTechCo's contract with Anthropic, not promised in public documentation.",
+    "sources": [
+      {
+        "title": "How to get support",
+        "url": "https://support.claude.com/en/articles/9015913-how-to-get-support",
+        "publisher": "Anthropic Help Center",
+        "excerpt": "Claude users click their initials or name in the lower-left corner and choose \"Get help.\" ... \"Human specialist support is not directly available for your account seat type.\" (Team and Enterprise non-owners)"
+      },
+      {
+        "title": "Manage costs effectively",
+        "url": "https://code.claude.com/docs/en/costs",
+        "publisher": "Anthropic",
+        "excerpt": "For billing questions about your specific account, contact Anthropic support through the in-product messenger: sign in at claude.ai, click your initials ... and select Get help"
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "rollout/rollout-plan.md"
+    ],
+    "notes": "Partial: the support article was read through a summarizing fetch tool and several statements (written-only, no phone, account-team working session) should be re-read on the live page during the Sprint 3 fact-check. Source URL for the first source is https://support.claude.com/en/articles/9015913-how-to-get-support."
+  },
+  {
+    "id": "CLM-696",
+    "claim": "As of October 2026, Anthropic's cost documentation recommends habits that keep spend down: use /clear between unrelated tasks, choose Sonnet for most coding tasks and reserve Opus for complex architectural or multi-step reasoning, use plan mode before large changes, disable unused MCP servers, and check token usage with /usage.",
+    "category": "pricing",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Manage costs effectively",
+        "url": "https://code.claude.com/docs/en/costs",
+        "publisher": "Anthropic",
+        "excerpt": "Clear between tasks: Use `/clear` to start fresh when switching to unrelated work. ... Sonnet handles most coding tasks well and costs less than Opus. Reserve Opus for complex architectural decisions or multi-step reasoning."
+      },
+      {
+        "title": "Manage costs effectively",
+        "url": "https://code.claude.com/docs/en/costs",
+        "publisher": "Anthropic",
+        "excerpt": "Use plan mode for complex tasks ... Disable unused servers: Run `/mcp` to see configured servers and disable any you're not actively using. Use `/usage` to check your current token usage"
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "rollout/rollout-plan.md"
+    ]
+  },
+  {
+    "id": "CLM-697",
+    "claim": "As of October 2026, Anthropic's champion kit advises answering engineer concerns by acknowledging the concern, offering a brief reframe and proposing one concrete demonstration on the person's own code. Suggested replies: to \"I am faster without it\", try it on work you avoid such as legacy files, unfamiliar services or test scaffolding; to \"I do not trust AI to touch production code\", agree no change should land unread and use plan mode, then review the diff to the same standard as any pull request; to \"it will make junior engineers weaker\", ask Claude to explain a file and its call sites before changing anything; to \"it hallucinated\", supply context with @-mentions, /init and the real error output; to \"no time to learn another tool\", a two-minute install and one real bug.",
+    "category": "adoption",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Champion kit",
+        "url": "https://code.claude.com/docs/en/champion-kit",
+        "publisher": "Anthropic",
+        "excerpt": "Healthy skepticism is expected; engineers should be cautious about tools that touch their code. ... acknowledge the concern, offer a brief reframe, and propose one concrete demonstration on the person's own code."
+      },
+      {
+        "title": "Champion kit",
+        "url": "https://code.claude.com/docs/en/champion-kit",
+        "publisher": "Anthropic",
+        "excerpt": "I do not trust AI to touch production code: Agree that no change should land unread. Suggest plan mode to see the proposed changes first, then review the diff to the same standard as any pull request."
+      }
+    ],
+    "accessed": "2026-10-20",
+    "usedIn": [
+      "rollout/rollout-plan.md"
+    ]
+  }
+]

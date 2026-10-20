@@ -1,0 +1,33 @@
+{
+  "note": "Facts given by the brief. Use these numbers verbatim; do not invent other facts about FinTechCo (it is fictional). Anything else is an assumption and must be labelled as one.",
+  "company": "FinTechCo",
+  "description": "Modern financial services company operating digital payment services and traditional banking divisions.",
+  "infrastructure": ["AWS", "GCP"],
+  "market": "Customers across the United States",
+  "priorities": ["Team productivity", "Shipping new products"],
+  "costPosture": "Cost-conscious but not cost-driven",
+  "goal": "Roll out a single agentic coding tool company-wide within the next few months",
+  "currentState": "No agentic coding tools in use today; evaluating Claude Code alongside other AI coding assistants",
+  "teams": [
+    { "id": "swe", "name": "Software Engineers", "size": 120, "focus": "Digital payments, mobile apps, banking infrastructure", "stack": ["Python", "TypeScript", "Java"] },
+    { "id": "ds", "name": "Data Scientists", "size": 40, "focus": "ML models for fraud detection, credit scoring, customer behavior", "stack": ["Python", "Jupyter", "pandas", "scikit-learn", "TensorFlow"] },
+    { "id": "sre", "name": "Site Reliability Engineers", "size": 20, "focus": "Managing incidents and keeping systems up and running", "stack": ["Python", "shell scripts", "Go"] }
+  ],
+  "technicalHeadcount": 180,
+  "attendees": [
+    { "role": "Chief Technology Officer", "profile": "Veteran technology leader, 20+ years in financial services IT; highly security-conscious; concerned about regulatory compliance; technical depth; skeptical of new technologies without proven enterprise adoption." },
+    { "role": "Head of Digital Transformation", "profile": "Forward-thinking technical leader championing AI initiatives in the bank; dotted-line leader of the engineering organization; has advocated for modern tools to improve developer productivity." }
+  ],
+  "meeting": {
+    "totalMinutes": 50,
+    "introMinutes": 5,
+    "rolePlayMinutes": 40,
+    "candidateQuestionsMinutes": 5,
+    "platform": "Google Meet with screen share",
+    "demoGuideMinutes": "10-15",
+    "apiCreditsUsd": 25,
+    "installCommand": "curl -fsSL https://claude.ai/install.sh | bash"
+  },
+  "presenter": "[Your Name], Applied AI Architect (candidate)",
+  "placeholders": ["[Your Name]"]
+}

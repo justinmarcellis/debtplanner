@@ -1,0 +1,44 @@
+{
+  "number": 0,
+  "name": "Sprint 0: inception",
+  "status": "closed",
+  "startedAt": "2026-10-20T15:15:45.593Z",
+  "committed": [
+    "S0-ARC-01",
+    "S0-PMO-01",
+    "S0-PRD-01"
+  ],
+  "committedPoints": 18,
+  "targets": {
+    "committedPoints": 18
+  },
+  "closedAt": "2026-10-20T16:57:49.435Z",
+  "review": {
+    "completedPoints": 18,
+    "committedPoints": 18,
+    "usd": 0,
+    "pointsPerDollar": null,
+    "firstPassAcceptance": 1,
+    "reworkRate": 0,
+    "testPassRate": null,
+    "testsPassed": null,
+    "shipped": [
+      "30 requirements and 11 deliverables traced to the brief; facts file",
+      "ADR-000..006 incl. delegation controls, demo architecture, meeting format, claims policy",
+      "Nine-team roster, budget and model tiers, playbooks, SDLC",
+      "Fabric tooling ported; RTM, claims-merge and contract validator with tests (6/6)"
+    ]
+  },
+  "goal": "Brief decomposed into a traceable spec; org, delegation controls, contracts and tooling in place",
+  "retro": {
+    "went_well": [
+      "Independent review accepted 3/3 first pass; separation of duties held even for the orchestrator's own work",
+      "Reviewer caught a real spec conflict (REQ-09 wrap time vs ADR-005)"
+    ],
+    "went_badly": [
+      "First Sprint 1 launch lost to an account usage limit: all 7 manager agents and the S0 reviewer failed within ~75s; no work lost but a full relaunch was needed",
+      "Claims register needed sharding after the fact: one shared file would have collided under parallel tickets"
+    ],
+    "manager_retros": []
+  }
+}

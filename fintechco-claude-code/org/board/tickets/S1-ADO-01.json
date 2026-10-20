@@ -1,0 +1,99 @@
+{
+  "status": "done",
+  "dependsOn": [],
+  "createdAt": "2026-10-20T17:02:47.912Z",
+  "history": [
+    {
+      "at": "2026-10-20T17:03:35.156Z",
+      "from": "ready",
+      "to": "in_progress"
+    },
+    {
+      "at": "2026-10-20T17:58:31.932Z",
+      "from": "in_progress",
+      "to": "ready"
+    },
+    {
+      "at": "2026-10-20T19:07:06.272Z",
+      "from": "ready",
+      "to": "in_progress"
+    },
+    {
+      "at": "2026-10-20T19:18:21.382Z",
+      "from": "in_progress",
+      "to": "done"
+    }
+  ],
+  "id": "S1-ADO-01",
+  "team": "adoption",
+  "title": "Evaluation plan and pilot charter",
+  "story": "As the Head of Digital Transformation I need a fair, tool-agnostic evaluation protocol, a Week 0 readiness list, a six-week cross-team pilot design with a decision gate, and a one-page charter I can circulate internally, so that I can sponsor a structured evaluation that compares every assistant on FinTechCo's own work and can end in a company-wide rollout.",
+  "points": 8,
+  "tier": "strong",
+  "owner": "eng-lead (for adoption)",
+  "reviewer": "qe-acceptance (consolidated, ADR-007)",
+  "sprint": 2,
+  "paths": [
+    "rollout/evaluation-plan.md",
+    "rollout/pilot-charter.md",
+    "research/claims/adoption-eval.json"
+  ],
+  "contracts": [
+    "org/contracts/claims.schema.json",
+    "org/contracts/use-cases.schema.json",
+    "org/contracts/metrics.schema.json",
+    "org/decisions/ADR-003-delegation-controls.md",
+    "org/decisions/ADR-005-meeting-format-and-narrative.md",
+    "org/decisions/ADR-006-claims-and-evidence.md"
+  ],
+  "acceptance": [
+    "rollout/evaluation-plan.md and rollout/pilot-charter.md exist, are plain Markdown (no HTML tags), and each opens with a three-line executive summary (check the first lines of each file).",
+    "evaluation-plan.md has these sections in order, found with grep '^## ': Principles; Tool-agnostic protocol; Week 0 readiness; Pilot design; Starter use cases; Weekly cadence; Success criteria and decision gate; Risks and mitigations; RACI.",
+    "Protocol is tool-agnostic: written for Tool A/B/C and states the same task bank drawn from FinTechCo's own backlog, same cohort design, same onboarding time, support and data access, counterbalanced task order, and metrics plus thresholds pre-registered before pilot week 1. Blinded review names what is blinded, what cannot be blinded, and the shared rubric dimensions. No metric or success criterion names a specific product; Claude Code appears only as one candidate arm.",
+    "Week 0 readiness covers all five items (security and compliance review, SSO, Amazon Bedrock and Google Vertex AI provisioning with both clouds named, managed settings baseline, metric baselines), each with an owner role and a testable exit condition.",
+    "Pilot design is six weeks mapped to PW3-PW8 with calendar dates consistent with the timeline spine in hub adoption. A cohort table gives sizes for SWE, DS and SRE that sum within 120/40/20, selection criteria, and a stated control-group or before/after design, with a small-sample caveat for the 20 SREs (no significance claims, report ranges).",
+    "Each of SWE, DS and SRE has at least two starter use cases in its own stack from brief/facts.json. Each carries a UC-SWE/DS/SRE-nn id that exists in strategy/use-cases.json if that file exists when written, otherwise a [UC-?: ...] placeholder.",
+    "Success criteria table: every criterion has a MET-nn id that exists in value/metrics.json (if the file exists) or a [MET-?: ...] placeholder, a threshold labelled as an assumption, and a guardrail. Decision gate (PW9) defines go, extend and stop with the decision owner and what evidence is required; the gate can return 'not Claude Code' or 'no'.",
+    "Weekly cadence table covers PW3-PW9 with ritual, owner and output per week.",
+    "At least 8 risks with mitigation and owner, including selection bias, novelty effect, mixed productivity evidence, use of other AI tools by control or rival arms, security finding, cost overrun, attrition and the Thanksgiving/year-end calendar risk. RACI table has one A per row and names CTO, Head of Digital Transformation, metrics owner, security lead, engineering managers, champions, evaluation lead and the Anthropic team.",
+    "pilot-charter.md is at most 500 words (wc -w), has Objective, Scope, Cohort, Success criteria, Timeline, Owners and What we need from whom sections, states the three meeting asks (security review opened, cohort and metrics owner named, kickoff date), and reads as FinTechCo-internal prose with no product pitch.",
+    "research/claims/adoption-eval.json has at least 8 claims, ids only within CLM-650..CLM-674, valid categories, each with an official-source URL and an accessed date in October 2026; partial claims carry safeWording; AI productivity evidence is recorded as mixed. Every external fact in both documents carries a [CLM-###] from the shard or a [CLM-?: ...] placeholder.",
+    "node org/contracts/validate.mjs passes."
+  ],
+  "brief": "Audience: the Head of Digital Transformation (champion, circulates the charter) and the CTO (security-first, skeptical, will test fairness). Produce rollout/evaluation-plan.md (depth), rollout/pilot-charter.md (one page) and claims shard research/claims/adoption-eval.json (CLM-650..674 only).\n\nTimeline spine (contract with S1-ADO-02; do not change; also in hub adoption): kickoff K = Monday of PW1, illustrative 2027-01-11, labelled as an assumption, show PW offsets and dates. PW1-2 Week 0 readiness; PW3-8 six-week pilot (pilot week n = PW n+2); PW9 decision gate; rollout waves PW10-17 are the rollout plan's job.\n\nevaluation-plan.md, in order: three-line executive summary; Principles; Tool-agnostic protocol for 'Tool A/B/C' (same task bank from FinTechCo's own backlog, matched cohorts, same onboarding and support, counterbalanced order, metrics and thresholds pre-registered, blinded review with one rubric: strip tool markers from diffs, notebooks and postmortem drafts, and say honestly what cannot be blinded; track use of other AI tools); Week 0 readiness (five items, owner, exit test); Pilot design (cohort table by team within 120/40/20, selection criteria, control or before/after, small-n handling for SREs); Starter use cases per team in their own stacks; Weekly cadence PW3-PW9; Success criteria and decision gate with guardrails and go/extend/stop; Risks (8+); RACI including the metrics owner.\n\nContracts: if strategy/use-cases.json or value/metrics.json exist when you write, cite ids and verify each exists; otherwise use [UC-?: ...] and [MET-?: ...]. Requests are already posted to those hubs.\n\nCharter: 500 words max, plain, internal voice, no pitch, lists what we need from whom and by when (offsets from K).\n\nClaims: official docs first (code.claude.com/docs monitoring, analytics, settings, Bedrock, Vertex, SSO), then DORA and the METR randomized trial for evaluation design; present productivity evidence as mixed, then 'which is why we measure on your work'. Cite only your own range or ids already in other shards; reuse an id if grep research/claims shows the same source. Product facts 'as of October 2026'.\n\nPitfalls: no invented FinTechCo data; every threshold is a labelled assumption; do not presume Claude Code wins; no disparagement of other tools.",
+  "requirements": [
+    "REQ-07",
+    "REQ-11",
+    "REQ-21",
+    "REQ-16"
+  ],
+  "deliverables": [
+    "D6"
+  ],
+  "startedAt": "2026-10-20T17:03:35.156Z",
+  "notes": [
+    {
+      "at": "2026-10-20T17:58:31.911Z",
+      "text": "Carried over from Sprint 1 after the account spend limit; executed player-coach per ADR-007."
+    }
+  ],
+  "review": {
+    "reworkCount": 1,
+    "verdicts": [
+      {
+        "at": "2026-10-20T19:07:06.272Z",
+        "by": "qe-acceptance",
+        "verdict": "rework",
+        "reason": "evaluation-plan.md:37 claims blinded review but never says what cannot be blinded (Claude Code adds commit/PR trailers by default, CLM-664), no counterbalancing; :52-60 only 5 risks, no cadence table; pilot-charter.md:27 $150-250 lacks [CLM-619]; :17 'week-6 readout' vs PW5/PW6. (F11, m10)"
+      },
+      {
+        "at": "2026-10-20T19:18:21.382Z",
+        "by": "qe-recheck (mechanical gate, ADR-007)",
+        "verdict": "accept",
+        "reason": "F11 fixed: unblindable signals and attribution handling, counterbalancing, AI-tool tracking, 12 risks, cadence table, PW labels, [CLM-619] in charter; m10 PW6 readout. org/reviews/recheck.mjs 16/16; validate, timing and tests green"
+      }
+    ],
+    "firstPass": false
+  },
+  "doneAt": "2026-10-20T19:18:21.382Z"
+}

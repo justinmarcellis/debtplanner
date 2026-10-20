@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ROI assumptions (value/roi-assumptions.json)",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "name", "unit", "conservative", "base", "upside", "basis"],
+    "properties": {
+      "id": { "type": "string", "pattern": "^ASM-[0-9]{2}$" },
+      "name": { "type": "string" },
+      "team": { "enum": ["swe", "ds", "sre", "all"] },
+      "unit": { "type": "string" },
+      "conservative": { "type": "number" },
+      "base": { "type": "number" },
+      "upside": { "type": "number" },
+      "basis": { "type": "string", "description": "Source ([CLM-###]) or 'assumption: <reasoning>'; brief/facts.json for headcounts." },
+      "editableInCalculator": { "type": "boolean" }
+    }
+  }
+}

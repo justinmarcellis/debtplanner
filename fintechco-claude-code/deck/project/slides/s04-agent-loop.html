@@ -1,0 +1,41 @@
+<section id="s04-agent-loop" data-transition="fade" style="background:#F6F4EF; padding:128px 128px 160px; display:flex; flex-direction:column; gap:32px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:28px; color:#1B1F24">
+<div style="display:flex; flex-direction:column; gap:12px">
+<p style="font-size:24px; font-weight:600; line-height:1.2; letter-spacing:3px; text-transform:uppercase; color:#1F6F6B">How it works</p>
+<h2 style="font-family:'Source Serif 4', Georgia, serif; font-size:64px; font-weight:600; line-height:1.15; color:#1B1F24">The Agent Loop</h2>
+</div>
+<div style="position:relative; width:1664px; height:640px">
+<svg style="position:absolute; left:0; top:0" width="1664" height="640" viewBox="0 0 1664 640" aria-label="Developer’s environment containing a loop: 1 Understand, 2 Plan, 3 Act with tools, 4 Verify, then back to Understand; a permission check set by your policy sits on the step into Act">
+<rect x="1" y="1" width="1662" height="638" rx="24" fill="#E2DED5" fill-opacity="0.4" stroke="#1F6F6B" stroke-width="2" stroke-dasharray="12 8"/>
+<rect x="48" y="104" width="420" height="144" rx="16" fill="#F6F4EF" stroke="#1F6F6B" stroke-width="3"/>
+<rect x="668" y="104" width="420" height="144" rx="16" fill="#F6F4EF" stroke="#1F6F6B" stroke-width="3"/>
+<rect x="668" y="464" width="420" height="144" rx="16" fill="#F6F4EF" stroke="#1F6F6B" stroke-width="3"/>
+<rect x="48" y="464" width="420" height="144" rx="16" fill="#F6F4EF" stroke="#1F6F6B" stroke-width="3"/>
+<rect x="698" y="308" width="360" height="96" rx="48" fill="#D9952B" stroke="#1B1F24" stroke-width="2"/>
+<rect x="1208" y="104" width="408" height="64" rx="12" fill="#F6F4EF" stroke="#4A5560" stroke-width="2"/>
+<rect x="1208" y="214" width="408" height="64" rx="12" fill="#F6F4EF" stroke="#4A5560" stroke-width="2"/>
+<rect x="1208" y="324" width="408" height="64" rx="12" fill="#F6F4EF" stroke="#4A5560" stroke-width="2"/>
+<rect x="1208" y="434" width="408" height="64" rx="12" fill="#F6F4EF" stroke="#4A5560" stroke-width="2"/>
+<rect x="1208" y="544" width="408" height="64" rx="12" fill="#F6F4EF" stroke="#4A5560" stroke-width="2"/>
+</svg>
+<x-connector x1="468" y1="176" x2="668" y2="176" style="color:#1F6F6B; border-width:3px"></x-connector>
+<x-connector x1="878" y1="248" x2="878" y2="308" head="none" style="color:#1F6F6B; border-width:3px"></x-connector>
+<x-connector x1="878" y1="404" x2="878" y2="464" style="color:#1F6F6B; border-width:3px"></x-connector>
+<x-connector x1="668" y1="536" x2="468" y2="536" style="color:#1F6F6B; border-width:3px"></x-connector>
+<x-connector x1="258" y1="464" x2="258" y2="248" style="color:#1F6F6B; border-width:3px"></x-connector>
+<p style="position:absolute; left:32px; top:40px; width:640px; height:34px; font-size:24px; font-weight:600; line-height:1.4; letter-spacing:3px; text-transform:uppercase; color:#1F6F6B">Your engineer’s environment</p>
+<p style="position:absolute; left:48px; top:104px; width:420px; height:144px; padding:38px 24px; font-size:24px; line-height:1.4; color:#1B1F24"><b>1 Understand</b><br><span style="color:#4A5560">Reads the code and the ticket</span></p>
+<p style="position:absolute; left:668px; top:104px; width:420px; height:144px; padding:38px 24px; font-size:24px; line-height:1.4; color:#1B1F24"><b>2 Plan</b><br><span style="color:#4A5560">Shows the steps before editing</span></p>
+<p style="position:absolute; left:698px; top:308px; width:360px; height:96px; padding:14px 20px; text-align:center; font-size:24px; line-height:1.4; color:#1B1F24"><b>Permission check</b><br>your policy decides</p>
+<p style="position:absolute; left:668px; top:464px; width:420px; height:144px; padding:38px 24px; font-size:24px; line-height:1.4; color:#1B1F24"><b>3 Act with tools</b><br><span style="color:#4A5560">Edits files, runs commands</span></p>
+<p style="position:absolute; left:48px; top:464px; width:420px; height:144px; padding:38px 24px; font-size:24px; line-height:1.4; color:#1B1F24"><b>4 Verify</b><br><span style="color:#4A5560">Runs tests, reads results</span></p>
+<p style="position:absolute; left:290px; top:322px; width:380px; height:68px; font-size:24px; line-height:1.4; color:#4A5560">Repeats until<br>the checks pass</p>
+<p style="position:absolute; left:1208px; top:40px; width:408px; height:34px; font-size:24px; font-weight:600; line-height:1.4; color:#4A5560">What it works with</p>
+<p style="position:absolute; left:1208px; top:104px; width:408px; height:64px; padding:15px 24px; font-size:24px; line-height:1.4; color:#1B1F24"><b>Repository</b></p>
+<p style="position:absolute; left:1208px; top:214px; width:408px; height:64px; padding:15px 24px; font-size:24px; line-height:1.4; color:#1B1F24"><b>Terminal and editor</b></p>
+<p style="position:absolute; left:1208px; top:324px; width:408px; height:64px; padding:15px 24px; font-size:24px; line-height:1.4; color:#1B1F24"><b>Tests</b></p>
+<p style="position:absolute; left:1208px; top:434px; width:408px; height:64px; padding:15px 24px; font-size:24px; line-height:1.4; color:#1B1F24"><b>Git</b></p>
+<p style="position:absolute; left:1208px; top:544px; width:408px; height:64px; padding:15px 24px; font-size:24px; line-height:1.4; color:#1B1F24"><b>Your tools via MCP</b></p>
+</div>
+<p style="position:absolute; left:128px; bottom:64px; width:1664px; font-size:24px; line-height:1.2; color:#4A5560">Source: Claude Code documentation, October 2026 [CLM-001] [CLM-003] [CLM-606] [CLM-006]</p>
+<aside>Here is the one picture I would like you both to keep. Claude Code is an agent: software that takes a goal, works out the steps and carries them out, using a Claude model to do the reasoning [CLM-001]. It runs inside your engineers’ own environment: their terminal, their editor, the repository, their tests and git, and other tools you connect. It works in a loop. One, it understands: it reads the code and the ticket. Two, it plans: it can show you the plan before it changes anything. Three, it acts with your tools: it edits files and runs commands such as your test suite. Four, it verifies: it runs the tests, reads the results and fixes what failed, then goes round again until the task is done [CLM-003]. CTO, the check in front of step three is the part for you. Your administrators choose how that check works: ask the engineer before every edit or command, or Auto mode, where a separate model reviews each action; and they can switch the riskier modes off centrally [CLM-606]. Either way, engineers review every change before it merges. (80 seconds)</aside>
+</section>

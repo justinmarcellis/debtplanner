@@ -1,0 +1,22 @@
+<section id="s15-roi" data-transition="fade" style="background:#F6F4EF; padding:128px 128px 160px; display:flex; flex-direction:column; gap:28px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:28px; color:#1B1F24">
+<div style="display:flex; flex-direction:column; gap:12px">
+<p style="font-size:24px; font-weight:600; letter-spacing:3px; text-transform:uppercase; color:#1F6F6B">Business case</p>
+<h2 style="font-family:'Source Serif 4', Georgia, serif; font-size:64px; font-weight:600; line-height:1.15; color:#1B1F24">ROI Scenarios</h2>
+</div>
+<table style="width:1664px; font-size:28px; color:#1B1F24">
+<tr style="background:#E2DED5">
+<th style="width:43%; padding:16px 22px; text-align:left; font-weight:600">Input or result</th>
+<th style="width:19%; text-align:right; font-weight:600; color:#4A5560">Conservative</th>
+<th style="width:19%; text-align:right; font-weight:600">Base</th>
+<th style="width:19%; text-align:right; font-weight:600; color:#4A5560">Upside</th>
+</tr>
+<tr><td>Hours saved per active user per week</td><td style="text-align:right; color:#4A5560">2</td><td style="text-align:right; font-weight:600">4</td><td style="text-align:right; color:#4A5560">6</td></tr>
+<tr><td>Active users at steady state (of 180)</td><td style="text-align:right; color:#4A5560">108</td><td style="text-align:right; font-weight:600">135</td><td style="text-align:right; color:#4A5560">162</td></tr>
+<tr><td>Annual value of redirected time</td><td style="text-align:right; color:#4A5560">$0.46M</td><td style="text-align:right; font-weight:600">$1.62M</td><td style="text-align:right; color:#4A5560">$3.91M</td></tr>
+<tr><td>Annual cost (usage + platform team)</td><td style="text-align:right; color:#4A5560">$0.49M</td><td style="text-align:right; font-weight:600">$0.42M</td><td style="text-align:right; color:#4A5560">$0.41M</td></tr>
+<tr><td>Payback, incl. ramp and enablement</td><td style="text-align:right; color:#4A5560">beyond 24 mo</td><td style="text-align:right; font-weight:600">month 3</td><td style="text-align:right; color:#4A5560">month 1</td></tr>
+</table>
+<p style="font-size:28px; font-weight:600; background:#D9952B; color:#1B1F24; padding:16px 24px; border-radius:12px">Break-even ≈ 1 hour saved per active user per week (base) · hours saved is the input that matters most</p>
+<p style="position:absolute; left:128px; bottom:64px; width:1664px; font-size:24px; line-height:1.2; color:#4A5560">Model: tested ROI model and the ROI calculator · usage at the published $150–250 per developer per month [CLM-619]; your price to be quoted</p>
+<aside>Now the math, with every assumption visible. Value here means engineering hours redirected to roadmap work, not headcount cut. The model multiplies active users, hours saved per week, a realization factor (the share of saved time that becomes delivered work, sixty percent in the base case) and the loaded cost of an hour. Cost is usage, using Anthropic’s published enterprise average of 150 to 250 dollars per developer per month [CLM-619], plus a small platform team and one-time enablement. Base case: four hours a week, three quarters of your 180 people active, about 1.6 million dollars of redirected time a year against about 0.4 million of cost, paying back in month three. The conservative column stacks every pessimistic assumption at once and comes out slightly negative; it needs about two hours a week. The amber line is the one to remember: in the base case it pays for itself at about one hour per person per week, and hours saved moves the answer three times more than any other input. That is exactly what the pilot measures. Your finance team can change every input in the calculator I will send. (85 seconds)</aside>
+</section>

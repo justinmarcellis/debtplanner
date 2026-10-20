@@ -1,0 +1,51 @@
+{
+  "status": "done",
+  "dependsOn": [],
+  "createdAt": "2026-10-20T15:17:01.644Z",
+  "history": [
+    {
+      "at": "2026-10-20T15:18:38.964Z",
+      "from": "ready",
+      "to": "in_progress"
+    },
+    {
+      "at": "2026-10-20T16:57:49.677Z",
+      "from": "in_progress",
+      "to": "ready"
+    },
+    {
+      "at": "2026-10-20T17:02:03.404Z",
+      "from": "ready",
+      "to": "in_progress"
+    },
+    {
+      "at": "2026-10-20T17:05:30.689Z",
+      "from": "in_progress",
+      "to": "review"
+    },
+    {
+      "at": "2026-10-20T17:58:31.938Z",
+      "from": "review",
+      "to": "done"
+    }
+  ],
+  "id": "S1-RES-00",
+  "team": "research",
+  "title": "Sprint 1 planning: Product & Market Intelligence",
+  "story": "Decompose the sprint stories into parallel tickets",
+  "points": 1,
+  "tier": "mid",
+  "owner": "mgr-research",
+  "reviewer": "dir-research",
+  "sprint": 1,
+  "paths": [
+    "org/board/tickets/"
+  ],
+  "acceptance": [
+    "Tickets created in the fabric with disjoint paths, points, tier, acceptance criteria and requirement ids"
+  ],
+  "requirements": [],
+  "deliverables": [],
+  "startedAt": "2026-10-20T15:18:38.964Z",
+  "doneAt": "2026-10-20T17:58:31.938Z"
+}

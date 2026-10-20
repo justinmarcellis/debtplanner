@@ -1,0 +1,48 @@
+{
+  "id": "S2-VAL-01",
+  "team": "value",
+  "title": "ROI calculator page",
+  "story": "ROI calculator page",
+  "points": 5,
+  "tier": "strong",
+  "owner": "eng-lead (for value)",
+  "reviewer": "qe-acceptance (consolidated, ADR-007)",
+  "sprint": 2,
+  "status": "done",
+  "dependsOn": [],
+  "createdAt": "2026-10-20T17:58:31.911Z",
+  "history": [
+    {
+      "at": "2026-10-20T19:07:07.425Z",
+      "from": "ready",
+      "to": "done"
+    }
+  ],
+  "paths": [
+    "value/calculator/"
+  ],
+  "contracts": [],
+  "acceptance": [
+    "One self-contained HTML page that reuses value/roi.mjs logic and reproduces the scenarios table in value/roi-model.md"
+  ],
+  "requirements": [
+    "REQ-14",
+    "REQ-06"
+  ],
+  "deliverables": [
+    "D5"
+  ],
+  "doneAt": "2026-10-20T19:07:07.425Z",
+  "review": {
+    "reworkCount": 0,
+    "verdicts": [
+      {
+        "at": "2026-10-20T19:07:07.425Z",
+        "by": "qe-acceptance",
+        "verdict": "accept",
+        "reason": "Calculator inlines roi.mjs and roi-assumptions.json byte-identical (checked), script parses, no storage or external data, assumptions editable with sources. Nit: only external resource is the Google Fonts link."
+      }
+    ],
+    "firstPass": true
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "status": "done",
+  "dependsOn": [],
+  "createdAt": "2026-10-20T15:17:01.645Z",
+  "history": [
+    {
+      "at": "2026-10-20T17:01:59.215Z",
+      "from": "ready",
+      "to": "in_progress"
+    },
+    {
+      "at": "2026-10-20T17:02:51.982Z",
+      "from": "in_progress",
+      "to": "review"
+    },
+    {
+      "at": "2026-10-20T17:58:31.945Z",
+      "from": "review",
+      "to": "done"
+    }
+  ],
+  "id": "S1-VAL-00",
+  "team": "value",
+  "title": "Sprint 1 planning: Value Engineering (Metrics & ROI)",
+  "story": "Decompose the sprint stories into parallel tickets",
+  "points": 1,
+  "tier": "mid",
+  "owner": "mgr-value",
+  "reviewer": "dir-value",
+  "sprint": 1,
+  "paths": [
+    "org/board/tickets/"
+  ],
+  "acceptance": [
+    "Tickets created in the fabric with disjoint paths, points, tier, acceptance criteria and requirement ids"
+  ],
+  "requirements": [],
+  "deliverables": [],
+  "startedAt": "2026-10-20T17:01:59.215Z",
+  "doneAt": "2026-10-20T17:58:31.945Z"
+}

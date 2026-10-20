@@ -1,0 +1,84 @@
+{
+  "status": "done",
+  "dependsOn": [],
+  "createdAt": "2026-10-20T17:06:01.758Z",
+  "history": [
+    {
+      "at": "2026-10-20T17:47:55.165Z",
+      "from": "ready",
+      "to": "in_progress"
+    },
+    {
+      "at": "2026-10-20T17:58:31.942Z",
+      "from": "in_progress",
+      "to": "ready"
+    },
+    {
+      "at": "2026-10-20T19:07:06.941Z",
+      "from": "ready",
+      "to": "done"
+    }
+  ],
+  "team": "strategy",
+  "reviewer": "qe-acceptance (consolidated, ADR-007)",
+  "sprint": 2,
+  "id": "S1-STR-03",
+  "title": "Use-case catalog for the three teams",
+  "story": "As the candidate I need a catalog of concrete use cases in each team's own stack, with value, risk, guardrails and two recommended pilot starters per team, so that the fit slide, the demo and the evaluation plan all draw on one consistent source.",
+  "points": 5,
+  "tier": "mid",
+  "owner": "eng-lead (for strategy)",
+  "paths": [
+    "strategy/use-cases.json",
+    "strategy/use-case-catalog.md"
+  ],
+  "contracts": [
+    "org/contracts/use-cases.schema.json",
+    "org/contracts/metrics.schema.json",
+    "org/decisions/ADR-004-demo-architecture.md",
+    "org/decisions/ADR-006-claims-and-evidence.md",
+    "brief/facts.json"
+  ],
+  "requirements": [
+    "REQ-05",
+    "REQ-07",
+    "REQ-10"
+  ],
+  "deliverables": [
+    "D4",
+    "D6"
+  ],
+  "acceptance": [
+    "strategy/use-cases.json conforms to org/contracts/use-cases.schema.json and node org/contracts/validate.mjs passes for it (no FAIL line naming strategy/use-cases.json or strategy/use-case-catalog.md; failures naming other teams' files are out of scope).",
+    "Counts and ids: node -e 'const u=require(\"./strategy/use-cases.json\");for(const t of [\"swe\",\"ds\",\"sre\",\"cross\"]){const x=u.filter(e=>e.team===t);console.log(t,x.length,\"starters\",x.filter(e=>e.pilotStarter).length,\"demoAct\",x.map(e=>e.demoAct).filter(Boolean).join(\",\"))}'  prints swe, ds and sre with 5 or 6 entries each and cross with 2 or 3. And  node -e 'const u=require(\"./strategy/use-cases.json\");const m={swe:\"SWE\",ds:\"DS\",sre:\"SRE\",cross:\"X\"};console.log(u.every(e=>e.id.startsWith(\"UC-\"+m[e.team]+\"-\")),new Set(u.map(e=>e.id)).size===u.length)'  prints true true (ids UC-SWE-nn, UC-DS-nn, UC-SRE-nn, UC-X-nn, sequential from 01).",
+    "pilotStarter is true for exactly 2 entries in each of swe, ds and sre (the counts command shows \"starters 2\") and false for every cross entry. Every starter has complexity low or medium. The two starters in a team differ in workflow and are not near-duplicates. The markdown explains why each was chosen (measurable baseline, low blast radius, feasible in week 1).",
+    "demoAct holds only 1, 2, 3 or null and follows ADR-004: act 1 only on swe entries (payments-ledger: codebase tour, PAY-1423 test-first fix, PAN-logging finding), act 2 only on ds entries (macro-risk: FRED acquisition and cleaning, Phillips-curve and Fed-policy-versus-VIX analysis, dashboard), act 3 only on sre entries (sre-ops: headless incident triage). Each of acts 1, 2 and 3 appears on at least one entry (the counts command lists them). Cross entries are null because the governance close is not an act. The markdown has a small demo-mapping table.",
+    "Stack coverage from brief/facts.json: node -e 'const u=require(\"./strategy/use-cases.json\");for(const t of [\"swe\",\"ds\",\"sre\"])console.log(t,[...new Set(u.filter(e=>e.team===t).flatMap(e=>e.stack??[]))].join(\",\"))'  lists Python, TypeScript and Java for swe; Python, Jupyter, pandas, scikit-learn and TensorFlow for ds; Python, shell and Go for sre. swe entries cover payments, mobile and banking infrastructure; ds covers fraud, credit scoring and customer behavior; sre covers incidents and uptime (reviewer reads titles and problems).",
+    "Every entry has: a problem phrased as typical pain (\"teams like yours often...\") and never as a FinTechCo fact; a workflow that starts with the literal ask in quotes followed by at least 3 steps of what Claude Code does; capabilities named as Claude Code features checked against code.claude.com/docs; a valueDriver; and a risk that states the main risk and a concrete guardrail (human review, permission rules, hooks, CI tests, synthetic or approved non-production data), with model-risk sign-off named for fraud and credit-scoring work. The catalog uses at least 4 distinct valueDriver values.",
+    "Metric placeholders: node -e 'const u=require(\"./strategy/use-cases.json\");console.log(u.every(e=>e.metrics.length>=2&&e.metrics.every(m=>/^(MET-\\d\\d|\\[MET-\\?: (adoption|engagement|flow|quality|experience|business) - .+\\])$/.test(m))))'  prints true (at least 2 per entry, tier names from org/contracts/metrics.schema.json so Value can map them). Each entry lists at least one [CLM-?: ...] placeholder in claims naming the Claude Code capability fact Research must source; no [CLM-###] id is cited and no statistic, customer name, quote or price appears.",
+    "strategy/use-case-catalog.md leads with the title, one lead sentence, then the one-table summary as the first table in the file. Columns: ID, Team, Use case, Value driver, FinTechCo priority (team productivity or shipping new products), Complexity, Pilot starter, Demo act. node -e 'const u=require(\"./strategy/use-cases.json\");const L=require(\"fs\").readFileSync(\"strategy/use-case-catalog.md\",\"utf8\").split(\"\\n\");const i=L.findIndex(l=>/^\\| *ID/.test(l));let j=i;while(L[j]&&L[j].startsWith(\"|\"))j++;const ids=L.slice(i+2,j).map(l=>l.split(\"|\")[1].trim());console.log(i,ids.length,u.length,u.every(e=>ids.includes(e.id)))'  prints a header-row index of 7 or less, equal row and entry counts, and true.",
+    "After the table the markdown has per-team sections (executive line first; each use case in 2 to 3 lines with its guardrail; a one-line \"fit line\" of 25 words or fewer the deck can quote; why these two starters), the demo-mapping table, and an \"Open placeholders\" list. It reads as prose a CTO can scan, not a JSON dump. Every entry maps to the priority team productivity or shipping new products.",
+    "Only this ticket's two paths were changed; nothing about FinTechCo is stated beyond brief/facts.json; demo repo names (payments-ledger, macro-risk, sre-ops) appear only on demoAct entries and are described as demo assets, not FinTechCo systems; a handoff is posted to hub strategy and a request listing the [MET-?] placeholders is posted to hub value."
+  ],
+  "brief": "Audience: Narrative (the 2-minute fit slide), Demo (the three acts), Adoption and Value (pilot starters, metrics) all read use-cases.json as their contract; executives scan the markdown table. Each use case must be something an engineer recognises and a CTO could approve.\n\nWrite the JSON first, then the markdown from it (a throwaway script outside the repo is fine, but the markdown must still read as prose). Per team 5 or 6 entries, plus 2 or 3 cross-team. Seeds to adapt, not copy:\nSWE: onboarding to an unfamiliar payments service (act 1); test-first fix of a rounding defect in fee calculation (act 1); characterization tests for untested banking-infrastructure Java; a TypeScript mobile feature from ticket to pull request; a dependency or API migration across services using subagents; pull-request descriptions and review preparation.\nDS: notebook EDA and data cleaning (act 2); fraud feature engineering in pandas and scikit-learn; notebooks to tested modules; model documentation and reproducibility notes for model-risk review; TensorFlow training-script debugging; stakeholder dashboards (act 2); customer-behavior cohorts.\nSRE: incident triage from logs, headless (act 3); post-incident reviews; runbook drafting and drift checks; debugging a Go service from an alert; shell-script hardening and toil automation; alert-noise review.\nCross: governance as code (managed settings, hooks, audit trail, the ADR-004 governance close); shared CLAUDE.md and skills for onboarding and standards; audit-ready change descriptions.\n\nPilot starters: pick for measurable baseline, low blast radius, existing tests and week-1 feasibility; prefer one per team that the audience saw in the demo, but only if it meets those tests.\n\nMetrics are placeholders only, written [MET-?: tier - metric] using the tier names in metrics.schema.json. Capability names: read code.claude.com/docs (read-only web research is allowed; load WebFetch with ToolSearch query \"select:WebFetch\") and use real feature names only. This ticket owns no claims shard, so use [CLM-?: ...] placeholders.\n\nPitfalls: no vendor hype; no invented FinTechCo systems; keep data boundaries explicit (pilot on approved repos, synthetic or non-production data); fraud and credit-scoring entries name model-risk sign-off.",
+  "startedAt": "2026-10-20T17:47:55.165Z",
+  "notes": [
+    {
+      "at": "2026-10-20T17:58:31.911Z",
+      "text": "Carried over from Sprint 1 after the account spend limit; executed player-coach per ADR-007."
+    }
+  ],
+  "doneAt": "2026-10-20T19:07:06.941Z",
+  "review": {
+    "reworkCount": 0,
+    "verdicts": [
+      {
+        "at": "2026-10-20T19:07:06.941Z",
+        "by": "qe-acceptance",
+        "verdict": "accept",
+        "reason": "17 use cases, ids match value/metrics.json, six starters with stacks per team, validator passes; s17 and evaluation-plan.md agree. Nit: UC-SWE-01 measured by MET-01 (weekly users), not time to first merged PR."
+      }
+    ],
+    "firstPass": true
+  }
+}

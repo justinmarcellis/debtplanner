@@ -1,0 +1,76 @@
+{
+  "status": "done",
+  "dependsOn": [],
+  "createdAt": "2026-10-20T17:05:30.541Z",
+  "history": [
+    {
+      "at": "2026-10-20T19:07:06.729Z",
+      "from": "ready",
+      "to": "done"
+    }
+  ],
+  "team": "research",
+  "reviewer": "qe-acceptance (consolidated, ADR-007)",
+  "sprint": 2,
+  "id": "S1-RES-03",
+  "title": "Enterprise proof points and productivity evidence",
+  "story": "As the candidate I need published customer outcomes, Anthropic adoption facts and independent productivity evidence, positive and negative, with exact figures and caveats, so that I can answer a skeptical bank CTO's \"who else runs this, and does it really help\" without overclaiming.",
+  "points": 8,
+  "tier": "mid",
+  "owner": "eng-lead (for research)",
+  "paths": [
+    "deck/project/slides/a05-evidence.html",
+    "research/claims/strategy.json"
+  ],
+  "contracts": [
+    "org/contracts/claims.schema.json",
+    "org/decisions/ADR-006-claims-and-evidence.md",
+    "org/decisions/ADR-003-delegation-controls.md",
+    "org/decisions/ADR-001-layout-and-formats.md"
+  ],
+  "requirements": [
+    "REQ-15",
+    "REQ-13",
+    "REQ-14"
+  ],
+  "deliverables": [
+    "D10"
+  ],
+  "acceptance": [
+    "research/proof-points.md opens with \"As of October 2026\" and a three-line executive summary, then a \"Safe to say\" ladder of at most 10 items in descending persuasiveness for a skeptical bank CTO; each item gives a spoken sentence of at most 30 words, claim ids, source and date, and one caveat. A \"Say with care\" list and a \"Do not say\" list (at least 5 items, each with the reason) follow",
+    "Customer evidence section: at least 6 public Claude Code or Claude enterprise stories, or a documented search record (queries and pages checked) where fewer exist; each entry gives customer, industry, whether the outcome is about Claude Code specifically or Claude generally, the outcome quoted verbatim in quotation marks, URL and publication date. Financial services or regulated industries and large engineering organisations are prioritised; if no financial-services story is found there is an explicit unverified claim saying so",
+    "Anthropic-published adoption facts section has at least 3 claims with figures exactly as published, with the definition, date and publisher of each figure and a label \"vendor-reported\"",
+    "Independent evidence section includes: the METR 2025 randomized controlled trial of experienced open-source developers (population, sample size, task type, tools in use, headline result and the developers' own expectation if reported, all exact) and whether METR published a follow-up by October 2026; at least 2 positive controlled trials or field experiments; DORA research on AI-assisted software development; and at least 1 other mixed or negative finding. Each entry states population, sample size, tool and model generation, measure, exact figure, confidence interval or stated caveat, date, funding where relevant, and whether it applies to agentic tools today",
+    "A \"How to say the mixed evidence\" script of at most 55 words exists, matching ADR-006 (acknowledge mixed results, then \"which is why we measure on your work\")",
+    "Every bullet in research/proof-points.md carries a claim id, except \"(judgment)\" lines allowed only under \"Do not say\" and gaps: grep -nE \"^\\s*[-*] \" research/proof-points.md | grep -v \"\\[CLM-\" | grep -v \"(judgment)\" prints no lines (table rows must carry ids too); at least 3 verbatim quotes spot-checked by the reviewer appear unchanged in the cited claim's source excerpt",
+    "Claims check exits 0 (ids within CLM-200..299, no placeholders, every cited id exists, excerpts at most 300 characters, partial claims have safeWording, accessed in October 2026): `node -e \"const fs=require('fs');const [shard,lo,hi,urlRe,...docs]=process.argv.slice(1);const c=JSON.parse(fs.readFileSync(shard,'utf8'));const ids=new Set(c.map(x=>x.id));const re=new RegExp(urlRe);const bad=[];for(const x of c){const n=+x.id.slice(4);const ok=['verified','partial'].includes(x.status);if(n<+lo||n>+hi)bad.push(x.id+' out of range');if(ok&&x.sources.some(s=>s.excerpt)===false)bad.push(x.id+' no excerpt');if(ok&&x.sources.some(s=>s.excerpt&&s.excerpt.length>300))bad.push(x.id+' excerpt over 300 chars');if(ok&&x.sources.some(s=>re.test(s.url))===false)bad.push(x.id+' no allowed source url');if(x.status==='partial'&&x.safeWording===undefined)bad.push(x.id+' no safeWording');if(/^2026-10-/.test(x.accessed)===false)bad.push(x.id+' accessed not in Oct 2026')}const miss=[],ph=[];for(const d of docs){const t=fs.readFileSync(d,'utf8');for(const m of t.matchAll(/\\[CLM-(\\d{3})\\]/g))if(ids.has('CLM-'+m[1])===false)miss.push(d+':CLM-'+m[1]);if(/\\[CLM-\\?/.test(t))ph.push(d)}console.log(JSON.stringify({claims:c.length,bad,miss:[...new Set(miss)],placeholders:ph}));process.exit(bad.length+miss.length+ph.length?1:0)\" research/claims/proof-points.json 200 299 '.' research/proof-points.md`",
+    "Shard holds at least 25 claims: `node -e \"console.log(require('./research/claims/proof-points.json').length)\"`",
+    "Source hosts: `node -e \"const c=require('./research/claims/proof-points.json');console.log([...new Set(c.flatMap(x=>x.sources.map(s=>new URL(s.url).hostname)))].sort().join('\\n'))\"` shows primary sources only (Anthropic or customer pages, the paper or publisher, DORA or Google Cloud); press coverage is a source only when it quotes a named person and the primary page cannot be found",
+    "node org/contracts/validate.mjs passes (shard schema valid, no duplicate ids, no citation to a missing or unusable claim)",
+    "Only this ticket's paths changed (git status --short shows research/proof-points.md and research/claims/proof-points.json only); no secrets, no Anthropic logos or brand assets, no real personal data"
+  ],
+  "brief": "Produce the evidence a candidate can safely say to a CTO with 20+ years in financial-services IT who is skeptical without proven enterprise adoption. Order everything by persuasiveness for that reader; fairly stated mixed evidence builds more trust than only good news.\n\nSetup: load web tools with ToolSearch query \"select:WebSearch,WebFetch\". Part 1, customer stories: search claude.com/customers and anthropic.com customer pages and Anthropic news for Claude Code and Claude enterprise engineering stories; prioritise financial services and regulated industries, then large engineering organisations. Quote outcomes exactly as published, in quotation marks, with page date. Label each outcome as Claude Code specifically or Claude generally; never present one as the other. Never name a customer who is not named on the cited page, and do not assume any name: find it. Part 2, Anthropic-published adoption facts (usage statistics, enterprise adoption statements, Economic Index or similar reports, Anthropic's own engineering use) with exact figures, definitions and dates, labelled vendor-reported. Part 3, independent evidence. Leads to find and verify in primary sources, copying NO figure from this brief: the METR 2025 randomized trial with experienced open-source developers and any METR follow-up through October 2026; controlled trials and field experiments of AI coding assistants (for example the GitHub Copilot controlled experiment, multi-company field experiments, Google's internal trial); DORA's AI-assisted software development research; other negative or mixed findings. For each: population, sample size, tool and model generation at the time, measure, exact figure, confidence interval or caveat, funding, date, and whether it transfers to today's agentic tools.\n\nDeliver research/proof-points.md in this order: executive summary, Safe to say ladder, Say with care, Do not say, customer evidence, Anthropic adoption facts, independent evidence (positive, then mixed or negative), mixed-evidence script, gaps. Shard research/claims/proof-points.json uses CLM-200..299 only; category adoption or productivity-evidence; use partial with safeWording whenever only a narrower version is supported.\n\nPitfalls: a vendor customer story is not independent measurement, and a study of an earlier tool generation does not automatically describe Claude Code; say so. No figure from memory. Label vendor-funded studies. Productivity and ROI numbers feed the Value team later, so give exact figures and populations. Mark \"Do not say\" and gap lines \"(judgment)\". Post a handoff to the research hub when done.",
+  "notes": [
+    {
+      "at": "2026-10-20T17:58:31.911Z",
+      "text": "Carried over from Sprint 1 after the account spend limit; executed player-coach per ADR-007."
+    },
+    {
+      "at": "2026-10-20T18:47:44.710Z",
+      "text": "Rescoped under ADR-007: Proof points are CLM-621..627 and CLM-650..655 (strategy and adoption-eval shards), presented in deck a05 and s07."
+    }
+  ],
+  "doneAt": "2026-10-20T19:07:06.729Z",
+  "review": {
+    "reworkCount": 0,
+    "verdicts": [
+      {
+        "at": "2026-10-20T19:07:06.729Z",
+        "by": "qe-acceptance",
+        "verdict": "accept",
+        "reason": "a05 matches CLM-623/652/650/651/653/626 and presents the evidence as mixed. Nits: a05-evidence.html:17 '52 juniors' should be 'mostly junior' (CLM-626); add METR 2026 intervals; s07:11 should say the 26% is an AI assistant, not Claude Code."
+      }
+    ],
+    "firstPass": true
+  }
+}

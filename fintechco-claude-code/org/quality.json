@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-20",
+  "testsPassed": 50,
+  "testsTotal": 50,
+  "suites": {
+    "org tooling, validator, ROI model (node --test)": "13/13",
+    "demo/payments-ledger (pytest)": "15/15 excluding the 3 planted PAY-1423 failures the demo fixes live",
+    "demo/payments-ledger hooks": "14/14",
+    "demo/macro-risk (pytest)": "5/5",
+    "demo/sre-ops payment-gateway (go test)": "3/3"
+  },
+  "gates": {
+    "validate": "node org/contracts/validate.mjs",
+    "timing": "node org/timing.mjs --check",
+    "rtm": "node org/rtm.mjs --check"
+  }
+}

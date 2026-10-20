@@ -1,0 +1,51 @@
+diff -ruN a/ledger/fees.py b/ledger/fees.py
+--- a/ledger/fees.py	2026-10-20 18:00:56.282100418 +0000
++++ b/ledger/fees.py	2026-10-20 18:00:56.307996127 +0000
+@@ -7,10 +7,13 @@
+ """
+ from __future__ import annotations
+ 
+-from decimal import Decimal
++from decimal import ROUND_HALF_UP, Decimal
+ 
+ from .models import Merchant, PricingPlan, Transaction
+ 
++CENT = Decimal("0.01")
++BPS = Decimal(10000)
++
+ 
+ def is_cross_border(txn: Transaction, merchant: Merchant) -> bool:
+     return txn.card.country != merchant.country
+@@ -18,11 +21,9 @@
+ 
+ def processing_fee(amount: Decimal, plan: PricingPlan, cross_border: bool = False) -> Decimal:
+     """Fee owed to the processor for one captured transaction."""
+-    rate = plan.percent_bps / 10000
+-    if cross_border:
+-        rate += plan.cross_border_bps / 10000
+-    fee = float(amount) * rate + plan.fixed_cents / 100
+-    return Decimal(str(round(fee, 2)))
++    bps = plan.percent_bps + (plan.cross_border_bps if cross_border else 0)
++    fee = amount * Decimal(bps) / BPS + Decimal(plan.fixed_cents) / 100
++    return fee.quantize(CENT, rounding=ROUND_HALF_UP)
+ 
+ 
+ def fee_for(txn: Transaction, merchant: Merchant) -> Decimal:
+@@ -30,4 +31,4 @@
+ 
+ 
+ def format_money(amount: Decimal) -> str:
+-    return f"${amount}"
++    return f"${amount.quantize(CENT, rounding=ROUND_HALF_UP)}"
+diff -ruN a/tests/test_fees.py b/tests/test_fees.py
+--- a/tests/test_fees.py	2026-10-20 18:00:56.282436552 +0000
++++ b/tests/test_fees.py	2026-10-20 18:00:56.308141751 +0000
+@@ -45,3 +45,8 @@
+ )
+ def test_pay_1423_half_up_rounding(amount, expected):
+     assert processing_fee(Decimal(amount), STANDARD) == Decimal(expected)
++
++
++def test_pay_1423_statement_shows_two_decimals():
++    assert format_money(processing_fee(Decimal("145.00"), STANDARD)) == "$4.51"
++    assert format_money(Decimal("4.5")) == "$4.50"

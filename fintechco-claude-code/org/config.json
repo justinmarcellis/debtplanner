@@ -1,0 +1,73 @@
+{
+  "program": "FinTechCo x Claude Code — Applied AI Architect onsite (mock customer meeting)",
+  "sponsor": "candidate (repo owner), milestone-only",
+  "sponsorChannel": "this chat, milestone-only",
+  "engagementRoot": "fintechco-claude-code/",
+  "budget": {
+    "totalUsd": 175,
+    "note": "Sponsor left the budget blank. Default set by the orchestrator (ADR-002), sized from the fnol-platform program's actuals. Red flag at 80%.",
+    "bySprint": {
+      "0": 5,
+      "1": 50,
+      "2": 55,
+      "3": 35,
+      "reserve": 30
+    },
+    "replanAtPct": 80,
+    "stopAtPct": 100,
+    "perTicketCapUsd": {
+      "fast": 0.5,
+      "mid": 3,
+      "strong": 8
+    },
+    "headlessDemoRunCapUsd": 3
+  },
+  "concurrency": {
+    "maxAgents": 8,
+    "note": "Harness caps each workflow at 2 concurrent agents on this 4-CPU container (ADR-000). Sprint 1 ran 4 workflows side by side (8 agents); agents are API-bound, CPU stayed low."
+  },
+  "modelTiers": {
+    "strong": {
+      "model": "opus",
+      "id": "claude-opus-5-5",
+      "inputPerMTok": 4,
+      "outputPerMTok": 20,
+      "cacheReadPerMTok": 0.2
+    },
+    "mid": {
+      "model": "sonnet",
+      "id": "claude-sonnet-5-5",
+      "inputPerMTok": 2,
+      "outputPerMTok": 10,
+      "cacheReadPerMTok": 0.2
+    },
+    "fast": {
+      "model": "haiku",
+      "id": "claude-haiku-5-5",
+      "inputPerMTok": 0.1,
+      "outputPerMTok": 0.5,
+      "cacheReadPerMTok": 0.01
+    }
+  },
+  "pricingSource": "Anthropic first-party list prices, cached 2026-10-06 (claude-api skill). Cache-read rate for Haiku 5.5 assumed at 10% of input.",
+  "storyPoints": "Fibonacci 1,2,3,5,8,13. Calibration: 1pt ≈ one focused document section or one file with tests; 5pt ≈ a leave-behind document or a demo act's code with tests; 8pt ≈ a full deliverable (deck build, demo repo) with its acceptance evidence.",
+  "performance": {
+    "lowPerformer": "bottom 10% by composite score, or below target two sprints running; fewer than 3 tickets = low confidence, no action",
+    "composite": "0.35*firstPassAcceptance + 0.2*(1-rework) + 0.2*estimateAccuracy + 0.15*costEfficiency + 0.1*(1-defectsAttributed)"
+  },
+  "targets": {
+    "firstPassAcceptance": 0.75,
+    "testPassRate": 1,
+    "claimsVerifiedOnSlides": 1,
+    "rtmCoverage": 1,
+    "meetingRunMinutesMax": 40,
+    "pointsPerDollar": 1
+  },
+  "gates": {
+    "G1": "Narrative lock — orchestrator approves storyline and slide titles (end of Sprint 1)",
+    "G2": "Claims gate — every customer-facing factual claim maps to a verified or partially-verified CLM entry (Sprint 3)",
+    "G3": "Demo gate — each demo act passes a scripted dry-run, with a fallback for every live step (Sprint 3)",
+    "G4": "Timing gate — run-of-show rehearsed at <= 38 minutes with a cut list (Sprint 3)",
+    "G5": "Release — RTM 100% covered, artifacts published, PR open (Release)"
+  }
+}

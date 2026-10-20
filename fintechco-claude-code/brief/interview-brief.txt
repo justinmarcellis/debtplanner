@@ -1,0 +1,160 @@
+                     Applied AI Architect Presentation
+                        Anthropic Virtual Onsite Interview
+
+Overview
+
+This interview evaluates your ability to communicate technical concepts,
+demonstrate product capabilities, and navigate complex dynamics with executive
+stakeholders. You will lead a 40-minute mock customer meeting. Our goal is to
+understand how you prepare for and run a real customer meeting - this is your
+opportunity to show us your approach!
+
+Scenario
+
+FinTechCo is a modern financial services company operating digital payment
+services and traditional banking divisions. They're evaluating Anthropic's Claude
+Code alongside other AI coding assistants- but they don't use any agentic coding
+tools today.
+
+The CTO has invited you to present to their executive team. They want to
+understand:
+
+   ●​ How Claude Code works at a high level
+   ●​ Why FinTechCo would benefit from it
+   ●​ How they should evaluate and roll it out
+
+About FinTechCo
+
+   ●​ Infrastructure: AWS and GCP, serving customers across the United States
+   ●​ Priorities: Team productivity and shipping new products (cost-conscious but
+      not cost-driven)
+   ●​ Goal: Roll out a single agentic coding tool company-wide within the next few
+      months
+
+Technical Teams
+   Team       Size                 Focus                           Tech Stack
+
+
+
+Software      120    Digital payments, mobile apps,      Python, TypeScript, Java
+Engineers            banking infrastructure
+
+
+
+Data          40     ML models for fraud detection,      Python, Jupyter, pandas,
+Scientists           credit scoring, customer behavior   scikit-learn, TensorFlow
+
+
+
+SREs (Site    20     Managing incidents and keeping      Python, shell scripts, Go
+Reliability          systems up and running.
+Engineers)
+
+
+
+
+  Your Task
+
+  Prepare to lead a 40-minute meeting with FinTechCo, which includes:
+
+     ●​ Overview of Claude Code via slides:
+           ○​ Unique value proposition, competitive differentiators
+           ○​ How Claude Code addresses FinTechCo's diverse technical teams
+           ○​ Metrics/framework for measuring impact and ROI
+           ○​ Recommended evaluation plan with specific use cases to start
+     ●​ Live Demo: A prepared technical demonstration that connects to
+        FinTechCo's use cases. We've included potential example topics below along
+        with an API key with free credits for Claude Code.
+     ●​ Wrap up: Close out the meeting and propose clear next steps before ending
+        the presentation, making sure not to run long.
+
+
+
+
+  Attendees
+You will be meeting with key stakeholders including:
+
+   ●​ Chief Technology Officer
+         ○​ Veteran technology leader with 20+ years in financial services IT,
+            highly security-conscious, and concerned about regulatory
+            compliance. Has technical depth but is skeptical of new technologies
+            without proven enterprise adoption.
+   ●​ Head of Digital Transformation
+         ○​ Forward-thinking technical leader championing AI initiatives within
+            the bank. Dotted line leader of the engineering organization who has
+            been advocating for more modern tools to improve developer
+            productivity.
+
+Key Considerations
+
+   ●​ The audience has different levels of technical expertise.
+   ●​ They are particularly concerned about how to measure business impact.
+   ●​ They want to understand implementation complexity and timelines.
+   ●​ ROI and business value must be clearly articulated.
+
+Logistics
+
+   ●​ The interview will be scheduled for 50 minutes total. This includes 5 minutes
+      at the start for introductions (before the role play), 5 minutes at the end for
+      questions you have about Anthropic, and 40 minutes for the mock
+      presentation. If you are running short on time, please recognize that and
+      adapt as necessary so you can leave time to wrap up your presentation.
+   ●​ Please test that you can share your screen on Google Meet.
+
+Resources
+
+   ●​ You have some old slides from past meetings below. Use these are a starting
+      point only, successful presentations typically involve
+      adding/editing/deleting to make your own.
+   ●​    [MAKE A COPY] Applied AI Architect Interview Slide Deck - Claude Cod…
+   ●​ Claude Code Doc
+   ●​ Claude Code Overview
+   ●​ Video of Boris Cherny (creator of Claude Code) discussing the future of
+      agentic coding
+   ●​ Webinar on Claude Code (you’ll need to register)
+
+
+
+API key for Claude Code
+
+Please note that the Recruiting Coordinator will be sending $25 in API credits in
+your onsite confirmation email. No action needed on your end.
+
+To install Claude Code, run this command:
+
+ None‎
+
+ curl -fsSL https://claude.ai/install.sh | bash
+
+
+
+
+Potential demos topics
+
+   ●​ Common workflows, including understanding new codebases, fixing bugs,
+      adding features, and refactoring code.
+   ●​ Example public finance data: you can create a free account to access Federal
+      Reserve Economic Data (FRED) for inflation, unemployment, and other
+      datasets. After creating an account and getting an API key, you could set up
+      demos based on this public data on some of the ideas below. Note that trying
+      to combine all of these ideas into a single 10-15 minute demo could be
+      challenging.
+          ○​ Data acquisition. Highlight how Claude Code can help with data
+             acquisition and review data source information, search the web, etc.
+             Example motivation: "Your team needs to quickly analyze how Federal
+             Reserve policy changes might impact portfolio strategies for an urgent
+             client presentation."
+          ○​ Data cleaning and exploratory analysis. Claude Code transforms
+             significant manual data wrangling into minutes of guided analysis.
+             Example motivation: “Demonstrate the ‘flattening of the Phillips Curve’
+             (diminished correlation between inflation and unemployment).”
+○​ Analysis and modeling. Claude Code enables rapid model prototyping
+   without extensive boilerplate code, allowing quants to focus on
+   insights rather than implementation. Example question: "How do
+   Federal Reserve policy changes historically impact market volatility, and
+   can we quantify these relationships?"
+○​ Dashboarding and visualizations. Claude Code can rapidly create
+   sophisticated, client-ready interactive applications that would often
+   require significant time or support from someone with front-end dev
+   skills.
+

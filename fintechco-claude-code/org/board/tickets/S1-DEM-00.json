@@ -1,0 +1,41 @@
+{
+  "status": "done",
+  "dependsOn": [],
+  "createdAt": "2026-10-20T15:17:01.645Z",
+  "history": [
+    {
+      "at": "2026-10-20T17:03:16.331Z",
+      "from": "ready",
+      "to": "in_progress"
+    },
+    {
+      "at": "2026-10-20T17:04:32.724Z",
+      "from": "in_progress",
+      "to": "review"
+    },
+    {
+      "at": "2026-10-20T17:58:31.933Z",
+      "from": "review",
+      "to": "done"
+    }
+  ],
+  "id": "S1-DEM-00",
+  "team": "demo",
+  "title": "Sprint 1 planning: Demo Engineering",
+  "story": "Decompose the sprint stories into parallel tickets",
+  "points": 1,
+  "tier": "mid",
+  "owner": "mgr-demo",
+  "reviewer": "dir-demo",
+  "sprint": 1,
+  "paths": [
+    "org/board/tickets/"
+  ],
+  "acceptance": [
+    "Tickets created in the fabric with disjoint paths, points, tier, acceptance criteria and requirement ids"
+  ],
+  "requirements": [],
+  "deliverables": [],
+  "startedAt": "2026-10-20T17:03:16.331Z",
+  "doneAt": "2026-10-20T17:58:31.933Z"
+}

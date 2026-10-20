@@ -1,0 +1,60 @@
+{
+  "status": "done",
+  "dependsOn": [],
+  "createdAt": "2026-10-20T15:15:45.457Z",
+  "history": [
+    {
+      "at": "2026-10-20T15:19:09.862Z",
+      "from": "review",
+      "to": "done"
+    }
+  ],
+  "id": "S0-PMO-01",
+  "team": "pmo",
+  "title": "Coordination fabric and engagement tooling",
+  "story": "As the engagement lead I need the board, hubs, sprint, spend, scorecard, RTM, claims-merge and contract-validation tooling so nine teams can work in parallel with an audit trail",
+  "points": 5,
+  "tier": "strong",
+  "owner": "eng-lead",
+  "reviewer": "qe-acceptance",
+  "sprint": 0,
+  "paths": [
+    "org/fabric.mjs",
+    "org/cli.mjs",
+    "org/sprint.mjs",
+    "org/spend.mjs",
+    "org/scorecards.mjs",
+    "org/rtm.mjs",
+    "org/rtm.test.mjs",
+    "org/claims.mjs",
+    "org/contracts/validate.mjs",
+    "org/contracts/validate.test.mjs"
+  ],
+  "contracts": [
+    "org/decisions/ADR-000-harness.md"
+  ],
+  "acceptance": [
+    "Fabric tooling ported from the reference program runs: node org/cli.mjs tickets lists tickets",
+    "node --test 'org/**/*.test.mjs' passes",
+    "node org/rtm.mjs writes brief/requirements.md with coverage computed from done tickets",
+    "node org/claims.mjs merges research/claims/*.json and rejects duplicate ids",
+    "node org/contracts/validate.mjs validates shards and contract files and flags citations to unknown or unverified claims"
+  ],
+  "requirements": [],
+  "deliverables": [
+    "D11"
+  ],
+  "doneAt": "2026-10-20T15:19:09.862Z",
+  "review": {
+    "reworkCount": 0,
+    "verdicts": [
+      {
+        "at": "2026-10-20T15:19:09.862Z",
+        "by": "qe-acceptance",
+        "verdict": "accept",
+        "reason": "All 5 criteria met: 6/6 tests pass; tickets/rtm/claims/validate run; dup-id rejection and unknown/unverified citation flagging proven in sandbox; nits only (no tests for claims/fabric, sparse CLI usage text)"
+      }
+    ],
+    "firstPass": true
+  }
+}
