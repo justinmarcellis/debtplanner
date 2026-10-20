@@ -1,0 +1,23 @@
+{
+  "status": "ready",
+  "dependsOn": [],
+  "createdAt": "2026-10-20T15:17:01.642Z",
+  "history": [],
+  "id": "S1-STR-00",
+  "team": "strategy",
+  "title": "Sprint 1 planning: Account Strategy & Discovery",
+  "story": "Decompose the sprint stories into parallel tickets",
+  "points": 1,
+  "tier": "mid",
+  "owner": "mgr-strategy",
+  "reviewer": "dir-strategy",
+  "sprint": 1,
+  "paths": [
+    "org/board/tickets/"
+  ],
+  "acceptance": [
+    "Tickets created in the fabric with disjoint paths, points, tier, acceptance criteria and requirement ids"
+  ],
+  "requirements": [],
+  "deliverables": []
+}
