@@ -74,13 +74,14 @@ Close: "Thank you. I enjoyed preparing this. Is there anything about my backgrou
 
 ## 4. Rehearsal log
 
-Record each run. Gate G4 passed on the scripted check (`node org/timing.mjs --check`); the two human runs below, each within 38:00 ± 1:00, are still to do and are the presenter's last exit criterion before the interview.
+Record each run. Gate G4 passed on the scripted check (`node org/timing.mjs --check`), and the scripted demo rehearsal (`node demo/rehearse.mjs`, results in `demo/fallback/rehearsal.json`) ran every runbook step. The two spoken runs below, each within 38:00 ± 1:00, are still to do and are the presenter's last exit criterion before the interview.
 
 | Run | Date | Total | Demo (A1 / A2 / A3) | Checkpoints hit (12 · 20 · 26 · 30 · 37) | Cuts used | Spend | Fix before next run |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | Scripted (G4) | 2026-10-20 | 33:44 planned speech + interaction + demo | 2:06 / 3:33 / 0:45 (dry-run) | all, by plan | none | ≈$2.30 | s07, s08 notes trimmed to plan |
-| 1 | | | | | | | |
-| 2 | | | | | | | |
+| Scripted demo (`rehearse.mjs`, Sonnet) | 2026-10-20 | 28:30 projected: slide speech, planned interaction, runbook Say lines and measured terminal time (no slack, no live narration) | 2:22 / 2:52 / 0:48 terminal; 3:07 / 3:12 / 1:00 with Say lines | All early: 9:50 · 13:24 · 18:01 · 21:04 · 26:02 | None | $2.24 measured + ≈$0.15 Act 3 ≈ **$2.39** | All 11 outcome checks pass. The first attempt found two demo bugs, both fixed: Act 2's allowlist didn't match its CLAUDE.md commands (2a needed approval), and 1e drew a refusal instead of the deny rule. The demo ran 8:11 without narration, so narrate while output streams to land in the 10–14 minute guide; if a spoken run is still short, walk through the 1b diff and the Act 2 dashboard rather than moving on early |
+| Spoken 1 | | | | | | | |
+| Spoken 2 | | | | | | | |
 
 ## 5. Self-check against the brief
 

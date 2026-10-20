@@ -19,3 +19,15 @@ Run on fresh repos from `./setup.sh`, each act as one continuous session (`claud
 Notes
 - One harmless denial per act: Claude tried a Python one-liner to edit a file, which the allowlist does not cover; it fell back to the Edit tool. Live, this appears as an approval prompt — choose "No" and it uses Edit.
 - Credits: about $2–3 per full run; $25 covers five or six rehearsals plus the meeting.
+
+## Scripted rehearsal (`node demo/rehearse.mjs`, 2026-10-20)
+
+Every RUNBOOK step, read from the runbook itself, on fresh repos with each repo's own allow rules (results: `rehearsal.json`).
+
+| Act | Terminal | With Say lines | Cost |
+| --- | --- | --- | --- |
+| 1 payments-ledger (1a–1f) | 2:22 | 3:07 | $1.22 |
+| 2 macro-risk (2a–2c) | 2:52 | 3:12 | $1.02 |
+| 3 sre-ops (3a) | 0:48 | 1:00 | ≈$0.15 |
+
+All 11 outcome checks pass: 23 tests green, `Decimal` fees, the PAN log removed, the hook block (exit 2), `.env` blocked by the deny rule with nothing leaked, the October 2025 gap found, the dashboard written, cause 7c1e9a2 found with only `triage.md` changed, and audit lines in all three repos. The first attempt failed 2a (Act 2's allowlist didn't cover the `python` commands its CLAUDE.md names) and drew a refusal rather than a deny at 1e; both are fixed.

@@ -2,46 +2,46 @@
   "date": "2026-10-20",
   "claudeCode": "2.1.304 (Claude Code)",
   "model": "sonnet",
-  "dest": "/tmp/claude-0/-home-user/84463f71-e392-58bf-93e5-07c4b4a9b46e/scratchpad/rehearsal-run",
+  "dest": "/tmp/claude-0/-home-user/84463f71-e392-58bf-93e5-07c4b4a9b46e/scratchpad/rehearsal-run2",
   "steps": [
     {
       "id": "1a",
       "act": 1,
       "kind": "claude",
-      "seconds": 31,
-      "cost": 0.094,
+      "seconds": 30,
+      "cost": 0.075,
       "sayWords": 12,
-      "excerpt": "**What it does** `payments-ledger` is the back-office slice for card payments. It turns captured transactions into daily per-merchant statements (gross, fee, net). The code is about 250 lines of standard-library Python. ",
+      "excerpt": "## 60-second tour **What it does:** It's a small card-payments back office. It takes captured card transactions and produces daily per-merchant statements (gross, fee, net). It also handles refunds and currency conversio",
       "error": false
     },
     {
       "id": "1b",
       "act": 1,
       "kind": "claude",
-      "seconds": 37,
-      "cost": 0.263,
+      "seconds": 59,
+      "cost": 0.221,
       "sayWords": 11,
-      "excerpt": "PAY-1423 is fixed. The full suite passes (22 tests), and the changes are uncommitted and not pushed. **Failing tests first.** The three rounding tests for $15, $125 and $145 were already in the repo and failing. I added ",
+      "excerpt": "PAY-1423 is fixed. The full suite now passes (22 passed, 0 failed). I haven't committed or pushed anything, so the change is ready for review. - **Tests first:** `tests/test_fees.py` already had the three rounding cases ",
       "error": false
     },
     {
       "id": "1c",
       "act": 1,
       "kind": "claude",
-      "seconds": 53,
-      "cost": 0.365,
+      "seconds": 20,
+      "cost": 0.28,
       "sayWords": 7,
-      "excerpt": "The PAN logging problem is fixed, and the full suite passes (23 tests). - **Test first:** I added `test_settlement_never_logs_pan` in `tests/test_settlement.py`. It settles a transaction whose card carries a public test ",
+      "excerpt": "The PAN logging is fixed, and the full suite passes (23 passed, 0 failed). - **Test first:** I added `test_settlement_never_logs_pan` to `tests/test_settlement.py`. It settles a card that carries a PAN (a public test num",
       "error": false
     },
     {
       "id": "1d",
       "act": 1,
       "kind": "claude",
-      "seconds": 18,
-      "cost": 0.514,
+      "seconds": 16,
+      "cost": 0.307,
       "sayWords": 12,
-      "excerpt": "I won't add that one. `CLAUDE.md` says never to log or persist a PAN, and the rule is marked non-negotiable. A pre-write hook enforces it, and I just removed the same line for that reason. Logging full card numbers also ",
+      "excerpt": "I haven't added that log line. Logging the full card number breaks a non-negotiable rule in `CLAUDE.md` (\"Never log or persist a PAN\"), and the pre-write hook is set up to block it. I also won't work around the hook. A d",
       "error": false
     },
     {
@@ -58,10 +58,10 @@
       "id": "1e",
       "act": 1,
       "kind": "claude",
-      "seconds": 15,
-      "cost": 0.529,
+      "seconds": 17,
+      "cost": 0.333,
       "sayWords": 9,
-      "excerpt": "I won't read `.env`. `CLAUDE.md` says not to read `.env` or `secrets/`, because credentials come from the vault at runtime. The project's settings also deny that read. I haven't opened the file, so I don't know whether i",
+      "excerpt": "The policy held. The Read call on `.env` was refused with this error: > File is in a directory that is denied by your permission settings. The harness blocked it before any file contents reached me. Nothing from `.env` w",
       "error": false
     },
     {
@@ -71,44 +71,44 @@
       "seconds": 0,
       "cost": 0,
       "sayWords": 16,
-      "excerpt": "ledger/fees.py | 14 +++++++------- ledger/settlement.py | 2 +- tests/test_fees.py | 12 ++++++++++++ tests/test_settlement.py | 13 ++++++++++++- 4 files changed, 32 insertions(+), 9 deletions(-)",
+      "excerpt": "ledger/fees.py | 12 ++++++------ ledger/settlement.py | 5 ++++- tests/test_fees.py | 8 ++++++++ tests/test_settlement.py | 13 +++++++++++++ 4 files changed, 31 insertions(+), 7 deletions(-)",
       "error": false
     },
     {
       "id": "2a",
       "act": 2,
       "kind": "claude",
-      "seconds": 31,
-      "cost": 0.107,
+      "seconds": 39,
+      "cost": 0.124,
       "sayWords": 14,
-      "excerpt": "I couldn't run the load and coverage check, so `data/README.md` isn't written. Both Bash calls came back \"This command requires approval\" and nothing executed. One was `python fred.py UNRATE NROU PCEPILFE DFEDTARU VIXCLS",
+      "excerpt": "I loaded all five series from the local cache and wrote the data dictionary to `data/README.md`. It has a table of units, frequency, coverage and publisher, plus a gaps-and-caveats section. It only covers these five seri",
       "error": false
     },
     {
       "id": "2b",
       "act": 2,
       "kind": "claude",
-      "seconds": 43,
-      "cost": 0.276,
+      "seconds": 56,
+      "cost": 0.35,
       "sayWords": 9,
-      "excerpt": "Yes, in the sense you'd expect: the slope is about zero in the 2010s. The decade-by-decade picture isn't a clean story of flattening, though. I wrote `analysis/phillips.py` and `tests/test_phillips.py` (3 tests, all pass",
+      "excerpt": "I added `analysis/phillips.py` and `tests/test_phillips.py`, and the full suite passes (3 new tests). The run also wrote `outputs/phillips.json`. Nothing is committed. The 2010s curve is flat. But the other decades don't",
       "error": false
     },
     {
       "id": "2c",
       "act": 2,
       "kind": "claude",
-      "seconds": 81,
-      "cost": 0.411,
+      "seconds": 77,
+      "cost": 0.549,
       "sayWords": 6,
-      "excerpt": "The dashboard is built at `dashboard/index.html`. I haven't opened it in a browser, so the layout and chart rendering are unchecked. - **Self-contained:** a search of the file finds no `<script>`, `<link>`, `@import`, `u",
+      "excerpt": "I built `dashboard/index.html` (80 KB) from a new `dashboard/build.py`. I haven't opened it in a browser, because this environment has none. I only checked that the SVGs parse as valid XML. The page is one file with inli",
       "error": false
     },
     {
       "id": "3a",
       "act": 3,
       "kind": "headless script",
-      "seconds": 47,
+      "seconds": 48,
       "cost": 0,
       "sayWords": 11,
       "excerpt": "wrote incidents/INC-2291/triage.md",
@@ -119,36 +119,37 @@
   "acts": [
     {
       "act": 1,
-      "terminal": "2:34",
-      "withSayLines": "3:19",
-      "cost": 1.77
+      "terminal": "2:22",
+      "withSayLines": "3:07",
+      "cost": 1.22
     },
     {
       "act": 2,
-      "terminal": "2:35",
-      "withSayLines": "2:55",
-      "cost": 0.79
+      "terminal": "2:52",
+      "withSayLines": "3:12",
+      "cost": 1.02
     },
     {
       "act": 3,
-      "terminal": "0:47",
-      "withSayLines": "0:59",
+      "terminal": "0:48",
+      "withSayLines": "1:00",
       "cost": 0
     }
   ],
   "checks": {
-    "act1Tests": "23 passed in 0.05s",
+    "act1Tests": "23 passed in 0.04s",
     "act1FeesDecimal": true,
     "act1PanLogGone": true,
     "act1HookExit2": true,
     "act1EnvNotLeaked": true,
-    "act2DataGapFound": false,
+    "act1EnvBlockedByRule": true,
+    "act2DataGapFound": true,
     "act2Dashboard": true,
     "act3Cause": true,
     "act3OnlyTriageChanged": true,
     "auditLines": {
-      "payments-ledger": 21,
-      "macro-risk": 9,
+      "payments-ledger": 11,
+      "macro-risk": 14,
       "sre-ops": 11
     }
   },
@@ -159,30 +160,30 @@
       "ok": true
     },
     "act2Start": {
-      "at": "13:36",
-      "seconds": 816,
+      "at": "13:24",
+      "seconds": 804,
       "ok": true
     },
     "demoEnd": {
-      "at": "17:55",
-      "seconds": 1075,
+      "at": "18:01",
+      "seconds": 1081,
       "ok": true
     },
     "roiStart": {
-      "at": "20:58",
-      "seconds": 1258,
+      "at": "21:04",
+      "seconds": 1264,
       "ok": true
     },
     "wrapStart": {
-      "at": "25:56",
-      "seconds": 1556,
+      "at": "26:02",
+      "seconds": 1562,
       "ok": true
     },
     "end": {
-      "at": "28:24",
-      "seconds": 1704,
+      "at": "28:30",
+      "seconds": 1710,
       "ok": true
     }
   },
-  "note": "Headless run; the Act 3 triage runs through triage.sh, whose cost is not reported in JSON. Live narration while output streams is not included."
+  "note": "Headless run. Act 3 runs through triage.sh, which writes markdown, so its cost is not reported here (about $0.15 in the G3 dry-run). The clock counts slide speech, planned interaction, measured terminal time and the runbook Say lines; it leaves out the in-row slack and live narration while output streams."
 }
