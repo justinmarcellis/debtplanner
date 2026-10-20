@@ -28,3 +28,9 @@ test('citations must exist and be usable', () => {
   const claims = [good, { ...good, id: 'CLM-002', status: 'unverified' }];
   assert.deepEqual(checkCitations('ok [CLM-001] bad [CLM-002] gone [CLM-003]', claims), ['CLM-002 is unverified', 'CLM-003 not in register']);
 });
+
+test('drafting placeholders are found; meeting-day fields are not', async () => {
+  const { findPlaceholders } = await import('./validate.mjs');
+  assert.deepEqual(findPlaceholders('cite [CLM-?: vendor docs] then TODO and TBD'), ['[CLM-?: vendor docs]', 'TODO', 'TBD']);
+  assert.deepEqual(findPlaceholders('by [date], owner [name], [Your Name], [CLM-602]'), []);
+});

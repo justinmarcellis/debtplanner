@@ -53,6 +53,11 @@ export function checkCitations(text, claims) {
   return [...new Set(out)];
 }
 
+/** Unresolved drafting placeholders that must not ship: [CLM-?: ...], TODO, TBD. Meeting-day fields like [date] are allowed. */
+export function findPlaceholders(text) {
+  return [...new Set([...text.matchAll(/\[CLM-\?[^\]]*\]|\bTODO\b|\bTBD\b/g)].map((m) => m[0].slice(0, 40)))];
+}
+
 const walk = (dir) => (existsSync(dir) ? readdirSync(dir).flatMap((f) => {
   const p = join(dir, f);
   if (f === 'node_modules' || f.startsWith('.git')) return [];
@@ -85,13 +90,22 @@ function main() {
     const dups = Array.isArray(data) ? duplicateIds(data) : [];
     report(!errs.length && !dups.length, `${c.file}: ${Array.isArray(data) ? data.length : 0} entries${errs.length ? '\n  ' + errs.slice(0, 20).join('\n  ') : ''}${dups.length ? '\n  duplicate ids: ' + dups.join(', ') : ''}`);
   }
-  const cited = ['deck', 'strategy', 'rollout', 'value', 'security', 'demo', 'rehearsal']
+  const cited = ['deck', 'strategy', 'rollout', 'value', 'security', 'demo', 'rehearsal', 'research']
     .flatMap((d) => walk(join(ROOT, d)))
-    .filter((p) => /\.(md|html|json)$/.test(p) && !p.endsWith('claims.json'));
+    .filter((p) => /\.(md|html|json)$/.test(p) && !relative(ROOT, p).startsWith('research/claims'));
+  let citations = 0;
   for (const p of cited) {
-    const issues = checkCitations(readFileSync(p, 'utf8'), claims);
+    const text = readFileSync(p, 'utf8');
+    citations += (text.match(/\[CLM-\d{3}\]/g) ?? []).length;
+    const issues = checkCitations(text, claims);
     if (issues.length) report(false, `${relative(ROOT, p)}: ${issues.join('; ')}`);
   }
+  report(true, `${citations} citations in ${cited.length} files resolve to verified or partial claims`);
+  // Release gate (G5): what the customer or the interviewer sees carries no drafting placeholders.
+  // deck/slide-spec.md and the templates are working papers and keep their history.
+  const release = cited.filter((p) => !/^deck\/(?!project\/)/.test(relative(ROOT, p)));
+  const open = release.map((p) => [relative(ROOT, p), findPlaceholders(readFileSync(p, 'utf8'))]).filter(([, f]) => f.length);
+  report(!open.length, `release files free of drafting placeholders${open.length ? '\n  ' + open.map(([p, f]) => `${p}: ${f.join(', ')}`).join('\n  ') : ''}`);
   process.exit(failed ? 1 : 0);
 }
 
