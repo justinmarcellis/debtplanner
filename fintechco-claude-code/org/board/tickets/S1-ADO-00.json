@@ -1,8 +1,19 @@
 {
-  "status": "ready",
+  "status": "review",
   "dependsOn": [],
   "createdAt": "2026-10-20T15:17:01.645Z",
-  "history": [],
+  "history": [
+    {
+      "at": "2026-10-20T17:02:00.162Z",
+      "from": "ready",
+      "to": "in_progress"
+    },
+    {
+      "at": "2026-10-20T17:02:47.954Z",
+      "from": "in_progress",
+      "to": "review"
+    }
+  ],
   "id": "S1-ADO-00",
   "team": "adoption",
   "title": "Sprint 1 planning: Evaluation & Rollout",
@@ -19,5 +30,6 @@
     "Tickets created in the fabric with disjoint paths, points, tier, acceptance criteria and requirement ids"
   ],
   "requirements": [],
-  "deliverables": []
+  "deliverables": [],
+  "startedAt": "2026-10-20T17:02:00.162Z"
 }

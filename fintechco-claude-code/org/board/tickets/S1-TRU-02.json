@@ -1,0 +1,54 @@
+{
+  "status": "in_progress",
+  "dependsOn": [],
+  "createdAt": "2026-10-20T17:03:45.400Z",
+  "history": [
+    {
+      "at": "2026-10-20T17:07:03.733Z",
+      "from": "ready",
+      "to": "in_progress"
+    }
+  ],
+  "id": "S1-TRU-02",
+  "team": "trust",
+  "title": "Threat model for agentic coding at FinTechCo and threats claims shard",
+  "story": "As the candidate I need a STRIDE threat model of agentic coding at FinTechCo, with a one-page summary table and a sourced claims shard, so that when the security-conscious CTO asks to see the threat model I can show the top threats, their likelihood and impact, and the Claude Code and SDLC controls that mitigate each, including the residual risk.",
+  "points": 5,
+  "tier": "strong",
+  "owner": "ic-trust-threat-modeler",
+  "reviewer": "qe-acceptance",
+  "sprint": 1,
+  "paths": [
+    "security/threat-model.md",
+    "research/claims/trust-threats.json"
+  ],
+  "contracts": [
+    "org/contracts/claims.schema.json",
+    "org/decisions/ADR-003-delegation-controls.md",
+    "org/decisions/ADR-005-meeting-format-and-narrative.md",
+    "org/decisions/ADR-006-claims-and-evidence.md"
+  ],
+  "acceptance": [
+    "security/threat-model.md exists. After the title it has a three-line executive summary, then a one-page summary table with at most 16 rows and these columns: ID, threat, surface, STRIDE, likelihood, impact, key mitigations (CC-n and SD-n ids), residual. No cell exceeds 25 words.",
+    "Sections follow the summary in this order: Scope, assumptions and attacker profiles; Method, scales and control legend; Trust-boundary data-flow diagram (text); Threat register; Coverage matrix; Residual risk and limits; Pilot guardrail profile; Pilot verification tests.",
+    "The register has 12 to 16 threats and includes each of the seven named threats, findable by ID in the summary table: prompt injection via repo content, issues, web pages or MCP tool output; secret exfiltration; destructive commands; supply chain (hallucinated or typosquatted packages); insecure generated code; over-broad MCP credentials; audit gaps.",
+    "Coverage matrix has four surfaces (developer workstation, CI runner, MCP servers, model provider path) by six STRIDE letters. Every cell lists at least one threat ID or 'N/A' with a reason.",
+    "Each register entry gives: surface, STRIDE letter(s), scenario in FinTechCo terms (payments, fraud, credit scoring, incidents; synthetic examples only), likelihood and impact (Low, Medium or High per the defined scale), at least one CC-n and one SD-n mitigation (or a stated reason none applies), residual rating, detection signal, FinTechCo owner role, and a pilot test that proves the mitigation.",
+    "Legend defines CC-1..CC-9 and SD-1..SD-7 with the same ids and names as S1-TRU-01: CC-1 permission modes and allow/ask/deny rules; CC-2 managed settings; CC-3 sandboxing; CC-4 hooks; CC-5 MCP server allowlisting and managed MCP config; CC-6 OpenTelemetry audit export; CC-7 Bedrock or Vertex provider path in the company's own cloud account; CC-8 authentication, SSO and credential handling incl. headless CI; CC-9 data-handling settings (telemetry opt-out, local transcript retention, retention and ZDR terms); SD-1 mandatory human code review; SD-2 CI security scanning; SD-3 branch protection and change management; SD-4 least privilege and secrets management; SD-5 dependency governance; SD-6 logging, SIEM and incident response; SD-7 environment segregation and synthetic data in non-prod. The SDLC controls (SD-n) are labelled ASSUMED baseline, to be confirmed in discovery.",
+    "Likelihood and impact are labelled as qualitative judgements on stated assumptions. No incident rate, CVE count, percentage or anecdote appears without a [CLM-45x] id, and no external fact lacks a claim id or a [CLM-?: ...] placeholder.",
+    "Residual risk and limits section states, with sources where factual: prompt injection is mitigated and not eliminated; approval fatigue can erode permission prompts; permission rules and the sandbox are separate layers; hooks and repo-borne configuration are only as strong as their review; the provider path does not protect a compromised endpoint. Running grep -inE 'prevents all|eliminates|guarantee|impossible|fully secure' security/threat-model.md matches only negations.",
+    "Pilot guardrail profile lists only settings verified in the Claude Code docs, each with a [CLM-45x] id, and marks anything unverified as open. The pilot verification tests list is concrete enough for the Adoption team to lift into pilot exit criteria.",
+    "research/claims/trust-threats.json is an array in the claims schema with ids only in CLM-450..499 and at least 15 claims, each with sources (title, url, publisher), accessed 2026-10-20 or later, and safeWording when partial. The document cites no id outside 450..499, and every cited id exists with status verified or partial.",
+    "node org/contracts/validate.mjs passes from the engagement root; citations are written as separate brackets such as [CLM-451][CLM-452].",
+    "No secrets, real customer names or Anthropic brand assets: grep -rnE 'sk-[A-Za-z0-9]{10,}|AKIA[0-9A-Z]{12,}' security/ returns nothing.",
+    "A handoff is posted to hub trust (and hub demo with the guardrail profile setting names) so the demo enterprise act can be reconciled in Sprint 2 (node org/cli.mjs hub trust shows the post)."
+  ],
+  "brief": "Write the threat model (D7 part 2). Reader: the CTO, who may say 'show me your threat model'. The one-page table must survive 60 seconds of skeptical reading; engineers read the register. Honesty beats reassurance: show residual risk and limits.\n\nMethod: STRIDE per element over four surfaces: developer workstation, CI runner (headless use), MCP servers (local and remote), model provider path (Bedrock, Vertex, first-party API). Draw trust boundaries in a text data-flow diagram. Name attacker profiles: external contributor or issue author, compromised dependency or MCP server, malicious insider, careless developer, compromised workstation.\n\nMust cover the seven named threats, plus what STRIDE surfaces: spoofed or tampered MCP server, repo-borne config or hook tampering, approval fatigue, bypass-permissions misuse, cardholder data or PII in prompts, provider-path misconfiguration (region, retention), denial of wallet. Write scenarios in FinTechCo terms with synthetic examples. Score likelihood and impact on a 3-level scale you define; say these are qualitative judgements on stated assumptions, never statistics.\n\nEnd with a pilot guardrail profile (settings verified in the docs only, each with a claim), a residual-risk view, and tests Adoption can lift into pilot exit criteria. The FinTechCo SDLC controls are an ASSUMED baseline (mandatory code review, CI scanning, branch protection, least privilege): facts.json does not confirm them.\n\nResearch: load WebSearch and WebFetch (ToolSearch query 'select:WebSearch,WebFetch'). Claude Code docs (security, permissions, settings, sandboxing, hooks, MCP, monitoring) first, then OWASP LLM Top 10, MITRE ATLAS, NIST (AI RMF, SP 800-218A) and fetched published research on package hallucination. Cite only what you fetched; no CVE counts, percentages or incident stories from memory; never describe a default or setting name from memory.\n\nShared vocabulary with S1-TRU-01: use the CC-n and SD-n ids and names from the legend criterion exactly, and restate them as a legend so the page stands alone.\n\nClaims: own range CLM-450..499 only; never cite CLM-400..449 (that shard may not exist yet), re-source the fact in your own range; mkdir -p research/claims; do not run org/claims.mjs. Wording: avoid absolutes such as 'secure', 'prevents all', 'eliminates'. Target 3,000 to 4,500 words.",
+  "requirements": [
+    "REQ-15"
+  ],
+  "deliverables": [
+    "D7"
+  ],
+  "startedAt": "2026-10-20T17:07:03.733Z"
+}

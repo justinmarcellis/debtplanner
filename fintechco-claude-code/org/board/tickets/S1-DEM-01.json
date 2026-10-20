@@ -1,0 +1,59 @@
+{
+  "status": "in_progress",
+  "dependsOn": [],
+  "createdAt": "2026-10-20T17:04:27.297Z",
+  "history": [
+    {
+      "at": "2026-10-20T17:05:57.679Z",
+      "from": "ready",
+      "to": "in_progress"
+    }
+  ],
+  "team": "demo",
+  "reviewer": "qe-acceptance",
+  "sprint": 1,
+  "id": "S1-DEM-01",
+  "title": "Act 1 repo: payments-ledger with planted defect, planted violation and fallback patch",
+  "story": "As the candidate I need a realistic small Python payments service with a one-cent fee bug and a PAN-logging violation, plus a verified reference fix, so that Act 1 shows onboarding, test-first bug fixing and governance to the 120 software engineers' stack without depending on luck.",
+  "points": 8,
+  "tier": "mid",
+  "owner": "ic-demo-swe-demo-dev",
+  "paths": [
+    "demo/payments-ledger/ledger/",
+    "demo/payments-ledger/tests/",
+    "demo/payments-ledger/tickets/",
+    "demo/payments-ledger/CLAUDE.md",
+    "demo/payments-ledger/README.md",
+    "demo/payments-ledger/pyproject.toml",
+    "demo/payments-ledger/.gitignore",
+    "demo/fallback/act1/"
+  ],
+  "contracts": [
+    "org/decisions/ADR-004-demo-architecture.md",
+    "org/decisions/ADR-003-delegation-controls.md",
+    "org/decisions/ADR-006-claims-and-evidence.md",
+    "org/contracts/README.md"
+  ],
+  "acceptance": [
+    "Given the repo, when `wc -l demo/payments-ledger/ledger/*.py` runs, then ledger/ holds __init__.py, models.py, fees.py, fx.py, settlement.py and refunds.py totalling 400-700 lines, with type hints on public functions and module docstrings; only stdlib is imported (pytest only in tests/).",
+    "Given the start state, when `cd demo/payments-ledger && python3 -m pytest -q` runs, then it exits non-zero and the ONLY failures are the parametrized cases in tests/test_fee_rounding_pay1423.py (at least 3 failing cases); every other test passes (at least 20 other tests); counts are recorded in demo/fallback/act1/README.md.",
+    "Given tickets/PAY-1423.md, then it is a merchant complaint (fictional merchant, synthetic-data footer) quoting at least 4 concrete transaction amounts with statement fee vs merchant-expected fee, and the contractual rule (half-up to the cent); a short Python snippet using Decimal ROUND_HALF_UP reproduces the expected values and the float round() path reproduces the statement values.",
+    "Given the code, then fees.py is the only module that converts money to float or uses round() on money; fx.py, settlement.py and refunds.py use Decimal and quantize half-up to cents (fx.py is the intended pattern for Claude to copy).",
+    "Given settlement.py, then exactly one logging call passes payment.card_number (the line logger.debug(\"settling payment %s card=%s amount=%s\", payment.id, payment.card_number, payment.amount)); no 13-19 digit PAN literal exists in ledger/; Luhn-valid test PANs appear only in tests/fixtures/; tests/test_no_pan_literals.py scans the repo outside tests/fixtures/ and passes.",
+    "Given CLAUDE.md, then it states: money is Decimal quantized half-up to cents; never log PANs, log last4 tokens (card_last4); run pytest before claiming done; plus how to run tests and a glossary of at least 8 payments terms (PAN, last4, processing fee, settlement batch, minor units, chargeback, refund, idempotency key). Rules are written as team policy; it asserts no PCI DSS requirement text. README.md explains the service, layout, and the one-line test command.",
+    "Given demo/fallback/act1/PAY-1423.patch (paths relative to the payments-ledger root, `patch -p1`), when applied to a `cp -r` copy in the scratchpad, then it applies cleanly and `python3 -m pytest -q` is fully green, including added regression tests (half-cent boundaries, refund fee consistency, a Decimal-oracle sweep over a range of cent amounts); PAN-LOG-fix.patch (switches the log line to card_last4 and adds a caplog test) applies alone and together with the first patch, all green.",
+    "Given demo/fallback/act1/README.md, then it records the exact commands run, date, Python version, and pass/fail counts for: start state, PAY-1423.patch applied, PAN-LOG-fix.patch applied, both applied.",
+    "Given the folder tree, then demo/payments-ledger/.claude/ and demo/payments-ledger/.env do not exist from this ticket, no `claude` CLI was run, and no Python syntax newer than 3.10 is used (no tomllib, typing.Self, except*, datetime.UTC).",
+    "node org/contracts/validate.mjs passes (it scans demo/ for [CLM-###] citations); any placeholder is written [CLM-?: ...]."
+  ],
+  "brief": "Build the Act 1 repo for the live demo (5 minutes on stage: tour an unfamiliar payments service, fix a one-cent fee bug test-first, flag a PAN-logging violation). The CTO has read real payments code, so it must look like a team's code, not a toy. Python 3.10+, stdlib + pytest, money as Decimal.\n\nStructure: ledger/{__init__,models,fees,fx,settlement,refunds}.py with module loggers and docstrings; tests/ with unit tests per module and tests/fixtures/cards.json (synthetic Luhn-valid test PANs from public test ranges); tickets/PAY-1423.md; CLAUDE.md; README.md; pyproject.toml (pytest testpaths = tests); .gitignore. Domain: Payment(id, merchant_id, amount, currency, card_number, created) with property card_last4; per-merchant fee schedule (percent + fixed cents, e.g. 2.9% + 30c); fx.py converts with Decimal and quantizes half-up (the intended pattern); settlement.py groups payments into per-merchant batches and renders merchant statements with per-payment fees and totals; refunds.py reverses fees pro rata via fees.py.\n\nDefect PAY-1423: fees.py goes through float and round(). Brute-force cent amounts to find ones where the float path differs from Decimal ROUND_HALF_UP; pick 4+ and use the same numbers in the ticket and the test. Everything else stays correct so pytest fails only in tests/test_fee_rounding_pay1423.py (its own file so the Sprint 2 setup script can add or remove it for a test-first prompt).\n\nViolation: exactly one line in settlement.py, the logger.debug line quoted in the acceptance criteria. Interface agreed with S1-DEM-03 (governance, runs in parallel): field names card_number (full PAN, in-memory only) and card_last4; full PAN literals live only under tests/fixtures/ because its PCI hook allows exactly that path; its tests use your exact debug line.\n\nCLAUDE.md: team rules as policy, never as claims about what PCI DSS requires (if you must, write [CLM-?: ...]). Merchant names, ids and amounts are fictional; end tickets with a synthetic-data note.\n\nFallback: write the two patches and verify on a cp -r copy in the scratchpad, then record the runs. .gitignore ignores only caches and virtualenvs (S1-DEM-03 ships a committed fake .env and .claude/). Never create .claude/ or .env here and never run the claude CLI.",
+  "requirements": [
+    "REQ-05",
+    "REQ-08",
+    "REQ-27"
+  ],
+  "deliverables": [
+    "D2"
+  ],
+  "startedAt": "2026-10-20T17:05:57.679Z"
+}

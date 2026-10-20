@@ -1,0 +1,50 @@
+{
+  "status": "ready",
+  "dependsOn": [],
+  "createdAt": "2026-10-20T17:05:30.540Z",
+  "history": [],
+  "team": "research",
+  "reviewer": "qe-acceptance",
+  "sprint": 1,
+  "id": "S1-RES-02",
+  "title": "Competitive landscape, battlecard and competitive claims shard",
+  "story": "As the candidate I need a fair, sourced comparison of the AI coding tools FinTechCo is evaluating and a one-page battlecard, so that I can state where Claude Code is differentiated, concede where competitors are strong, and avoid statements the CTO can knock down.",
+  "points": 13,
+  "tier": "mid",
+  "owner": "ic-research-competitive-analyst",
+  "paths": [
+    "research/competitive-landscape.md",
+    "research/battlecard.md",
+    "research/claims/competitive.json"
+  ],
+  "contracts": [
+    "org/contracts/claims.schema.json",
+    "org/decisions/ADR-006-claims-and-evidence.md",
+    "org/decisions/ADR-003-delegation-controls.md",
+    "org/decisions/ADR-001-layout-and-formats.md",
+    "org/decisions/ADR-005-meeting-format-and-narrative.md"
+  ],
+  "requirements": [
+    "REQ-04",
+    "REQ-21"
+  ],
+  "deliverables": [
+    "D10"
+  ],
+  "acceptance": [
+    "research/competitive-landscape.md opens with \"As of October 2026\" and a three-line executive summary, and has one profile heading (grep -n \"^### \") for each of: GitHub Copilot (agent mode and coding agent), Cursor, OpenAI Codex, Google (Gemini CLI, Gemini Code Assist, Jules), Amazon Q Developer or Kiro, Windsurf or Devin (Cognition), JetBrains Junie, and Claude Code itself",
+    "Each profile gives five labelled fields, each with a claim id or an explicit unverified note: form factor; agentic capabilities; deployment and data options (AWS and GCP stated explicitly, including which model providers it can use); enterprise controls; pricing model (list price and date where published)",
+    "A comparison matrix (tools by the five fields) exists and every populated cell carries a claim id",
+    "Three analysis sections exist: \"Where Claude Code is differentiated for FinTechCo\" (each differentiator rests on cited facts and names the FinTechCo concern it answers), \"Where competitors are genuinely strong\" (at least one cited, unhedged strength for each of at least 5 tools), and \"Landmines\" (at least 8 statements not to make, each with the reason and a safe alternative wording)",
+    "A short \"Fair evaluation protocol\" note (same tasks, repos, metrics and reviewers for every tool) is present, for the adoption team to build on",
+    "research/battlecard.md is one page: wc -w research/battlecard.md reports at most 700 words; it has headings \"Positioning line\" (one sentence of at most 25 words), \"Five differentiators\" (exactly 5 numbered items, each with proof and FinTechCo relevance), six \"### Objection\" entries (grep -c \"^### Objection\" research/battlecard.md prints 6) each with an answer of at most 3 sentences, and \"Traps to avoid\"",
+    "Every bullet and numbered item in both markdown files carries a claim id, except analyst advice marked \"(judgment)\", which is allowed only under Landmines, Fair evaluation protocol and Traps to avoid: grep -nE \"^\\s*([-*]|[0-9]+\\.) \" research/competitive-landscape.md research/battlecard.md | grep -v \"\\[CLM-\" | grep -v \"(judgment)\" prints no lines",
+    "Claims check exits 0 for the shard against both documents (ids within CLM-100..199, no placeholders, every cited id exists, excerpts at most 300 characters, partial claims have safeWording, accessed in October 2026): `node -e \"const fs=require('fs');const [shard,lo,hi,urlRe,...docs]=process.argv.slice(1);const c=JSON.parse(fs.readFileSync(shard,'utf8'));const ids=new Set(c.map(x=>x.id));const re=new RegExp(urlRe);const bad=[];for(const x of c){const n=+x.id.slice(4);const ok=['verified','partial'].includes(x.status);if(n<+lo||n>+hi)bad.push(x.id+' out of range');if(ok&&x.sources.some(s=>s.excerpt)===false)bad.push(x.id+' no excerpt');if(ok&&x.sources.some(s=>s.excerpt&&s.excerpt.length>300))bad.push(x.id+' excerpt over 300 chars');if(ok&&x.sources.some(s=>re.test(s.url))===false)bad.push(x.id+' no allowed source url');if(x.status==='partial'&&x.safeWording===undefined)bad.push(x.id+' no safeWording');if(/^2026-10-/.test(x.accessed)===false)bad.push(x.id+' accessed not in Oct 2026')}const miss=[],ph=[];for(const d of docs){const t=fs.readFileSync(d,'utf8');for(const m of t.matchAll(/\\[CLM-(\\d{3})\\]/g))if(ids.has('CLM-'+m[1])===false)miss.push(d+':CLM-'+m[1]);if(/\\[CLM-\\?/.test(t))ph.push(d)}console.log(JSON.stringify({claims:c.length,bad,miss:[...new Set(miss)],placeholders:ph}));process.exit(bad.length+miss.length+ph.length?1:0)\" research/claims/competitive.json 100 199 '.' research/competitive-landscape.md research/battlecard.md`",
+    "Shard holds at least 60 claims: `node -e \"console.log(require('./research/claims/competitive.json').length)\"`",
+    "Source hosts: `node -e \"const c=require('./research/claims/competitive.json');console.log([...new Set(c.flatMap(x=>x.sources.map(s=>new URL(s.url).hostname)))].sort().join('\\n'))\"` lists only hostnames owned by the vendor being described (or Anthropic for Claude Code claims); no review sites, blogs, news, forums or social media",
+    "Tone check: grep -inE \"\\b(best|only|worst|inferior|superior|leading|unmatched)\\b|#1\" research/competitive-landscape.md research/battlecard.md shows no hit that lacks a named, dated attribution; no sentence disparages a competitor",
+    "node org/contracts/validate.mjs passes (shard schema valid, no duplicate ids, no citation to a missing or unusable claim)",
+    "Only this ticket's paths changed (git status --short shows the three paths above only); no secrets, no Anthropic logos or brand assets, no real personal data"
+  ],
+  "brief": "Produce a fair, sourced competitive landscape and a one-page battlecard for a candidate who will face a CTO and a champion already evaluating several tools. Honest concessions earn more trust than polish.\n\nSetup: load web tools with ToolSearch query \"select:WebSearch,WebFetch\". For each competitor use ONLY its own official docs, product and pricing pages (never blogs, reviews or forums about it). Tools: GitHub Copilot (agent mode, coding agent, CLI), Cursor, OpenAI Codex, Google (Gemini CLI, Gemini Code Assist, Jules), Amazon Q Developer and Kiro, Windsurf and Devin (Cognition), JetBrains Junie; add another only if clearly material, with one line of justification. Product lineups and ownership changed through 2025 and 2026, so confirm current names and status from the vendor's own pages; do not rely on memory.\n\nBudget: 3 to 5 official pages and about 8 claims per vendor, covering five fields: form factor; agentic capabilities; deployment and data options (especially on AWS and GCP, and which model providers each tool can use, including whether Claude models are available inside it); enterprise controls (SSO, policy, audit, admin); pricing model with list price and date. If a field is not on an official page, record an unverified claim naming the page you searched. Source Claude Code's own entries yourself from Anthropic pages into this shard (CLM-100..199 only); do not wait for S1-RES-01.\n\nAnalysis (judgment, not marketing): where Claude Code is differentiated for FinTechCo (three teams on Python, TypeScript, Java, Go and Jupyter; AWS and GCP; regulated; security-conscious CTO), where competitors are genuinely strong (for example IDE-native experience, tight fit with an existing source-control platform or cloud), and landmines. Separate the model from the harness: several tools offer Claude models, so a fair differentiator is the agent harness, surfaces, extensibility and controls, not the model alone. Include a short fair evaluation protocol note.\n\nBattlecard: speakable, at most 700 words, structure fixed by acceptance. Six objections should include: we already have Copilot; the IDE experience elsewhere is better; why not the AWS-native or Google-native tool; single-vendor and model lock-in; cost; security and data. Pitfalls: no benchmark comparisons from marketing pages, no \"only\" or \"best\" without a named dated source, no security claims about a competitor, no inferred prices, every line dated \"as of October 2026\". Mark analyst advice that is not an external fact \"(judgment)\" (allowed only where acceptance says). Post a handoff to the research hub when done."
+}

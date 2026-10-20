@@ -1,0 +1,27 @@
+<!--
+KIND: compare (paper)
+USE WHEN: two options side by side on the same 3 or 4 questions (for example autocomplete versus an agent, today versus pilot). Fair, dated, no disparagement of any product.
+SLOTS TO REPLACE: eyebrow, title (h2, one line), the two column headers, the 4 row pairs (bold lead-in + one line each), footer source line, speaker notes.
+LIMITS: 3 or 4 rows (for 3 rows change the grid rows to 56px repeat(3, 112px)); each cell is a bold lead-in of 24 characters or fewer plus ONE line of 60 characters or fewer; same lead-in text in both columns of a row; both columns have the same number of rows.
+BUILD: content kind (padding 128px 128px 160px, identical header block, pinned 24px footer). One grid, so rows line up across the columns. Left column slate on paper, right column ink with teal lead-ins.
+-->
+<section id="tpl-compare" data-transition="fade" style="background:#F6F4EF; padding:128px 128px 160px; display:flex; flex-direction:column; gap:32px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:28px; color:#1B1F24">
+  <div style="display:flex; flex-direction:column; gap:12px">
+    <p style="font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; font-weight:600; line-height:1.2; letter-spacing:3px; text-transform:uppercase; color:#1F6F6B">Agentic versus autocomplete</p>
+    <h2 style="font-family:'Source Serif 4', Georgia, serif; font-size:64px; font-weight:600; line-height:1.15; color:#1B1F24">From suggestions to finished tasks</h2>
+  </div>
+  <div style="display:grid; grid-template-columns:repeat(2, 1fr); grid-template-rows:56px repeat(4, 112px); gap:32px">
+    <p style="font-size:28px; font-weight:600; line-height:1.2; padding:12px 0 0 0; border-top:4px solid #4A5560; color:#4A5560">Autocomplete assistant</p>
+    <p style="font-size:28px; font-weight:600; line-height:1.2; padding:12px 0 0 0; border-top:4px solid #1F6F6B; color:#1F6F6B">Agentic coding tool</p>
+    <p style="font-size:28px; line-height:1.4; padding:12px 0 0 0; border-bottom:1px solid #E2DED5; color:#4A5560"><b>Unit of help</b><br>A suggested line of code</p>
+    <p style="font-size:28px; line-height:1.4; padding:12px 0 0 0; border-bottom:1px solid #E2DED5; color:#1B1F24"><span style="color:#1F6F6B"><b>Unit of help</b></span><br>A finished, tested task</p>
+    <p style="font-size:28px; line-height:1.4; padding:12px 0 0 0; border-bottom:1px solid #E2DED5; color:#4A5560"><b>Where it works</b><br>Inside one editor window</p>
+    <p style="font-size:28px; line-height:1.4; padding:12px 0 0 0; border-bottom:1px solid #E2DED5; color:#1B1F24"><span style="color:#1F6F6B"><b>Where it works</b></span><br>In the repo, terminal and tests</p>
+    <p style="font-size:28px; line-height:1.4; padding:12px 0 0 0; border-bottom:1px solid #E2DED5; color:#4A5560"><b>Who checks</b><br>The engineer runs the tests</p>
+    <p style="font-size:28px; line-height:1.4; padding:12px 0 0 0; border-bottom:1px solid #E2DED5; color:#1B1F24"><span style="color:#1F6F6B"><b>Who checks</b></span><br>The agent runs them; people review</p>
+    <p style="font-size:28px; line-height:1.4; padding:12px 0 0 0; border-bottom:1px solid #E2DED5; color:#4A5560"><b>Control</b><br>Settings in the editor</p>
+    <p style="font-size:28px; line-height:1.4; padding:12px 0 0 0; border-bottom:1px solid #E2DED5; color:#1B1F24"><span style="color:#1F6F6B"><b>Control</b></span><br>Permissions and central policy</p>
+  </div>
+  <p style="position:absolute; left:128px; bottom:64px; width:1664px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; line-height:1.2; color:#4A5560">Source: [CLM-?: source]</p>
+  <aside>NOTES STUB (compare). Spoken script, about 140 words per minute; target 40 s. Walk the rows top to bottom, one sentence per row, then name the row that matters most to this audience. Keep it fair and dated. Replace this stub.</aside>
+</section>

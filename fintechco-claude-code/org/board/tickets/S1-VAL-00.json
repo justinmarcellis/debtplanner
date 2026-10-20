@@ -1,8 +1,19 @@
 {
-  "status": "ready",
+  "status": "review",
   "dependsOn": [],
   "createdAt": "2026-10-20T15:17:01.645Z",
-  "history": [],
+  "history": [
+    {
+      "at": "2026-10-20T17:01:59.215Z",
+      "from": "ready",
+      "to": "in_progress"
+    },
+    {
+      "at": "2026-10-20T17:02:51.982Z",
+      "from": "in_progress",
+      "to": "review"
+    }
+  ],
   "id": "S1-VAL-00",
   "team": "value",
   "title": "Sprint 1 planning: Value Engineering (Metrics & ROI)",
@@ -19,5 +30,6 @@
     "Tickets created in the fabric with disjoint paths, points, tier, acceptance criteria and requirement ids"
   ],
   "requirements": [],
-  "deliverables": []
+  "deliverables": [],
+  "startedAt": "2026-10-20T17:01:59.215Z"
 }

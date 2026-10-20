@@ -1,0 +1,46 @@
+{
+  "status": "ready",
+  "dependsOn": [],
+  "createdAt": "2026-10-20T17:05:30.539Z",
+  "history": [],
+  "team": "research",
+  "reviewer": "qe-acceptance",
+  "sprint": 1,
+  "id": "S1-RES-01",
+  "title": "Claude Code fact base (October 2026) and product claims shard",
+  "story": "As the candidate I need a fully cited fact base on how Claude Code works, where it runs, how it extends and how it is administered, so that the deck's \"how it works\" and \"differentiators\" sections and every Q&A answer rest on official sources.",
+  "points": 8,
+  "tier": "mid",
+  "owner": "ic-research-claude-code-researcher",
+  "paths": [
+    "research/claude-code-facts.md",
+    "research/claims/product.json"
+  ],
+  "contracts": [
+    "org/contracts/claims.schema.json",
+    "org/decisions/ADR-006-claims-and-evidence.md",
+    "org/decisions/ADR-003-delegation-controls.md",
+    "org/decisions/ADR-001-layout-and-formats.md",
+    "org/decisions/ADR-005-meeting-format-and-narrative.md"
+  ],
+  "requirements": [
+    "REQ-02",
+    "REQ-03",
+    "REQ-29"
+  ],
+  "deliverables": [
+    "D10"
+  ],
+  "acceptance": [
+    "research/claude-code-facts.md exists, opens with an \"As of October 2026\" line and a three-line executive summary, and has sections A to H in this order (check with grep -n \"^## \" research/claude-code-facts.md): A How it works, B Surfaces, C Extensibility, D Models and defaults, E Enterprise administration, F Differentiators for the deck, G Themes from the brief's resources, H Unverified or not found",
+    "Sections A to E cover every topic named in the story: agentic loop (gather context, plan, act with tools, verify); permission modes including plan mode; checkpoints and rewind; surfaces (terminal CLI, IDE extensions, desktop, web, Slack, GitHub Actions/CI, headless -p, Agent SDK); CLAUDE.md memory, slash commands, skills, plugins, subagents, hooks, MCP; models and defaults; SSO, managed settings/policies, usage analytics, OpenTelemetry monitoring, cost controls. Each topic has a verified or partial claim, or an explicit unverified entry naming the pages searched",
+    "Section G has a claim or an unverified entry for each of the three resources named in REQ-29 (Claude Code overview, Boris Cherny's talk on the future of agentic coding, the Claude Code webinar); talk or webinar themes are claimed only where a citable page or official transcript states them (partial status with safeWording at best for video-only sources)",
+    "Section F lists at least 5 differentiators, each written as an attributed product fact with claim ids and no comparison to a named competitor: grep -inE \"copilot|cursor|codex|windsurf|devin|junie|kiro|amazon q|gemini\" research/claude-code-facts.md prints nothing",
+    "Every bullet in research/claude-code-facts.md carries a claim id: grep -nE \"^\\s*[-*] \" research/claude-code-facts.md | grep -v \"\\[CLM-\" prints no lines",
+    "Claims check exits 0 (ids within CLM-001..099, no [CLM-?] placeholders left, every cited id exists, every verified or partial claim has a source excerpt of at most 300 characters on an official Anthropic URL, partial claims have safeWording, accessed date in October 2026): `node -e \"const fs=require('fs');const [shard,lo,hi,urlRe,...docs]=process.argv.slice(1);const c=JSON.parse(fs.readFileSync(shard,'utf8'));const ids=new Set(c.map(x=>x.id));const re=new RegExp(urlRe);const bad=[];for(const x of c){const n=+x.id.slice(4);const ok=['verified','partial'].includes(x.status);if(n<+lo||n>+hi)bad.push(x.id+' out of range');if(ok&&x.sources.some(s=>s.excerpt)===false)bad.push(x.id+' no excerpt');if(ok&&x.sources.some(s=>s.excerpt&&s.excerpt.length>300))bad.push(x.id+' excerpt over 300 chars');if(ok&&x.sources.some(s=>re.test(s.url))===false)bad.push(x.id+' no allowed source url');if(x.status==='partial'&&x.safeWording===undefined)bad.push(x.id+' no safeWording');if(/^2026-10-/.test(x.accessed)===false)bad.push(x.id+' accessed not in Oct 2026')}const miss=[],ph=[];for(const d of docs){const t=fs.readFileSync(d,'utf8');for(const m of t.matchAll(/\\[CLM-(\\d{3})\\]/g))if(ids.has('CLM-'+m[1])===false)miss.push(d+':CLM-'+m[1]);if(/\\[CLM-\\?/.test(t))ph.push(d)}console.log(JSON.stringify({claims:c.length,bad,miss:[...new Set(miss)],placeholders:ph}));process.exit(bad.length+miss.length+ph.length?1:0)\" research/claims/product.json 1 99 '^https://(code\\.claude\\.com|docs\\.claude\\.com|platform\\.claude\\.com|support\\.claude\\.com|www\\.anthropic\\.com|anthropic\\.com|www\\.claude\\.com|claude\\.com|claude\\.ai|github\\.com/anthropics/|www\\.youtube\\.com/watch|youtu\\.be/)' research/claude-code-facts.md`",
+    "Shard holds between 50 and 99 claims; `node -e \"console.log(require('./research/claims/product.json').length)\"` prints a number in that range",
+    "node org/contracts/validate.mjs passes (shard schema valid, no duplicate ids, no citation to a missing or unusable claim)",
+    "Only this ticket's paths changed (git status --short shows research/claude-code-facts.md and research/claims/product.json only); no secrets, no Anthropic logos or brand assets, no real personal data"
+  ],
+  "brief": "Produce the Claude Code fact base that the deck, the security brief and the Q&A bank all cite. Audience: the Narrative team (a 4-minute \"how it works\" section and a 3-minute \"why Claude Code\" section) and, behind them, a security-conscious bank CTO and a non-engineer champion. Each section opens with one plain-English line, then engineer depth in bullets. Define agentic, MCP, hooks, subagent and headless in one plain sentence at first use.\n\nSetup: load the web tools with ToolSearch query \"select:WebSearch,WebFetch\". Primary sources: code.claude.com/docs (overview, how it works, workflows, permissions and modes, checkpointing, memory, slash commands, skills, plugins, subagents, hooks, MCP, each surface, headless and Agent SDK, model configuration, managed settings, SSO/IAM, monitoring with OpenTelemetry, analytics, costs), the changelog, and Anthropic announcements on anthropic.com and claude.com. Page names are leads: use real current URLs and the page's last-updated date; prefer pages updated in 2026.\n\nStructure is in the first acceptance criterion. One fact per bullet, ending with its [CLM-###]. Section F states differentiators as attributed product facts only (competitor comparison is S1-RES-02). Section G: capture themes of the Claude Code overview, Boris Cherny's talk and the webinar only where a citable page or official transcript states them, otherwise record one unverified entry saying what you searched.\n\nShard research/claims/product.json: an array in claims.schema.json, ids CLM-001..099 only, 50 to 99 claims, category product or model as fits, accessed set to the date you read the page (2026-10-xx), the page date in sources[].date, an excerpt of at most 300 characters copied from the page, safeWording whenever status is partial. For an unverified claim cite the closest official page you searched and say what was missing in notes.\n\nPitfalls: model names, defaults, flags and surfaces change monthly, so read the page and never write from memory. No benchmark claims or superlatives unless a named, dated source says so, and then attribute. Data retention, training, certifications and regulatory fit belong to the Trust team (CLM-400..449): leave a pointer, no claim. Prices, plans and Bedrock/Vertex setup belong to S1-RES-04; cost controls here means what an admin can set, not dollar figures. Write a CLM id only as a bracketed citation. If you need a fact another shard will hold, source it yourself; do not wait. Post a handoff to the research hub when done."
+}

@@ -1,0 +1,51 @@
+<!--
+KIND: diagram (paper), generic pinned diagram
+USE WHEN: any flow, tier or fan-out the room should read as boxes and lines (evaluation design, rollout waves, a process). Use diagram-how-it-works or diagram-deployment for those two named diagrams.
+SLOTS TO REPLACE: eyebrow, title (h2, one line), box labels (bold line + one subtitle line), node list comment, connector coordinates, footer source line, speaker notes.
+LIMITS: host 1664px by 640px (the 700px host in diagrams.md does not fit under the eyebrow; see deck/visual-system.md); at most 8 boxes; boxes 200px wide or more with 24px text, 32px or more apart, same size for the same kind of node; labels are 24px (bold line + subtitle, one line each); at most 24 pinned children in the host (svg, connectors and labels all count).
+BUILD: content kind (padding 128px 128px 160px, identical header block, pinned 24px footer). Artwork is one inline svg listed first; every word is a pinned p over it. Order inside the host: svg, connectors, labels. Straight connectors from edge midpoints or the bus points below. No text element inside the svg.
+-->
+<section id="tpl-diagram" data-transition="fade" style="background:#F6F4EF; padding:128px 128px 160px; display:flex; flex-direction:column; gap:32px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:28px; color:#1B1F24">
+  <div style="display:flex; flex-direction:column; gap:12px">
+    <p style="font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; font-weight:600; line-height:1.2; letter-spacing:3px; text-transform:uppercase; color:#1F6F6B">Evaluation design</p>
+    <h2 style="font-family:'Source Serif 4', Georgia, serif; font-size:64px; font-weight:600; line-height:1.15; color:#1B1F24">One scorecard for every tool</h2>
+  </div>
+  <!--
+  NODE LIST (host-relative px; host 1664 x 640): id left top width height  label
+  SRC 0 244 360 160  Pilot cohort
+  T1 640 40 384 120  Software engineers
+  T2 640 264 384 120  Data scientists
+  T3 640 488 384 120  Site reliability engineers
+  DST 1304 244 360 160  One scorecard
+  EDGE MIDPOINTS: SRC right (360,324); T1 left (640,100) right (1024,100); T2 left (640,324) right (1024,324); T3 left (640,548) right (1024,548); DST left (1304,324)
+  BUS POINTS: fan bar x=500 from (500,100) to (500,548); join bar x=1164 from (1164,100) to (1164,548)
+  BUS fanTop 500 100
+  BUS fanBottom 500 548
+  BUS joinTop 1164 100
+  BUS joinBottom 1164 548
+  -->
+  <div style="position:relative; width:1664px; height:640px">
+    <svg style="position:absolute; left:0; top:0" width="1664" height="640" viewBox="0 0 1664 640" aria-label="Pilot cohort fans out to three team boxes, which join into one scorecard">
+      <rect x="0" y="244" width="360" height="160" rx="16" fill="#13202B"/>
+      <rect x="640" y="40" width="384" height="120" rx="16" fill="#F6F4EF" stroke="#1F6F6B" stroke-width="3"/>
+      <rect x="640" y="264" width="384" height="120" rx="16" fill="#F6F4EF" stroke="#1F6F6B" stroke-width="3"/>
+      <rect x="640" y="488" width="384" height="120" rx="16" fill="#F6F4EF" stroke="#1F6F6B" stroke-width="3"/>
+      <rect x="1304" y="244" width="360" height="160" rx="16" fill="#13202B"/>
+    </svg>
+    <x-connector x1="360" y1="324" x2="640" y2="324" style="color:#1F6F6B; border-width:3px"></x-connector>
+    <x-connector x1="500" y1="100" x2="500" y2="548" head="none" style="color:#1F6F6B; border-width:3px"></x-connector>
+    <x-connector x1="500" y1="100" x2="640" y2="100" style="color:#1F6F6B; border-width:3px"></x-connector>
+    <x-connector x1="500" y1="548" x2="640" y2="548" style="color:#1F6F6B; border-width:3px"></x-connector>
+    <x-connector x1="1024" y1="100" x2="1164" y2="100" head="none" style="color:#1F6F6B; border-width:3px"></x-connector>
+    <x-connector x1="1024" y1="548" x2="1164" y2="548" head="none" style="color:#1F6F6B; border-width:3px"></x-connector>
+    <x-connector x1="1164" y1="100" x2="1164" y2="548" head="none" style="color:#1F6F6B; border-width:3px"></x-connector>
+    <x-connector x1="1024" y1="324" x2="1304" y2="324" style="color:#1F6F6B; border-width:3px"></x-connector>
+    <p style="position:absolute; left:0px; top:244px; width:360px; height:160px; padding:46px 24px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; line-height:1.4; color:#F6F4EF"><b>Pilot cohort</b><br><span style="color:rgba(246,244,239,0.8)">Across all three teams</span></p>
+    <p style="position:absolute; left:640px; top:40px; width:384px; height:120px; padding:26px 24px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; line-height:1.4; color:#1B1F24"><b>Software engineers</b><br><span style="color:#4A5560">Python, TypeScript, Java</span></p>
+    <p style="position:absolute; left:640px; top:264px; width:384px; height:120px; padding:26px 24px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; line-height:1.4; color:#1B1F24"><b>Data scientists</b><br><span style="color:#4A5560">Python, Jupyter, pandas</span></p>
+    <p style="position:absolute; left:640px; top:488px; width:384px; height:120px; padding:26px 24px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; line-height:1.4; color:#1B1F24"><b>Site reliability engineers</b><br><span style="color:#4A5560">Python, shell, Go</span></p>
+    <p style="position:absolute; left:1304px; top:244px; width:360px; height:160px; padding:46px 24px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; line-height:1.4; color:#F6F4EF"><b>One scorecard</b><br><span style="color:rgba(246,244,239,0.8)">Same metrics for every tool</span></p>
+  </div>
+  <p style="position:absolute; left:128px; bottom:64px; width:1664px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; line-height:1.2; color:#4A5560">Source: [CLM-?: source]</p>
+  <aside>NOTES STUB (diagram). Spoken script, about 140 words per minute; target 45 s. Say what the diagram shows in one sentence, then walk it left to right. Number the steps aloud. Replace this stub.</aside>
+</section>

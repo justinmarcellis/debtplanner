@@ -1,0 +1,72 @@
+<!--
+KIND: diagram (paper), variant diagram-deployment
+USE WHEN: the deployment and governance picture for the CTO: where Claude Code runs (Laptop, CI), where the models are reached (Amazon Bedrock, Google Cloud Vertex AI) and the three control planes that surround it (Policy, Audit, Identity). Main deck security section and the deployment backup slide.
+SLOTS TO REPLACE: speaker notes and footer source line. Labels are nouns on purpose. Any added statement about data handling, retention, residency, certification or availability needs a claim placeholder and Trust review first.
+LIMITS: Laptop and CI feed Claude Code; Claude Code reaches Amazon Bedrock (FinTechCo AWS account) and Google Cloud Vertex AI (FinTechCo GCP project); annotations Policy (managed settings), Audit (logs, OpenTelemetry) and Identity (cloud IAM, SSO). Matches the demo/enterprise pack in ADR-004: managed-settings.json (Policy), the hook audit log and otel.env.example (Audit), bedrock.env.example and vertex.env.example (the two routes). Host 1664px by 640px, labels 24px, at most 24 pinned children (this file has 21).
+BUILD: content kind (padding 128px 128px 160px, identical header block, pinned 24px footer). Artwork is one inline svg listed first; every word is a pinned p; solid teal arrows are the request path, dashed slate lines are controls. No text element inside the svg.
+-->
+<section id="tpl-diagram-deployment" data-transition="fade" style="background:#F6F4EF; padding:128px 128px 160px; display:flex; flex-direction:column; gap:32px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:28px; color:#1B1F24">
+  <div style="display:flex; flex-direction:column; gap:12px">
+    <p style="font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; font-weight:600; line-height:1.2; letter-spacing:3px; text-transform:uppercase; color:#1F6F6B">Security and deployment</p>
+    <h2 style="font-family:'Source Serif 4', Georgia, serif; font-size:64px; font-weight:600; line-height:1.15; color:#1B1F24">Deployment options on AWS and GCP</h2>
+  </div>
+  <!-- [CLM-?: model access through Amazon Bedrock in a FinTechCo AWS account and through Google Cloud Vertex AI in a FinTechCo GCP project] Trust review required before use -->
+  <!-- [CLM-?: managed settings policy, audit logs, OpenTelemetry export, cloud IAM and SSO identity as drawn] Trust review required before use -->
+  <!--
+  NODE LIST (host-relative px; host 1664 x 640): id left top width height  label
+  L 0 0 400 136  Laptop | Developer terminal or IDE
+  CI 0 232 400 136  CI | Automated pipeline job
+  CC 624 100 416 168  Claude Code | Agent in your environment
+  BR 1264 0 400 136  Amazon Bedrock | FinTechCo AWS account (demo/enterprise/bedrock.env.example)
+  VX 1264 232 400 136  Google Cloud Vertex AI | FinTechCo GCP project (demo/enterprise/vertex.env.example)
+  POL 0 496 512 112  Policy | managed settings (demo/enterprise/managed-settings.json)
+  AUD 576 496 512 112  Audit | logs, OpenTelemetry (hook audit log, demo/enterprise/otel.env.example)
+  IDN 1152 496 512 112  Identity | cloud IAM, SSO
+  EDGE MIDPOINTS: L right (400,68); CI right (400,300); CC left (624,184) right (1040,184) bottom (832,268); BR left (1264,68); VX left (1264,300); POL top (256,496); AUD top (832,496); IDN top (1408,496)
+  JOIN (Laptop and CI into Claude Code): junction x=512; points (512,68) (512,300) (512,184)
+  FAN (Claude Code to the two clouds): junction x=1152; points (1152,184) (1152,68) (1152,300)
+  BUS (Policy, Audit, Identity under Claude Code): bar y=472 from (256,472) to (1408,472); drop at x=832
+  BUS joinTop 512 68
+  BUS joinBottom 512 300
+  BUS joinMid 512 184
+  BUS fanMid 1152 184
+  BUS fanTop 1152 68
+  BUS fanBottom 1152 300
+  BUS annoLeft 256 472
+  BUS annoRight 1408 472
+  -->
+  <div style="position:relative; width:1664px; height:640px">
+    <svg style="position:absolute; left:0; top:0" width="1664" height="640" viewBox="0 0 1664 640" aria-label="Laptop and CI feed Claude Code, which reaches Amazon Bedrock in the FinTechCo AWS account and Google Cloud Vertex AI in the FinTechCo GCP project; Policy, Audit and Identity annotate Claude Code">
+      <rect x="1.5" y="1.5" width="397" height="133" rx="16" fill="#F6F4EF" stroke="#4A5560" stroke-width="3"/>
+      <rect x="1.5" y="233.5" width="397" height="133" rx="16" fill="#F6F4EF" stroke="#4A5560" stroke-width="3"/>
+      <rect x="624" y="100" width="416" height="168" rx="16" fill="#13202B"/>
+      <rect x="1265.5" y="1.5" width="397" height="133" rx="16" fill="#F6F4EF" stroke="#1F6F6B" stroke-width="3"/>
+      <rect x="1265.5" y="233.5" width="397" height="133" rx="16" fill="#F6F4EF" stroke="#1F6F6B" stroke-width="3"/>
+      <rect x="0" y="496" width="512" height="112" rx="16" fill="#E2DED5"/>
+      <rect x="576" y="496" width="512" height="112" rx="16" fill="#E2DED5"/>
+      <rect x="1152" y="496" width="512" height="112" rx="16" fill="#E2DED5"/>
+    </svg>
+    <x-connector x1="400" y1="68" x2="512" y2="300" route="hv" head="none" style="color:#1F6F6B; border-width:3px"></x-connector>
+    <x-connector x1="400" y1="300" x2="512" y2="300" head="none" style="color:#1F6F6B; border-width:3px"></x-connector>
+    <x-connector x1="512" y1="184" x2="624" y2="184" style="color:#1F6F6B; border-width:3px"></x-connector>
+    <x-connector x1="1040" y1="184" x2="1152" y2="184" head="none" style="color:#1F6F6B; border-width:3px"></x-connector>
+    <x-connector x1="1152" y1="68" x2="1152" y2="300" head="none" style="color:#1F6F6B; border-width:3px"></x-connector>
+    <x-connector x1="1152" y1="68" x2="1264" y2="68" style="color:#1F6F6B; border-width:3px"></x-connector>
+    <x-connector x1="1152" y1="300" x2="1264" y2="300" style="color:#1F6F6B; border-width:3px"></x-connector>
+    <x-connector x1="832" y1="268" x2="832" y2="496" head="none" style="color:#4A5560; border-width:3px; border-style:dashed"></x-connector>
+    <x-connector x1="256" y1="472" x2="1408" y2="472" head="none" style="color:#4A5560; border-width:3px; border-style:dashed"></x-connector>
+    <x-connector x1="256" y1="472" x2="256" y2="496" head="none" style="color:#4A5560; border-width:3px; border-style:dashed"></x-connector>
+    <x-connector x1="1408" y1="472" x2="1408" y2="496" head="none" style="color:#4A5560; border-width:3px; border-style:dashed"></x-connector>
+    <p style="position:absolute; left:0px; top:0px; width:400px; height:136px; padding:34px 24px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; line-height:1.4; color:#1B1F24"><b>Laptop</b><br><span style="color:#4A5560">Developer terminal or IDE</span></p>
+    <p style="position:absolute; left:0px; top:232px; width:400px; height:136px; padding:34px 24px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; line-height:1.4; color:#1B1F24"><b>CI</b><br><span style="color:#4A5560">Automated pipeline job</span></p>
+    <p style="position:absolute; left:624px; top:100px; width:416px; height:168px; padding:50px 24px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; line-height:1.4; color:#F6F4EF"><b>Claude Code</b><br><span style="color:rgba(246,244,239,0.8)">Agent in your environment</span></p>
+    <p style="position:absolute; left:1264px; top:0px; width:400px; height:136px; padding:34px 24px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; line-height:1.4; color:#1B1F24"><b>Amazon Bedrock</b><br><span style="color:#4A5560">FinTechCo AWS account</span></p>
+    <p style="position:absolute; left:1264px; top:232px; width:400px; height:136px; padding:34px 24px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; line-height:1.4; color:#1B1F24"><b>Google Cloud Vertex AI</b><br><span style="color:#4A5560">FinTechCo GCP project</span></p>
+    <p style="position:absolute; left:0px; top:400px; width:760px; height:34px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; line-height:1.4; color:#4A5560">Solid arrows: request path. Dashed lines: controls.</p>
+    <p style="position:absolute; left:0px; top:496px; width:512px; height:112px; padding:22px 24px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; line-height:1.4; color:#1B1F24"><b>Policy</b><br><span style="color:#4A5560">managed settings</span></p>
+    <p style="position:absolute; left:576px; top:496px; width:512px; height:112px; padding:22px 24px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; line-height:1.4; color:#1B1F24"><b>Audit</b><br><span style="color:#4A5560">logs, OpenTelemetry</span></p>
+    <p style="position:absolute; left:1152px; top:496px; width:512px; height:112px; padding:22px 24px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; line-height:1.4; color:#1B1F24"><b>Identity</b><br><span style="color:#4A5560">cloud IAM, SSO</span></p>
+  </div>
+  <p style="position:absolute; left:128px; bottom:64px; width:1664px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; line-height:1.2; color:#4A5560">Source: [CLM-?: source]</p>
+  <aside>NOTES STUB (diagram-deployment). Spoken script, about 140 words per minute; target 60 s. Executive line first, then left to right: Laptop and CI, Claude Code, the two cloud routes. Then the three annotations as the controls you showed in the demo: policy, audit, identity. Do not state data-handling, residency or certification facts until Trust has approved the wording and Research has supplied claim ids. Replace this stub.</aside>
+</section>

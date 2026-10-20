@@ -1,0 +1,48 @@
+{
+  "status": "ready",
+  "dependsOn": [],
+  "createdAt": "2026-10-20T17:06:01.756Z",
+  "history": [],
+  "team": "strategy",
+  "reviewer": "qe-acceptance",
+  "sprint": 1,
+  "id": "S1-STR-01",
+  "title": "Stakeholder map, meeting plan and discovery guide",
+  "story": "As the candidate I need a two-page stakeholder map and a discovery guide for the CTO and the Head of Digital Transformation so that I open the 40 minutes with the right questions, adapt the flow to what I hear, and equip the champion to carry the case to the people who are not in the room.",
+  "points": 8,
+  "tier": "strong",
+  "owner": "ic-strategy-stakeholder-analyst",
+  "paths": [
+    "strategy/stakeholder-map.md",
+    "strategy/discovery.md"
+  ],
+  "contracts": [
+    "org/decisions/ADR-005-meeting-format-and-narrative.md",
+    "org/decisions/ADR-003-delegation-controls.md",
+    "org/decisions/ADR-006-claims-and-evidence.md",
+    "brief/facts.json"
+  ],
+  "requirements": [
+    "REQ-12",
+    "REQ-13",
+    "REQ-15",
+    "REQ-16",
+    "REQ-30"
+  ],
+  "deliverables": [
+    "D4"
+  ],
+  "acceptance": [
+    "strategy/stakeholder-map.md opens with a three-line summary (objective, the ask, the single biggest risk to the meeting). Everything before the \"## Appendix\" heading fits two pages: running  awk '/^## Appendix/{exit} {print}' strategy/stakeholder-map.md | wc -w  prints 1200 or fewer (about two printed pages; table pipes inflate the count), and an \"## Appendix\" heading exists.",
+    "For each of the CTO and the Head of Digital Transformation the body gives: goals, fears, what they must hear (one sentence in the candidate's voice), the proof they need, how to engage them in the room, and at least 3 signals to watch for, each with a planned response. Persona traits trace to brief/facts.json; anything else is labelled \"Assumption:\" or phrased as typical for executives in regulated finance.",
+    "An absent-stakeholders table covers CISO, risk and compliance, model risk, engineering managers, procurement and finance. Each row has: likely concern (typical, not a FinTechCo fact), what they will ask the champion, the leave-behind that answers it by deliverable id (D5 ROI model, D6 evaluation plan, D7 security brief, D8 follow-up kit) and our offer to help. A short \"champion kit\" list says what the Head of Digital Transformation carries away to sell internally.",
+    "Exactly three win themes: grep -c '^### Win theme' strategy/stakeholder-map.md prints 3. Each ties to a FinTechCo priority from brief/facts.json (team productivity, shipping new products) or to safe control, and names its proof as a [CLM-?: ...] placeholder.",
+    "Risks to the meeting: grep -c '^| R-' strategy/stakeholder-map.md prints 6 or more. Each row has a trigger, a mitigation and the related ADR-005 checkpoint or cut (for example 0:12 demo start, 0:26 demo end, 0:37 wrap).",
+    "The ask section restates ADR-005 without changing its substance: CTO opens a security and compliance review (we send the review package; working session with their security team within a week); Head of Digital Transformation names a pilot cohort across all three teams and a metrics owner to capture baselines; together they set a pilot kickoff date; success means both agree and the CTO's top concern is named and has an owner.",
+    "strategy/discovery.md has: a 30-second \"what we heard\" recap using only brief/facts.json facts; one primary opening question for the CTO and one for the Head of Digital Transformation, written as spoken lines with an estimated speaking time (~140 wpm) so both fit the 3-minute Open segment; at least 3 follow-ups per attendee, each with a \"why we ask\"; and at least 6 deeper questions reserved for the security working session or follow-up call.",
+    "strategy/discovery.md has a flow-adjustment table: grep -c '^| F-' strategy/discovery.md prints 8 or more. Each row maps \"if we hear X\" to the ADR-005 segments to expand, cut or reorder, the minutes added or saved, and the effect on the 0:12, 0:26 and 0:37 checkpoints; net plan stays within 40 minutes with wrap-up starting by 0:37. A default flow for \"just start presenting\" (no discovery time) is included, and a 3-line note-taking template feeds the wrap-up.",
+    "Claims rule (ADR-006): every external fact carries a specific [CLM-?: what to source] placeholder; a [CLM-###] id appears only if it already exists in research/claims/*.json as verified or partial. Running  node org/contracts/validate.mjs | grep -E 'FAIL.*strategy/(stakeholder-map|discovery)' || echo clean  prints clean.",
+    "Nothing is invented about FinTechCo beyond brief/facts.json (no existing tools, regulators, vendors, org names or budgets stated as fact); no real people, secrets or Anthropic brand assets; only this ticket's two paths were changed; a handoff listing unresolved placeholders is posted to hub strategy."
+  ],
+  "brief": "Audience: the candidate (a principal architect) reading this the night before and glancing at it in the room. Executives read the first line, so lead with the point. Stance per ADR-005: advisor, not seller. The Head of Digital Transformation is also someone you arm to sell internally after you leave (REQ-16).\n\nstakeholder-map.md. First three lines: objective, the ask, biggest risk. Then a body of two pages at most, then \"## Appendix\" for depth (persona notes, full risk register, per-stakeholder detail). Body order: (1) the two attendees: goals, fears, what they must hear, proof needed, how to engage in the room (tone, who to address first, where to hand over control), signals to watch with a response each (for example the CTO raises security before 0:26: answer in 20 seconds only if it blocks, otherwise park it and promise the 0:26 segment). (2) Absent-stakeholders table plus champion kit. (3) Three \"### Win theme n\" headings. (4) Risk table with ids R-01, R-02, ... (5) The ask, per ADR-005.\n\ndiscovery.md. 30-second \"what we heard\" recap from facts.json only (productivity, shipping products, one tool within months, no agentic tools today, evaluating alongside others). One opening question per attendee as a spoken line with its speaking time. At least 3 follow-ups each with \"why we ask\". At least 6 deeper security-session questions. Then \"## Flow adjustments\", a table with ids F-01, F-02, ...: \"If we hear...\" -> expand, cut or reorder -> minutes delta -> checkpoint effect. Use ADR-005 segment names and section numbers (Deck sections 1 to 8); slide numbers do not exist before G1. End with the note-taking template.\n\nPitfalls: FinTechCo is fictional; for anything not in facts.json write \"executives in regulated finance often...\" or label it \"Assumption:\". Your ticket owns no claims shard, so use [CLM-?: precise thing to source], for example [CLM-?: named regulated-industry Claude Code adopters, exactly as published]. Do not wait for or cite sibling tickets' files (objection-handling, use-cases); refer to them by name only. No disparagement of competitors, no superlatives."
+}

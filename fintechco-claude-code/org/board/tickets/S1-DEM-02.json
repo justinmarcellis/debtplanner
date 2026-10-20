@@ -1,0 +1,54 @@
+{
+  "status": "in_progress",
+  "dependsOn": [],
+  "createdAt": "2026-10-20T17:04:27.299Z",
+  "history": [
+    {
+      "at": "2026-10-20T17:05:50.700Z",
+      "from": "ready",
+      "to": "in_progress"
+    }
+  ],
+  "team": "demo",
+  "reviewer": "qe-acceptance",
+  "sprint": 1,
+  "id": "S1-DEM-02",
+  "title": "Act 2 macro-risk: cached FRED data, Phillips-curve and Fed-policy/VIX analyses, findings",
+  "story": "As the candidate I need a reproducible FRED data pull and two honest analyses (Phillips-curve slope over time, VIX around Fed hikes versus cuts) so that Act 2 shows the 40 data scientists' acquisition, EDA and modeling workflow and the dashboard sprint has verified numbers to draw.",
+  "points": 8,
+  "tier": "mid",
+  "owner": "ic-demo-data-demo-dev",
+  "paths": [
+    "demo/macro-risk/",
+    "research/claims/demo-fred.json"
+  ],
+  "contracts": [
+    "org/decisions/ADR-004-demo-architecture.md",
+    "org/decisions/ADR-006-claims-and-evidence.md",
+    "org/contracts/claims.schema.json",
+    "org/contracts/README.md"
+  ],
+  "acceptance": [
+    "Given demo/macro-risk/data/raw/, then it holds a committed CSV for each of UNRATE, NROU, PCEPILFE, CPIAUCSL, FEDFUNDS, DFF, DFEDTAR, DFEDTARU, VIXCLS, USREC and BAMLH0A0HYM2 (or a documented reason in data/README.md if a series is unavailable), pulled from FRED in this ticket, not synthesized.",
+    "Given data/README.md, then it has a data dictionary row per cached series (series id, title, units, frequency, seasonal adjustment, source agency, first and last observation date, pull as-of date), taken from the FRED series pages, each fact carrying a [CLM-5xx] id, plus an attribution line for FRED and the original sources and a note on the BAMLH0A0HYM2 history limit and NROU projection horizon.",
+    "Given fred.py, when `python3 demo/macro-risk/fred.py UNRATE` runs with no network, then it loads the cache and exits 0; a pytest proves no network is used when the cache exists (socket blocked) and that '.' values parse as NaN; the refresh path covers both the public CSV endpoint and the FRED API branch when FRED_API_KEY is set, and a failed refresh falls back to the cache with a warning.",
+    "Given `cd demo/macro-risk && python3 analysis/phillips.py && python3 analysis/fed_policy_vol.py`, then both run from the cache in under 30 seconds and write outputs/phillips_by_decade.json, outputs/phillips_rolling.json, outputs/fed_events.json and outputs/vix_event_study.json; a second run produces byte-identical files (no timestamps; fixed bootstrap seed).",
+    "Given analysis/phillips.py, then it computes YoY core PCE inflation, the gap UNRATE minus NROU (quarterly NROU handling documented), OLS slope per decade and a 120-month rolling slope with 95% intervals using Newey-West standard errors, numpy/pandas only; a test checks the OLS slope against numpy.polyfit on the same data.",
+    "Given analysis/fed_policy_vol.py, then target changes come from DFEDTAR through 2008-12-15 and DFEDTARU from 2008-12-16 (the 2008-12-16 move classified as a cut), the event window is [-5, +20] trading days with VIX measured relative to day -1, results are split hikes vs cuts with n, mean, median and a bootstrap interval, and the summary table lists events excluded for lack of VIX data and overlapping windows.",
+    "Given outputs/findings.md, then it states the actual numbers from the JSON in plain language (reviewer spot-checks at least 3 numbers against the JSON), and lists caveats: correlation not causation, regime dependence, serial correlation and overlapping windows, small samples with n per group, NROU is a CBO estimate/projection that is revised, crisis-time cuts confound the VIX comparison. It narrates no historical events beyond what the data shows unless a [CLM-5xx] id supports it.",
+    "Given README.md, then it documents the one-line commands (fetch, analyses, tests), the JSON schema of every outputs file (keys and meaning) so a dashboard can consume it without reading the code, and how a start state is derived (analysis/ imports only fred.py, pandas, numpy, so deleting analysis/ and outputs/ leaves a working fetch helper).",
+    "Given `python3 -m pytest demo/macro-risk -q`, then at least 12 tests pass offline on the committed cache (data presence, YoY arithmetic spot check, OLS vs polyfit, event detection boundary at 2008-12-15/16, window length 26, determinism, no network).",
+    "Given research/claims/demo-fred.json, then it holds at least 15 claims within CLM-500..CLM-529 (category fred-data, status verified, source URLs on fred.stlouisfed.org or the FRED API docs, accessed 2026-10-20, excerpt <= 300 chars) covering every series fact and the endpoint/API/attribution facts used; `node org/contracts/validate.mjs` passes.",
+    "Given the folder, then no dashboard/ directory, setup.sh or RUNBOOK is created and no Python syntax newer than 3.10 is used."
+  ],
+  "brief": "Build the complete reference implementation of Act 2 (6 minutes on stage). Audience: a security-minded CTO and an AI champion, so one clear finding per analysis and honest caveats. Python 3.10+, stdlib + pandas + numpy, pytest; no scipy or statsmodels. Tests never touch the network.\n\nfred.py: fetch_series(id, refresh=False) returns a DataFrame (date index, float value, '.' becomes NaN). It uses https://fred.stlouisfed.org/graph/fredgraph.csv?id=<ID> (header is observation_date,<ID>) or the FRED API when FRED_API_KEY is set, caches to data/raw/<ID>.csv, and uses the cache whenever it exists. CLI: python3 fred.py [--refresh] UNRATE ... If urllib fails TLS in this container, set SSL_CERT_FILE=/root/.ccr/ca-bundle.crt; never disable verification. Pull now and commit: UNRATE NROU PCEPILFE CPIAUCSL FEDFUNDS DFF DFEDTAR DFEDTARU VIXCLS USREC BAMLH0A0HYM2. A probe shows BAMLH0A0HYM2 starts around October 2023 and NROU runs to 2036 (projections), so restrict regressions to dates with realized UNRATE and PCEPILFE and say so.\n\nanalysis/ imports only fred.py (Sprint 2 derives the live-prompt start state by deleting analysis/ and outputs/):\n- phillips.py: YoY core PCE (PCEPILFE), gap = UNRATE minus NROU (carry each quarterly NROU value across its months and document it), OLS inflation on gap per decade (1960s onward, 2020s partial) and a 120-month rolling slope with 95% intervals. Monthly YoY is serially correlated, so use Newey-West (Bartlett kernel, at least 12 lags) standard errors with statistics.NormalDist for the critical value and say so. Do not force a flattening story; report what the numbers show, including non-monotonic results.\n- fed_policy_vol.py: events from DFEDTAR to 2008-12-15 then DFEDTARU; event day is the first trading day on or after the change; VIX (from 1990) relative to day -1 over [-5, +20]; hikes vs cuts with n, mean, median and a seeded bootstrap interval. Flag overlapping windows and cuts made in crises.\n\nOutputs: the four JSON files, no timestamps, plus outputs/findings.md. Document each JSON schema in README.md for the Sprint 2 dashboard ticket. Do not git-ignore data/raw/ or outputs/.\n\nFacts: take titles, units, frequency, seasonal adjustment and source from each FRED series page (WebFetch fred.stlouisfed.org/series/<ID>), not memory; one claim per fact in the shard; cite [CLM-5xx] in data/README.md. Attribute FRED and the original sources.",
+  "requirements": [
+    "REQ-05",
+    "REQ-08",
+    "REQ-27"
+  ],
+  "deliverables": [
+    "D2"
+  ],
+  "startedAt": "2026-10-20T17:05:50.700Z"
+}

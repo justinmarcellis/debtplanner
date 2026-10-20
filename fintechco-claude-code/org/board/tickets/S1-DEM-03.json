@@ -1,0 +1,50 @@
+{
+  "status": "ready",
+  "dependsOn": [],
+  "createdAt": "2026-10-20T17:04:27.299Z",
+  "history": [],
+  "team": "demo",
+  "reviewer": "qe-acceptance",
+  "sprint": 1,
+  "id": "S1-DEM-03",
+  "title": "Governance pack: Claude Code settings, PCI and audit hooks, enterprise controls, headless verification",
+  "story": "As the candidate I need project settings, two working hooks, a fake .env and an enterprise control pack, all verified against current Claude Code docs and exercised headless, so that I can show the security-first CTO controls enforced in code, mapped to his concerns, and routed through Bedrock or Vertex in FinTechCo's own accounts.",
+  "points": 13,
+  "tier": "mid",
+  "owner": "ic-demo-governance-config-dev",
+  "paths": [
+    "demo/payments-ledger/.claude/",
+    "demo/payments-ledger/.env",
+    "demo/enterprise/",
+    "demo/fallback/governance/",
+    "research/claims/demo-claude-code.json"
+  ],
+  "contracts": [
+    "org/decisions/ADR-004-demo-architecture.md",
+    "org/decisions/ADR-003-delegation-controls.md",
+    "org/decisions/ADR-006-claims-and-evidence.md",
+    "org/contracts/claims.schema.json",
+    "org/contracts/README.md"
+  ],
+  "acceptance": [
+    "Given research/claims/demo-claude-code.json, then it holds at least 25 claims within CLM-530..CLM-559, each with a code.claude.com/docs (or docs.claude.com / cloud-provider doc) URL, accessed 2026-10-20 and an excerpt <= 300 chars, covering every settings key, permission rule form, hook event name, matcher syntax, hook stdin fields, stdout/exit-code protocol, managed-settings file location per OS, Bedrock/Vertex/OpenTelemetry env var used in any file of this ticket; `node org/contracts/validate.mjs` passes.",
+    "Given .claude/settings.json (valid JSON), then permissions.allow covers running tests and read-only git, permissions.deny covers Read of .env* and secrets/**, git push, curl and wget, hooks has PreToolUse on file-write tools running .claude/hooks/pci_guard.py and PostToolUse on all tools running .claude/hooks/audit_log.py, every key/value matches the verified docs, and the hook commands resolve from any working directory (documented mechanism).",
+    "Given pci_guard.py, when fed hook JSON on stdin, then it blocks (per the documented protocol, with a reason naming the rule and telling Claude to log last4 tokens) any written content holding a 13-19 digit number (spaces/hyphens allowed) that passes Luhn, unless the path is under tests/fixtures/; it also blocks the heuristic rule: a logging or print call passing an unmasked card_number/pan/card_num identifier, including the exact line logger.debug(\"settling payment %s card=%s amount=%s\", payment.id, payment.card_number, payment.amount), while allowing the card_last4 variant, non-Luhn long digit runs and ordinary code; malformed input behaviour is a documented decision with a test; a blocked attempt appends a 'blocked' record to the audit log.",
+    "Given audit_log.py, when fed PostToolUse JSON, then it appends exactly one JSON object per line to .claude/audit/audit.jsonl (UTC timestamp, session_id, event, tool_name, summarised input such as file_path or truncated command, outcome flag), redacts Luhn-valid numbers, never stores file contents, creates the directory if missing and never exits non-zero for bad input.",
+    "Given `python3 -m pytest demo/payments-ledger/.claude/hooks/tests -q`, then at least 15 tests pass, covering Luhn pass/fail, separators, the fixtures-path allowance, the exact planted line and its last4 variant, Edit/Write/MultiEdit payload shapes, redaction and the stdin/exit-code protocol of both hooks; test PANs are built from parts so no PAN literal exists outside tests/fixtures/ in demo/payments-ledger/.",
+    "Given demo/payments-ledger/.env, then it holds an obviously fake value (for example FAKE-NOT-A-REAL-SECRET-demo-only), a header comment saying it is synthetic, and nothing resembling a real key format.",
+    "Given demo/enterprise/, then it has managed-settings.json (valid JSON, only keys verified in the shard), bedrock.env.example, vertex.env.example and otel.env.example (placeholders only, no real account ids, regions or endpoints presented as fact), and README.md with a banner 'DRAFT pending Trust review', a table mapping each control to the CTO concern, the enforcement point (managed, project, hook) and its known limits, a 'what this does not do' section (including whether Read deny rules cover shell reads and that regex hooks are a guardrail not DLP, per the docs), [CLM-5xx] on every product fact, and [CLM-?: ...] placeholders instead of any statement about data retention, training or certifications.",
+    "Given demo/fallback/governance/make_temp_copy.sh and verification.md, then the script builds a temporary copy of the repo (S1-DEM-01 files if demo/payments-ledger/ledger/settlement.py exists, otherwise a stand-in settlement.py, stating which) and verification.md records `claude --version`, the exact `claude -p ... --model sonnet --max-turns 6` commands, trimmed outputs and total_cost_usd per run with the sum <= $3.00, showing (a) the PCI hook blocking a write that logs a full PAN, (b) a Read of .env denied with the fake value absent from the output, (c) audit.jsonl lines present; any run where the model declined before the hook could fire is recorded and re-run with a neutral prompt; failures are reported honestly.",
+    "Given demo/fallback/governance/, then a PAN-free sample audit.jsonl from the verification runs is saved there, and nothing outside this ticket's paths and the scratchpad or temp copy was modified (including ~/.claude)."
+  ],
+  "brief": "Build the governance pack the CTO will probe. Everything must match current docs: before writing, WebFetch code.claude.com/docs pages for settings, hooks (reference and guide), IAM/permissions, Amazon Bedrock, Google Vertex AI and monitoring-usage, and record each key, event, matcher form, stdin/stdout/exit-code rule, managed-settings location per OS and env var in the shard (CLM-530..559, accessed 2026-10-20). Memory is not a source: CLAUDE_CODE_USE_BEDROCK, CLAUDE_CODE_USE_VERTEX, CLAUDE_CODE_ENABLE_TELEMETRY, rule forms like Bash(git push *) and permissionDecision are candidates to check, not facts. Python 3.10+, stdlib only for hooks.\n\nOrder of work: (1) hooks and tests, (2) settings.json and the fake .env, (3) enterprise/, (4) headless verification. Keep the shard growing as you go.\n- pci_guard.py (PreToolUse, file-write tools): inspect the content being written (Write content, Edit new_string, MultiEdit edits) and block with a reason that tells Claude what to do instead (log last4 tokens). Rule 1 is the ADR spec (Luhn-valid 13-19 digits outside tests/fixtures/). Rule 2 is a documented heuristic for logging calls that pass an unmasked card_number/pan identifier. Interface agreed with S1-DEM-01 (parallel): field names card_number and card_last4, the exact planted log line in the acceptance criteria, PAN literals only under tests/fixtures/.\n- audit_log.py (PostToolUse, all tools): JSONL, redacted, never crashes a session. A PreToolUse block may not trigger PostToolUse, so have pci_guard append its own 'blocked' record (confirm in docs and in the headless run).\n- settings.json per ADR-004. Check whether a Read deny stops shell reads of .env; if not, say so in the README and consider also denying the shell forms.\n- enterprise/: placeholders only; the README is read by a skeptical CTO, so lead with the control, state its limit plainly, and cite the doc claim.\n\nHeadless: make_temp_copy.sh builds the temp copy. Run claude -p ... --model sonnet --max-turns 6 (check claude --help for print-mode flags such as --output-format json, a budget cap and setting-source isolation) with total spend at most $3; record total_cost_usd for every run. You are the only agent allowed to run the claude CLI. If it fails on auth or limits, record that in verification.md and post a blocker to the demo hub; do not retry past the cap. Never touch ~/.claude.",
+  "requirements": [
+    "REQ-08",
+    "REQ-15",
+    "REQ-17"
+  ],
+  "deliverables": [
+    "D2",
+    "D7"
+  ]
+}

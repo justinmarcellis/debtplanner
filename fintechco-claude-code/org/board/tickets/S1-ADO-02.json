@@ -1,0 +1,79 @@
+{
+  "status": "done",
+  "dependsOn": [],
+  "createdAt": "2026-10-20T17:02:47.913Z",
+  "history": [
+    {
+      "at": "2026-10-20T17:04:01.111Z",
+      "from": "ready",
+      "to": "in_progress"
+    },
+    {
+      "at": "2026-10-20T17:25:13.300Z",
+      "from": "in_progress",
+      "to": "review"
+    },
+    {
+      "at": "2026-10-20T17:27:49.713Z",
+      "from": "review",
+      "to": "done"
+    }
+  ],
+  "id": "S1-ADO-02",
+  "team": "adoption",
+  "title": "Rollout, enablement and operating model",
+  "story": "As the Head of Digital Transformation and the CTO I need a path from the pilot decision gate to all 180 technical staff in about four months, with enablement, a governance operating model, a support model, an honest complexity assessment, a dated week-by-week timeline and a change-management approach for a first agentic tool, so that I can approve a rollout I trust will land safely.",
+  "points": 8,
+  "tier": "mid",
+  "owner": "ic-adoption-rollout-planner",
+  "reviewer": "qe-acceptance",
+  "sprint": 1,
+  "paths": [
+    "rollout/rollout-plan.md",
+    "research/claims/adoption-rollout.json"
+  ],
+  "contracts": [
+    "org/contracts/claims.schema.json",
+    "org/contracts/use-cases.schema.json",
+    "org/decisions/ADR-003-delegation-controls.md",
+    "org/decisions/ADR-004-demo-architecture.md",
+    "org/decisions/ADR-005-meeting-format-and-narrative.md",
+    "org/decisions/ADR-006-claims-and-evidence.md"
+  ],
+  "acceptance": [
+    "rollout/rollout-plan.md exists, is plain Markdown (no HTML tags), and opens with a three-line executive summary.",
+    "Sections present (grep '^## '): Waves; Enablement; Governance operating model; Support model; Implementation complexity assessment; Timeline; Change management; Risks; RACI and assumptions.",
+    "Waves table covers PW10-PW17 with, per wave: window, teams, cumulative headcount, entry prerequisites, exit criteria and owner. Cumulative headcount ends at 180 (120 SWE, 40 DS, 20 SRE) by Friday 2027-05-07; all three teams appear by Wave 1. A contingency paragraph says what happens if the PW9 gate returns extend or stop.",
+    "Enablement section covers all of: champions network (ratio and duties), hands-on workshops per team in that team's own stack (SWE Python/TypeScript/Java, DS Jupyter/pandas/scikit-learn/TensorFlow, SRE Python/shell/Go), CLAUDE.md and settings templates, shared skills/plugins/slash commands, office hours, internal showcase.",
+    "Governance section defines: a small center of excellence (roles, time commitment); policy management through managed settings with a change process; an MCP server approval process as numbered steps each with owner, criteria and target turnaround; usage and cost monitoring with review cadence and alert thresholds labelled as assumptions.",
+    "Support model gives tiers, channels, escalation path including to the vendor, and response targets labelled as assumptions.",
+    "Complexity assessment has three groups (easy, takes real work, needs security sign-off); each item states an effort estimate labelled as an assumption and an owner role; Bedrock and Vertex provisioning, SSO, managed settings and MCP approval are each placed in a group with a reason.",
+    "Timeline table has exactly 17 rows PW1-PW17 with Monday dates from 2027-01-11 to 2027-05-03 consistent with the spine in hub adoption (readiness PW1-2, pilot PW3-8, gate PW9, waves PW10-17), columns Week, Monday date, Phase/wave, Milestone (15 words or fewer), Cumulative enabled; K is labelled an illustrative assumption with the rule for shifting dates.",
+    "Change management covers what changes in code review, onboarding and ways of working, includes a plain-English agentic-versus-autocomplete explanation, manager role, handling of skepticism, and how adoption health is checked; terms such as MCP, hooks and subagent are defined on first use.",
+    "research/claims/adoption-rollout.json has at least 10 claims, ids only within CLM-675..CLM-699, valid categories, official-source URLs, accessed date in October 2026, safeWording on partial claims; setting and file names in the plan match the cited documentation. Every external fact in the plan carries a [CLM-###] from the shard or a [CLM-?: ...] placeholder.",
+    "node org/contracts/validate.mjs passes."
+  ],
+  "brief": "Audience: the Head of Digital Transformation and CTO as readers of a leave-behind; engineering directors and the center of excellence as users. Produce rollout/rollout-plan.md and claims shard research/claims/adoption-rollout.json (CLM-675..699 only).\n\nTimeline spine (contract with S1-ADO-01; do not change; also in hub adoption): K = Monday of PW1, illustrative 2027-01-11, labelled as an assumption. PW1-2 readiness; PW3-8 pilot; PW9 decision gate; your waves occupy PW10-17 and end Friday 2027-05-07 with all 180 enabled (120 SWE, 40 DS, 20 SRE). The pilot cohort keeps working through the gate.\n\nStructure: three-line executive summary; Waves table (wave, PW window, teams and cumulative headcount, entry prerequisites, exit criteria, owner); Enablement (champions network, per-team hands-on workshops on a real task in the team's own stack, CLAUDE.md and settings templates, shared skills, plugins and slash commands, office hours, internal showcase); Governance operating model (small center of excellence, managed-settings policy change process, MCP server approval as numbered steps, usage and cost monitoring); Support model; Implementation complexity assessment (easy / real work / needs security sign-off, effort and owner per item); Timeline (PW1-PW17 table a slide can render: Week, Monday date, Phase/wave, Milestone of 15 words or fewer, Cumulative enabled); Change management for an organization with no agentic tools (agentic versus autocomplete in plain English; code review, onboarding, ways of working); Risks; RACI and assumptions; contingency if the gate says extend or stop.\n\nClaims: official docs first (code.claude.com/docs: settings and managed policy, MCP and managed MCP allowlists, plugins and marketplaces, skills, slash commands, memory and CLAUDE.md, monitoring, analytics, cost management, enterprise deployment, Bedrock, Vertex). Verify setting names exactly. Cite only your own range or ids already in other shards; reuse an id if grep research/claims shows the same source. Product facts 'as of October 2026'.\n\nPitfalls: no invented FinTechCo facts; effort, SLA and ratio numbers are labelled assumptions; reference the governance pack (demo/enterprise/, ADR-004) and the security brief by path only if they exist when you write, otherwise by deliverable name (D2, D7); keep prose short, tables slide-ready.",
+  "requirements": [
+    "REQ-11",
+    "REQ-19",
+    "REQ-20"
+  ],
+  "deliverables": [
+    "D6"
+  ],
+  "startedAt": "2026-10-20T17:04:01.111Z",
+  "doneAt": "2026-10-20T17:27:49.713Z",
+  "review": {
+    "reworkCount": 0,
+    "verdicts": [
+      {
+        "at": "2026-10-20T17:27:49.713Z",
+        "by": "qe-acceptance",
+        "verdict": "accept",
+        "reason": "All 11 criteria met: 9 required sections, waves PW10-17 reach 180 (120/40/20) by Fri 2027-05-07, 17-row timeline dates verified, governance/support/complexity complete, 23 official-source claims in CLM-675..697, validate.mjs passes"
+      }
+    ],
+    "firstPass": true
+  }
+}

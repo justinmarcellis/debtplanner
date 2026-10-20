@@ -1,0 +1,53 @@
+{
+  "status": "in_progress",
+  "dependsOn": [],
+  "createdAt": "2026-10-20T17:05:02.958Z",
+  "history": [
+    {
+      "at": "2026-10-20T17:07:57.967Z",
+      "from": "ready",
+      "to": "in_progress"
+    }
+  ],
+  "id": "S1-NAR-02",
+  "team": "narrative",
+  "title": "Visual system and slide-kind templates",
+  "story": "As the candidate I need a visual system and eight real slide templates plus the two diagrams the deck depends on, in the Slides artifact format and the ADR-001 look, so that Sprint 2 can build every slide from a proven template and the deck reads as one clean, readable system for both a CTO and a champion.",
+  "points": 8,
+  "tier": "mid",
+  "owner": "ic-narrative-slide-designer",
+  "reviewer": "qe-acceptance",
+  "sprint": 1,
+  "paths": [
+    "deck/visual-system.md",
+    "deck/templates/"
+  ],
+  "contracts": [
+    "org/decisions/ADR-001-layout-and-formats.md",
+    "org/decisions/ADR-004-demo-architecture.md",
+    "org/decisions/ADR-006-claims-and-evidence.md",
+    "/tmp/claude-0/-home-user-debtplanner/84463f71-e392-58bf-93e5-07c4b4a9b46e/scratchpad/artifact-files/66bbdaee-1483-491b-a26d-cec18b6d7499/artifact-type/reference/format.md"
+  ],
+  "acceptance": [
+    "`ls deck/templates` lists exactly cover, section, statement, compare, table, diagram, cards, closing, diagram-how-it-works and diagram-deployment (each .html); deck/visual-system.md exists; nothing is written under deck/project/ or outside this ticket's paths.",
+    "Each template file is one slide: `grep -c '<section' deck/templates/*.html` is 1 for every file; the section has an id, an explicit background, data-transition=\"fade\" and a leading HTML comment (kind, when to use, slots to replace, content limits); the last child is one <aside> speaker-note stub; there is no html, head, body, style or font link wrapper.",
+    "Subset compliance (format.md): `grep -nE '<style|class=|<script|margin:|z-index|var\\(|<text|foreignObject|[[:space:]]on[a-z]+=|@import|http' deck/templates/*.html` prints nothing (no xmlns, no URLs); `grep -ohE '<[a-zA-Z][a-zA-Z0-9-]*' deck/templates/*.html | sort -u` shows only tags format.md allows plus svg drawing elements; no em, rem, vw or vh units on sizes; headings set font-size explicitly.",
+    "Size and margins: `grep -ohE 'font-size:[[:space:]]*[0-9.]+' deck/templates/*.html | grep -oE '[0-9.]+' | sort -n | head -1` prints 24 or more; the canvas is 1920x1080 with 128px margins; content kinds (statement, compare, table, diagram, cards and both diagrams) use padding 128px 128px 160px and exactly one pinned footer row of 24px text at bottom:64px (a 'Source:' line using the placeholder [CLM-?: source]); no pinned element ends below y=920 except the footer, and none exceeds left+width 1792.",
+    "Palette and type: `grep -ohiE '#[0-9a-f]{3,8}' deck/templates/*.html | tr a-f A-F | sort -u` is a subset of #1B1F24, #F6F4EF, #13202B, #4A5560, #E2DED5, #1F6F6B, #4FB3A9, #D9952B (rgba() allowed only as one of these with alpha); font-family values are only 'Source Serif 4', 'IBM Plex Sans' and 'JetBrains Mono', each with Georgia, Arial or Courier New and a generic fallback; cover, section and closing are on night, other kinds on paper; amber always carries ink text; no slate or #1F6F6B text on night.",
+    "Consistency: the eyebrow and h2 have the same top position, size and font on the five content kinds and both diagrams; repeated elements (cards, rows) use equal sizes and gaps; the table template sets width:N% on every cell of its first row and fits header plus 5 rows at 28px or less above the footer band; the cards template shows 3 cards and states in its comment how to build 4.",
+    "diagram-how-it-works.html shows a labelled 'Developer's environment' region (repo, terminal, tests, git, cloud CLIs) around a loop of 1 Understand, 2 Plan, 3 Act with tools, 4 Verify, with 5 Ask permission drawn as a gate on the step into Act (not a sixth loop step) and an arrow from Verify back to Understand; each node has a plain-English label and a one-line technical subtitle. diagram-deployment.html shows Laptop and CI -> Claude Code -> Amazon Bedrock (FinTechCo AWS account) and Google Cloud Vertex AI (FinTechCo GCP project), annotated Policy (managed settings), Audit (logs, OpenTelemetry) and Identity (cloud IAM, SSO), matching the demo/enterprise files in ADR-004.",
+    "Diagram construction: each diagram has an inline <svg> of 52 KB or less whose width and height equal its viewBox, with zero <text> elements; every label is a <p> pinned over it with a width; a node-list comment gives each box's left, top, width, height; every x-connector endpoint equals a listed box's edge midpoint (or a recipe bus point); boxes are 200px wide or more at 24px text and 32px or more apart; no host holds more than 24 pinned children (svg and connectors count); the geometry audit is recorded in visual-system.md.",
+    "Claims hygiene: `grep -c 'CLM-[0-9]' deck/templates/*.html` is 0 for every file; any claim-bearing label (data boundary, residency, certifications, availability) is neutral noun wording with an HTML comment '[CLM-?: ...] Trust review required before use'; `node org/contracts/validate.mjs` passes.",
+    "visual-system.md contains: palette with roles and the ADR-001 contrast pairs (allowed and forbidden combinations); type scale of 5 sizes with role, face and weight; layout grid (128px margins, 160px footer rule, 1664px content width, readable measure of 800-1000px); a catalog table of the 8 kinds and 2 diagrams (kind, file, use, content limits, background); the amber statement variant; diagram construction rules; the slide id convention (s01-cover) and how Sprint 2 copies a template into deck/project/slides/<id>.html; the speaker-notes aside convention; Google Slides fallback fonts (Georgia, Arial, Courier New); and a Verification section listing each command run with its result.",
+    "No Anthropic logos, wordmarks, imagery or brand palette; no image files; FinTechCo has no logo; the cover template states it is the candidate's own preparation and uses the placeholder [Your Name]."
+  ],
+  "brief": "Build the deck's visual system and ten real slide files. Read first, in order, the Slides format references at /tmp/claude-0/-home-user-debtplanner/84463f71-e392-58bf-93e5-07c4b4a9b46e/scratchpad/artifact-files/66bbdaee-1483-491b-a26d-cec18b6d7499/artifact-type/reference/: format.md (the closed subset; anything outside it is a build error), layout.md, styles.md, craft.md, fonts.md, diagrams.md, diagram-recipes.md. Then ADR-001 (palette, typefaces, contrast pairs) and ADR-004 (the enterprise pack the deployment diagram must match). No slide builder is installed here, so the subset is the check: review each file against format.md and, if useful, write a throwaway lint script in the scratchpad directory (never in deck/) and record the results in visual-system.md under Verification.\n\nFiles: deck/templates/{cover,section,statement,compare,table,diagram,cards,closing}.html plus diagram-how-it-works.html and diagram-deployment.html, and deck/visual-system.md. The kind names are a contract with S1-NAR-01 (the storyliner uses them in parallel), so do not rename. Templates are not the published deck; they live outside deck/project/.\n\nEach file is one <section> with inline styles only, realistic synthetic sample text and no external facts. Night (#13202B) for cover, section, closing; paper for the rest; teal #1F6F6B on paper and #4FB3A9 on night; amber only as a chip or bar carrying ink text. Sketches: cover (title, subtitle, 'Prepared by [Your Name], independent preparation'); section (big numeral, title, one-sentence description in data-section); statement (one serif sentence of 18 words or fewer, or a 160-200px number with caption); compare (two columns, 3-4 rows); table (5 rows x 4 columns); diagram (1664x700 host, svg underlay, pinned <p> labels); cards (3 cards with number, label, two lines, mono stack tag); closing (three owner / action / date rows mirroring the ADR-005 ask, dates as [date]).\n\nDiagrams: draw artwork as SVG and every word as a <p> over it (fonts do not load inside svg). Follow diagrams.md edge-midpoint and 32px-gap rules and write the node list as a comment before adding connectors. The permission step is a gate on Act because the agent asks before it acts. Keep deployment annotations as nouns; statements about data handling need Trust review, so leave them as comments with [CLM-?: ...].",
+  "requirements": [
+    "REQ-12",
+    "REQ-25"
+  ],
+  "deliverables": [
+    "D1"
+  ],
+  "startedAt": "2026-10-20T17:07:57.967Z"
+}

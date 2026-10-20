@@ -1,0 +1,53 @@
+<!--
+KIND: table (paper)
+USE WHEN: a small grid the room reads across: the metrics framework, starter use cases per team, a timeline of gates. A native table, so it stays editable and exports as a real table.
+SLOTS TO REPLACE: eyebrow, title (h2, one line), the header cells, the 5 body rows of 4 cells, footer source line, speaker notes.
+LIMITS: 4 columns, header + 5 rows, 28px text. Every cell is ONE line (about 20 characters in a 20% column, 28 in a 32% column); at most 3 cells in different rows may wrap to two lines. Column shares must add up to 100 and are set as width on EVERY cell of the first row. Padding is set once, on the first header cell (format.md: one per table). Metric cells that need ids carry [MET-?: metric] until value/metrics.json exists.
+BUILD: content kind (padding 128px 128px 160px, identical header block, pinned 24px footer). Height budget: header row plus 5 single-line rows is about 525px; the body area above the footer band is about 645px.
+-->
+<section id="tpl-table" data-transition="fade" style="background:#F6F4EF; padding:128px 128px 160px; display:flex; flex-direction:column; gap:32px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:28px; color:#1B1F24">
+  <div style="display:flex; flex-direction:column; gap:12px">
+    <p style="font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; font-weight:600; line-height:1.2; letter-spacing:3px; text-transform:uppercase; color:#1F6F6B">Measurement</p>
+    <h2 style="font-family:'Source Serif 4', Georgia, serif; font-size:64px; font-weight:600; line-height:1.15; color:#1B1F24">One scorecard, five layers</h2>
+  </div>
+  <table style="width:1664px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:28px; color:#1B1F24">
+    <tr style="background:#E2DED5">
+      <th style="width:20%; padding:24px 24px; text-align:left; font-weight:600; color:#1B1F24">Layer</th>
+      <th style="width:32%; text-align:left; font-weight:600; color:#1B1F24">Example metric</th>
+      <th style="width:26%; text-align:left; font-weight:600; color:#1B1F24">Baseline source</th>
+      <th style="width:22%; text-align:left; font-weight:600; color:#1B1F24">Guardrail</th>
+    </tr>
+    <tr>
+      <td style="color:#1F6F6B">Adoption</td>
+      <td>Weekly active developers</td>
+      <td>Tool usage logs</td>
+      <td>Opt-in only</td>
+    </tr>
+    <tr>
+      <td style="color:#1F6F6B">Flow</td>
+      <td>Cycle time per change</td>
+      <td>Git and ticket history</td>
+      <td>Review time steady</td>
+    </tr>
+    <tr>
+      <td style="color:#1F6F6B">Quality</td>
+      <td>Defects found after release</td>
+      <td>Bug tracker</td>
+      <td>No rise in rework</td>
+    </tr>
+    <tr>
+      <td style="color:#1F6F6B">Reliability</td>
+      <td>Time to restore service</td>
+      <td>Incident records</td>
+      <td>On-call load tracked</td>
+    </tr>
+    <tr>
+      <td style="color:#1F6F6B">Outcome</td>
+      <td>Features shipped per quarter</td>
+      <td>Product roadmap</td>
+      <td>Target agreed first</td>
+    </tr>
+  </table>
+  <p style="position:absolute; left:128px; bottom:64px; width:1664px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; line-height:1.2; color:#4A5560">Source: [CLM-?: source]</p>
+  <aside>NOTES STUB (table). Spoken script, about 140 words per minute; target 40 s. Read one row as an example, then say what the reader should notice across the rows. Every metric is measured against your own baseline. Replace this stub.</aside>
+</section>

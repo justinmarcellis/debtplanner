@@ -1,5 +1,5 @@
 {
-  "status": "in_progress",
+  "status": "review",
   "dependsOn": [],
   "createdAt": "2026-10-20T15:17:01.645Z",
   "history": [
@@ -17,6 +17,11 @@
       "at": "2026-10-20T16:59:27.786Z",
       "from": "ready",
       "to": "in_progress"
+    },
+    {
+      "at": "2026-10-20T17:03:45.487Z",
+      "from": "in_progress",
+      "to": "review"
     }
   ],
   "id": "S1-TRU-00",

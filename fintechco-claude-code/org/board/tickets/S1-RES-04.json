@@ -1,0 +1,49 @@
+{
+  "status": "ready",
+  "dependsOn": [],
+  "createdAt": "2026-10-20T17:05:30.541Z",
+  "history": [],
+  "team": "research",
+  "reviewer": "qe-acceptance",
+  "sprint": 1,
+  "id": "S1-RES-04",
+  "title": "Pricing, packaging and deployment options (Bedrock, Vertex AI, Foundry)",
+  "story": "As the candidate I need dated list prices, Anthropic's published cost guidance and exact Bedrock and Vertex AI routing configuration for Claude Code, so that I can explain how FinTechCo buys and runs it on AWS and GCP and show cost controls without leading with price.",
+  "points": 8,
+  "tier": "mid",
+  "owner": "ic-research-pricing-analyst",
+  "paths": [
+    "research/pricing-and-deployment.md",
+    "research/claims/pricing-deployment.json"
+  ],
+  "contracts": [
+    "org/contracts/claims.schema.json",
+    "org/decisions/ADR-006-claims-and-evidence.md",
+    "org/decisions/ADR-003-delegation-controls.md",
+    "org/decisions/ADR-001-layout-and-formats.md"
+  ],
+  "requirements": [
+    "REQ-17",
+    "REQ-18",
+    "REQ-14"
+  ],
+  "deliverables": [
+    "D10"
+  ],
+  "acceptance": [
+    "research/pricing-and-deployment.md opens with \"As of October 2026\" and a three-line executive summary, and has sections: Ways to buy and run; List prices; Anthropic cost guidance and cost controls; Routing Claude Code through Amazon Bedrock; Routing through Google Cloud Vertex AI; Microsoft Foundry; Mapping to FinTechCo; Unverified or not found",
+    "\"Ways to buy and run\" covers all six options (Claude Team seats, Claude Enterprise seats, Claude Console API pay-as-you-go, Amazon Bedrock, Google Cloud Vertex AI, Microsoft Foundry); each states who bills, the billing unit, how users authenticate (including SSO where documented) and any Claude Code feature differences, or an unverified note",
+    "\"List prices\" gives every price with currency, unit, date read and link, for seats and for API models including Opus 5.5, Sonnet 5.5, Haiku 5.5 and Fable 5.1 and the prompt-caching and batch multipliers; each price is checked against the 2026-10-06 reference (Opus 5.5 4/20, Sonnet 5.5 2/10, Haiku 5.5 0.10/0.50, Fable 5.1 10/50 USD per MTok in/out) and any discrepancy is recorded; a price not found on an official page is an unverified claim, not a number",
+    "\"Anthropic cost guidance and cost controls\" quotes Anthropic's published typical Claude Code cost per developer with exact wording, figure, date and link (or an unverified claim naming the pages searched) and covers spend limits, model choice, prompt caching, usage monitoring and rate-limit guidance, each cited",
+    "The Bedrock and Vertex AI sections each give: every environment variable that switches Claude Code to that provider, the authentication options, the IAM actions or roles required, the model ids or inference-profile ids to configure, region notes for US-only workloads, and a copy-pasteable snippet using placeholders only; the Foundry section gives the same in shorter form. Every variable name and id is a cited claim read from official Anthropic, AWS, Google or Microsoft pages",
+    "Any statement about data residency, retention, where inference runs or what leaves the customer's cloud boundary is tagged [TRUST-REVIEW] (ADR-003 section 4.2 Trust veto) and is not worded as a security guarantee",
+    "No secrets or real identifiers: grep -nE \"AKIA|sk-ant|\\b[0-9]{12}\\b\" research/pricing-and-deployment.md prints nothing",
+    "\"Mapping to FinTechCo\" suggests which route fits AWS-resident and GCP-resident teams, states that FinTechCo's actual pricing is \"to be quoted\", and shows an illustrative 180-seat list-price calculation with the formula, using only cited prices and labelled \"illustrative, not a quote\"",
+    "Every bullet in research/pricing-and-deployment.md carries a claim id, except \"(judgment)\" lines allowed only under Mapping to FinTechCo: grep -nE \"^\\s*[-*] \" research/pricing-and-deployment.md | grep -v \"\\[CLM-\" | grep -v \"(judgment)\" prints no lines (table cells holding facts carry ids too)",
+    "Claims check exits 0 (ids within CLM-300..399, no placeholders, every cited id exists, every verified or partial claim has an excerpt of at most 300 characters on an official Anthropic, AWS, Google or Microsoft URL, partial claims have safeWording, accessed in October 2026): `node -e \"const fs=require('fs');const [shard,lo,hi,urlRe,...docs]=process.argv.slice(1);const c=JSON.parse(fs.readFileSync(shard,'utf8'));const ids=new Set(c.map(x=>x.id));const re=new RegExp(urlRe);const bad=[];for(const x of c){const n=+x.id.slice(4);const ok=['verified','partial'].includes(x.status);if(n<+lo||n>+hi)bad.push(x.id+' out of range');if(ok&&x.sources.some(s=>s.excerpt)===false)bad.push(x.id+' no excerpt');if(ok&&x.sources.some(s=>s.excerpt&&s.excerpt.length>300))bad.push(x.id+' excerpt over 300 chars');if(ok&&x.sources.some(s=>re.test(s.url))===false)bad.push(x.id+' no allowed source url');if(x.status==='partial'&&x.safeWording===undefined)bad.push(x.id+' no safeWording');if(/^2026-10-/.test(x.accessed)===false)bad.push(x.id+' accessed not in Oct 2026')}const miss=[],ph=[];for(const d of docs){const t=fs.readFileSync(d,'utf8');for(const m of t.matchAll(/\\[CLM-(\\d{3})\\]/g))if(ids.has('CLM-'+m[1])===false)miss.push(d+':CLM-'+m[1]);if(/\\[CLM-\\?/.test(t))ph.push(d)}console.log(JSON.stringify({claims:c.length,bad,miss:[...new Set(miss)],placeholders:ph}));process.exit(bad.length+miss.length+ph.length?1:0)\" research/claims/pricing-deployment.json 300 399 '^https://(code\\.claude\\.com|docs\\.claude\\.com|platform\\.claude\\.com|support\\.claude\\.com|www\\.anthropic\\.com|anthropic\\.com|www\\.claude\\.com|claude\\.com|claude\\.ai|github\\.com/anthropics/|docs\\.aws\\.amazon\\.com|aws\\.amazon\\.com|cloud\\.google\\.com|learn\\.microsoft\\.com|azure\\.microsoft\\.com|ai\\.azure\\.com)' research/pricing-and-deployment.md`",
+    "Shard holds at least 35 claims: `node -e \"console.log(require('./research/claims/pricing-deployment.json').length)\"`",
+    "node org/contracts/validate.mjs passes (shard schema valid, no duplicate ids, no citation to a missing or unusable claim)",
+    "Only this ticket's paths changed (git status --short shows research/pricing-and-deployment.md and research/claims/pricing-deployment.json only); no secrets, no Anthropic logos or brand assets, no real personal data"
+  ],
+  "brief": "Produce the buying, pricing and deployment reference for a candidate presenting to a cost-conscious but not cost-driven bank on AWS and GCP serving US customers. Value is framed on throughput and time to market; cost controls are shown, not led with. A platform engineer must be able to copy your configuration and a CFO must be able to trust your numbers.\n\nSetup: load web tools with ToolSearch query \"select:WebSearch,WebFetch\". Sources in priority order: Anthropic pricing and models pages and the code.claude.com/docs pages on Bedrock, Vertex AI, Foundry, LLM gateway, costs, model configuration, IAM and monitoring; then AWS, Google Cloud and Microsoft official docs and pricing pages for provider-side model ids, regions, quotas and prices. Never write a variable, id or number from memory.\n\nLeads to verify: the env vars that switch Claude Code to each provider (use flag, region or project, model overrides), AWS authentication options and the IAM actions needed to invoke and list models, Vertex AI project, region, required role and Model Garden enablement, cross-region versus regional endpoints and any price difference, and the exact model or inference-profile ids for Opus 5.5, Sonnet 5.5 and Haiku 5.5. Prices: the 2026-10-06 reference in acceptance is a cross-check only; cite an official page for every price, record discrepancies, and let the official page win. Find Anthropic's own typical cost per developer and quote it exactly with its date.\n\nPut each price in a table with date and link, and config blocks with placeholders such as <aws-region> and <gcp-project-id>. Shard research/claims/pricing-deployment.json uses CLM-300..399 only, category pricing or deployment (model where it is a model fact), partial with safeWording where a source is narrower.\n\nPitfalls: seat plans, tiers and limits change often, so date everything; never invent an enterprise price (use \"contact sales\" only if the page says so); do not assert a security property or data-handling guarantee (tag it [TRUST-REVIEW] and keep the page's own words); certifications belong to the Trust team (CLM-400..449); ROI belongs to the Value team, so keep the 180-seat arithmetic simple; mark route advice \"(judgment)\". Post a handoff to the research hub when done."
+}

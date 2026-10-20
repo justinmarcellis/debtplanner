@@ -1,0 +1,51 @@
+{
+  "status": "ready",
+  "dependsOn": [],
+  "createdAt": "2026-10-20T17:02:51.938Z",
+  "history": [],
+  "id": "S1-VAL-01",
+  "team": "value",
+  "title": "Impact measurement framework: metrics contract, leave-behind and executive scorecard",
+  "story": "As the candidate I need a tiered impact-measurement framework (adoption, engagement, flow, quality, experience, business) with baselines, guardrails and a one-page monthly scorecard so that the CTO sees impact will be proven on FinTechCo's own data and the Head of Digital Transformation can run it.",
+  "points": 5,
+  "tier": "mid",
+  "owner": "ic-value-metrics-designer",
+  "reviewer": "qe-acceptance",
+  "sprint": 1,
+  "paths": [
+    "value/metrics.json",
+    "value/metrics-framework.md",
+    "research/claims/value-metrics.json"
+  ],
+  "contracts": [
+    "org/contracts/metrics.schema.json",
+    "org/contracts/claims.schema.json",
+    "org/contracts/README.md",
+    "org/decisions/ADR-001-layout-and-formats.md",
+    "org/decisions/ADR-003-delegation-controls.md",
+    "org/decisions/ADR-005-meeting-format-and-narrative.md",
+    "org/decisions/ADR-006-claims-and-evidence.md"
+  ],
+  "acceptance": [
+    "`node org/contracts/validate.mjs` exits 0 with value/metrics.json and research/claims/value-metrics.json present (schema valid, unique MET-nn and CLM ids, every [CLM-###] in value/ resolves to a verified or partial claim).",
+    "value/metrics.json has 26 to 40 entries, ids MET-01 upward with no gaps, every entry uses only schema fields (no extra keys) and also fills pilotTarget and guardrail; all six tiers (adoption, engagement, flow, quality, experience, business) have at least 3 metrics each.",
+    "Required metrics are present by name: deployment frequency, lead time for changes, PR cycle time, failed deployment recovery time (time to restore), change failure rate, escaped defects, security findings, developer survey (SPACE-informed), time-to-market for new products, roadmap throughput, capacity reallocated to new products; DS: notebook-to-production lead time and experiment iteration cycle; SRE: MTTA, MTTR, toil hours. Team-specific metrics carry the team in the name suffix ((SWE), (DS), (SRE)) and population in the definition.",
+    "Every definition states formula, unit and population precisely enough that two analysts would compute the same number. Every dataSource names a system class (Git host, Jira-class tracker, CI, incident tooling, survey, Claude Code analytics, OpenTelemetry) and, for Claude Code telemetry metrics, which of analytics or OpenTelemetry provides it, as stated in the cited official docs. Every baseline states a capture method and time window (for example a historical pull over a stated number of weeks, or a week-0 survey); none says TBD.",
+    "Every pilotTarget either starts with 'Assumption:' plus reasoning or cites a CLM id present in the shard; every guardrail names a counter-metric that exists in the file (by MET id) or a plain-language counter-metric; audience values use only the schema enum.",
+    "value/metrics-framework.md opens with a three-line executive summary and contains, in order: principles (team-level aggregates only, tool-agnostic flow and quality metrics so any evaluated assistant is measured identically, baselines first, guardrails); a tier table that marks every metric leading or lagging and gives time-to-signal (readable inside the 8-week pilot vs later); per-team sections for SWE, DS and SRE in their own stacks; a baseline-capture plan; an instrumentation map (Git host, tracker, CI, incident tooling, Claude Code analytics, OpenTelemetry); measurement caveats (attribution, gaming, mixed AI-productivity evidence).",
+    "The executive scorecard section fits one page: at most 12 headline metric rows, each referencing an existing MET id, with columns metric, baseline, target, current, status (text label on-track / watch / off-track, never colour alone), guardrail; a SWE/DS/SRE strip; a 'decisions this review can make' box. Cells are blank or a dash and the section says it is a layout, not data; no invented numbers anywhere.",
+    "research/claims/value-metrics.json holds 8 to 20 claims in CLM-560..579 only, in the claims schema, each with an official URL, publisher and accessed date; covers DORA metric definitions and current naming (dora.dev), the SPACE framework (ACM Queue), Claude Code OpenTelemetry monitoring docs, Claude Code usage analytics docs, and at least one DORA finding on AI adoption; partial claims carry safeWording; nothing is cited in value/ that is unverified.",
+    "Every external fact in the markdown carries [CLM-###] or [CLM-?: ...]; no FinTechCo fact beyond brief/facts.json (specific tool brands such as Jira appear only as examples or labelled assumptions).",
+    "Handoff posts exist: `AGENT_ID=ic-value-metrics-designer node org/cli.mjs hub adoption` shows a handoff proposing the pilotTarget thresholds as inputs to the pilot gate, and `hub narrative` shows a handoff naming the headline metric set for the measurement slide."
+  ],
+  "brief": "Audience: the CTO (skeptical, wants proof on his own data) and the Head of Digital Transformation (will run this monthly). Executives read the scorecard and the first three lines; engineers read the definitions. Lead with the point: impact is proven in stages, on FinTechCo's own baselines, against guardrails.\n\nShared anchors (identical in the ROI ticket, do not vary): 120 SWE / 40 DS / 20 SRE (brief/facts.json); an 8-week pilot (ADR-005), company-wide in about four months; priorities are team productivity and shipping new products, so business outcomes lead the scorecard. The Adoption team owns the pilot gate; your pilotTarget values are proposed thresholds you hand to them.\n\nOrder of work: (1) source claims first from official docs, not memory: dora.dev (DORA has renamed time to restore; confirm the current name), the SPACE paper in ACM Queue, Claude Code docs on OpenTelemetry monitoring and usage analytics. Confirm exact metric names, which plans expose them, and whether commits or PRs are attributable to Claude Code before naming them in dataSource. (2) Draft metrics.json, about 28 to 36 entries. (3) Write the framework around it.\n\nPitfalls: DORA's four keys are split across tiers (throughput in flow, change failure rate in quality); never define one twice. Flow, quality and experience metrics must be tool-agnostic because FinTechCo is comparing assistants; only adoption and engagement use Claude Code telemetry. Recommend team-level aggregates, never individual leaderboards (label it a policy assumption). Do not state which tools FinTechCo uses; say 'Git host', 'Jira-class tracker', 'incident tooling'. The schema has no team field: encode team in the name, and if you want one post a contract-change request to the decisions hub instead of editing the schema. Present AI-productivity evidence as mixed (the DORA finding on stability justifies guardrails), then 'which is why we measure on your work'. Keep the scorecard to the headline set; the rest is backup. Other teams' contracts do not exist yet: write [UC-?: ...] and [CLM-?: ...] placeholders and move on. Report what you built, how you verified it and what you assumed.",
+  "requirements": [
+    "REQ-06",
+    "REQ-13",
+    "REQ-16",
+    "REQ-18"
+  ],
+  "deliverables": [
+    "D5"
+  ]
+}

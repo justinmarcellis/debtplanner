@@ -1,0 +1,70 @@
+{
+  "status": "in_progress",
+  "dependsOn": [],
+  "createdAt": "2026-10-20T17:05:02.956Z",
+  "history": [
+    {
+      "at": "2026-10-20T17:06:02.869Z",
+      "from": "ready",
+      "to": "in_progress"
+    }
+  ],
+  "id": "S1-NAR-01",
+  "team": "narrative",
+  "title": "Storyline and slide-by-slide spec (G1 input)",
+  "story": "As the candidate I need the storyline, the one thing the CTO and Head of Digital Transformation should remember, and a timed slide-by-slide spec (main deck of at most 20 slides plus 6-10 backup slides) so that the orchestrator can lock the narrative at G1 and Sprint 2 can build the deck without re-deciding anything.",
+  "points": 8,
+  "tier": "strong",
+  "owner": "ic-narrative-storyliner",
+  "reviewer": "qe-acceptance",
+  "sprint": 1,
+  "paths": [
+    "deck/storyline.md",
+    "deck/slide-spec.md"
+  ],
+  "contracts": [
+    "org/decisions/ADR-005-meeting-format-and-narrative.md",
+    "org/decisions/ADR-004-demo-architecture.md",
+    "org/decisions/ADR-006-claims-and-evidence.md",
+    "org/decisions/ADR-003-delegation-controls.md",
+    "org/contracts/README.md",
+    "org/contracts/claims.schema.json",
+    "org/contracts/use-cases.schema.json",
+    "org/contracts/metrics.schema.json",
+    "org/contracts/roi-assumptions.schema.json"
+  ],
+  "acceptance": [
+    "Only deck/storyline.md and deck/slide-spec.md are written by this ticket.",
+    "storyline.md has these headed parts: the one thing to remember (one sentence, 25 words or fewer); the eight ADR-005 spine sentences quoted verbatim, each expanded into beats, proof and a transition line; a table mapping the 10 ADR-005 agenda segments to spine sentences and deck sections (resolving the 'Deck §5-§8' versus spine numbering without editing the ADR); an attendee matrix (every spine section x CTO and Head of Digital Transformation: what they need, what we show, objection pre-empted); the ask quoting the three ADR-005 items with owner and the slide id that makes each; a glossary (agentic, MCP, hooks, subagent, headless, CLAUDE.md and any other term used) with the slide id where each is first defined.",
+    "slide-spec.md opens with a title sequence (titles only) in ONE stated grammar; `grep -inE \"it'?s not .*(it'?s|but)\" deck/slide-spec.md deck/storyline.md` finds no title in the 'It's not X, it's Y' form.",
+    "Slide blocks are headed '### s01-<slug> — <Title>' (main) and '### a01-<slug> — <Title>' (appendix). `grep -c '^### s[0-9]' deck/slide-spec.md` is 20 or fewer; `grep -c '^### a[0-9]' deck/slide-spec.md` is between 6 and 10; the appendix covers all seven topics: deployment architecture, data handling, controls catalog, competitive detail, pricing models, metrics detail, evaluation detail.",
+    "Every slide block carries the fields Section, Kind, Executive line, On slide, Visual, Notes (N s, W words), Reqs, Placeholders, Cut, each once (reviewer counts each label against the number of blocks). Kind is one of cover, section, statement, compare, table, diagram, cards, closing (diagram blocks name the variant) or NEW(reason). Executive line is one sentence of 25 words or fewer. On-slide content is numbers, table cells, diagrams and short labels, not paragraphs.",
+    "A clock table has all 10 ADR-005 agenda rows with columns ADR minutes, spoken seconds (the sum of the Notes seconds of that segment's slides, recomputable by the reviewer), interaction or demo seconds, planned seconds, slack seconds. Checkpoints 0:12, 0:20, 0:26, 0:30, 0:37 are unchanged; the demo row is 840 s (5+6+2+1 min per ADR-004); non-demo spoken plus interaction is 1440 s or less; every segment has at least 10 s of slack; total planned is 2280 s (38:00) or less (G4 target); wrap-up (2 min) starts at 0:37 and is never cut.",
+    "Notes are spoken script, not bullets; for the three slides the reviewer samples and for each section total, words are within 10% of seconds x 140/60. Each term is defined in plain English at its first use. The demo section has at most 2 slides, 45 s of speech or less, and notes name the switch to the terminal and the fallback line.",
+    "Cut list: every slide's Cut field is 'keep', 'skip at <checkpoint>' or 'compress at <checkpoint>', consistent with ADR-005 (competitor table to one sentence and fit slide skipped at 0:12; security to one slide at 0:30; evaluation to its timeline slide at 0:37), with a table of what is dropped at each checkpoint and the seconds recovered.",
+    "Requirement coverage: each of REQ-02 to REQ-12, REQ-22 and REQ-25 appears in at least one slide's Reqs field or the requirement map, and the map names the slide that satisfies it (how-it-works legible to non-engineers; UVP in FinTechCo terms; fair differentiators; per-team slide naming 120/40/20 and their stacks; metrics framework with leading and lagging metrics, baselines, guardrails; evaluation plan with named starter use cases per team; demo slides consistent with ADR-004; wrap slide with owners and dates; benefit tied to productivity and shipping new products; dated timeline to company-wide rollout in about four months).",
+    "Claims rule (ADR-006): every external fact, statistic, price, certification, customer name, quote or competitor statement carries [CLM-###] (only an id that exists in research/claims/*.json when written) or [CLM-?: what needs sourcing]; metrics, use cases and ROI inputs use [MET-?], [UC-?], [ASM-?] or real ids. FinTechCo facts match brief/facts.json (120, 40, 20, total 180) and any other statement about FinTechCo is labelled 'Assumption:'. Productivity evidence is shown as mixed and followed by 'which is why we measure on your work'; the deck contains sourced-or-placeholdered enterprise proof points for the CTO; no unattributed superlative; no invented number, customer or quote. `node org/contracts/validate.mjs` passes.",
+    "Porting note in slide-spec.md: a kind-by-kind table for rebuilding each of the eight kinds in the Google Slides template named in the brief (layout to use, fonts, colors; refers to deck/visual-system.md instead of duplicating it), the candidate's step-by-step port procedure (export .pptx or PDF, fonts, speaker notes, rehearsal on Google Meet share), and a keep/edit/delete/new disposition table for the old template deck, left as a labelled blank if the template cannot be read locally. The cover slide is stated as the candidate's own preparation with the [Your Name] placeholder and no logos or brand assets.",
+    "An 'Open items' list records any conflict between sources without changing an ADR, including at least: ADR-005 gives a 1-minute buffer while REQ-01 asks for 2 minutes and G4 targets 38 minutes."
+  ],
+  "brief": "Write deck/storyline.md and deck/slide-spec.md, the input to gate G1. Read first: ADR-005 (clock, checkpoints, spine, ask), ADR-004 (demo), ADR-006, ADR-003, standards.md, brief/facts.json, brief/requirements.json. Do not re-decide ADRs; when sources conflict, list the conflict under 'Open items' and plan to the stricter one. Narrative has no web access (ADR-003 section 2): every external fact is a placeholder [CLM-?: ...]. If research/claims/*.json, strategy/use-cases.json or value/metrics.json already exist when you finish, cite real ids and run node org/contracts/validate.mjs.\n\nShared contract with S1-NAR-02, built in parallel: slide kinds are exactly cover, section, statement, compare, table, diagram, cards, closing; a diagram slide names its variant (diagram-how-it-works, diagram-deployment or generic). Slide ids: s01-cover style for the main deck, a01- for the appendix. Need a ninth kind? Write NEW(reason) and post a request to the narrative hub.\n\nstoryline.md: the one thing to remember; the eight spine sentences verbatim, expanded; the agenda-to-spine mapping table (ADR-005 numbers 'Deck section 5-8' differently from the spine because the demo is spine 5 but not a deck section); attendee matrix; the ask; glossary.\n\nslide-spec.md order: title sequence (one grammar; recommended: short topic titles of 2-5 words, with the claim in the executive line), clock table, slide blocks, appendix, porting note, requirement map, open items. Notes are a spoken script at 140 wpm (about 2.33 words per second).\n\nSuggested skeleton, 19 slides: open 3 (cover, agenda, what we heard); how it works 3 (loop diagram, agentic vs autocomplete, extension points); why 2 (UVP, differentiators); fit 1 (three teams); demo 1-2; security 2 (controls, deployment diagram); measure 2 (framework, ROI with sensitivity); evaluation 2 (timeline, starter use cases per team); wrap 1; questions 1. Appendix 7-9.\n\nPitfalls: stance is principal architect, not salesperson: recommend measuring every tool the same way; fair, dated, non-disparaging competitor view; ROI only via [ASM-?]/[MET-?] with a range; the CTO is skeptical, so proof and controls come before enthusiasm; executives read the first line, so the executive line carries the point and depth lives in notes and backup slides.",
+  "requirements": [
+    "REQ-02",
+    "REQ-03",
+    "REQ-04",
+    "REQ-05",
+    "REQ-06",
+    "REQ-07",
+    "REQ-08",
+    "REQ-09",
+    "REQ-10",
+    "REQ-11",
+    "REQ-12",
+    "REQ-22",
+    "REQ-25"
+  ],
+  "deliverables": [
+    "D1"
+  ],
+  "startedAt": "2026-10-20T17:06:02.869Z"
+}
