@@ -3,7 +3,7 @@
 Decided in ADR-004. Clock: demo starts by **0:12**, Act 2 starts by **0:20**, demo ends by **0:26** (ADR-005). Model: **Sonnet 5.5** (`/model sonnet`); Opus 5.5 is the step-up if asked. Every step has a recovery line; never debug live.
 
 ## The day before
-Install Claude Code with the provided script, `curl -fsSL https://claude.ai/install.sh | bash`, then `claude --version`. Set the provided API key in your shell profile (never in a repo or on screen) and check it with `claude -p "say ready"`. Full checklist, including the Google Meet screen-share test and the $25 credit budget: `rehearsal/interview-kit.md` §3.
+Install Claude Code with the provided script, `curl -fsSL https://claude.ai/install.sh | bash`, then `claude --version`. Set the provided API key in your shell profile (never in a repo or on screen) and check it with `claude -p "say ready"`. Then `node demo/rehearse.mjs` runs every step below headless on fresh repos (about 8 minutes, $2–3): it proves the install, key, credits and prompts work on your machine and writes timings to `fallback/rehearsal.json`. Full checklist, including the Google Meet screen-share test and the $25 credit budget: `rehearsal/interview-kit.md` §3.
 
 ## Before the meeting (T−30 min)
 1. `./setup.sh` → repos in `~/fintechco-demo/` (≈2 s). Then run `claude` once in each repo and accept the trust prompt; `/model sonnet`; exit.
@@ -45,7 +45,7 @@ Say: *"3 a.m. page. Same agent, no chat window: it runs from a script or an aler
 
 ## Governance close (1:00)
 Tab 1: `!cat .claude/settings.json` (deny `.env`, deny push, hooks) → `!wc -l ~/fintechco-demo/*/.claude/audit/audit.jsonl` (one audit file per act, every tool call recorded; contents never logged) → `!cat ~/fintechco-demo/enterprise/managed-settings.json` (starts in Manual mode, auto and bypass disabled) → `~/fintechco-demo/enterprise/bedrock.env.example`.
-Say: *"Central policy developers can't override, an audit trail into your SIEM, and inference inside your own AWS or GCP account."*
+Say: *"Central policy developers can't override, an audit trail into your SIEM, and model calls through your own AWS or GCP account, on your credentials and billing."*
 
 ## After
 `./reset.sh` before every rehearsal and right before the meeting.

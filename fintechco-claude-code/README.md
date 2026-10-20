@@ -52,6 +52,7 @@ node org/reviews/recheck.mjs                          # the consolidated review'
 (cd demo/payments-ledger && python3 -m pytest -q .claude/hooks/test_hooks.py)
 (cd demo/macro-risk && python3 -m pytest -q)
 node org/dashboard/build.mjs                          # rebuild the program dashboard
+node demo/rehearse.mjs                                # scripted rehearsal: every runbook step headless, timed and costed ($2-3)
 ```
 
 FinTechCo is fictional. Every number is either sourced (a `[CLM-###]` in `research/claims.md`) or labelled an assumption. No Anthropic brand assets are used.

@@ -48,6 +48,7 @@ Close: "Thank you. I enjoyed preparing this. Is there anything about my backgrou
 - [ ] **Install Claude Code** with the provided script: `curl -fsSL https://claude.ai/install.sh | bash`, then `claude --version`.
 - [ ] **API key.** Set the provided key (`export ANTHROPIC_API_KEY=...` in the shell profile, never in a repo or on screen). Run `claude -p "say ready"` to confirm it works.
 - [ ] **Credits ($25).** A full three-act dry run measured **≈$2.30** on Sonnet (`demo/fallback/dry-run.md`). Budget: two full rehearsals (≈$5) + morning warm-up (≈$0.50) + the live demo (≈$2.30) ≈ **$8**, leaving more than $15 of headroom. Check the balance in the Console after each rehearsal.
+- [ ] **Scripted rehearsal.** `node demo/rehearse.mjs` runs the whole runbook headless on your machine (about 8 minutes, $2–3) and projects the meeting clock; it is the quickest proof that install, key, credits and prompts all work.
 - [ ] **Demo kit.** `demo/setup.sh` → repos in `~/fintechco-demo/` with the `start` and `complete` tags; Python packages (pandas, numpy, pytest) installed. Go is optional.
 - [ ] **Workspace trust.** Run `claude` once in each demo repo and accept the trust prompt (allow rules in `.claude/settings.json` are ignored until the workspace is trusted).
 - [ ] **Two full timed rehearsals** of the 40 minutes, with the stopwatch, following `strategy/run-of-show.md`. Log both in §4. `demo/reset.sh` before each one.
