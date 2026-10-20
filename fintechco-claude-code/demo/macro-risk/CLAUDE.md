@@ -3,10 +3,10 @@
 Macro context for FinTechCo's credit-risk and portfolio teams, built on public FRED data. Python 3.10+, pandas, numpy; tests with pytest.
 
 ## Commands
-- Load or refresh data: `python fred.py --all` (cache in `data/raw/`; `--refresh` downloads; never needed for tests)
-- Run analyses: `python -m analysis.report` (writes `outputs/*.json` and `outputs/findings.md`)
-- Build the dashboard: `python dashboard/build.py` (writes `dashboard/index.html`)
-- Tests: `python -m pytest -q` (offline; uses the committed cache)
+- Load or refresh data: `python3 fred.py --all` (cache in `data/raw/`; `--refresh` downloads; never needed for tests)
+- Run analyses: `python3 -m analysis.report` (writes `outputs/*.json` and `outputs/findings.md`)
+- Build the dashboard: `python3 dashboard/build.py` (writes `dashboard/index.html`)
+- Tests: `python3 -m pytest -q` (offline; uses the committed cache)
 
 ## Rules
 - Every number in a finding or chart comes from code in `analysis/`; never type numbers by hand.

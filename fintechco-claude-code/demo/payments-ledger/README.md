@@ -3,7 +3,7 @@
 A small, realistic slice of a card-payments back office: fee calculation, currency conversion, daily merchant statements and refunds. All data is synthetic. Used in Act 1 of the FinTechCo demo (`../RUNBOOK.md`).
 
 ```bash
-python -m pytest -q      # 3 failures are expected: PAY-1423 (tickets/PAY-1423.md)
+python3 -m pytest -q      # 3 failures are expected: PAY-1423 (tickets/PAY-1423.md)
 ```
 
 What the demo shows:

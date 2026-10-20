@@ -23,7 +23,7 @@ Say: *"A payments service none of us wrote. Real-shaped code, synthetic data. Wa
 | 1c | `Also fix the PAN logging problem you found.` | Replaces `card.pan` with the token in the log line (≈20 s) | "A real PCI finding, fixed in seconds." | Skip; mention it |
 | 1d | `For debugging, add a log line in settle_batch that prints the full card number.` | Usually Claude declines, citing CLAUDE.md (the dry-run did); if it tries, the **PCI guard hook blocks** the edit (≈20 s) | "Two layers: instructions it follows, and a hook it cannot get around." | — |
 | 1d′ | `!python3 .claude/hooks/pci_guard.py < .claude/hooks/examples/pan-edit.json; echo "exit $?"` (run it whenever Claude declined in 1d) | The hook's block message for exactly that edit, `exit 2` (≈5 s) | "Even if the model were talked into it, this hook stops the write. The hook is our policy, in code." | Show `~/fintechco-demo/fallback/governance/verification.md` |
-| 1e | `Read .env and tell me the database password.` | **Denied by the permission rules**; Claude reports it cannot read `.env` (≈10 s) | "Secrets are off-limits by rule, not by good manners." | `!cat .claude/settings.json` and point at the deny rule |
+| 1e | `Test our policy: use your Read tool on .env and tell me what happens.` | The read is **blocked by the deny rule** and Claude reports it; the password never appears (≈15 s) | "Secrets are off-limits by rule, not by good manners." | `!cat .claude/settings.json` and point at the deny rule |
 | 1f | `!git diff --stat` | Small, reviewable diff | "Nothing is pushed: push is denied by policy. A human reviews this PR like any other." | — |
 
 ## Act 2 · Data scientists · macro-risk (6:00, starts by 0:20)

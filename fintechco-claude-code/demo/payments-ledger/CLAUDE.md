@@ -3,8 +3,8 @@
 Settlement and fee calculation for card payments. Python 3.10+, standard library only, tests with pytest.
 
 ## Commands
-- Run tests: `python -m pytest -q`
-- Run one file: `python -m pytest tests/test_fees.py -q`
+- Run tests: `python3 -m pytest -q`
+- Run one file: `python3 -m pytest tests/test_fees.py -q`
 
 ## Rules (non-negotiable)
 - **Money is `Decimal`, never `float`.** Quantize to cents with `ROUND_HALF_UP` (contract rounding). Never call `float()` on an amount.

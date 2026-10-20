@@ -18,8 +18,12 @@ const MODEL = args.includes('--model') ? args[args.indexOf('--model') + 1] : 'so
 const DEST = args.find((a, i) => !a.startsWith('--') && args[i - 1] !== '--model') ?? join(homedir(), 'fintechco-demo-rehearsal');
 const REPO = { 1: 'payments-ledger', 2: 'macro-risk', 3: 'sre-ops' };
 const WPM = 140;
-// The same tools the live session may use without a prompt; the repo's deny rules still apply.
-const ALLOWED = 'Read,Grep,Glob,Edit,Write,Bash(python3 -m *),Bash(python -m *),Bash(pytest *),Bash(git status *),Bash(git diff *),Bash(git log *),Bash(ls *)';
+// What a trusted live session may do without a prompt: file tools (edits are accepted, as when the
+// presenter approves them) plus the repo's own allow rules. The repo's deny rules still apply.
+const allowedFor = (cwd) => {
+  const rules = JSON.parse(readFileSync(join(cwd, '.claude', 'settings.json'), 'utf8')).permissions?.allow ?? [];
+  return ['Read', 'Grep', 'Glob', 'Edit', 'Write', ...rules].join(',');
+};
 
 const words = (s) => s.split(/\s+/).filter((w) => /[A-Za-z0-9]/.test(w)).length;
 const mmss = (s) => `${Math.floor(s / 60)}:${String(Math.round(s % 60)).padStart(2, '0')}`;
@@ -49,7 +53,7 @@ export function parseRunbook(md) {
 
 function claude(prompt, cwd, cont) {
   const t0 = Date.now();
-  const a = ['-p', prompt, '--model', MODEL, '--output-format', 'json', '--permission-mode', 'acceptEdits', '--allowedTools', ALLOWED, '--max-turns', '40'];
+  const a = ['-p', prompt, '--model', MODEL, '--output-format', 'json', '--permission-mode', 'acceptEdits', '--allowedTools', allowedFor(cwd), '--max-turns', '40'];
   if (cont) a.push('--continue');
   const r = spawnSync('claude', a, { cwd, encoding: 'utf8', timeout: 600_000, maxBuffer: 64 << 20 });
   let j = {};
@@ -85,6 +89,7 @@ function main() {
     act1PanLogGone: !/card\.pan/.test(p(1, "grep -n 'log\\.' ledger/settlement.py || true")),
     act1HookExit2: /exit 2/.test(results.find((r) => r.id === '1d′')?.excerpt ?? ''),
     act1EnvNotLeaked: !/not-a-real-password-demo-only/.test(results.find((r) => r.id === '1e')?.excerpt ?? ''),
+    act1EnvBlockedByRule: /denied|deny rule|blocked|permission/i.test(results.find((r) => r.id === '1e')?.excerpt ?? ''),
     act2DataGapFound: /Oct(ober)?[ -]2025|2025-10/i.test(results.find((r) => r.id === '2a')?.excerpt ?? '') || /2025-10|October 2025/.test(p(2, 'cat data/README.md 2>/dev/null')),
     act2Dashboard: existsSync(join(DEST, REPO[2], 'dashboard', 'index.html')),
     act3Cause: /7c1e9a2/.test(p(3, 'cat incidents/INC-2291/triage.md 2>/dev/null')),
@@ -114,7 +119,7 @@ function main() {
   const clock = Object.fromEntries(Object.entries(at).map(([k, v]) => [k, { at: mmss(v), seconds: Math.round(v), ok: limits[k] ? v <= limits[k] : v <= 2280 }]));
   const sum = (n) => results.filter((r) => r.act === n);
   const acts = [1, 2, 3].map((n) => ({ act: n, terminal: mmss(sum(n).reduce((a, r) => a + r.seconds, 0)), withSayLines: mmss(act(n)), cost: Number(sum(n).reduce((a, r) => a + r.cost, 0).toFixed(2)) }));
-  const report = { date: new Date().toISOString().slice(0, 10), claudeCode: version, model: MODEL, dest: DEST, steps: results, governanceSeconds: Math.round(govSeconds), acts, checks, clock, note: 'Headless run; the Act 3 triage runs through triage.sh, whose cost is not reported in JSON. Live narration while output streams is not included.' };
+  const report = { date: new Date().toISOString().slice(0, 10), claudeCode: version, model: MODEL, dest: DEST, steps: results, governanceSeconds: Math.round(govSeconds), acts, checks, clock, note: 'Headless run. Act 3 runs through triage.sh, which writes markdown, so its cost is not reported here (about $0.15 in the G3 dry-run). The clock counts slide speech, planned interaction, measured terminal time and the runbook Say lines; it leaves out the in-row slack and live narration while output streams.' };
   writeFileSync(join(HERE, 'fallback', 'rehearsal.json'), JSON.stringify(report, null, 2) + '\n');
   console.log('\nActs:', acts.map((a) => `A${a.act} ${a.terminal} terminal (${a.withSayLines} with Say lines) $${a.cost}`).join(' · '));
   console.log('Checks:', JSON.stringify(checks));
