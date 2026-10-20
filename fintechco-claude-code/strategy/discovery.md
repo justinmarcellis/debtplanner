@@ -69,7 +69,7 @@ Listen for corrections. Any correction outranks this page: write it on line 3 of
 
 ## Deeper questions for the security working session or follow-up call
 
-Not for the 40 minutes. They go into the review package (D7) and the working session the CTO opens (ask 1). Product facts carry claim ids; anything unsourced is a placeholder.
+Not for the 40 minutes. They go into the review package (D7) and the working session the CTO opens (ask 1). Product facts carry claim ids; anything unsourced is left out.
 
 | # | Question | What it decides |
 |---|---|---|
@@ -79,11 +79,11 @@ Not for the 40 minutes. They go into the review package (D7) and the working ses
 | S4 | How are developer machines managed, and can your device management deliver a managed settings policy? [CLM-675] | How central policy reaches every pilot laptop. |
 | S5 | Where should agent activity go (logging or monitoring platform), how long is it kept, and what would an auditor want to see for an AI-assisted change? [CLM-656] [CLM-684] | Telemetry export, retention and audit evidence. |
 | S6 | How are secrets stored and scanned today, and which paths must the agent never read? | Deny rules and hooks for secrets. |
-| S7 | Which data retention and training terms does your vendor-risk process require? [CLM-?: Anthropic commercial terms on retention and training for Claude Code inputs, as of October 2026] | Whether standard terms fit or a review is needed. |
+| S7 | Which data retention and training terms does your vendor-risk process require? [CLM-600] [CLM-602] | Whether standard terms fit or a review is needed. |
 | S8 | Which data-science work needs model-risk sign-off, and should model code stay out of the pilot? | Scope of the data-science starter use cases. |
 | S9 | Which external tools or MCP servers (MCP: the open standard for connecting the agent to other systems) may it connect to? [CLM-678] | The MCP allowlist in managed settings. |
 | S10 | If the agent did something unexpected, how would you want to detect, stop and investigate it? | Pilot incident runbook, including how access is revoked. |
-| S11 | Which documents does your third-party risk review require? [CLM-?: security and compliance documents available from Anthropic's Trust Center, as listed] | Contents of the review package (D7). |
+| S11 | Which documents does your third-party risk review require? Anthropic's attestation reports are available through its Trust Center, and we would ask your team to request them and read their scope themselves. [CLM-618] | Contents of the review package (D7). |
 
 ## Flow adjustments
 
@@ -135,8 +135,8 @@ Fill in during the meeting; read lines 1 and 2 back as the ask, and send line 3 
 3 PARKED   Parked questions and corrections -> who answers, by when: ________
 ```
 
-## Open placeholders in this file
-- [CLM-?: Anthropic commercial terms on retention and training for Claude Code inputs, as of October 2026]
-- [CLM-?: security and compliance documents available from Anthropic's Trust Center, as listed]
+## Sourcing notes for this file
+- S7 points to the training and retention terms [CLM-600] [CLM-602].
+- S11 points to the attestation reports through the Trust Center, in the partial wording of [CLM-618].
 
-Cited verified or partial claims (from `research/claims/adoption-*.json`): CLM-656, CLM-662, CLM-666, CLM-675, CLM-678, CLM-684, CLM-686, CLM-687. Security wording needs Trust review before release (ADR-003 section 4.2). The objection and Q&A bank and the use-case catalog (sibling strategy tickets) hold the answers these questions lead to.
+Cited verified or partial claims (from `research/claims/adoption-*.json` and `research/claims/strategy.json`): CLM-600, CLM-602, CLM-618, CLM-656, CLM-662, CLM-666, CLM-675, CLM-678, CLM-684, CLM-686, CLM-687. Security wording needs Trust review before release (ADR-003 section 4.2). The objection and Q&A bank and the use-case catalog (sibling strategy tickets) hold the answers these questions lead to.

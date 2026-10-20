@@ -60,11 +60,11 @@ Format: half a day, about 3 hours, at most 12 people, a champion co-facilitating
 
 | Team and stack | Real task in the team's own repo | Output | Starter use case |
 | --- | --- | --- | --- |
-| SWE, Python | Add missing unit tests to an owned service and fix one small bug; plan first, tests first | Pull request through normal review | [UC-?: SWE pilot starter] |
-| SWE, TypeScript | Add tests and tighten types in a real component or service | Pull request through normal review | [UC-?: SWE pilot starter] |
-| SWE, Java | Explain an unfamiliar class and its call sites, then add unit tests and one small, safe refactor | Pull request through normal review | [UC-?: SWE pilot starter] |
-| DS, Jupyter, pandas, scikit-learn, TensorFlow | Turn pandas data-prep cells into tested functions; review a scikit-learn pipeline for data leakage and add cross-validation; explain a TensorFlow training script and add a reproducible evaluation step. Synthetic or masked data only, rule confirmed by security | Notebook diff and tests, reviewed by a second data scientist | [UC-?: DS pilot starter] |
-| SRE, Python, shell, Go | Triage a closed incident from its logs using read-only tools; turn one runbook step into a tested shell function; fix a small Go issue with a test; run the same triage non-interactively with `claude -p` and read-only tools | Structured triage note, tested script, Go pull request | [UC-?: SRE pilot starter] |
+| SWE, Python | Add missing unit tests to an owned service and fix one small bug; plan first, tests first | Pull request through normal review | UC-SWE-02 |
+| SWE, TypeScript | Add tests and tighten types in a real component or service | Pull request through normal review | UC-SWE-01 |
+| SWE, Java | Explain an unfamiliar class and its call sites, then add unit tests and one small, safe refactor | Pull request through normal review | UC-SWE-01 |
+| DS, Jupyter, pandas, scikit-learn, TensorFlow | Turn pandas data-prep cells into tested functions; review a scikit-learn pipeline for data leakage and add cross-validation; explain a TensorFlow training script and add a reproducible evaluation step. Synthetic or masked data only, rule confirmed by security | Notebook diff and tests, reviewed by a second data scientist | UC-DS-02 |
+| SRE, Python, shell, Go | Triage a closed incident from its logs using read-only tools; turn one runbook step into a tested shell function; fix a small Go issue with a test; run the same triage non-interactively with `claude -p` and read-only tools | Structured triage note, tested script, Go pull request | UC-SRE-01, UC-SRE-02 |
 
 ### CLAUDE.md and settings templates
 
@@ -173,7 +173,7 @@ End-to-end target: Tier 1 within 10 business days, Tier 2 within 20, Tier 3 with
 | --- | --- | --- |
 | Adoption: active users, sessions, repeat use | OTel `claude_code.session.count` and `claude_code.active_time.total` [CLM-656]; the Claude Code analytics dashboard if Claude for Teams or Enterprise seats are also used [CLM-657] | Weekly |
 | Cost and tokens | OTel `claude_code.cost.usage` and `claude_code.token.usage` [CLM-656]; the AWS and Google Cloud billing consoles [CLM-658] | Daily alert, weekly review |
-| Output indicators | OTel `claude_code.pull_request.count`, `claude_code.commit.count`, `claude_code.lines_of_code.count` [CLM-656]; indicators only, outcome metrics belong to D5 [MET-?: outcome metrics and owner] | Weekly |
+| Output indicators | OTel `claude_code.pull_request.count`, `claude_code.commit.count`, `claude_code.lines_of_code.count` [CLM-656]; indicators only, outcome metrics (for example MET-05, MET-08 and MET-12) belong to D5 and are owned by the metrics owner named at the meeting | Weekly |
 | Friction and safety | `claude_code.tool_decision` accept and reject events; `claude_code.mcp_server_connection` events; `claude doctor` warnings from sampled machines [CLM-684, CLM-680, CLM-676] | Weekly |
 | Capacity | Provider quota and throttling dashboards in the cloud consoles | Daily during waves |
 
@@ -205,7 +205,7 @@ Targets below are assumptions, to be replaced by the CoE's service-desk targets 
 | 1. Peers | Champions | `#claude-code` channel, pairing | How do I, prompt help | First reply within 4 working hours |
 | 2. CoE rota | One CoE engineer on duty each week | Service-desk queue named Claude Code, plus the channel | Access, settings, plugin and MCP requests, template problems | Acknowledge in 4 working hours; fix or workaround in 2 working days |
 | 3. Platform specialists | Cloud, network, identity and security teams | Existing internal ticket queues | Bedrock and Vertex IAM and quota, device delivery, sign-in, proxy | Their existing targets; the CoE tracks each ticket to closure |
-| 4. Vendors | Anthropic through the in-product Get help messenger, where owners and admins reach human specialists [CLM-695]; AWS or Google Cloud support for provider service problems | Messenger, account team, cloud provider consoles | Product defects, account and billing, provider outages | [CLM-?: contractual vendor response targets for FinTechCo's plan] |
+| 4. Vendors | Anthropic through the in-product Get help messenger, where owners and admins reach human specialists [CLM-695]; AWS or Google Cloud support for provider service problems | Messenger, account team, cloud provider consoles | Product defects, account and billing, provider outages | Agreed in FinTechCo's contract with Anthropic, not promised in public documentation [CLM-695] |
 
 **Severity and targets (A19).**
 
@@ -346,7 +346,7 @@ Before the first announcement, work through the pre-launch checklist: `#claude-c
 
 ### How adoption health is checked
 
-Weekly during PW3-PW17, then monthly, with the result attached to each wave's exit review. Definitions that feed the business case are D5's [MET-?: adoption and flow metrics defined in D5].
+Weekly during PW3-PW17, then monthly, with the result attached to each wave's exit review. Definitions that feed the business case are D5's: adoption and engagement in MET-01 to MET-03, flow in MET-04 to MET-07 and MET-15.
 
 | Check | Signal | Healthy (A21) |
 | --- | --- | --- |
@@ -438,4 +438,4 @@ Everything below is an assumption to be confirmed or replaced; none is a FinTech
 | A27 | Managers protect the half-day workshop and champion hours; no change to sprint commitments for the first 8 weeks | Directors confirm |
 | A28 | First provider ready by PW3, second by PW10 | Reorder if both are needed at PW3 |
 
-**Open placeholders.** [UC-?: SWE pilot starter], [UC-?: DS pilot starter] and [UC-?: SRE pilot starter] await the use-case catalog; [MET-?: outcome metrics and owner] and [MET-?: adoption and flow metrics defined in D5] await the metrics file; [CLM-?: contractual vendor response targets for FinTechCo's plan] awaits the Anthropic order form.
+**Sources resolved.** Starter use cases are the pilot starters in the use-case catalog (UC-SWE-01, UC-SWE-02, UC-DS-02, UC-SRE-01, UC-SRE-02); metric ids come from the metrics file; vendor response targets are agreed in FinTechCo's contract with Anthropic, not promised in public documentation [CLM-695].

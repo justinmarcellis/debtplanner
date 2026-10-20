@@ -1,0 +1,29 @@
+<section id="s13-deployment" data-transition="fade" style="background:#F6F4EF; padding:128px 128px 160px; display:flex; flex-direction:column; justify-content:space-between; gap:32px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:28px; color:#1B1F24">
+<div style="display:flex; flex-direction:column; gap:12px">
+<p style="font-size:24px; font-weight:600; letter-spacing:3px; text-transform:uppercase; color:#1F6F6B">Security and governance</p>
+<h2 style="font-family:'Source Serif 4', Georgia, serif; font-size:64px; font-weight:600; line-height:1.15; color:#1B1F24">Deployment in AWS and GCP</h2>
+</div>
+<div style="display:flex; align-items:center; gap:28px">
+<div style="width:380px; display:flex; flex-direction:column; gap:20px">
+<div style="background:#FBFAF6; border:2px solid #4A5560; border-radius:16px; padding:24px"><p style="font-size:28px; font-weight:600">Engineers’ laptops</p><p style="font-size:24px; color:#4A5560">terminal · IDE · desktop</p></div>
+<div style="background:#FBFAF6; border:2px solid #4A5560; border-radius:16px; padding:24px"><p style="font-size:28px; font-weight:600">CI runners</p><p style="font-size:24px; color:#4A5560">headless jobs</p></div>
+</div>
+<x-shape kind="arrow-right" style="background:#1F6F6B; width:96px; height:48px"></x-shape>
+<div style="width:420px; background:#13202B; border-radius:16px; padding:32px; display:flex; flex-direction:column; gap:10px">
+<p style="font-size:32px; font-weight:600; color:#F6F4EF">Claude Code</p>
+<p style="font-size:24px; line-height:1.4; color:#BFC8CF">Managed settings: permissions, hooks, sandbox, MCP allowlist</p>
+</div>
+<x-shape kind="arrow-right" style="background:#1F6F6B; width:96px; height:48px"></x-shape>
+<div style="flex:1; display:flex; flex-direction:column; gap:20px">
+<div style="background:#FBFAF6; border:3px solid #1F6F6B; border-radius:16px; padding:24px"><p style="font-size:28px; font-weight:600">Amazon Bedrock</p><p style="font-size:24px; color:#4A5560">FinTechCo AWS account · IAM · CloudTrail</p></div>
+<div style="background:#FBFAF6; border:3px solid #1F6F6B; border-radius:16px; padding:24px"><p style="font-size:28px; font-weight:600">Google Cloud Agent Platform</p><p style="font-size:24px; color:#4A5560">formerly Vertex AI · FinTechCo GCP project</p></div>
+</div>
+</div>
+<div style="display:flex; gap:24px">
+<p style="flex:1; font-size:26px; background:#E2DED5; padding:16px 24px; border-radius:12px"><b>Policy</b> · managed settings</p>
+<p style="flex:1; font-size:26px; background:#E2DED5; padding:16px 24px; border-radius:12px"><b>Audit</b> · OpenTelemetry → SIEM</p>
+<p style="flex:1; font-size:26px; background:#E2DED5; padding:16px 24px; border-radius:12px"><b>Identity and cost</b> · cloud IAM, budgets</p>
+</div>
+<p style="position:absolute; left:128px; bottom:64px; width:1664px; font-size:24px; line-height:1.2; color:#4A5560">Sources: [CLM-614] [CLM-686] [CLM-687] [CLM-688] [CLM-620] [CLM-615] · data-boundary details for your security team in security/security-brief.md</p>
+<aside>This is the picture your architects will ask for. Engineers run Claude Code on their laptops, and the same agent runs headless in CI. A couple of environment variables route every model request to Amazon Bedrock in a FinTechCo AWS account, or to Google Cloud’s Agent Platform, formerly Vertex AI, in a FinTechCo GCP project [CLM-686] [CLM-687]; the documentation recommends a dedicated account or project, and pinned model versions [CLM-688]. Your existing commercial agreement applies to usage through those clouds [CLM-614]. Your cloud’s identity and access management decides who may call the model, and spend shows up in your own cloud billing under your budgets [CLM-620]. On Bedrock, AWS states that model providers, Anthropic included, have no access to your prompts or logs; check the retention setting for the specific model [CLM-615]. Around it sit three things you control: policy, audit, and identity and cost. Controls make it safe to try; the next question is how you will know it worked. (75 seconds; skip at the 0:30 checkpoint)</aside>
+</section>

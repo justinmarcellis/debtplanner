@@ -1,0 +1,50 @@
+[
+  {
+    "id": "CLM-500",
+    "claim": "FRED (Federal Reserve Economic Data) is a public database run by the Federal Reserve Bank of St. Louis; series can be downloaded as CSV without an API key.",
+    "category": "fred-data",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "FRED, Federal Reserve Bank of St. Louis",
+        "url": "https://fred.stlouisfed.org/",
+        "publisher": "Federal Reserve Bank of St. Louis (FRED)",
+        "excerpt": "fredgraph.csv?id=<SERIES> returned HTTP 200 without a key"
+      }
+    ],
+    "accessed": "2026-10-20",
+    "notes": "Verified by downloading the series CSV on 2026-10-20 (demo/macro-risk/data/raw)."
+  },
+  {
+    "id": "CLM-501",
+    "claim": "FRED series UNRATE (unemployment rate, BLS) has no October 2025 observation in the October 2026 download; the adjacent months are present.",
+    "category": "fred-data",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "FRED, Federal Reserve Bank of St. Louis",
+        "url": "https://fred.stlouisfed.org/series/UNRATE",
+        "publisher": "Federal Reserve Bank of St. Louis (FRED)",
+        "excerpt": "row 2025-10-01 is blank; 2025-11-01 is 4.5"
+      }
+    ],
+    "accessed": "2026-10-20",
+    "notes": "Verified by downloading the series CSV on 2026-10-20 (demo/macro-risk/data/raw)."
+  },
+  {
+    "id": "CLM-502",
+    "claim": "The analysis uses core PCE prices (PCEPILFE, BEA), the CBO noncyclical rate of unemployment (NROU), the federal funds target (DFEDTAR, DFEDTARU, Federal Reserve Board) and VIX closes (VIXCLS, CBOE), all from FRED.",
+    "category": "fred-data",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "FRED, Federal Reserve Bank of St. Louis",
+        "url": "https://fred.stlouisfed.org/series/VIXCLS",
+        "publisher": "Federal Reserve Bank of St. Louis (FRED)",
+        "excerpt": "series downloaded 2026-10-20; see demo/macro-risk/data/README.md"
+      }
+    ],
+    "accessed": "2026-10-20",
+    "notes": "Verified by downloading the series CSV on 2026-10-20 (demo/macro-risk/data/raw)."
+  }
+]

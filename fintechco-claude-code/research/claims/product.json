@@ -1,0 +1,182 @@
+[
+  {
+    "id": "CLM-001",
+    "claim": "As of October 2026, Anthropic describes Claude Code as an agentic coding tool that reads your codebase, edits files, runs commands, and integrates with your development tools.",
+    "category": "product",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Claude Code overview",
+        "url": "https://code.claude.com/docs/en/overview",
+        "publisher": "Anthropic (Claude Code docs)",
+        "excerpt": "Claude Code is an agentic coding tool that reads your codebase, edits files, runs commands, and integrates with your development tools."
+      }
+    ],
+    "accessed": "2026-10-20"
+  },
+  {
+    "id": "CLM-002",
+    "claim": "Claude Code runs in the terminal, in IDE extensions (VS Code, and JetBrains IDEs such as IntelliJ IDEA and PyCharm), in a desktop app and on the web; each surface uses the same engine, so a repository's CLAUDE.md files, settings and MCP servers work across all of them.",
+    "category": "product",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Claude Code overview",
+        "url": "https://code.claude.com/docs/en/overview",
+        "publisher": "Anthropic (Claude Code docs)",
+        "excerpt": "Each surface connects to the same underlying Claude Code engine, so your repo's CLAUDE.md files, settings, and MCP servers work across all of them."
+      }
+    ],
+    "accessed": "2026-10-20"
+  },
+  {
+    "id": "CLM-003",
+    "claim": "For bugs and features, Claude Code plans the approach, writes code across multiple files and verifies it works; for a bug it traces the issue through the codebase to the root cause.",
+    "category": "product",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Claude Code overview",
+        "url": "https://code.claude.com/docs/en/overview",
+        "publisher": "Anthropic (Claude Code docs)",
+        "excerpt": "Claude Code plans the approach, writes the code across multiple files, and verifies it works."
+      }
+    ],
+    "accessed": "2026-10-20"
+  },
+  {
+    "id": "CLM-004",
+    "claim": "Claude Code works directly with git (stages changes, writes commit messages, creates branches, opens pull requests) and can run in CI through GitHub Actions or GitLab CI/CD to automate code review and issue triage.",
+    "category": "product",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Claude Code overview",
+        "url": "https://code.claude.com/docs/en/overview",
+        "publisher": "Anthropic (Claude Code docs)",
+        "excerpt": "In CI, you can automate code review and issue triage with GitHub Actions or GitLab CI/CD."
+      }
+    ],
+    "accessed": "2026-10-20"
+  },
+  {
+    "id": "CLM-005",
+    "claim": "Claude Code is scriptable: `claude -p` runs it non-interactively, so it can take piped logs, run in CI, or chain with other tools.",
+    "category": "product",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Claude Code overview",
+        "url": "https://code.claude.com/docs/en/overview",
+        "publisher": "Anthropic (Claude Code docs)",
+        "excerpt": "Claude Code is composable and follows the Unix philosophy. Pipe logs into it, run it in CI, or chain it with other tools."
+      }
+    ],
+    "accessed": "2026-10-20"
+  },
+  {
+    "id": "CLM-006",
+    "claim": "Claude Code connects to external tools and data through the Model Context Protocol (MCP), an open standard (for example design docs in Google Drive, Jira tickets, or custom tooling).",
+    "category": "product",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Claude Code overview",
+        "url": "https://code.claude.com/docs/en/overview",
+        "publisher": "Anthropic (Claude Code docs)",
+        "excerpt": "The Model Context Protocol (MCP) is an open standard for connecting AI tools to external data sources."
+      }
+    ],
+    "accessed": "2026-10-20"
+  },
+  {
+    "id": "CLM-007",
+    "claim": "Teams customize Claude Code with CLAUDE.md (project instructions read at the start of every session), skills (shareable repeatable workflows such as /review-pr) and hooks (commands that run before or after Claude Code actions).",
+    "category": "product",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Claude Code overview",
+        "url": "https://code.claude.com/docs/en/overview",
+        "publisher": "Anthropic (Claude Code docs)",
+        "excerpt": "CLAUDE.md is a markdown file you add to your project root that Claude Code reads at the start of every session."
+      }
+    ],
+    "accessed": "2026-10-20"
+  },
+  {
+    "id": "CLM-008",
+    "claim": "Claude Code can spawn multiple agents (subagents) that work on different parts of a task in parallel under a lead agent, and the Agent SDK lets teams build their own agents on Claude Code's tools and permissions.",
+    "category": "product",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Claude Code overview",
+        "url": "https://code.claude.com/docs/en/overview",
+        "publisher": "Anthropic (Claude Code docs)",
+        "excerpt": "Spawn multiple Claude Code agents that work on different parts of a task simultaneously. A lead agent coordinates the work."
+      }
+    ],
+    "accessed": "2026-10-20"
+  },
+  {
+    "id": "CLM-009",
+    "claim": "The terminal CLI, VS Code and JetBrains surfaces support third-party providers (Amazon Bedrock, Google Cloud, Microsoft Foundry), so they can run on cloud-provider credentials.",
+    "category": "deployment",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Claude Code overview",
+        "url": "https://code.claude.com/docs/en/overview",
+        "publisher": "Anthropic (Claude Code docs)",
+        "excerpt": "The Terminal CLI, VS Code, and JetBrains also support third-party providers."
+      }
+    ],
+    "accessed": "2026-10-20"
+  },
+  {
+    "id": "CLM-010",
+    "claim": "A PreToolUse hook receives the tool name and input as JSON on stdin and can block the call by exiting with code 2 (its stderr is returned to Claude) or by returning a permissionDecision of deny.",
+    "category": "product",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Hooks reference",
+        "url": "https://code.claude.com/docs/en/hooks",
+        "publisher": "Anthropic (Claude Code docs)",
+        "excerpt": "Exit code 2 blocks the call... permissionDecision accepts allow, deny, ask, or defer."
+      }
+    ],
+    "accessed": "2026-10-20"
+  },
+  {
+    "id": "CLM-011",
+    "claim": "Project permission `allow` rules in a committed .claude/settings.json apply only after each developer trusts the folder, while `deny` and `ask` rules apply right away; OpenTelemetry exporter variables do not take effect from a repository file.",
+    "category": "security",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Settings files and precedence",
+        "url": "https://code.claude.com/docs/en/settings",
+        "publisher": "Anthropic (Claude Code docs)",
+        "excerpt": "permissions.allow rules... apply only after each teammate trusts the folder... deny and ask rules apply right away."
+      }
+    ],
+    "accessed": "2026-10-20"
+  },
+  {
+    "id": "CLM-012",
+    "claim": "Claude Code installs on macOS, Linux and WSL with `curl -fsSL https://claude.ai/install.sh | bash`, and native installations update automatically in the background.",
+    "category": "product",
+    "status": "verified",
+    "sources": [
+      {
+        "title": "Claude Code overview",
+        "url": "https://code.claude.com/docs/en/overview",
+        "publisher": "Anthropic (Claude Code docs)",
+        "excerpt": "Native installations automatically update in the background to keep you on the latest version."
+      }
+    ],
+    "accessed": "2026-10-20"
+  }
+]

@@ -13,7 +13,7 @@ Advisor, not seller (ADR-005). Plain text is from `brief/facts.json` (A1); **Typ
 | Goals | Team productivity, new products, one agentic tool company-wide within months. Assumption: a choice they can defend to auditors | The same priorities. Assumption: a measured win that survives the CTO's review |
 | Fears | Typical: code leaving the perimeter; unapproved agent actions; untraceable changes; adopting before peers prove it | Assumption: a stall in security review; a pilot without baselines; engineers led on a dotted line never adopt |
 | Must hear | "You decide where it runs, what it touches and what it records, and your security team tests that before any real code." | "You'll measure this on your own teams, against your own baselines, and leave equipped to carry it internally." |
-| Proof needed | Controls live (denied read, blocked write, audit log); policy users cannot override [CLM-659]; model calls through their own AWS or Google Cloud account [CLM-686] [CLM-687]; [CLM-?: named regulated-industry Claude Code adopters, exactly as published] | ROI with stated assumptions (D5); evaluation plan with starter use cases and decision gate (D6); their teams' stacks in the demo |
+| Proof needed | Controls live (denied read, blocked write, audit log); policy users cannot override [CLM-659]; model calls through their own AWS or Google Cloud account [CLM-686] [CLM-687]; we do not cite named adopters in the room, and the follow-up kit lists published customer statements: Anthropic's financial-services page carries statements from named firms, including one attributed to Citi about choosing Claude for its developer platform, and we describe no firm's deployment size or results [CLM-631] | ROI with stated assumptions (D5); evaluation plan with starter use cases and decision gate (D6); their teams' stacks in the demo |
 | Engage | Peer to peer, technical, brief; concede risk first. Ask them first. Hand over in Act 1 (they pick a rehearsed block to see) and at 0:26: "What would your security team test first?" (top concern) | Warm, practical ally, never two against the CTO. Ask them second. Hand over at 0:34 (cohort, metrics owner); at 0:37 they restate next steps (practice for selling internally) |
 
 **Signals to watch**
@@ -49,13 +49,13 @@ Advisor, not seller (ADR-005). Plain text is from `brief/facts.json` (A1); **Typ
 ## 3. Win themes
 
 ### Win theme 1: finished tasks, measured on your work
-Team productivity. It plans, edits, runs tests and checks results [CLM-694]; the gain is proved on FinTechCo baselines. Proof: [CLM-?: published Claude Code productivity result with method and sample, exactly as published].
+Team productivity. It plans, edits, runs tests and checks results [CLM-694]; the gain is proved on FinTechCo baselines. Proof: we quote no productivity percentage; the evidence on AI coding productivity is mixed [CLM-666], which is why we measure on your work.
 
 ### Win theme 2: new products sooner, across all three teams
-Shipping new products. One tool for payments and mobile code, fraud and credit-scoring analysis, incident triage. Proof: [CLM-?: named financial-services Claude Code customer outcome on delivery speed, exactly as published].
+Shipping new products. One tool for payments and mobile code, fraud and credit-scoring analysis, incident triage. Proof: we cite no customer outcome on delivery speed; the pilot measures it on your own products (MET-12 roadmap throughput, MET-13 time to first release of a new product).
 
 ### Win theme 3: safe control, in your own cloud
-Safe control: central policy [CLM-659], blocking hooks, audit trail, Amazon Bedrock or Vertex AI deployment [CLM-686] [CLM-687]. Proof: [CLM-?: Anthropic commercial terms on training and retention of Claude Code inputs, as of October 2026].
+Safe control: central policy [CLM-659], blocking hooks, audit trail, Amazon Bedrock or Vertex AI deployment [CLM-686] [CLM-687]. Proof: as of October 2026, Anthropic's Commercial Terms say it may not train models on Customer Content [CLM-600]; standard retention for Claude Code on commercial plans is 30 days, and zero data retention is available to qualified Enterprise accounts [CLM-602].
 
 ## 4. Risks to the meeting
 
@@ -101,7 +101,7 @@ Everything else in this file (goals beyond the priorities, fears, likely reactio
 - Why they matter: they own the risk decision; without the security review (ask 1) nothing else moves. Assumption: they also influence the budget for the tool.
 - What a good meeting looks like to them (Assumption): fewer slides, controls seen working, honest limits, a plan their security team leads.
 - Words to avoid: "secure by default", "compliant", "proven at banks" (unless a verified claim says exactly that), any productivity percentage presented as theirs.
-- Depth to have ready (backup slides and D7): the data path for each deployment route (Anthropic API, Amazon Bedrock [CLM-686], Vertex AI [CLM-687]); managed settings precedence and lock-down keys [CLM-659] [CLM-677]; hooks as deterministic checks [CLM-694]; telemetry export [CLM-680]; [CLM-?: data retention periods and zero-data-retention availability for Claude Code, as of October 2026]; [CLM-?: certifications exactly as listed on Anthropic's Trust Center].
+- Depth to have ready (backup slides and D7): the data path for each deployment route (Anthropic API, Amazon Bedrock [CLM-686], Vertex AI [CLM-687]); managed settings precedence and lock-down keys [CLM-659] [CLM-677]; hooks as deterministic checks [CLM-694]; telemetry export [CLM-680]; data retention periods and zero-data-retention availability for Claude Code, as of October 2026 [CLM-602] [CLM-603]; certifications as listed in Anthropic's help center, dated March 16, 2026 (SOC 2 Type I and Type II, ISO 27001:2022, ISO/IEC 42001:2023 and a HIPAA-ready configuration), with the reports available through the Trust Center for FinTechCo's team to request and read for scope [CLM-618].
 - If they ask for references: offer to ask Anthropic's account team whether a reference conversation is possible; never promise one.
 
 **Head of Digital Transformation.**
@@ -112,10 +112,10 @@ Everything else in this file (goals beyond the priorities, fears, likely reactio
 
 **Absent stakeholders, depth.**
 - CISO: typically wants the threat model, the deployment data flow and the list of enforced controls before a working session. Bring D7 and the governance close from the demo (managed settings, hooks, audit log).
-- Risk and compliance: typically asks what evidence an auditor would see for an AI-assisted change. Answer with controls and commit attribution [CLM-664]; their team decides regulatory fit. Any named regulation stays a placeholder: [CLM-?: which US financial regulations and supervisory guidance address AI-assisted software changes, from primary sources].
+- Risk and compliance: typically asks what evidence an auditor would see for an AI-assisted change. Answer with controls and commit attribution [CLM-664]; their team decides regulatory fit. We name no specific regulation or supervisory guidance in the room; their team maps those requirements.
 - Model risk: typical model-governance practice validates model changes before production. Pilot rule: data-science starter use cases avoid production fraud and credit-scoring models unless model risk has signed off.
 - Engineering managers: the objection and Q&A bank (sibling strategy ticket) holds answers on skills and review load; the use-case catalog (sibling strategy ticket) names starter use cases per team.
-- Procurement and finance: list prices only, with date and link; FinTechCo pricing is "to be quoted" (ADR-006). Spend controls by deployment route [CLM-685]; [CLM-?: Claude Code list prices for Team and Enterprise seats, with date and link].
+- Procurement and finance: we state no list prices; FinTechCo pricing is "to be quoted" (ADR-006). Spend controls by deployment route [CLM-685].
 
 ### A3. Further risks
 
@@ -132,14 +132,11 @@ Everything else in this file (goals beyond the priorities, fears, likely reactio
 
 "Here is what I'd suggest as next steps. First, [CTO], would you open a security and compliance review with us? We'll send the review package and meet your security team within a week. Second, [Head of Digital Transformation], could you name a pilot cohort across all three teams and someone to own the baselines? Third, can we agree a kickoff date today? And [CTO], your top concern was ___: who should own it?"
 
-### A5. Open placeholders in this file
-- [CLM-?: named regulated-industry Claude Code adopters, exactly as published]
-- [CLM-?: published Claude Code productivity result with method and sample, exactly as published]
-- [CLM-?: named financial-services Claude Code customer outcome on delivery speed, exactly as published]
-- [CLM-?: Anthropic commercial terms on training and retention of Claude Code inputs, as of October 2026]
-- [CLM-?: data retention periods and zero-data-retention availability for Claude Code, as of October 2026]
-- [CLM-?: certifications exactly as listed on Anthropic's Trust Center]
-- [CLM-?: which US financial regulations and supervisory guidance address AI-assisted software changes, from primary sources]
-- [CLM-?: Claude Code list prices for Team and Enterprise seats, with date and link]
+### A5. Items this file deliberately does not state
+- Named adopters and customer outcomes: not cited in the room; the follow-up kit (D8) lists published customer statements [CLM-631].
+- Productivity figures: none quoted; the evidence is mixed [CLM-666] and results come from FinTechCo's own baselines.
+- Training, retention and certifications: stated only as in [CLM-600], [CLM-602], [CLM-603] and the partial wording of [CLM-618]; FinTechCo's team reads the reports.
+- Named US financial regulations and supervisory guidance: not named; FinTechCo's compliance team maps them.
+- Claude Code list prices: not stated; FinTechCo pricing is "to be quoted".
 
-Cited verified or partial claims (from `research/claims/adoption-*.json`): CLM-659, CLM-664, CLM-666, CLM-677, CLM-680, CLM-685, CLM-686, CLM-687, CLM-691, CLM-692, CLM-694, CLM-697. Statements on data handling, deployment and controls need Trust review before release (ADR-003 section 4.2).
+Cited verified or partial claims (from `research/claims/adoption-*.json` and `research/claims/strategy.json`): CLM-600, CLM-602, CLM-603, CLM-618, CLM-631, CLM-659, CLM-664, CLM-666, CLM-677, CLM-680, CLM-685, CLM-686, CLM-687, CLM-691, CLM-692, CLM-694, CLM-697. Statements on data handling, deployment and controls need Trust review before release (ADR-003 section 4.2).

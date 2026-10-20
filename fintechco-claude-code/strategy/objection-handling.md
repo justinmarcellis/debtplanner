@@ -1,12 +1,12 @@
 # Objection and Q&A bank: Claude Code for FinTechCo
 
-Ticket S1-STR-02 · Deliverables D4 and D10 · Owner ic-strategy-objection-handler · Product facts as of October 2026 · Sprint 1 draft: placeholders are resolved in Sprint 2, and Trust reviews every tagged entry before release (ADR-003 section 4.2).
+Ticket S1-STR-02 · Deliverables D4 and D10 · Owner ic-strategy-objection-handler · Product facts as of October 2026 · Sprint 2 draft: unsourced statements are removed or sourced, and Trust reviews every tagged entry before release (ADR-003 section 4.2).
 
 ## Summary in three lines
 
 - Thirty-two objections in eight groups, each with a sayable answer of 65 words or fewer (about 28 seconds at 140 words per minute), depth if pushed, sourced claims and one bridge back to an ADR-005 ask.
 - Every answer concedes what is true first, never promises a productivity number, never says Claude Code makes FinTechCo compliant, and treats FinTechCo's compliance and security teams as the deciders of fit.
-- Every external fact carries a [CLM-6xx] id from `research/claims/strategy.json`; anything not yet verifiable is a specific `[CLM-?: ...]` placeholder, listed at the end for Research and Trust.
+- Every external fact carries a [CLM-6xx] id from `research/claims/strategy.json`; anything not verifiable is not stated, and the items deliberately left to written follow-up or to FinTechCo's own teams are listed at the end for Research and Trust.
 
 ## Index of objections
 
@@ -52,7 +52,7 @@ Scan by short form during the meeting, then jump to the entry. Asker is the pers
 Ranked by how much a wrong answer would hurt the meeting. Rehearse these aloud until each Answer takes under 30 seconds without notes.
 
 1. **O-06 Just say it is compliant.** One word of overclaim ("compliant", "certified for your use") ends the CTO's trust and breaches ADR-003 and ADR-006. Say what Anthropic attests and what controls exist; the compliance team decides fit.
-2. **O-01 Code leaves our perimeter.** A wrong statement about where data goes is a deployment-boundary error. Know the three routes and the one placeholder (Vertex retention terms for Claude).
+2. **O-01 Code leaves our perimeter.** A wrong statement about where data goes is a deployment-boundary error. Know the three routes and the one thing we do not state (Vertex retention terms for Claude).
 3. **O-02 You'll train on our code.** Training and retention wording must be exact; know the consumer-account exception and the opt-in program.
 4. **O-04 Prompt injection and exfiltration.** Never say it is solved. Concede it, name the layered controls and their documented limits (the sandbox covers shell commands only).
 5. **O-14 METR says 19% slower.** Dismissing or cherry-picking the study destroys credibility. Know that METR calls its own 2025 results out of date and its 2026 data unreliable.
@@ -69,7 +69,7 @@ Rules for every answer:
 - No productivity number is ever promised. Published results are mixed; we measure on FinTechCo's own work.
 - Compliance wording is always "Anthropic attests X; Claude Code provides these controls; your compliance team decides fit".
 - No superlatives and no statement about a competitor beyond its own dated documentation.
-- Product facts are "as of October 2026". Partial claims are spoken in their safe wording from the register. A `[CLM-?: ...]` placeholder is never spoken as fact; say "I will get that in writing for your review".
+- Product facts are "as of October 2026". Partial claims are spoken in their safe wording from the register. Anything without a claim id is never spoken as fact; say "I will get that in writing for your review".
 - Facts about FinTechCo come only from the brief: 120 software engineers, 40 data scientists, 20 SREs, AWS and GCP, no agentic coding tools today, evaluating several. Anything else about them is a question to ask, not a statement.
 
 ---
@@ -84,9 +84,9 @@ Rules for every answer:
   - What leaves the machine: your prompts, the file contents and tool output Claude Code puts into context, and the model's replies, over TLS 1.2 or higher; the agent itself runs locally [CLM-604].
   - Three routes: Anthropic's own platform, Amazon Bedrock, or Google Cloud's Agent Platform (formerly Vertex AI), each with your credentials and IAM; the docs recommend a dedicated AWS account or GCP project for Claude Code [CLM-614].
   - On Bedrock, AWS says model providers have no access to Bedrock's deployment accounts, logs, or customer prompts and completions; retention is set per Region, and a few newer models require AWS-side retention for review, so check the specific model [CLM-615].
-  - For Vertex I will not state Claude's retention or logging terms myself: [CLM-?: Google Cloud prompt-retention, logging and abuse-monitoring terms that apply to Claude as a partner model on its Agent Platform, from Google Cloud or Anthropic documentation].
+  - For Vertex I will not state Claude's retention or logging terms myself; I will get Google Cloud's written terms for Claude as a partner model for your review.
   - Where more lives: D7 security brief (data-flow diagram per route) and the data handling backup slide.
-- **Claims:** [CLM-614] deployment routes; [CLM-604] encryption; [CLM-615] Bedrock data handling (partial); [CLM-?: Google Cloud prompt-retention, logging and abuse-monitoring terms for Claude as a partner model on Vertex]
+- **Claims:** [CLM-614] deployment routes; [CLM-604] encryption; [CLM-615] Bedrock data handling (partial)
 - **Bridge:** Let's put exactly this in front of your security team: I send the review package and we hold a working session within a week.
 
 ### O-02. "How do I know you won't train your models on our code and prompts?"
@@ -110,9 +110,9 @@ Rules for every answer:
   - Zero data retention: prompts and responses are processed in real time and not stored after the response, except where needed to comply with law or combat misuse; flagged sessions may be kept up to 2 years [CLM-603].
   - It is per organization, needs enablement by Anthropic after an eligibility review, covers Anthropic's direct platform only, and does not cover MCP servers or other third-party integrations [CLM-603].
   - It switches off features that need storage: cloud sessions, Remote Control and /feedback; the docs also list newer models that require retention by default and so are not available to ZDR organizations [CLM-603].
-  - On Bedrock the retention mode is yours per Region [CLM-615]; on Vertex: [CLM-?: Google Cloud retention terms for Claude as a partner model]. Personnel access: [CLM-?: Anthropic's documented controls on employee access to customer data, from the Trust Center or privacy documentation].
+  - On Bedrock the retention mode is yours per Region [CLM-615]; on Vertex I will get Google Cloud's written terms for Claude as a partner model. Personnel access inside Anthropic: I will get the documented controls in writing rather than state them from memory.
   - Where more lives: D7 (retention options table) and the data handling backup slide.
-- **Claims:** [CLM-602] retention; [CLM-603] ZDR scope; [CLM-615] Bedrock retention (partial); [CLM-?: Anthropic personnel access controls for customer data]; [CLM-?: Google Cloud retention terms for Claude on Vertex]
+- **Claims:** [CLM-602] retention; [CLM-603] ZDR scope; [CLM-615] Bedrock retention (partial)
 - **Bridge:** Let's make retention a named line item in the security review: standard 30 days or zero retention, your team's call.
 
 ### O-04. "A poisoned README, web page or MCP server could make it exfiltrate our data. Prompt injection is not solved."
@@ -136,9 +136,9 @@ Rules for every answer:
   - Default exposure: file reads inside the working directory do not prompt, and sandboxed commands can read most of the machine, including credential files, unless denyRead or credentials settings say otherwise [CLM-606][CLM-607].
   - Controls: permission deny rules (deny is evaluated first and a managed deny cannot be overridden) [CLM-606][CLM-609], plus a PreToolUse hook that blocks reads of named paths [CLM-611]. Bash deny rules match command text and are not a security boundary, so pair them with the sandbox [CLM-606].
   - What it reads can persist: local transcripts are plaintext for 30 days by default (cleanupPeriodDays changes that) [CLM-602]; OpenTelemetry prompt content is redacted unless you turn it on [CLM-612].
-  - Card data and secrets in repositories: [CLM-?: PCI DSS requirements on storing cardholder data and on development environments and tools that can reach it, for FinTechCo's compliance team to confirm].
+  - Card data and secrets in repositories: which PCI DSS requirements apply to storing cardholder data and to development tools that can reach it is for FinTechCo's compliance team to confirm; I am not stating them.
   - Where more lives: D7 (secrets and card-data handling, threat model).
-- **Claims:** [CLM-606] permissions; [CLM-607] sandbox; [CLM-609] managed settings; [CLM-611] hooks; [CLM-602] local transcripts; [CLM-612] OpenTelemetry redaction; [CLM-?: PCI DSS requirements on cardholder data in development environments and tools]
+- **Claims:** [CLM-606] permissions; [CLM-607] sandbox; [CLM-609] managed settings; [CLM-611] hooks; [CLM-602] local transcripts; [CLM-612] OpenTelemetry redaction
 - **Bridge:** Step one of the pilot setup is a secrets scan and a deny-list, owned by your security team; let's put that on the review agenda.
 
 ## 2. Compliance and regulation
@@ -150,10 +150,10 @@ Rules for every answer:
 - **If pushed:**
   - Anthropic's help center (March 16, 2026) lists, for its commercial products: a HIPAA-ready configuration with a BAA, ISO 27001:2022, ISO/IEC 42001:2023, and SOC 2 Type I and Type II; reports are available through the Trust Center. I have not read the reports, and your team should check scope and period [CLM-618].
   - Controls Claude Code provides: permission rules and modes [CLM-606], optional sandbox [CLM-607], managed settings [CLM-609], hooks [CLM-611] and OpenTelemetry export [CLM-612]. These are controls to map, not a conclusion.
-  - SOX: [CLM-?: SOX requirements on IT general controls and change management relevant to developer tooling, for FinTechCo's audit team to confirm]. PCI DSS: [CLM-?: PCI DSS requirements relevant to developer tools and systems that can reach cardholder data]. GLBA: [CLM-?: GLBA Safeguards Rule requirements on service providers and customer information].
+  - SOX, PCI DSS and GLBA: I am not stating specific requirements. Which SOX change-management and IT general controls, PCI DSS requirements for tools that can reach cardholder data, and GLBA service-provider requirements apply to developer tooling is for FinTechCo's audit and compliance teams to confirm.
   - Open the live Trust Center before the meeting; its listing did not render for my tooling, so reconcile it with the help-center wording [CLM-618].
   - Where more lives: D7 (control-mapping worksheet for your compliance team) and D10 (claims register).
-- **Claims:** [CLM-618] attestations (partial); [CLM-609] managed settings; [CLM-606]; [CLM-607]; [CLM-611]; [CLM-612]; [CLM-?: SOX ITGC and change-management requirements for developer tooling]; [CLM-?: PCI DSS requirements for developer tools near cardholder data]; [CLM-?: GLBA Safeguards Rule service-provider requirements]
+- **Claims:** [CLM-618] attestations (partial); [CLM-609] managed settings; [CLM-606]; [CLM-607]; [CLM-611]; [CLM-612]
 - **Bridge:** Name the person on your side who runs the fit assessment; I'll bring the control inventory to the working session.
 
 ### O-07. "What audit trail will my auditors get: who asked for what, what it ran, what changed?"
@@ -164,9 +164,9 @@ Rules for every answer:
   - OpenTelemetry is opt-in; events include user_prompt, tool_result, api_request and tool_decision; prompt text stays redacted unless OTEL_LOG_USER_PROMPTS is set, and tool details need OTEL_LOG_TOOL_DETAILS; administrators set it in managed settings so developers cannot redirect it [CLM-612]. Richer logs capture sensitive content, so decide that with security and privacy.
   - Gateway route: a self-hosted Claude apps gateway records a per-request audit log with identity-provider identity; on Bedrock, AWS recommends AWS CloudTrail for API and user activity [CLM-613].
   - Git trail: commit trailers and pull-request lines can attribute changes, but whoever controls the setting can hide them, so lean on your branch protection and review records [CLM-632].
-  - Anthropic-side feeds: [CLM-?: whether Anthropic's Compliance API or audit logs cover Claude Code activity, which plans include them, and what local CLI sessions are excluded, from Anthropic's Compliance API documentation].
-  - SOX evidence: [CLM-?: what evidence SOX change-management and access testing expects for developer tooling, for FinTechCo's internal audit to confirm]. Where more lives: D7 (logging architecture).
-- **Claims:** [CLM-612] OpenTelemetry; [CLM-611] hooks; [CLM-613] gateway and CloudTrail; [CLM-632] attribution; [CLM-?: Compliance API and audit-log coverage of Claude Code]; [CLM-?: SOX evidence expectations for developer tooling]
+  - Anthropic-side feeds: I do not know whether Anthropic's Compliance API or audit logs cover Claude Code activity, which plans include them, or what local CLI sessions are excluded; I will confirm that in writing.
+  - SOX evidence: what evidence change-management and access testing expects for developer tooling is for FinTechCo's internal audit to confirm; I am not stating it. Where more lives: D7 (logging architecture).
+- **Claims:** [CLM-612] OpenTelemetry; [CLM-611] hooks; [CLM-613] gateway and CloudTrail; [CLM-632] attribution
 - **Bridge:** Ask your internal audit lead what evidence they would want; that shapes the pilot's logging design and goes in the review package.
 
 ### O-08. "Our regulators expect model risk management. Where does an AI coding tool fit?"
@@ -176,10 +176,10 @@ Rules for every answer:
 - **If pushed:**
   - Two separate questions: whether the coding tool itself is a model under your policy, and the fraud and credit-scoring models your data scientists build with it. Those models stay subject to your existing development and independent validation, whoever wrote the code.
   - Evidence the pilot can produce: plan-then-approve, tests as verification targets, human review, and change attribution [CLM-633][CLM-632].
-  - Regulatory text: [CLM-?: text of US federal banking model risk management guidance on what counts as a model and on development and validation, and whether it covers developer-assistance tools, for FinTechCo's risk and compliance teams to confirm].
+  - Regulatory text: which US federal banking model risk management guidance applies, what it counts as a model, and whether it covers developer-assistance tools is for FinTechCo's risk and compliance teams to confirm; I am not stating it.
   - For the data science team, add reproducibility: notebooks and training code written with assistance get the same lineage and review as hand-written ones (policy to agree with the risk function).
   - Where more lives: D7 (control mapping) and D6 (pilot guardrails for the data science cohort).
-- **Claims:** [CLM-632] attribution and review; [CLM-633] verification practices; [CLM-?: US federal banking model risk management guidance and its application to developer tools]
+- **Claims:** [CLM-632] attribution and review; [CLM-633] verification practices
 - **Bridge:** Invite someone from model risk to the security and compliance working session so the classification question has an owner.
 
 ### O-09. "When AI-written code breaks something or violates policy, who is accountable? And who owns the IP?"
@@ -190,9 +190,9 @@ Rules for every answer:
   - Operating model: the same code owners, branch protection, required reviews and CI gates apply, so an AI-assisted change is a normal pull request with a named human author. Nothing merges on the tool's authority.
   - Traceability: commit trailers and pull-request attribution are configurable and can be hidden, so tie accountability to your own pull-request template and ticket link rather than the trailer alone [CLM-632].
   - IP: Commercial Terms sections B (ownership) and K (defense), with exclusions for your modifications, combinations with other technology, your inputs, knowing infringement, patents and trademarks; negotiated terms may differ [CLM-601].
-  - Open-source licence exposure in generated code: [CLM-?: Anthropic documentation on licence-compliance risk of generated code and any code-referencing or duplicate-detection feature in Claude Code].
+  - Open-source licence exposure in generated code: I do not have sourced guidance on this, so I will ask Anthropic for its written position for your counsel.
   - Where more lives: D7 (accountability model) and D10 (the terms as sourced).
-- **Claims:** [CLM-632] attribution and user review; [CLM-601] ownership and IP defense (partial); [CLM-?: licence-compliance risk guidance for generated code]
+- **Claims:** [CLM-632] attribution and user review; [CLM-601] ownership and IP defense (partial)
 - **Bridge:** Add accountability and IP terms to the review package, and let's agree the pull-request template the pilot cohort will use.
 
 ## 3. Quality and risk of AI-written code
@@ -276,12 +276,12 @@ Rules for every answer:
 - **Asker:** CTO
 - **Answer:** I'll commit to a method, not a number. We baseline your cycle time, review time and defect rates now, run the pilot, and compute ROI from your measurements, with assumptions and sensitivity shown so you see what has to be true for payback. Cost inputs start from Anthropic's published enterprise averages [CLM-619]; your price is to be quoted.
 - **If pushed:**
-  - Benefit side: hours saved times loaded cost times a realization rate, plus time-to-market effects on your priorities (team productivity, shipping new products). Loaded engineering cost: [CLM-?: loaded annual cost of a US software engineer from a named labor-statistics or salary source, for the value team to set as an assumption].
+  - Benefit side: hours saved times loaded cost times a realization rate, plus time-to-market effects on your priorities (team productivity, shipping new products). Loaded engineering cost: set by the value team as an assumption from FinTechCo's own finance data, not from an outside salary figure.
   - Cost side: licences or tokens, enablement time, review overhead. Anchor: about $150 to $250 per developer per month on average, below $30 per active day for 90% of users, as Anthropic reports, not as a forecast for you [CLM-619].
   - Sensitivity: the calculator shows the break-even share of engineering time that must be saved, and how payback moves if realization is half what you hoped.
   - Lagging outcomes to watch: lead time for payments and mobile features, incident time to resolve, change failure rate [CLM-624].
   - Where more lives: D5 (ROI model and interactive calculator).
-- **Claims:** [CLM-619] published cost averages; [CLM-624] DORA (partial); [CLM-?: loaded annual cost of a US software engineer from a named source]
+- **Claims:** [CLM-619] published cost averages; [CLM-624] DORA (partial)
 - **Bridge:** Pick a date for baselines and a metrics owner; the ROI model runs on those inputs.
 
 ### O-17. "My developers will say it's great. How do I know that's real and not just feel-good?"
@@ -317,9 +317,9 @@ Rules for every answer:
   - Arithmetic only, not a forecast: 180 people at $150 to $250 would be $27,000 to $45,000 a month if every one were an average user [CLM-619].
   - Averages hide spread: heavy users, automation and multi-instance runs cost more, and the docs say costs vary widely [CLM-619]. Our assumption to test: SRE incident automation, data science notebooks and application development will each use it differently.
   - Seats versus tokens: Teams and Enterprise draw on per-seat allowances; Console and cloud routes bill per token [CLM-620].
-  - List prices and volume terms: [CLM-?: current list price of Claude for Enterprise or Teams seats and any volume terms for about 180 users, to be quoted by Anthropic sales and dated].
+  - List prices and volume terms: I am not quoting any; Anthropic sales would give a dated quote for about 180 users.
   - Where more lives: D5 (ROI ranges and sensitivity) and D6 (seat waves across the four-month rollout).
-- **Claims:** [CLM-619] cost averages; [CLM-620] billing models; [CLM-?: current list price and volume terms for 180 seats]
+- **Claims:** [CLM-619] cost averages; [CLM-620] billing models
 - **Bridge:** Pilot cohort first, then a quote sized to the measured baseline; let's agree the kickoff date.
 
 ### O-20. "Seats, API, or through our own cloud: which billing model? We're cost-conscious, not cost-driven."
@@ -354,23 +354,23 @@ Rules for every answer:
 - **Answer:** I'd rather you decide on evidence than on my pitch. I expect Claude Code to do well on multi-step tasks in your repositories, but I can't show that until the same tasks run through every tool you're evaluating. So I'm proposing one protocol for all of them, with criteria set in advance.
 - **If pushed:**
   - What I would test as hypotheses, not claims: multi-file changes, test-and-fix loops, incident triage in shell, and the admin controls and deployment options in D7.
-  - No superlatives without a named, dated source: [CLM-?: independent, named and dated benchmark or study comparing agentic coding tools on realistic tasks, to be cited only if it exists].
+  - No superlatives and no outside benchmark cited: we have no sourced independent comparison of agentic coding tools to quote, so the evaluation produces FinTechCo's own evidence.
   - Fair protocol: per team, payments, mobile and banking infrastructure tasks for engineers, fraud and credit-scoring notebooks for data scientists, incidents for SREs; same time-box, blinded review where possible, shared success criteria.
   - Selection risk: people dropping out when forced to work without a tool distorted METR's 2026 data, so plan crossover and dropout handling up front [CLM-621].
   - Compare controls on the same checklist for every tool; ask each vendor for equivalents. Where more lives: D6 and D10 (battlecard).
-- **Claims:** [CLM-621] METR lessons (partial); [CLM-?: independent named and dated comparison of agentic coding tools]
+- **Claims:** [CLM-621] METR lessons (partial)
 - **Bridge:** Name the pilot cohort and I'll draft the shared task set with your engineering leads.
 
 ### O-23. "We're on AWS and GCP. Why not just use whatever coding assistant our cloud vendors ship?"
 - **Asker:** CTO
 - **Answer:** That's a legitimate option and belongs in the evaluation. Cloud-vendor assistants may fit your procurement and identity setup well. Claude Code can also run in those same clouds, through Bedrock or Vertex, on your IAM [CLM-614]. Judge both on tasks and controls; I won't characterize their products beyond their own documentation.
 - **If pushed:**
-  - Their capabilities, data handling and pricing: [CLM-?: current official descriptions of AWS's and Google Cloud's own coding assistants, covering capabilities, data handling and pricing, from their official documentation].
+  - Their capabilities, data handling and pricing: I will not characterize them beyond each provider's own current documentation; ask each provider for it and compare on the same grid.
   - Overlap: using Claude Code through Bedrock or Vertex puts model spend on your cloud account and under your cloud agreement [CLM-614][CLM-620].
   - Compare on the same grid: task completion, controls (managed policy, sandbox, audit), data boundary, cost, and developer adoption.
   - The goal is a single tool, so the decision gate picks one with evidence.
   - Where more lives: D10 (battlecard) and D6 (evaluation protocol).
-- **Claims:** [CLM-614] deployment routes; [CLM-620] cloud billing; [CLM-?: AWS and Google Cloud coding assistants, official capabilities, data handling and pricing]
+- **Claims:** [CLM-614] deployment routes; [CLM-620] cloud billing
 - **Bridge:** Let's include one cloud-native option in the evaluation protocol and agree the kickoff date.
 
 ### O-24. "I've read that Claude models are already available inside other assistants. So why would I need Claude Code?"
@@ -381,9 +381,9 @@ Rules for every answer:
   - The announcement: Claude and Codex as coding agents for Copilot Business and Pro, included in the subscription, in public preview, with an administrator enabling agents; status may have changed since [CLM-628].
   - What differs: where it runs, the permission model and admin controls [CLM-606][CLM-609], deployment through your Bedrock or Vertex accounts [CLM-614], MCP, hooks and what is logged [CLM-610][CLM-611][CLM-612].
   - A useful experiment: the same model family in different harnesses isolates the effect of the harness. Do not assume Claude Code wins; test it.
-  - Data terms depend on whom you contract with, so each route needs its own review: [CLM-?: GitHub's data-handling, retention and training terms for Claude models within Copilot, from GitHub's official documentation].
+  - Data terms depend on whom you contract with, so each route needs its own review; I am not stating GitHub's data-handling, retention or training terms, which come from GitHub's own documentation.
   - Where more lives: D10 (battlecard) and D7.
-- **Claims:** [CLM-628] GitHub announcement; [CLM-606]; [CLM-609]; [CLM-614]; [CLM-610]; [CLM-611]; [CLM-612]; [CLM-?: GitHub data-handling terms for Claude within Copilot]
+- **Claims:** [CLM-628] GitHub announcement; [CLM-606]; [CLM-609]; [CLM-614]; [CLM-610]; [CLM-611]; [CLM-612]
 - **Bridge:** Let's put the harness-versus-model comparison into the pilot design and agree who owns the evaluation scorecard.
 
 ## 7. Change management and skills
@@ -443,12 +443,12 @@ Rules for every answer:
 - **Asker:** CTO
 - **Answer:** Concentration risk is fair to price in. Your signed agreement governs terms and price, not today's web page, so protections belong in the contract. Technically, you reduce lock-in by building integrations on the open MCP standard [CLM-629] and by running through Bedrock or Vertex, under your existing cloud agreements [CLM-614].
 - **If pushed:**
-  - Contract protections to ask for: price protection, notice before model retirement, termination assistance, data deletion. Notice terms: [CLM-?: Anthropic's published model deprecation and notice commitments, from its model deprecations documentation].
+  - Contract protections to ask for: price protection, notice before model retirement, termination assistance, data deletion. Notice terms: I am not stating Anthropic's model deprecation or notice commitments here; ask for them in writing.
   - MCP: Anthropic announced on December 9, 2025 that it is donating MCP to the Linux Foundation's Agentic AI Foundation, co-founded with Block and OpenAI, committed to keeping it open-source and vendor-neutral. That makes your integrations portable, not Claude Code's own configuration [CLM-629].
   - Through Bedrock or Vertex, billing and IAM sit under your cloud agreements, and Anthropic's legal page says your existing commercial agreement applies to Claude Code usage there unless otherwise agreed [CLM-614].
   - Third-party risk: your vendor-risk process will want attestation reports and concentration analysis; Anthropic's list is in the help center and Trust Center [CLM-618].
   - Where more lives: D7 and D10 (claims register).
-- **Claims:** [CLM-629] MCP donation; [CLM-614] cloud routes and agreements; [CLM-618] attestations (partial); [CLM-?: Anthropic model deprecation and notice commitments]
+- **Claims:** [CLM-629] MCP donation; [CLM-614] cloud routes and agreements; [CLM-618] attestations (partial)
 - **Bridge:** Include your third-party risk team in the review package so concentration questions are answered with documents.
 
 ### O-30. "What happens when the service is down, or the model we depend on is retired mid-project?"
@@ -459,9 +459,9 @@ Rules for every answer:
   - The docs advise pinning for multi-user deployments, because aliases resolve to a built-in default that can lag the newest release or not yet be enabled in your account [CLM-630].
   - Behavior: unpinned sessions switch to an earlier version or a lower tier; a pinned model keeps its model and requests fail without a fallback chain; administrators can restrict models with availableModels and enforceAvailableModels [CLM-630].
   - Cloud routes: model availability varies by region and endpoint type, so test your regions and global endpoints before rollout [CLM-630].
-  - Uptime and status: [CLM-?: published service-level commitments and status history for Claude models from Anthropic, Amazon Bedrock and Google Cloud, from their official SLA and status pages].
+  - Uptime and status: I am not quoting service levels or status history; those are contract and status-page topics, and I will bring the written commitments from each provider.
   - Practice it: include an outage drill in the pilot with the SRE team. Where more lives: D7 (resilience) and D6.
-- **Claims:** [CLM-630] pinning and fallback; [CLM-?: service-level commitments and status history for Claude models on Anthropic, Bedrock and Vertex]
+- **Claims:** [CLM-630] pinning and fallback
 - **Bridge:** Let's schedule an outage drill with your SREs inside the pilot plan.
 
 ### O-31. "How do we exit? What do we lose if we change tools in a year?"
@@ -484,17 +484,17 @@ Rules for every answer:
 - **If pushed:**
   - Bedrock: AWS credential chain and SSO, IAM actions for model invocation, Guardrails through request headers, a dedicated account recommended; the WebSearch tool is not available on Bedrock [CLM-614].
   - Vertex (now Google Cloud's Agent Platform): Application Default Credentials, the aiplatform.user role, global, multi-region or regional endpoints, with model availability varying by endpoint [CLM-614][CLM-630].
-  - Data: on Bedrock, model providers have no access to logs, prompts or completions, and retention is per Region [CLM-615]; on Vertex: [CLM-?: Google Cloud retention and logging terms for Claude as a partner model]. Telemetry, error reports and /feedback are off by default on both [CLM-605]; encryption uses KMS or CMEK options [CLM-604].
+  - Data: on Bedrock, model providers have no access to logs, prompts or completions, and retention is per Region [CLM-615]; on Vertex I will bring Google Cloud's written terms for Claude as a partner model. Telemetry, error reports and /feedback are off by default on both [CLM-605]; encryption uses KMS or CMEK options [CLM-604].
   - Two clouds, one policy: managed settings by device management or file, or a gateway for remote delivery [CLM-609]. Zero data retention applies to Anthropic's direct platform only, so cloud routes follow the cloud provider's retention policy [CLM-603].
   - Where more lives: D7 (data-flow diagram per route) and the deployment backup slide.
-- **Claims:** [CLM-614] routes; [CLM-615] Bedrock data handling (partial); [CLM-605]; [CLM-604]; [CLM-609]; [CLM-603]; [CLM-630]; [CLM-620]; [CLM-?: Google Cloud retention and logging terms for Claude on Vertex]
+- **Claims:** [CLM-614] routes; [CLM-615] Bedrock data handling (partial); [CLM-605]; [CLM-604]; [CLM-609]; [CLM-603]; [CLM-630]; [CLM-620]
 - **Bridge:** Let the security working session choose the route; I'll bring the data-flow diagram for each.
 
 ---
 
-## Open placeholders for Research and Trust
+## Items deliberately left out, for Research and Trust
 
-Each is a specific item to source before release (ADR-006). None may be spoken as fact until resolved.
+No verified claim supports these, so the answers above do not state them (ADR-006). Each may be added only once Research registers a verified or partial claim; until then, say "I will get that in writing for your review".
 
 - Vertex: Google Cloud prompt-retention, logging and abuse-monitoring terms for Claude as a partner model (O-01, O-03, O-32). Recorded as unverified; Google's data-governance page does not address partner models.
 - Anthropic personnel access controls for customer data (O-03).

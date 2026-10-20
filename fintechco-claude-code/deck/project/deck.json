@@ -1,0 +1,24 @@
+{
+  "v": 4,
+  "createdOnFiles": { "v": 1, "at": "2026-10-20T19:30:00Z" },
+  "lists": "css",
+  "title": "Claude Code for FinTechCo",
+  "order": ["s01-cover", "s02-agenda", "s03-priorities", "s04-agent-loop", "s05-agents-autocomplete", "s06-extension-points", "s07-value", "s08-differentiators", "s09-fit-by-team", "s10-demo-plan", "s11-demo-recap", "s12-security-controls", "s13-deployment", "s14-measurement", "s15-roi", "s16-timeline", "s17-starters", "s18-next-steps", "s19-close", "a00-appendix", "a01-data-handling", "a02-controls-catalog", "a03-fair-comparison", "a04-cost", "a05-evidence", "a06-roi-assumptions", "a07-rollout-waves"],
+  "cover": "s01-cover",
+  "sections": {
+    "open": { "description": "What FinTechCo wants and the agenda for the 40 minutes", "start": "s01-cover" },
+    "how": { "description": "How Claude Code works, in one picture", "start": "s04-agent-loop" },
+    "why": { "description": "Why it helps FinTechCo and how to compare tools fairly", "start": "s07-value" },
+    "fit": { "description": "Fit for the three teams and the live demo", "start": "s09-fit-by-team" },
+    "control": { "description": "Security, governance and deployment in AWS and GCP", "start": "s12-security-controls" },
+    "measure": { "description": "Measuring impact and ROI", "start": "s14-measurement" },
+    "evaluate": { "description": "Evaluation plan, starter use cases and next steps", "start": "s16-timeline" },
+    "appendix": { "description": "Backup slides for questions", "start": "a00-appendix" }
+  },
+  "faces": {
+    "source-serif-4": { "family": "Source Serif 4", "href": "https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400..700&display=swap" },
+    "ibm-plex-sans": { "family": "IBM Plex Sans", "href": "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" },
+    "jetbrains-mono": { "family": "JetBrains Mono", "href": "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" }
+  },
+  "designSystems": []
+}
