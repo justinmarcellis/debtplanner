@@ -80,8 +80,8 @@ Transition: "Each team gets one act in the demo, which is next."
 > (Demo) Here it is on payments code, macro data and an incident, with your controls on.
 
 Beats
-1. s10-demo-plan sets up three acts and a governance close (14 minutes), then the presenter says "I'm switching to the terminal now." The fallback line, if a step stalls: "Here is this morning's run of the same prompt."
-2. Act 1, software engineers, 5 min, `payments-ledger`: a tour of an unfamiliar payments service; ticket PAY-1423 ("statements off by a cent") fixed test-first, `float` to `Decimal`, tests green, clean diff; Claude flags the pre-existing card-number logging line; the PCI hook blocks a write that would log a full card number; reading `.env` is denied by policy.
+1. s10-demo-plan sets up three acts and a governance close (14 minutes), then the presenter says "I'm switching to the terminal now." The fallback line, if a step stalls: "This morning's run, same prompt." Then play the matching transcript from `demo/fallback/`.
+2. Act 1, software engineers, 5 min, `payments-ledger`: a tour of an unfamiliar payments service; ticket PAY-1423 ("statements off by a cent") fixed test-first, `float` to `Decimal`, tests green, clean diff; Claude flags the pre-existing card-number logging line; the card-number hook (`pci_guard.py`) blocks a write that would log a full card number; reading `.env` is denied by policy.
 3. Act 2, data scientists, 6 min, `macro-risk`: FRED series fetched with a data dictionary; Phillips-curve flattening (slope by decade, rolling slope; correlation, not a causal claim); an event study of Fed policy moves against VIX; a one-file interactive dashboard.
 4. Act 3, SREs, 2 min, `sre-ops`: `./triage.sh incidents/INC-2291` runs Claude Code headless with read-only tools and returns a structured triage. The same command is shown as a CI job.
 5. Governance close, 1 min: `managed-settings.json`, project `settings.json`, the audit log the hooks wrote during Acts 1-3, the two environment variables that route through Amazon Bedrock or Vertex AI, OpenTelemetry export.
@@ -268,3 +268,10 @@ Each term is defined in plain English in the speaker notes of the slide listed, 
 | token | A small chunk of text, the unit API usage is priced in | a05-pricing-models |
 | DORA metrics | A published framework of software delivery measures (throughput and stability) | a06-metrics-detail |
 | MCP allowlisting | Limiting which external tool servers the agent may connect to | a03-controls-catalog |
+| kickoff (K) | The Monday the pilot programme starts; Assumption: illustratively 2027-01-11 | s16-evaluation-timeline |
+| PW (program week) | A week counted from kickoff: PW1 is the kickoff week, PW17 the last rollout week | s16-evaluation-timeline (axis note) |
+| diff | The exact lines a change adds and removes | Act 1 narration (terminal, between s10 and s11; `demo/RUNBOOK.md`) |
+| float versus Decimal | Binary floating-point numbers cannot hold every cent exactly; decimal arithmetic can | Act 1 narration (terminal, between s10 and s11) |
+| Phillips curve | The historical relationship between inflation and unemployment | Act 2 narration (terminal, between s10 and s11) |
+| VIX | A market index of expected stock-market volatility [CLM-?: VIX definition and publisher] | Act 2 narration (terminal, between s10 and s11) |
+| event study | Comparing a measure in a window before and after a set of events | Act 2 narration (terminal, between s10 and s11) |
