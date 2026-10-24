@@ -22,6 +22,6 @@ The Workbench app's source is not in this repository, so these files are the han
 
 ## Checks
 
-`index.html` is a release file for both gates: `node org/reviews/recheck.mjs` (for example F3, no "asks before it acts") and `node org/contracts/validate.mjs` (no drafting placeholders). The cloud wording follows `security/security-brief.md`: calls go through our Google Cloud project under our IAM and logging. It does not claim inference runs inside our project, because CLM-616 is still unverified. "Not used for training" rests on CLM-600.
+`index.html` is a release file for both gates: `node org/reviews/recheck.mjs` (for example F3, the permission-mode wording) and `node org/contracts/validate.mjs` (no drafting placeholders). The cloud wording follows `security/security-brief.md`: calls go through our Google Cloud project under our IAM and logging. It does not claim inference runs inside our project, because CLM-616 is still unverified. "Not used for training" rests on CLM-600.
 
 All customers, CIDs, emails and judge scores are fictional and labelled that way on the page.
