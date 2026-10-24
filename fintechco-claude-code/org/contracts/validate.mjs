@@ -90,7 +90,7 @@ function main() {
     const dups = Array.isArray(data) ? duplicateIds(data) : [];
     report(!errs.length && !dups.length, `${c.file}: ${Array.isArray(data) ? data.length : 0} entries${errs.length ? '\n  ' + errs.slice(0, 20).join('\n  ') : ''}${dups.length ? '\n  duplicate ids: ' + dups.join(', ') : ''}`);
   }
-  const cited = ['deck', 'strategy', 'rollout', 'value', 'security', 'demo', 'rehearsal', 'research']
+  const cited = ['deck', 'strategy', 'rollout', 'value', 'security', 'demo', 'rehearsal', 'research', 'architectures']
     .flatMap((d) => walk(join(ROOT, d)))
     .filter((p) => /\.(md|html|json)$/.test(p) && !relative(ROOT, p).startsWith('research/claims'));
   let citations = 0;
