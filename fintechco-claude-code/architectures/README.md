@@ -16,9 +16,9 @@ Four new sections for the live Workbench page at https://fintechco-workbench.web
 
 The two files carry the same wording. If you change one, change the other.
 
-## Porting into the Workbench
+## In the Workbench
 
-The Workbench app's source is not in this repository, so these files are the hand-off. In the Workbench repo, render each entry of `sections` with the page's existing section component, insert the `group` heading before `laptops` (`group_start: true`), add the `nav` labels to the header and the `card` entries to the intro grid, and build the case desk from `demo`. Then redeploy to Firebase Hosting and check the four anchors, the case desk, phone width and dark mode.
+The Workbench source is `fintechco-workbench/` in justinmarcellis/fnol-platform (branch `jmm/practical-euler-rhgtf9`, its PR #4). These sections are built there in PR #5: the data is in `src/lib/architectures.ts` and `src/lib/architectureExtras.ts`, the case desk in `src/components/FraudCaseDesk.tsx`. Deploy with `./deploy.sh studio-9883115447-372d0` from that folder (Cloud Run plus the `fintechco-workbench` Hosting site).
 
 ## Checks
 

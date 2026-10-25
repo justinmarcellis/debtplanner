@@ -48,7 +48,7 @@
               "s": "Free form, attachments, forwarded threads"
             },
             {
-              "t": "Call-centre notes",
+              "t": "Call center notes",
               "s": "Typed by an agent during the call"
             }
           ]
@@ -397,7 +397,7 @@
       "steps": [
         "Alert. Monitoring fires and publishes a message that starts a short Cloud Run job.",
         "Investigate. Claude Code runs headless with read-only tools: it searches code and queries logs, but can't touch running systems.",
-        "Summarise. It posts the likely cause with evidence in the incident channel.",
+        "Summarize. It posts the likely cause with evidence in the incident channel.",
         "Propose. If the cause is in code, it opens a draft pull request with a fix and a test.",
         "Decide. The on-call engineer merges it through normal review, or closes it."
       ],
@@ -515,7 +515,7 @@
     "fields": [
       {
         "k": "Claim type",
-        "v": "Card not present, unauthorised",
+        "v": "Card not present, unauthorized",
         "c": 0.94
       },
       {
