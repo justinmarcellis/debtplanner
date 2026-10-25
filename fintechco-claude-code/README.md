@@ -24,6 +24,7 @@ Everything prepared for a 40-minute mock customer meeting with FinTechCo's CTO a
 | D9 | Interview logistics kit | `rehearsal/interview-kit.md` |
 | D10 | Claims register and battlecard | `research/claims.md` (89 claims, sources and excerpts) · `research/battlecard.md` |
 | D11 | Program dashboard | `org/dashboard/index.html` · dashboard artifact |
+| — | "How it fits together" additions for the Workbench: fraud claims, laptops, PR review with an LLM judge, on-call | `architectures/` (preview `index.html`, copy `howItFitsTogether.additions.json`) |
 
 ## Published artifacts (private until you share them)
 

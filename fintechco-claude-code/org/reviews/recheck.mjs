@@ -13,7 +13,7 @@ const walk = (d) => readdirSync(join(ROOT, d)).flatMap((f) => {
   return statSync(join(ROOT, p)).isDirectory() ? walk(p) : [p];
 });
 // What the customer or the interviewer sees; deck/slide-spec.md and storyline.md are marked superseded.
-const release = ['deck/project', 'strategy', 'rollout', 'security', 'value', 'rehearsal', 'research/battlecard.md', 'demo/RUNBOOK.md', 'demo/README.md', 'demo/enterprise/README.md']
+const release = ['deck/project', 'strategy', 'rollout', 'security', 'value', 'rehearsal', 'architectures', 'research/battlecard.md', 'demo/RUNBOOK.md', 'demo/README.md', 'demo/enterprise/README.md']
   .flatMap((p) => (statSync(join(ROOT, p)).isDirectory() ? walk(p) : [p]))
   .filter((p) => /\.(md|html|json)$/.test(p));
 // Guidance that quotes a phrase in order to forbid it ("Do not say ...") is not a violation.
